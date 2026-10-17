@@ -51,6 +51,9 @@
   const productById = new Map(products.map(p => [p.id, p]));
   const moneyOrStatus = () => 'Price to be confirmed';
   let activeFilter = 'all';
+  let activeAfterDarkFilter = 'all';
+  let afterDarkSearchText = '';
+  let afterDarkSort = 'recommended';
   let searchText = '';
   let onlySaved = false;
   const saved = new Set(readArray('blacked-v10-saved').filter(id => productById.has(id)));
@@ -105,8 +108,14 @@
       <button class="compare-btn ${isCompared?'selected':''}" type="button" data-compare="${p.id}" aria-pressed="${isCompared}" style="width:100%;margin-top:7px;font-size:10px">${isCompared?'✓ Added to compare':'+ Compare'}</button></div></article>`;
   }
   function renderProducts() {
+    const intimateCount = products.filter(p => p.category === 'lingerie').length;
     const matched = products.filter(p => {
-      const filterMatch = activeFilter === 'all' || (activeFilter === 'concept' ? p.concept : p.category === activeFilter);
+      let filterMatch;
+      if (onlySaved) filterMatch = true;
+      else if (activeFilter === 'all') filterMatch = p.category === 'lingerie';
+      else if (activeFilter === 'concept') filterMatch = p.category === 'lingerie' && p.concept;
+      else if (activeFilter === 'inspiration') filterMatch = p.category === 'inspiration';
+      else filterMatch = p.category === 'lingerie';
       const query = searchText.trim().toLowerCase();
       const searchMatch = !query || [p.name,p.desc,p.label,p.category,p.searchTerms||''].join(' ').toLowerCase().includes(query);
       const savedMatch = !onlySaved || saved.has(p.id);
@@ -114,7 +123,7 @@
     });
     $('#productGrid').innerHTML = matched.map(productCard).join('');
     $('#emptyState').hidden = matched.length > 0;
-    $('#allCount').textContent = products.length;
+    $('#allCount').textContent = intimateCount;
     $('#wishlistCount').textContent = saved.size;
     $('#filterRow').querySelectorAll('[data-filter]').forEach(button => {
       const active = !onlySaved && button.dataset.filter === activeFilter;
@@ -122,12 +131,13 @@
     });
     $('#wishlistJump').classList.toggle('saved-view', onlySaved);
     updateCompare(); updateCartUI();
+    renderAfterDarkProducts();
   }
   $('#filterRow').addEventListener('click', e => { const btn = e.target.closest('[data-filter]'); if (!btn) return; activeFilter = btn.dataset.filter; onlySaved = false; renderProducts(); });
   $('#productSearch').addEventListener('input', e => { searchText = e.target.value; $('#clearSearch').hidden = !searchText; renderProducts(); });
   $('#clearSearch').addEventListener('click', () => { $('#productSearch').value = ''; searchText = ''; $('#clearSearch').hidden = true; renderProducts(); $('#productSearch').focus(); });
   $('#wishlistJump').addEventListener('click', () => { onlySaved = !onlySaved; activeFilter = 'all'; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true; renderProducts(); $('#collection').scrollIntoView({behavior:'smooth'}); toast(onlySaved ? 'Showing your saved items.' : 'Showing the full collection.'); });
-  $('#wellnessShop').addEventListener('click', () => { activeFilter='toys'; onlySaved=false; renderProducts(); });
+  $('#wellnessShop').addEventListener('click', () => { activeAfterDarkFilter='all'; renderAfterDarkProducts(); });
 
   function toggleSave(id) { if (!productById.has(id)) return; if (saved.has(id)) { saved.delete(id); toast('Removed from saved styles.'); } else { saved.add(id); toast('Saved on this device.'); } persist('blacked-v10-saved',[...saved]); renderProducts(); if (activeDialogProduct === id) syncDialogSave(); }
   function addToCart(id) { if (!productById.has(id)) return; cart.set(id, Math.min(99,(cart.get(id)||0)+1)); persist('blacked-v10-cart',Object.fromEntries(cart)); renderProducts(); toast(`${productById.get(id).name} added to your demo bag.`); openCart(); }
@@ -138,6 +148,48 @@
     const compare = e.target.closest('[data-compare]'); if (compare) return toggleCompare(compare.dataset.compare);
     const detail = e.target.closest('[data-open-product]'); if (detail) openProductDialog(detail.dataset.openProduct);
   });
+
+  // The After Dark catalogue is a separate destination from the Intimates catalogue.
+  function adultType(p) {
+    if (['dildo','obsidian-xl'].includes(p.id)) return 'dildo';
+    if (p.id === 'plug') return 'anal';
+    if (p.id === 'pulse') return 'massager';
+    if (p.category === 'care') return 'care';
+    return 'other';
+  }
+  function renderAfterDarkProducts() {
+    const grid = $('#afterDarkGrid');
+    if (!grid) return;
+    const allAdult = products.filter(p => p.category === 'toys' || p.category === 'care');
+    let matched = allAdult.filter(p => {
+      const type = adultType(p);
+      const filterMatch = activeAfterDarkFilter === 'all' || (activeAfterDarkFilter === 'care' ? type === 'care' : type === activeAfterDarkFilter);
+      const q = afterDarkSearchText.trim().toLowerCase();
+      const searchMatch = !q || [p.name,p.desc,p.label,p.material,p.searchTerms||'',type].join(' ').toLowerCase().includes(q);
+      return filterMatch && searchMatch;
+    });
+    if (afterDarkSort === 'az') matched = matched.slice().sort((a,b) => a.name.localeCompare(b.name));
+    grid.innerHTML = matched.map(productCard).join('');
+    $('#afterDarkEmpty').hidden = matched.length > 0;
+    $('#afterDarkCount').textContent = allAdult.length;
+    const labels = { all: 'all After Dark concepts and care items', dildo: 'dildos and toys', anal: 'anal-wellness concepts', massager: 'massager concepts', care: 'lubricant, care and storage concepts' };
+    $('#afterDarkActiveFilter').textContent = `Showing ${matched.length} ${labels[activeAfterDarkFilter] || 'items'}` + (afterDarkSearchText.trim() ? ` matching “${afterDarkSearchText.trim()}”` : '');
+    $('#afterDarkFilters')?.querySelectorAll('[data-after-filter]').forEach(button => {
+      const active = button.dataset.afterFilter === activeAfterDarkFilter;
+      button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
+    });
+    updateCartUI();
+  }
+  $('#afterDarkGrid').addEventListener('click', e => {
+    const add = e.target.closest('[data-add-cart]'); if (add) return addToCart(add.dataset.addCart);
+    const save = e.target.closest('[data-save]'); if (save) return toggleSave(save.dataset.save);
+    const compare = e.target.closest('[data-compare]'); if (compare) return toggleCompare(compare.dataset.compare);
+    const detail = e.target.closest('[data-open-product]'); if (detail) openProductDialog(detail.dataset.openProduct);
+  });
+  $('#afterDarkFilters').addEventListener('click', e => { const button = e.target.closest('[data-after-filter]'); if (!button) return; activeAfterDarkFilter = button.dataset.afterFilter; renderAfterDarkProducts(); });
+  $('#afterDarkSearch').addEventListener('input', e => { afterDarkSearchText = e.target.value; $('#clearAfterDarkSearch').hidden = !afterDarkSearchText; renderAfterDarkProducts(); });
+  $('#clearAfterDarkSearch').addEventListener('click', () => { $('#afterDarkSearch').value = ''; afterDarkSearchText = ''; $('#clearAfterDarkSearch').hidden = true; renderAfterDarkProducts(); $('#afterDarkSearch').focus(); });
+  $('#afterDarkSort').addEventListener('change', e => { afterDarkSort = e.target.value; renderAfterDarkProducts(); });
 
   function updateCompare() {
     const section = $('#compareSection'); const grid = $('#compareGrid');
@@ -334,9 +386,16 @@
     if (open) { openProductDialog(open.dataset.comfortOpen); return; }
     const browse = e.target.closest('[data-comfort-browse]');
     if (browse) {
-      activeFilter = browse.dataset.comfortBrowse || 'toys';
-      onlySaved = false; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true;
-      renderProducts(); $('#collection').scrollIntoView({behavior:'smooth', block:'start'});
+      const target = browse.dataset.comfortBrowse || 'toys';
+      if (target === 'toys' || target === 'care') {
+        activeAfterDarkFilter = target === 'care' ? 'care' : 'all';
+        afterDarkSearchText = ''; $('#afterDarkSearch').value = ''; $('#clearAfterDarkSearch').hidden = true;
+        renderAfterDarkProducts(); $('#after-dark').scrollIntoView({behavior:'smooth', block:'start'});
+      } else {
+        activeFilter = target === 'lingerie' ? 'all' : target;
+        onlySaved = false; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true;
+        renderProducts(); $('#collection').scrollIntoView({behavior:'smooth', block:'start'});
+      }
       return;
     }
     if (e.target.closest('#comfortEditAnswers')) {
@@ -502,8 +561,15 @@
     if (shortcut) {
       event.preventDefault();
       const nextFilter = shortcut.dataset.shopFilter;
-      const allowed = ['all','lingerie','toys','care','concept','inspiration'];
-      activeFilter = allowed.includes(nextFilter) ? nextFilter : 'toys';
+      if (nextFilter === 'toys' || nextFilter === 'care') {
+        activeAfterDarkFilter = nextFilter === 'care' ? 'care' : 'all';
+        renderAfterDarkProducts();
+        $('#after-dark')?.scrollIntoView({behavior:'smooth', block:'start'});
+        toast(nextFilter === 'care' ? 'Care & accessories opened in After Dark.' : 'After Dark catalogue opened.');
+        return;
+      }
+      const allowed = ['all','concept','inspiration'];
+      activeFilter = allowed.includes(nextFilter) ? nextFilter : 'all';
       onlySaved = false;
       searchText = '';
       const search = $('#productSearch');
@@ -512,17 +578,8 @@
       if (clear) clear.hidden = true;
       renderProducts();
       $('#collection')?.scrollIntoView({behavior:'smooth', block:'start'});
-      toast(activeFilter === 'care' ? 'Care & accessories selected.' : activeFilter === 'concept' ? 'Design concepts selected.' : 'Catalogue filtered for your selection.');
+      toast(activeFilter === 'concept' ? 'Intimates design concepts selected.' : 'Intimates catalogue filtered.');
       return;
-    }
-    const railButton = event.target.closest('[data-rail-step]');
-    if (railButton) {
-      const rail = $('#featuredRail');
-      if (!rail) return;
-      const direction = Number(railButton.dataset.railStep) < 0 ? -1 : 1;
-      const card = rail.querySelector('.featured-style-card');
-      const distance = card ? card.getBoundingClientRect().width + 16 : 300;
-      rail.scrollBy({left: direction * distance, behavior:'smooth'});
     }
   });
 

@@ -1,42 +1,48 @@
-# BLACKED — Intimates + Wellness Studio (Big Update v1.4)
+# BLACKED — Intimates + After Dark Wellness (Big Update V1.5)
 
-Mobile-first static HTML/CSS/JavaScript prototype for the existing BLACKED project.
+Mobile-first static HTML/CSS/JavaScript prototype. Built from the supplied V1.4 project while preserving the existing Intimates collection, Fit Studio, sizing guide, local wishlist, comparison, demo bag, and Women's Wellness questionnaire.
 
-## What's new in v1.4
-- New storefront discovery area inspired by the user's reference screenshots: circular category shortcuts, a horizontal “wellness style references” rail, scrolling topic chips, and mobile-friendly next/previous buttons.
-- Four category photos and two product-reference photos have been cropped from screenshots supplied by the user. The crops exclude the source shop logo, pricing, promo claims, and most surrounding browser/site UI.
-- The reference-photo cards are explicitly labeled as visual references and are not represented as verified BLACKED SKUs, stock, sale prices, ratings, or best-sellers.
-- Homepage crop images are embedded directly into the HTML, so they continue to render if the separate `assets/` folder is accidentally omitted. Editable crop copies remain in `assets/`.
-- Quick category buttons filter the existing catalogue and scroll down to it.
+## What changed in V1.5
 
-## Included features from earlier versions
-- Client-side 18+ confirmation screen (not identity or age verification).
-- Premium BLACKED visual style and mobile navigation.
-- 24 catalogue options: 10 original image references, 4 BLACKED concepts, 3 separately labeled external SYRN style references, 4 personal-wellness concepts, and 3 care/accessory concepts. (Catalog item count is computed from the current source; all entries marked as concepts/references remain unverified inventory.)
-- Search, category filters, device-local wishlist, side-by-side compare (up to 3), demo bag with quantity/remove controls, product detail dialog.
-- Separate Women’s Wellness Studio questionnaire with optional prior-use/comfort reference questions. Answers are not saved or sent to a server.
-- Manual Fit Studio with local photo preview and transparent garment-cutout overlay, position/scale/rotation controls and PNG export. It is not an AI try-on model.
-- Size guide and rule-based style finder.
+- New BLACKED-branded homepage campaign visual (`assets/home-after-dark-hero.webp`) with a bold violet/pink adult-wellness look inspired by the user's reference composition. The competitor's logo, original discount claims, sales claims and rating claims are not copied. This is an original generated campaign visual, not the exact third-party campaign photo.
+- Separate **After Dark 18+** navigation destination and product grid. Adult products and related care items no longer appear in the default Intimates listing.
+- Distinct product categories: Dildos & toys, Anal wellness, Massagers, and Lube/Care/Storage.
+- After Dark search, sorting, product detail, demo bag, save/wishlist and compare actions.
+- Cropped reference photos from user-provided screenshots remain in `assets/ref-massager.jpg` and `assets/ref-ring-toy.jpg`. They are labelled as references only, not verified BLACKED inventory.
+- Existing Intimates section is kept focused on lingerie, garment design concepts, and separately labelled external-style inspiration.
+- Existing women's Wellness Studio remains a separate section with optional prior-use and comfort questions, including optional remembered size dimensions. Responses are processed in-page only and are not saved to local storage or sent to a server by this static prototype.
+- The global client-side 18+ age confirmation remains. It is not formal age verification.
 
-## Image rights and product truth
-- Newly cropped product/category photos came from screenshots you supplied. They are for prototype/reference use only. Obtain the applicable rights or replace them with your own authorized product photos before commercial/public marketing.
-- Cropped image subjects are visual examples only. They do not verify brand, manufacturer, composition, safety certifications, dimensions, stock, price, discount, shipping or customer ratings.
-- Older campaign and concept images still load from the existing public GitHub Pages URL. Preserve the original `ref-*`, `design-*`, and `syrn-*.svg` files in that repository.
-- Do not use other-brand or campaign/reference images as actual BLACKED sales listings unless you have permission and verified inventory details.
+## Catalog truth and product images
 
-## Important limitations
-- The bag is a front-end demo only. There is no real checkout, payment provider, inventory sync, customer account, order service, or backend.
-- Fit Studio manually overlays a separate transparent garment PNG over a local photo. It does not extract a garment from an ad, generate AI fitting, or predict fit.
-- Product wellness entries are concepts. Confirm supplier, composition, dimensions, cleaning instructions, legal labeling, pricing, stock and available sizes before selling.
-- The age screen is a simple client-side confirmation, not formal age verification.
+- The existing 10 campaign/reference images and 4 BLACKED lingerie concepts are still references/concepts unless physical inventory, supplier, dimensions, composition, price and rights have been verified.
+- Wellness entries are concept illustrations until the supplier, real dimensions, material/composition, care instructions, legal labelling, price and stock are confirmed.
+- No source-store discounts, star ratings, awards, sales counts or shipping estimates from screenshots were copied.
+- The banner is an original generated composition inspired by the reference's bold campaign mood. It is not the exact image from the other store.
+- Obtain relevant usage rights for screenshot-derived crops before public commercial promotion; replace them with authorized BLACKED product photos when available.
 
-## Deploy on GitHub Pages from a phone
+## Fit Studio limitations
+
+The Fit Studio uses the customer's own photo plus a separately supplied transparent garment PNG. It positions the actual cut-out manually and is **not AI virtual try-on**, does not extract a garment from an ad/campaign poster, and does not predict size/fit. Realistic AI fitting requires a separate provider and secure backend.
+
+## Not connected yet
+
+This project is still a front-end prototype. No product inventory API, live prices, accounts, backend, order management, checkout, payment provider, or AI fitting API is connected. The cart is a demo cart only and must not be presented as an order-confirmation/payment flow.
+
+## Deploy on GitHub Pages from Android
+
 1. Download and extract this ZIP.
-2. Replace `index.html`, `styles.css`, `app.js`, `VERSION.txt`, `README.md`, `RESEARCH-AND-UPGRADE-PLAN.md`, and `TEST-NOTES.md` in the existing repository.
-3. Upload the full `assets/` folder as well (includes editable SVGs and the source JPEG crops). The new homepage crops are embedded too, so those top sections can render even if the folder is omitted.
-4. Do not delete existing `ref-*`, `design-*`, and `syrn-*.svg` source images used by the older collection and the Fit Studio.
-5. Commit and wait for GitHub Pages to publish. Refresh the website; if an old build appears, close/reopen the tab or clear the site's cache.
-6. Test on Android: age gate, category shortcuts, popular-style rail arrows and swipe, search, filters, product popup, wishlist, compare, demo bag, Wellness Studio answers, garment PNG upload and preview export.
+2. In the existing repository, replace `index.html`, `styles.css`, `app.js`, `VERSION.txt`, `README.md`, `RESEARCH-AND-UPGRADE-PLAN.md`, and `TEST-NOTES.md`.
+3. Upload the entire `assets/` folder (including `home-after-dark-hero.webp`, SVG illustrations, and reference crops).
+4. Preserve the repository's existing `ref-*`, `design-*`, and `syrn-*.svg` files, which legacy Intimates/Studio references still use through the existing GitHub Pages URL.
+5. Commit changes and wait for GitHub Pages to publish. Refresh the site or clear its cache if you see an older build.
+6. Test on Android: age gate; homepage CTAs; menu links; Intimates filters; After Dark filters/search/sort; open product; save; compare; demo bag quantity/remove; Women's Wellness conditional questions and reset; photo and transparent garment upload; size/position controls; PNG export.
 
-## No API keys needed
-This prototype needs no paid APIs or API keys. A real AI try-on and live shopping checkout require separate provider/backend integration.
+## Research links
+
+- Baymard Institute, Product List UX 2025: https://baymard.com/research-articles/current-state-product-list-and-filtering
+- Baymard Institute, Mobile E-Commerce Usability: https://baymard.com/research/mcommerce-usability
+- ASCI Code for Self-Regulation in Advertising: https://www.ascionline.in/the-asci-code/
+- India Code, Indecent Representation of Women (Prohibition) Act, 1986: https://www.indiacode.nic.in/bitstream/123456789/5557/1/womenprohibition1986.pdf
+- Planned Parenthood, Sex Toys and Safety: https://www.plannedparenthood.org/learn/sex-pleasure-and-sexual-dysfunction/sex-and-pleasure/sex-toys
+- FASHN, Virtual Try-On v1.6 API docs: https://docs.fashn.ai/api-reference/tryon-v1-6

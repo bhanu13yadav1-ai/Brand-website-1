@@ -1,28 +1,32 @@
-# V1.4 validation notes
+# V1.5 test notes
 
-## Static checks completed
-- `node --check app.js` passed with no JavaScript syntax errors.
-- `index.html` passed Python's built-in HTML parser.
-- 96 HTML IDs are unique; no duplicate IDs were found.
-- All simple `$('#id')` selectors found in `app.js` resolve to a matching ID in `index.html`.
-- All 24 catalogue records were detected in the current product data.
-- All referenced `assets/*` product sources exist in the ZIP or are provided as embedded data URIs in the existing image registry.
-- The 4 category crops and 2 product-reference crops are embedded directly in the new homepage HTML. Editable JPEG copies are present in `assets/`.
-- The new storefront section contains 4 category shortcut tiles, 3 horizontally scrollable reference cards, 2 rail arrow buttons, and working data attributes for category filtering.
-- CSS opening/closing brace counts balance.
-- ZIP archive integrity was checked after packaging.
+## Static checks completed for this package
+- `node --check app.js` passed (no JavaScript syntax errors).
+- Python HTML parser completed successfully.
+- 103 HTML IDs found; no duplicate IDs.
+- All 90 literal JavaScript `$('#id')` selectors resolve to matching HTML IDs.
+- New homepage hero and all bundled `assets/*` paths exist.
+- Legacy Intimates image names not copied into this update package are referenced through the existing public GitHub Pages asset base (`https://bhanu13yadav1-ai.github.io/Brand-website-1/`). Keep the original `ref-*`, `design-*`, and `syrn-*.svg` files in the existing repo.
+- After Dark navigation, category filters, search, sort, product grid, comfort questionnaire and Fit Studio controls are present in HTML/JS.
+- ZIP integrity is checked separately after the archive is created.
 
-## Browser interaction test limitation
-- An attempted Chromium headless browser check was blocked by the runtime's administrator policy when navigating to the local `file://` project. Therefore this release does not claim a successful full browser click-through test.
-- After uploading to GitHub Pages, test the category shortcuts, horizontal swipe and rail arrows, filtering, search, product details, wishlist, compare, demo bag, Wellness Studio questionnaire, local photo upload and PNG export on an Android device.
+## Functional paths to test after publishing
+1. Accept/decline age gate.
+2. Homepage banner renders; “Enter After Dark” opens the separate adult section; “Shop Intimates” opens the lingerie catalog.
+3. Mobile menu links route to Intimates, After Dark, Women's Wellness, and Fit Studio.
+4. Intimates default shows lingerie/style references only; Design concepts and External inspiration filter the intended items.
+5. After Dark default shows toys and care entries only; all category filters, search clear, A–Z sort, product dialog, save, compare, and demo bag work.
+6. Home category shortcut tiles and Wellness Studio browse buttons open the After Dark section rather than mixing adult products into Intimates.
+7. Wellness Studio's prior-use questions remain optional; dimensions validate; “pain/too much” answers avoid recommending larger size; answers are not stored.
+8. Fit Studio can upload a person photo and transparent garment PNG separately, then manually resize/rotate/move/export; uploading a campaign poster is not presented as a real cut-out.
 
-## Image/source notes
-- Six images were cropped from screenshots supplied by the user: four circular category images and two product-reference images (a massager held over clothing and a compact accessory in a hand).
-- Crops exclude the original storefront logo, price labels, discounts and most surrounding web UI; they are labeled as visual references. They are not confirmed BLACKED SKUs, official product photos, price offers, ratings, or proof of inventory.
-- Use authorized/original product imagery for public commercial launch unless reuse rights are confirmed.
+## Browser testing status
+- A full browser click-through was attempted in the available runtime, but browser navigation did not complete. No complete end-to-end browser test is claimed.
+- Confirm the listed paths on an Android browser after GitHub Pages deployment.
 
-## Known limitations
-- The storefront is a front-end prototype. There is no live catalogue API, real inventory, checkout/payment, order system or customer account backend.
-- Product concepts have unverified stock, price, materials and dimensions.
-- Fit Studio uses a manually-positioned transparent garment cut-out with a local person photo. It is not AI virtual try-on and cannot automatically extract the garment from a campaign image.
-- The 18+ gate is client-side confirmation only, not identity or age verification.
+## Important limitations
+- Adult wellness and lingerie stock, pricing, material claims, dimensions and supplier info are not confirmed. Do not present the concepts as available inventory until those facts are verified.
+- Screenshot crops are reference-only pending any relevant usage rights.
+- Fit Studio is manual overlay, not AI virtual try-on.
+- Wishlist and demo bag are browser-local frontend features; no account sync or real checkout exists.
+- 18+ screen is client-side confirmation, not official age verification.
