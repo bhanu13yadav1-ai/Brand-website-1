@@ -1,28 +1,21 @@
-# BLACKED Big Update V1.9 — Complete ZIP
+# BLACKED Big Update V1.8
 
-## Important: this is a real web page, not a screenshot
-`index.html` contains the full HTML, CSS, JavaScript and embedded core images. It has real buttons, section navigation, a responsive product catalogue, an eight-frame image-sequence viewer, a local-only manual garment cut-out tool, client-side wishlist/compare/demo bag, and the optional comfort questionnaire.
+## What's changed
+- A real tabbed storefront with Home, Intimates, Boyfriend, After Dark 18+, and Women's Wellness destinations.
+- Home hero and locally embedded assets: the main campaign banner, new wellness illustrations, product crops, massager image and all eight 360-degree angle frames are embedded in `index.html` to avoid missing `/assets` after a phone upload.
+- Dark neon product-commerce style with compact mobile product cards, search, filters, wishlist, comparison and demo bag.
+- Boyfriend planner with date-night/gift/conversation idea suggestions; answers are not saved.
+- The existing intimate catalogue, size guide, Fit Studio, manual transparent garment PNG overlay, and wellness questionnaire are retained.
+- The 360 viewer has eight angle frames, thumbnail selection, slider, arrows, drag and reset. Frames are generated concept views, not official manufacturer photography.
 
-## Easiest GitHub Pages deployment
-1. Download and extract this ZIP.
-2. In your existing GitHub repository, replace **only `index.html`** with the `index.html` in this ZIP.
-3. Commit the change and wait for GitHub Pages to publish.
-4. Open the site on your phone and refresh it. If you see old code, close and reopen the browser tab or clear the site cache.
+## Easiest deployment from Android
+**Recommended: upload only `index.html`** from this package to the root of your existing `Brand-website-1` repository and commit it. The CSS, JavaScript, homepage hero, product image assets and 360 frames are embedded inside the HTML, so they do not need a separate assets-folder upload. Keep your existing root-level `ref-*`, `design-*` and `syrn-*.svg` images; the older Intimates reference cards use those original repository files when available.
 
-Because the runtime images are embedded in `index.html`, the new hero, product-card imagery and 360° frames do not depend on the `assets/` folder being uploaded. The `assets/` directory is included as the editable source assets for future development; it is not required for V1.9 to run.
+If you also want maintainable source files, `app.js` and `styles.css` are included separately for editing. The standalone `index.html` already includes embedded copies and does not require those files at runtime.
 
-## Features included
-- Visible Intimates, After Dark 18+, and Women’s Wellness tabs, plus Home and Fit Studio navigation.
-- Bold dark/neon pink/purple storefront with product rails, category shortcuts, responsive card grids and bottom mobile navigation.
-- Search, category filters, sort-by-name, product details, wishlist, up-to-three-item compare, and demo bag with quantity controls.
-- Eight-view 360° image-sequence viewer with touch/mouse drag, arrows, slider, thumbnails, angle readout and reset.
-- Optional comfort questionnaire. If the user selects prior experience, it asks what size previously felt comfortable; it does not store answers.
-- Manual Fit Studio requires both the user’s photo and a transparent PNG of a real garment. It never places a fake bra/brief over the photo. Images remain local to the browser and the output can be saved as PNG.
-- Age-confirmation interstitial for adults-only content.
-
-## Honest limitations
-- This is a front-end prototype. Prices, inventory, reviews, checkout, payments, accounts and shipping are not connected.
-- Product images are generated/cropped concept references, not verified supplier inventory or supplier-approved photographs. Do not publish product dimensions, body-safe/waterproof claims or prices until verified.
-- 360° is an interactive 8-image sequence, not true 3D rotation or manufacturer-captured photography. Real 360° needs a consistent supplier photo turntable or a proper 3D model.
-- The Fit Studio is manual image compositing—not AI virtual try-on or a fit guarantee. AI try-on needs a compatible provider and a secure backend.
-- The age gate is a user confirmation, not identity verification.
+## Important limitations
+- This is a static prototype; product concepts, prices, inventory, checkout, payment and orders are not connected.
+- The 360 view changes between eight generated concept frames; it is not a true 3D model or verified supplier turntable.
+- Fit Studio's manual mode needs the customer's photo plus a transparent garment PNG. It is not AI virtual try-on.
+- The age gate is a front-end confirmation, not identity verification.
+- Some legacy Intimates photos are loaded from the existing GitHub Pages repository's root files. Do not delete those originals when replacing `index.html`.

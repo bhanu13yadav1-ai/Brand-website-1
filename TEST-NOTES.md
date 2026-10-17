@@ -1,19 +1,14 @@
-# V1.9 Test Notes
+# V1.8 Test Notes
 
-## Static checks
-- HTMLParser parse: PASS
-- Inline JavaScript syntax via `node --check`: PASS
-- CSS parse errors: 0 (tinycss2)
-- Duplicate HTML IDs: 0 (none)
-- Missing required UI IDs: 0 (none)
-- Broken in-page anchors: 0 (none)
-- Embedded image assets: 29 data URIs; all 8 360-frame keys included.
-- Single-file runtime: `index.html` contains HTML, inline CSS, inline JavaScript and all core image bytes. External asset folder is not required at runtime.
-- Feature code present: navigation, local demo bag, wishlist, compare, search, filters/sort, wellness conditional questions, manual cut-out canvas, image download, 360 image sequence controls.
+## Static checks performed
+- Standalone HTML generated with inline CSS and inline application JavaScript.
+- Critical local project assets are represented as data URLs in the standalone HTML, including the campaign hero and all eight `wand-360-frame-*.webp` images.
+- Main view panel IDs and tab controls use unique IDs and explicit `data-view` values.
+- The viewer uses eight frames (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) with wrapped previous/next state, range updates and active thumbnail state.
+- Boyfriend planner uses client-side static suggestions; it does not transmit or persist form answers.
+- Product price/availability remains clearly labelled as unconfirmed; demo bag is not checkout.
 
-## Not claimed
-- Full automated browser click-through was not available in this environment, so interactive controls still need smoke-testing on the target Android browser after deployment.
-- The website has not been published to GitHub Pages from this session.
-- Cart/checkout is demo-only. Prices/inventory/payment are not connected.
-- Generated/cropped product images are concepts, not supplier-certified photos or proof of stock.
-- The 360° view is an 8-frame image sequence, not a true 3D model.
+## Known limitations
+- A full real-device browser click-through could not be performed in this build environment. The package should be tested on GitHub Pages after upload.
+- The legacy user-supplied `ref-*`, `design-*` and `syrn-*.svg` images are not redistributed in this package; Intimates image cards rely on the existing root-level files on the user's repository. The new hero/360/wellness assets are embedded.
+- Generated 360 images are concept angles, not supplier-verified product photography.
