@@ -1,7 +1,6 @@
-BLACKED INTIMATES + WELLNESS STUDIO
-Version: 1.0 Big Update
-Build: Static HTML/CSS/JavaScript
-Catalogue: 23 options
-Age gate: front-end confirmation only
-AI virtual try-on: not implemented
-Checkout/payments: not connected
+BLACKED — Intimates + Wellness Studio
+Version: 1.1
+Type: Static HTML/CSS/JavaScript prototype
+Key fix: personal-wellness SVG art is embedded in app.js as a data URI, so image cards still render if the /assets folder is omitted during mobile GitHub uploads.
+Fit Studio: upload no longer switches modes automatically; manual mode is explicitly described; guide positioning has non-drag arrow controls.
+Limitations: no live AI try-on, live stock/pricing, orders, checkout, payment or user accounts.

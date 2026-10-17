@@ -1,4 +1,4 @@
-# BLACKED — Intimates + Wellness Studio (Big Update v1.0)
+# BLACKED — Intimates + Wellness Studio (Big Update v1.1)
 
 Mobile-first static HTML/CSS/JavaScript prototype for the existing BLACKED project.
 
@@ -13,7 +13,8 @@ Mobile-first static HTML/CSS/JavaScript prototype for the existing BLACKED proje
 - Product detail dialog
 - Manual Fit Studio with local photo preview, draggable generic guide, scale control and PNG export
 - Mobile navigation and clear notes about concepts, materials, stock, sizing and checkout
-- Non-explicit SVG product illustrations for the new wellness category
+- Non-explicit SVG product illustrations embedded inside `app.js` so product images do not break if the `assets/` directory is missed during upload
+- More explicit Fit Studio mode guidance, photo upload stays in reference mode until the user opts into the manual guide, and arrow buttons move the guide without dragging
 
 ## Important truth-in-labeling / launch notes
 - Product wellness items are concept entries, not verified inventory. Confirm supplier, composition, dimensions, safety information, packaging, local requirements, prices and available stock before offering them for sale.
@@ -25,9 +26,17 @@ Mobile-first static HTML/CSS/JavaScript prototype for the existing BLACKED proje
 ## Deploy to the existing GitHub Pages repo on a phone
 1. Download and extract this ZIP.
 2. Keep the existing `ref-*` and `design-*` image files in the repo. They are still used by the catalogue via the current public Pages URL.
-3. Upload/replace `index.html`, `styles.css`, and `app.js` from this package at the repository root. Upload the new `assets/` SVG folder too.
+3. Upload/replace `index.html`, `styles.css`, and `app.js` from this package at the repository root. The new wellness illustrations are embedded in `app.js`, so uploading `assets/` is not required for those product cards to render (keep the folder if you want the editable SVG source files).
 4. Commit changes and wait for GitHub Pages to finish publishing. Then open the site in a browser and refresh; if an old build remains cached, close/reopen the page or clear site cache.
 5. Test the age gate, catalogue filters, search, product details, save, compare, demo bag and Fit Studio on Android before public launch.
 
 ## No API keys needed
 This static preview doesn't require paid services or API keys. Real AI fitting, live product catalogues and payment processing require separate compatible services/backend work.
+
+
+## V1.1 image and preview improvements
+
+- All locally authored SVG illustrations are embedded as data URIs in the JavaScript and used by the image helper and fallback handler. This specifically addresses broken personal-wellness images when the `/assets` folder is not uploaded.
+- Legacy campaign/design photos remain served from the project's existing GitHub Pages URL, so that original repository's `ref-*`, `design-*`, and `syrn-*.svg` assets should remain published.
+- Uploading a personal photo no longer automatically switches to the guide. The visitor explicitly taps the manual guide button.
+- Keyboard/touch-friendly arrow controls provide a non-drag way to reposition the generic guide.
