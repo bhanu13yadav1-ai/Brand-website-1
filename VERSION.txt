@@ -1,6 +1,6 @@
-BLACKED INTIMATES + WELLNESS
-Version: 1.8
-Build type: Static HTML/CSS/JavaScript
-Main fixes: core raster image assets embedded in app.js / HTML; 360 viewer now uses embedded frames; visible Intimates / After Dark 18+ / Women’s Wellness tabs; After Dark top-picks rail and trending filters.
-360: eight generated concept angles at 45-degree intervals; not supplier-certified photography.
-Limitations: prototype listings; live inventory, checkout, payments and AI virtual try-on are not connected.
+BLACKED — INTIMATES + WELLNESS
+Version: 1.9
+Type: Self-contained responsive static HTML storefront prototype
+Main features: separate Intimates / After Dark 18+ / Women's Wellness tabs; Home, Fit Studio; interactive eight-frame 360 angle viewer; concept catalogue; client-side wishlist, compare and demo bag; optional wellness comfort finder; local manual garment cut-out preview.
+Core hero, product cards and 360° images are embedded in index.html, so runtime does not depend on uploading an assets directory.
+Limitations: generated/cropped concept imagery; actual product images, stock, prices, payment, shipping, verified specs and realistic AI try-on are not connected.
