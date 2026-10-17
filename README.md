@@ -1,35 +1,24 @@
-# BLACKED — Intimates + After Dark Wellness (Big Update V1.7)
+# BLACKED Intimates + Wellness — Big Update V1.8
 
-V1.7 fixes the angle mapping and touch interaction in the 360° concept viewer while preserving the separate Intimates, After Dark 18+, and Women’s Wellness experiences.
+## What changed
+- Added a visible three-destination tab rail: **Intimates**, **After Dark 18+**, and **Women’s Wellness**.
+- Kept the premium BLACKED campaign artwork and embedded the hero image directly in `index.html`, so it will not break if the `/assets` folder is omitted.
+- Embedded raster assets in `app.js`, including all eight 360 viewer frames, the massager concept image, category images, and the visual reference crops. The viewer thumbnails and main frame use those embedded sources rather than fragile relative paths.
+- Added a mobile-scrollable **Top picks to explore** rail and hashtag-style category shortcuts inside After Dark, inspired by the supplied storefront screenshots without copying another store’s brand, reviews, or sale claims.
+- The adult product listing stays separate from lingerie. Products are clearly labelled concept/reference until supplier, specs, price, stock and rights are confirmed.
 
-## What changed in V1.7
-- Rebuilt the angle sequence from eight clean product-view crops at 0°, 45°, 90°, 135°, 180°, 225°, 270° and 315°. The incorrect ninth macro close-up is no longer used as a rotation angle.
-- Corrected angle math to match each image’s 45° step. The eight views wrap back to the front to complete a full rotation.
-- Added tap-able angle thumbnails, a reset-to-front button, and clearer angle status.
-- Improved touch drag with pointer capture, accumulated drag distance, `touch-action: none` on the viewer only, keyboard support, and fallback messaging when an image is missing.
-- Added cache-busting `?v=1.7` to the main JS/CSS and angle frames to reduce stale-file issues on mobile browsers.
-- Kept product truth clear: this is a generated concept angle study, not a real manufacturer-supplied 360° spin of a confirmed item.
+## Install on GitHub Pages
+1. Extract this ZIP.
+2. Upload/replace `index.html`, `styles.css`, `app.js`, `VERSION.txt`, and the whole `assets` folder in the repository root.
+3. Do not delete your existing `ref-*`, `design-*`, or `syrn-*.svg` legacy assets; some legacy Intimates cards still refer to them via the current GitHub Pages site.
+4. Commit the files, wait for GitHub Pages to finish, then refresh the site. On mobile, close/reopen the tab or hard-refresh if a stale cached page remains.
 
-## Important limitations
-The massager portrait and angle images are generated concept imagery. Angles are not guaranteed to be geometrically exact photographs of a real stock SKU. Actual supplier, price, stock, material, size, charging, water resistance and product rights must be verified before commercial listing.
+## 360° viewer
+- Drag horizontally, use arrows, choose one of the eight thumbnails, move the slider, or reset to front view.
+- The angle frames are generated concept artwork at 0/45/90/135/180/225/270/315 degrees. This is an interactive image-sequence demo, not a supplier-certified 3D model or real product capture.
 
-The cart remains a demo. There is no live inventory, checkout/payment integration, account backend, or AI virtual try-on provider. Fit Studio requires a user photo plus a separately supplied transparent garment PNG; placement is manual, not automatic garment fitting. Wellness-questionnaire answers remain in page memory only (not saved or sent). The 18+ gate is a front-end confirmation, not formal age verification.
-
-## Deploy from Android / GitHub Pages
-1. Download and extract this ZIP.
-2. Open the extracted `Brand-website-1-Big-Update-v1.7` folder. Upload the **contents of that folder** into the existing repository root, not the outer folder itself.
-3. Replace `index.html`, `styles.css`, `app.js`, `VERSION.txt`, `README.md`, `RESEARCH-AND-UPGRADE-PLAN.md`, and `TEST-NOTES.md`.
-4. Upload the **entire `assets/` folder contents**, including `wand-massager-studio.webp` and `wand-360-frame-01.webp` through `wand-360-frame-08.webp`. Do not upload only the HTML files.
-5. Preserve the repository’s legacy `ref-*`, `design-*`, and `syrn-*.svg` images because Intimates and Fit Studio still use them. Merge/copy new assets into the existing `assets/` folder rather than deleting legacy images.
-6. Commit and wait for GitHub Pages to publish. On Android, close the old tab, reopen the URL, and hard refresh if cached content persists. The JS/CSS/frame query strings changed to `v=1.7`; if the site still shows V1.6, the new files were not uploaded to the site’s root.
-
-## Check after publishing
-Test age gate; mobile nav; Intimates filters; After Dark search/filter/sort; the 360 viewer’s drag, eight thumbnails, arrow buttons, slider, reset and keyboard keys; product details; wishlist; compare; demo bag; Wellness questions; photo plus transparent PNG upload; overlay scale/position/rotation; and PNG export.
-
-## Research starting points
-- Baymard Institute, Product List UX: https://baymard.com/research-articles/current-state-product-list-and-filtering
-- Baymard Institute, Mobile E-Commerce Usability: https://baymard.com/research/mcommerce-usability
-- Google web.dev, Core Web Vitals: https://web.dev/articles/vitals
-- ASCI Code for Self-Regulation in Advertising: https://www.ascionline.in/the-asci-code/
-- Planned Parenthood, Sex Toys and Safety: https://www.plannedparenthood.org/learn/sex-pleasure-and-sexual-dysfunction/sex-and-pleasure/sex-toys
-- FASHN, Virtual Try-On API docs: https://docs.fashn.ai/api-reference/tryon-v1-6
+## Honest limitations
+- Static front-end only. Bag, wishlist and comparison are demo/local features; payment, inventory, shipping, reviews, accounts and checkout are not connected.
+- The Wellness questionnaire is informational and not medical advice; intimate answers are not stored or sent.
+- The manual Fit Studio needs both a user photo and a transparent PNG garment cut-out. It does not make realistic AI try-on predictions.
+- Product concepts have no verified prices, stock, materials or dimensions. Do not publish unverified safety, waterproof, body-safe or sales claims.

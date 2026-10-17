@@ -1,30 +1,23 @@
-# V1.7 Test Notes
+# V1.8 Testing Notes
 
-## Static validation
-- `node --check app.js`: PASS
-- HTML parser: PASS
-- Duplicate HTML IDs: none
-- 8 unique 512×512 generated angle WebP files (0° to 315°): verified with Pillow
-- 360 image paths 01–08: present
-- Old macro-close-up frame 09: no longer included/referenced
-- Core scripts/styles and angle frame URLs: cache-busted to `v=1.7`
-- ZIP CRC/integrity: checked after packaging
+## Static checks completed
+- `node --check app.js`: passed.
+- Python HTML parser: passed.
+- HTML IDs: 116 unique IDs; no duplicates.
+- In-page anchor targets: no missing targets found.
+- Static `<img>` tags using fragile relative `assets/...` paths: none found; hero, 360 start frame, and visual-inspiration images are embedded directly in HTML.
+- Embedded critical asset map: hero, all 8 360 angle frames, massager concept, and reference crops are present in `app.js`.
+- CSS parse with `tinycss2`: 495 top-level rules/tokens, no top-level parse errors.
+- ZIP integrity: checked after packaging.
 
-## 360 viewer code paths included
-- Previous/next buttons
-- Slider input
-- 8 thumbnail buttons with active-state updates
-- Front-view reset button
-- Horizontal touch/mouse drag with pointer capture and distance accumulation
-- Keyboard arrows, Home and End
-- Image preloading and missing-asset fallback messaging
-- Matching 45° increments and 0° front wrap-around
+## Browser testing limitation
+A Chromium/Playwright click-through test was attempted, but runtime navigation was blocked by administrator policy (`ERR_BLOCKED_BY_ADMINISTRATOR`) for both localhost and file URLs. Therefore a full live browser/device pass is **not claimed**. The interaction code is statically checked but still needs Android verification after deployment.
 
-## Not claimed as tested
-A full automated browser click-through could not run in this environment: Chromium/Playwright navigation returned `ERR_BLOCKED_BY_ADMINISTRATOR` for both local HTTP and file URLs. Therefore actual touch behavior on Android and all other click flows still need a real-device smoke test after GitHub Pages deployment. No live deployment is performed by this package.
+## Deployment status
+This ZIP has not been deployed to GitHub Pages. Upload the files, commit, wait for Pages to publish, then test the 3 main tabs, product search/filter, wishlist, compare, demo bag, Wellness questionnaire, photo/garment upload, and every 360 viewer control on the actual phone.
 
-## Product and service limitations
-- Angle photos are generated concept visuals, not a real manufacturer's synchronized 360° photography.
-- The cart is demo-only; no checkout/payment API is connected.
-- No AI try-on provider, account backend, live prices or inventory is connected.
-- Fit Studio uses a user-supplied transparent garment PNG and manual positioning; it does not extract a garment from a poster.
+## Known limitations
+- The 360 viewer uses eight generated concept frames at 45-degree intervals, not supplier-supplied 3D photography.
+- Legacy Intimates campaign/design photos continue to use the existing public GitHub Pages asset URLs where those files already exist in the repository; keep old `ref-*`, `design-*`, and `syrn-*.svg` assets intact.
+- Actual product SKUs, materials, dimensions, prices, availability, reviews, checkout, payments and fulfilment are not connected.
+- The Fit Studio is a manual cut-out overlay, not AI fit prediction.

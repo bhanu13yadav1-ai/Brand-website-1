@@ -1,6 +1,6 @@
-BLACKED Intimates + After Dark Wellness
-Version: 1.7
+BLACKED INTIMATES + WELLNESS
+Version: 1.8
 Build type: Static HTML/CSS/JavaScript
-New: corrected eight-view 360-degree concept viewer with 45-degree increments, thumbnails, reset, arrows, slider, keyboard and touch drag.
-Cache busting: core assets and angle frames use v=1.7 query strings to help refresh stale mobile browsers.
-Important: angle frames are generated concept imagery, not verified supplier photography. No AI try-on, inventory, live price, checkout or payment backend is connected.
+Main fixes: core raster image assets embedded in app.js / HTML; 360 viewer now uses embedded frames; visible Intimates / After Dark 18+ / Women’s Wellness tabs; After Dark top-picks rail and trending filters.
+360: eight generated concept angles at 45-degree intervals; not supplier-certified photography.
+Limitations: prototype listings; live inventory, checkout, payments and AI virtual try-on are not connected.

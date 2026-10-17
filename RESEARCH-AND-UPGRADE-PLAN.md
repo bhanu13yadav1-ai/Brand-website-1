@@ -1,27 +1,19 @@
-# BLACKED Big Update V1.7 — Research & Upgrade Plan
+# V1.8 Research & Upgrade Plan
 
-## Primary fix: the 360° viewer
-The V1.6 viewer used nine frames for which the last tile was a macro close-up, not a product angle. It also calculated degrees as `index × 360 / 9` (40° increments), while the generated views were arranged at 45° intervals. This caused the displayed angle, slider and frames not to match.
+## Product direction
+The storefront uses three clear shopping destinations: Intimates, After Dark 18+, and Women’s Wellness. The adult catalogue remains separate, with searchable/filterable concept cards, top-pick shortcuts and visible product-information caveats.
 
-V1.7 uses eight distinct product-angle crops: 0°, 45°, 90°, 135°, 180°, 225°, 270° and 315°. It cycles through all eight views; after the 315° view, the next step wraps to the front image, which completes the full turn. A separate ninth macro shot is excluded from the viewer.
+## Asset reliability
+The previous mobile screenshot showed broken hero, 360 frame, and visual-inspiration images. In V1.8 these core images are embedded as data URIs in the HTML/JavaScript, and the corresponding local `assets/` folder is retained in the ZIP. That makes the key areas more resistant to an incomplete GitHub upload.
 
-## Interaction and mobile fixes
-- Left/right buttons, slider, keyboard arrows, Home/End, thumbnail selection, and reset all call the same `showSpinFrame()` function so the image, slider, angle output, thumbnails and status text remain synchronized.
-- Touch dragging uses accumulated horizontal movement, pointer capture and an explicit touch interaction zone. The rest of the page remains scrollable.
-- The product images are preloaded and have an explicit fallback/error message.
-- JS/CSS and frames use a `v=1.7` URL query to help prevent stale mobile browser caches.
+## 360 viewer
+Eight 512×512 generated product angles are used at 45-degree increments. The slider, thumbnail, arrow and pointer-drag controls share the same angle index. This is a framed image-sequence demo rather than a true 3D object, and the generated angles are not manufacturer-authorized photography. Replace them with supplier-approved 360-degree photography or a 3D model once the actual product is confirmed.
 
-## Other existing features preserved
-The build keeps the branded homepage, separate After Dark 18+ catalogue, Intimates collection, Women's Wellness questionnaire, local wishlist, comparison, demo bag, size guide, and manual garment-cutout Fit Studio. This build does not silently replace the manual garment overlay with generic shapes.
+## Commerce & wellness claims
+No prices, reviews, stock status, discount levels or supplier specifications are invented. Adult wellness product listings remain concept/reference entries until verified. For anal toys, the site calls out secure flared bases and maker-specific cleaning instructions. The size questionnaire is optional and is not stored.
 
-## Product truth
-The product views are generated concept images, not true supplier photography. No stock, brand-specific materials, product dimensions, water resistance, charging details, ratings, prices or availability should be claimed until supported by the actual supplier. The viewer is interactive UI using sequential images; it is not a 3D model or AI renderer.
-
-## Next high-value upgrade after V1.7
-1. Acquire supplier-approved product-only photos and a real 24–36-frame spin or a verified 3D model.
-2. Add supplier-confirmed product specs and real pricing/availability.
-3. Only then connect live inventory and a secure checkout backend.
-4. For AI try-on, connect a compatible provider through a server-side endpoint, protect API secrets, obtain explicit consent and implement retention/deletion controls.
-
-## QA caveat
-Static checks (syntax, HTML structure, ID uniqueness, image dimensions and file presence) can be performed here. Automated browser navigation was blocked by the runtime administrator policy (`ERR_BLOCKED_BY_ADMINISTRATOR`), so we do not claim full click-through or Android device validation. Real-device checks after deployment remain required.
+## Next production steps
+1. Confirm rights for original and cropped campaign/product photos.
+2. Add a real product catalogue with verified dimensions/materials, SKU, price, availability and care instructions.
+3. If realistic try-on is desired, use separate person and transparent/product-only garment inputs with a secure backend AI integration; do not put API keys in browser JavaScript.
+4. Add real checkout/payment only after a backend, inventory source, privacy policy and fulfillment workflow are ready.
