@@ -1,33 +1,21 @@
-# BLACKED INNERWEAR Fit Studio v0.6.0 — validation notes
+# V1.0 validation notes
 
-## Static checks completed
+## Checks completed
+- `node --check app.js` passes with no JavaScript syntax errors.
+- `index.html` passes Python's built-in HTML parser.
+- All literal ID selectors in app.js match an ID in index.html.
+- No duplicate IDs were found in index.html.
+- Static catalogue has 23 entries.
+- All newly created local SVG asset references exist.
+- The product image references from the previous GitHub Pages project are retained as absolute URLs to the existing published site, so keep the original `ref-*`, `design-*`, and `syrn-*.svg` files in the repository.
 
-- `node --check app.js` passed with no JavaScript syntax errors at package time.
-- `index.html` passed Python's built-in HTML parser.
-- Catalog has **37 distinct selectable entries** in the JavaScript data model. These are a mix of owner-provided campaign images, design/reference images, concept artwork and external-brand reference images—not a claim of 37 sellable SKUs.
-- All `40` distinct product `image`/`previewImage` asset references exist: PASS.
-- All `14` distinct `<img src>` references in the HTML exist: PASS.
-- No direct `syrn.com` URL or embed appears in site HTML/JavaScript/CSS. All external-brand reference images are supplied image assets and explicitly marked reference-only.
-- Static source checks confirm the canvas's reference mode uses the selected product's own `previewImage || image`; selected summary uses the supplied campaign/reference image and shows the product-detail concept separately when present.
-- Size guidance does not guess a BLACKED size because verified, product-specific sizing data has not been supplied. Fit Detective is general guidance only.
-- Product prices/stock/reviews/shipping promises have not been invented.
-- No AI API, paid API, package install, backend photo-upload handler or checkout dependency is included.
+## Not verified in this build environment
+- A full browser click-through regression test could not be completed; the headless browser smoke attempt failed to return a DOM. Please test the live GitHub Pages build on Android after deploying.
+- The original remote image URLs, canvas export permissions, age gate and storage behaviour should be tested on the actual hosted site.
 
-## P0–P4 implementation status
-
-- **P0 — selected image:** static source verified; browser interaction test still recommended on the target Android phone.
-- **P1 — image gallery/detail:** product modal gallery and local image references implemented; browser interaction test still recommended.
-- **P2 — Fit Passport + Fit Detective:** local opt-in storage/clear and general fitting guidance implemented. Product-specific size output intentionally remains disabled until real size charts are provided.
-- **P3 — Style Finder, comparison, wishlist and set-concept builder:** implemented with local-only data and image selection; the set builder is visual inspiration, not a confirmed matching SKU or order.
-- **P4 — trust, policies, reviews and QA:** honest no-reviews / owner-policy-required states are shown; no checkout/reviews system is connected. Mobile layout and accessibility labels are present.
-
-## Browser testing limitation
-
-A full automated headless-browser click-through run could not be completed in this environment. This package does **not** claim complete end-to-end browser regression testing. Please open the ZIP in a modern Android browser or deploy a preview and test: selecting each option, modal thumbnails, filters, Style Finder, compare, save/remove wishlist, Fit Detective, Fit Passport save/clear, photo upload/clear, manual mode toggle and PNG downloads.
-
-## Known limitations
-
-- A realistic automatic virtual try-on is not included. The selected item image is shown correctly; the optional personal-photo overlay is generic and manually adjustable. Exact product overlays need clean, transparent garment assets for each specific product.
-- Product photos supplied as campaign posters remain full poster images. Product-detail images are shown separately if available.
-- External-brand reference images are from user-supplied images/screenshots; use them only with appropriate permission for public/commercial release. No external site is linked or embedded.
-- Cart, inventory, checkout, payment processing, synced user accounts and real review submission require a later backend.
+## Functional scope / limitations
+- Search, category filtering, local wishlist, comparison, demo cart, product detail dialog, rule-based style finder, sample-size estimator and manual photo guide are implemented in the front-end.
+- This is not a production store: no verified product inventory, supplier integration, real price, order backend, payment processing, user accounts or customer analytics are connected.
+- The manual guide uses a generic illustration on a user-selected photo. It is not realistic garment extraction, automatic AI virtual try-on or a fit recommendation.
+- Newly added personal-wellness listings and illustrations are design concepts only. Verify supplier, composition/material, intended use, dimensions, care guidance, packaging, pricing, stock and applicable local requirements before listing real products.
+- The age gate is only a browser-side confirmation and does not verify identity or age.

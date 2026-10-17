@@ -1,8 +1,7 @@
-BLACKED INNERWEAR Fit Studio
-Version: 0.6.0
-Build type: Static HTML/CSS/JavaScript
-AI/API cost: None
-Catalog: 37 selectable references and concepts (not verified sellable SKUs)
-Main fix: Selected Try-On reference uses the selected image and never falls back to a generic demo silhouette.
-External-brand sources: Only user-supplied images; no direct SYRN website links or embeds.
-P0–P4: Consolidated plan included.
+BLACKED INTIMATES + WELLNESS STUDIO
+Version: 1.0 Big Update
+Build: Static HTML/CSS/JavaScript
+Catalogue: 23 options
+Age gate: front-end confirmation only
+AI virtual try-on: not implemented
+Checkout/payments: not connected
