@@ -1,44 +1,36 @@
-# BLACKED INNERWEAR — Fit Studio v0.5.1
+# BLACKED INNERWEAR — Fit Studio v0.6.0
 
-**Stack:** plain HTML + CSS + JavaScript  
-**Target:** Android/mobile-first, free prototype, no AI or paid APIs  
-**Build step:** none; open `index.html` or upload the files to a static host.
+**Build:** static HTML + CSS + JavaScript
+**Budget:** designed for ₹0, no AI API, no paid API, no npm install or build tool
+**Target:** Android/mobile-first; GitHub repository friendly
 
-## What is in this release
+## Included in this version
 
-- Premium BLACKED INNERWEAR landing page and responsive navigation.
-- The same 10 original user-provided reference images are included unchanged, plus 4 user-provided BLACKED design-concept poster images and separate product-only detail images for those four concepts.
-- A 17-option Fit Studio picker: 10 original references, 4 added BLACKED concepts, and 3 original schematic style illustrations linked to separate SYRN product pages for inspiration. The three SYRN items are clearly marked as a separate brand and not BLACKED inventory.
-- **Fix for the selected-product / demo-image issue:** the main canvas now shows the exact selected product/reference image by default. The generic demo silhouette has been removed. Selecting a style changes the main canvas to that selected image; the 4 newer BLACKED concepts show their product-only image in the canvas.
-- The personal-photo illustration guide is disabled until the customer selects their own photo. Uploading a photo does not replace the product photo in the main canvas; the user must explicitly choose “My photo + guide” to see their uploaded image with a generic manual illustration overlay.
-- Product filters, product detail dialog, style quiz, size finder / local Fit Passport, compare up to 3 references, saved-style wishlist, and style moodboard.
-- Local photo preview and PNG export. Selected customer photos are processed inside the browser; this static prototype does not post them to a server.
-- Mobile-first layout and accessibility labels/focus styles.
+- The 10 originally supplied reference image files remain in the release unchanged.
+- Additional owner-supplied BLACKED campaign/concept images are packaged as separate assets. The 4 standalone garment-detail concept images are visual concepts, not confirmed stock.
+- Cropped external-brand reference images come only from screenshots/images you supplied. The browser chrome/site interface was cropped where applicable. **No SYRN website is embedded, scraped, linked or used as a live product source.** Those images are clearly marked external reference/inspiration only and are not BLACKED inventory; public commercial use may require permission.
+- Fit Studio picker dynamically lists all catalog items. Selecting an item updates the canvas to that item’s own image: a product-detail concept image when one is associated, otherwise the exact supplied image. A generic silhouette is never used as a fallback for a selected product.
+- The selection summary displays the selected campaign/reference photo, plus a separate detail view if one exists.
+- Customer-photo mode is optional and browser-local. A generic illustration overlay is available only after the customer chooses their own photo and explicitly switches to “My photo + guide”. It does not cut out the selected garment, detect body shape, simulate cloth or predict real fit.
+- Product detail dialog has a thumbnail gallery using each item's own supplied image and available detail image.
+- Collection filters, Style Finder/Quiz, compare up to three, device-local wishlist, and downloadable style-set moodboard. The “set concept” is a visual pairing, not a sellable bundle.
+- Fit Detective gives general educational checks. Fit Passport can save measurements on the current device with opt-in and clear controls.
+- No BLACKED sizes, prices, stock counts, customer ratings or policies are invented. The size recommendation remains disabled until actual product-specific measurements are supplied. The reviews/policy area is an honest unconfigured state.
+- Responsive layout, navigation and mobile-friendly controls.
 
-## Important limitations
+## Important before a real shop launch
 
-1. This is **not AI virtual try-on**. A campaign image cannot automatically be separated into an exact garment layer by this prototype. The optional “My photo + guide” view uses a generic adjustable illustration over the customer's photo; it does not extract the selected product, fit the garment to body contours, simulate fabric, or predict sizing.
-2. The 10 original images include both BLACKED campaign artwork and reference screenshots/photos. They are not 10 verified inventory SKUs. The 4 newer BLACKED designs are still concepts until you confirm physical products, construction, size specs, price, availability and rights to the images.
-3. The SYRN-inspired items are schematic illustrations with links to SYRN's own product pages, not copied official product photos and not BLACKED products for sale.
-4. The size finder uses a sample chart. Replace the sample with measurements from actual garments before letting customers rely on size advice.
-5. There is no cart, inventory sync, order backend, checkout, payment processing, user account or review database in this static prototype.
-6. Wishlist and Fit Passport save in the current browser/device only where browser storage is available. They are not synchronized between devices.
+1. The 10 original images are a mix of campaign visuals and design references, not 10 verified inventory SKUs. Added BLACKED artwork is concept/campaign material until you confirm physical products, construction and stock.
+2. External-brand supplied images are separate design references, not BLACKED products, not a collaboration, and not linked to the external store. Verify usage rights before any public commercial use.
+3. To implement actual try-on on a customer's photo without AI, provide a transparent PNG garment cut-out for each product. The current optional overlay is a generic manual illustration guide only.
+4. Give us the actual bra cup/band, brief and bodysuit charts before enabling product-size recommendations.
+5. Supply real price, colour, variant/stock, shipping, cancellation, hygiene returns/exchange and support details before checkout. This is still a static frontend prototype: there is no cart/order/payment backend, account system, real review database or inventory sync.
+6. Fit Passport and wishlist save on the current device/browser only; they do not sync between devices. Clearing browser storage may remove them.
 
-## Open locally
+## Run locally / deploy
 
-Extract the ZIP and open `index.html` in a modern browser. All local images, CSS and JavaScript are in the same folder. If an Android file viewer blocks local HTML, upload the extracted files to your private repository or use a local preview server.
+Extract this ZIP and open `index.html` in a modern browser. Keep all files from the ZIP together in the same folder. No installation is required. For GitHub, upload all extracted files (not only the ZIP) to the repository root and replace older version files. A private repository does not automatically make a hosted website private; configure access controls separately if needed.
 
-## Put it in GitHub
+## Research and implementation roadmap
 
-1. Create or open your GitHub repository.
-2. Extract this ZIP and upload **all files inside it** to the repository root, including `index.html`, `styles.css`, `app.js`, README/test notes, all 10 `ref-*` images, all `design-*` concept images/detail photos, and all three `syrn-*.svg` illustrations.
-3. Replace old files in the existing repository; do not leave an old `app.js` or old reference photos mixed with the new HTML.
-4. A private GitHub repository keeps the source private. A normal static Pages/Cloudflare deployment has a public website URL unless an access restriction is added.
-
-## Research references used for UX direction
-
-- Baymard Institute — apparel e-commerce UX: https://baymard.com/industries/apparel-ux
-- Baymard Institute — apparel UX best practices: https://baymard.com/research-articles/apparel-5-best-practices
-- MDN — using images with Canvas: https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API/Tutorial/Using_images
-- MDN — using files in web applications: https://developer.mozilla.org/en-US/docs/Web/API/File_API/Using_files_from_web_applications
-- W3C WAI — WCAG 2.2: https://www.w3.org/WAI/standards-guidelines/wcag/new-in-22/
+See `RESEARCH-ROADMAP-P0-P4.md` for the consolidated priorities, rationale and acceptance-test plan. Research links include Baymard apparel UX, MDN Canvas/File API guidance and W3C accessibility guidance.

@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#f6f0eb">
   <meta name="description" content="Discover BLACKED INNERWEAR — thoughtful everyday pieces, a manual style preview studio, and a measurement-led size guide.">
-  <title>BLACKED INNERWEAR — Fit Studio v0.5.1</title>
+  <title>BLACKED INNERWEAR — Fit Studio v0.6.0</title>
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231c1819'/%3E%3Ctext x='50%25' y='55%25' font-size='37' text-anchor='middle' fill='%23f5b2c4' font-family='Georgia'%3EB%3C/text%3E%3C/svg%3E">
   <link rel="stylesheet" href="styles.css">
   <script src="app.js" defer></script>
@@ -25,6 +25,7 @@
       <a href="#studio">Try-on studio</a>
       <a href="#fit-guide">Find your size</a>
       <a href="#style-quiz">Style quiz</a>
+      <a href="#fit-detective">Fit Detective</a>
       <a href="#saved-styles">Saved styles</a>
       <a href="#our-note">Our note</a>
     </nav>
@@ -65,15 +66,15 @@
 
     <section class="collection section-wrap section-space" id="collection">
       <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR ORIGINAL REFERENCES</p><h2>14 visual references.<br><em>Your own direction.</em></h2></div>
-        <p class="section-heading-note">Your 10 original images stay unchanged. Four more BLACKED design concepts and three separately labelled SYRN style references are available in the Fit Studio. These are design references, not confirmed stock SKUs.</p>
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> YOUR ORIGINAL REFERENCES</p><h2>Explore the collection.<br><em>Find your direction.</em></h2></div>
+        <p class="section-heading-note">Explore your 10 original references, added BLACKED campaign and concept artwork, and a separate group of external-brand reference images you supplied. Every item is individually labelled; references and concepts are not confirmed stock SKUs.</p>
       </div>
       <div class="filter-row" role="group" aria-label="Filter campaign and design references">
-        <button class="filter-chip is-active" data-filter="all" aria-pressed="true">All references <span>14</span></button>
-        <button class="filter-chip" data-filter="campaign" aria-pressed="false">Campaign &amp; movement <span>5</span></button>
-        <button class="filter-chip" data-filter="lace" aria-pressed="false">Lace &amp; statement <span>3</span></button>
-        <button class="filter-chip" data-filter="detail" aria-pressed="false">Product details <span>2</span></button>
-        <button class="filter-chip" data-filter="concept" aria-pressed="false">New concepts <span>4</span></button>
+        <button class="filter-chip is-active" data-filter="all" aria-pressed="true">All references <span data-filter-count>37</span></button>
+        <button class="filter-chip" data-filter="campaign" aria-pressed="false">Campaign &amp; movement <span data-filter-count>0</span></button>
+        <button class="filter-chip" data-filter="lace" aria-pressed="false">Lace &amp; statement <span data-filter-count>0</span></button>
+        <button class="filter-chip" data-filter="detail" aria-pressed="false">Product details <span data-filter-count>0</span></button>
+        <button class="filter-chip" data-filter="concept" aria-pressed="false">Design concepts <span data-filter-count>0</span></button><button class="filter-chip" data-filter="external" aria-pressed="false">External references <span data-filter-count>0</span></button>
       </div>
       <div class="product-grid" id="productGrid" aria-live="polite">
         <article class="product-card" data-category="campaign" data-product="move">
@@ -199,9 +200,9 @@
           <button class="product-link" data-preview-product="ivory">View in Try-On <span aria-hidden="true">→</span></button>
         </article>
       </div>
-      <p class="catalog-note"><span aria-hidden="true">✦</span> The 10 original uploads are preserved, with 4 additional owner-supplied concept visuals. Campaign and concept images are references—not proof of inventory, pricing or exact construction. Confirm the actual product and rights before selling.</p>
+      <p class="catalog-note"><span aria-hidden="true">✦</span> All campaign and concept cards are visual references until you confirm physical inventory, exact product construction, prices, size charts and rights. External-brand images supplied by you are inspiration only; this prototype does not use or link to that brand’s website.</p>
       <section class="compare-panel" id="comparePanel" aria-labelledby="compareHeading" hidden>
-        <div class="utility-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> SIDE-BY-SIDE</p><h3 id="compareHeading">Compare your shortlist</h3><p>Choose up to three references from the collection. Prices, stock and product sizes remain unconfirmed.</p></div><button type="button" class="subtle-button" id="clearCompare">Clear comparison</button></div>
+        <div class="utility-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> SIDE-BY-SIDE</p><h3 id="compareHeading">Compare your shortlist</h3><p>Choose up to three images from the collection. Prices, stock and product sizes remain unconfirmed.</p></div><button type="button" class="subtle-button" id="clearCompare">Clear comparison</button></div>
         <div class="compare-results" id="compareResults"></div>
       </section>
       <section class="saved-panel" id="saved-styles" aria-labelledby="savedHeading">
@@ -209,34 +210,14 @@
         <div class="saved-results" id="wishlistGrid"><div class="saved-empty"><span>♡</span><p>Your wishlist is empty. Tap “Save style” on any reference to keep it here.</p></div></div>
       </section>
     </section>
-
-
-    <section class="syrn-inspiration section-wrap section-space" id="style-inspiration">
-      <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> EXTERNAL STYLE INSPIRATION</p><h2>Explore the SYRN<br><em>design direction.</em></h2></div>
-        <p class="section-heading-note">You asked for Sydney Sweeney's lingerie styles too. These are examples from SYRN, her separate brand—not BLACKED products and not part of BLACKED inventory.</p>
-      </div>
-      <div class="syrn-inspiration-grid">
-        <article class="syrn-card">
-          <a class="syrn-image-link syrn-art syrn-art-demi" href="https://syrn.com/products/forever-yours-lightly-lined-smooth-demi-bra-bab" target="_blank" rel="noopener noreferrer" aria-label="View Forever Yours Demi Bra on the official SYRN store"><span class="syrn-art-label">SYRN / OFFICIAL REFERENCE</span><svg viewBox="0 0 260 210" aria-hidden="true"><path d="M72 65 C74 45 92 39 108 58 L130 95 L152 58 C168 39 186 45 188 65 L204 111 Q130 145 56 111Z" fill="#d8b0a2" stroke="#6e4b4d" stroke-width="2"/><path d="M73 64 L50 30 M187 64 L210 30" fill="none" stroke="#6e4b4d" stroke-width="5" stroke-linecap="round"/><path d="M56 111 Q130 135 204 111 L204 126 Q130 150 56 126Z" fill="#c7978d" stroke="#6e4b4d" stroke-width="2"/><path d="M94 90 Q130 116 166 90" fill="none" stroke="#f4e5dc" stroke-width="3"/></svg><span class="syrn-art-subtitle">Lightly lined demi</span></a>
-          <div class="syrn-card-copy"><p class="product-kicker">SYRN BY SYDNEY SWEENEY · OFFICIAL REFERENCE</p><h3>Forever Yours Lightly Lined Demi Bra</h3><p>Smooth-cup direction, adjustable straps and lace accents.</p><a class="syrn-external-link" href="https://syrn.com/products/forever-yours-lightly-lined-smooth-demi-bra-bab" target="_blank" rel="noopener noreferrer">View on official SYRN store ↗</a></div>
-        </article>
-        <article class="syrn-card">
-          <a class="syrn-image-link syrn-art syrn-art-lace" href="https://syrn.com/products/forget-me-not-unlined-balconette-bra-dwm" target="_blank" rel="noopener noreferrer" aria-label="View Forget Me Not Balconette Bra on the official SYRN store"><span class="syrn-art-label">SYRN / OFFICIAL REFERENCE</span><svg viewBox="0 0 260 210" aria-hidden="true"><path d="M70 69 C76 40 102 43 116 68 L130 95 L144 68 C158 43 184 40 190 69 L204 112 Q130 145 56 112Z" fill="#242026" stroke="#dcadbc" stroke-width="2.5"/><path d="M72 66 L54 27 M188 66 L206 27" stroke="#242026" stroke-width="5" stroke-linecap="round"/><path d="M56 112 Q130 139 204 112 L204 129 Q130 153 56 129Z" fill="#181619" stroke="#dcadbc" stroke-width="2"/><path d="M70 90 Q90 65 110 96 Q130 65 150 96 Q170 65 190 90" fill="none" stroke="#dcadbc" stroke-width="2"/><path d="M117 105 l13 -8 l13 8 l-13 7Z" fill="#dba7b7"/></svg><span class="syrn-art-subtitle">Unlined balconette</span></a>
-          <div class="syrn-card-copy"><p class="product-kicker">SYRN BY SYDNEY SWEENEY · OFFICIAL REFERENCE</p><h3>Forget Me Not Unlined Balconette Bra</h3><p>Unlined cups, a balconette silhouette and adjustable straps.</p><a class="syrn-external-link" href="https://syrn.com/products/forget-me-not-unlined-balconette-bra-dwm" target="_blank" rel="noopener noreferrer">View on official SYRN store ↗</a></div>
-        </article>
-        <article class="syrn-card">
-          <a class="syrn-image-link syrn-art syrn-art-bodysuit" href="https://syrn.com/products/the-fantasy-lace-halter-bodysuit-afd" target="_blank" rel="noopener noreferrer" aria-label="View Fantasy Lace Halter Bodysuit on the official SYRN store"><span class="syrn-art-label">SYRN / OFFICIAL REFERENCE</span><svg viewBox="0 0 260 210" aria-hidden="true"><path d="M92 28 Q130 49 168 28 L158 70 Q172 84 193 97 L178 156 L158 193 L130 176 L102 193 L82 156 L67 97 Q88 84 102 70Z" fill="#7d384f" stroke="#f0ccd6" stroke-width="2.5"/><path d="M92 28 L82 54 L105 70 L130 95 L155 70 L178 54 L168 28" fill="none" stroke="#f0ccd6" stroke-width="3"/><path d="M104 78 Q130 62 156 78 L146 117 L130 143 L114 117Z" fill="#c77a91" stroke="#efcad4" stroke-width="2"/><path d="M92 104 L113 117 M168 104 L147 117 M112 146 L148 146" stroke="#f0ccd6" stroke-width="2"/><path d="M110 30 Q130 42 150 30" fill="none" stroke="#f0ccd6" stroke-width="3"/></svg><span class="syrn-art-subtitle">Lace halter bodysuit</span></a>
-          <div class="syrn-card-copy"><p class="product-kicker">SYRN BY SYDNEY SWEENEY · OFFICIAL REFERENCE</p><h3>The Fantasy Lace Halter Bodysuit</h3><p>Floral-lace styling, halter neckline and open-back design direction.</p><a class="syrn-external-link" href="https://syrn.com/products/the-fantasy-lace-halter-bodysuit-afd" target="_blank" rel="noopener noreferrer">View on official SYRN store ↗</a></div>
-        </article>
-      </div>
-      <p class="catalog-note"><span aria-hidden="true">✦</span> These three cards are original schematic illustrations made for this prototype, not official SYRN product photos. Product names and details link to SYRN's official store. They are inspiration only and are not available for purchase through BLACKED. Get permission before reusing another brand's photos, names or designs in commercial promotion.</p>
+    <section class="external-reference-note section-wrap" id="style-inspiration" aria-label="External reference notice">
+      <div class="external-reference-note-inner"><span class="reference-note-icon" aria-hidden="true">✧</span><div><p class="eyebrow"><span class="eyebrow-line"></span> STYLE REFERENCES</p><h2>Inspired by ideas.<br><em>Built for BLACKED.</em></h2><p>Some external-brand reference images were supplied by you and are used only as clearly labelled design references. This website does not embed, scrape, or link to SYRN’s store. These images are not BLACKED products or confirmed inventory, and public commercial use requires appropriate image/design rights.</p></div></div>
     </section>
 
     <section class="style-quiz-section section-wrap section-space" id="style-quiz">
       <div class="section-heading">
         <div><p class="eyebrow"><span class="eyebrow-line"></span> FIND YOUR STYLE</p><h2>A few choices.<br><em>Your kind of comfort.</em></h2></div>
-        <p class="section-heading-note">A lightweight rule-based quiz—no AI, no account, and no personal photo required. Recommendations use your stated preferences and the 10 original reference images and 4 BLACKED concepts.</p>
+        <p class="section-heading-note">A lightweight rule-based quiz—no AI, no account, and no personal photo required. Recommendations use your selected preferences and only catalogued visual attributes; external-brand references are kept out of BLACKED-style recommendations.</p>
       </div>
       <div class="style-quiz-card">
         <form id="styleQuizForm" class="style-quiz-form">
@@ -252,14 +233,14 @@
 
     <section class="style-board-section section-wrap section-space" id="build-set">
       <div class="section-heading">
-        <div><p class="eyebrow"><span class="eyebrow-line"></span> MAKE IT YOURS</p><h2>Build a style<br><em>moodboard.</em></h2></div>
-        <p class="section-heading-note">Pair two of your original references and save an inspiration board. This is a visual design exercise—not a confirmed matching set, stock listing or order.</p>
+        <div><p class="eyebrow"><span class="eyebrow-line"></span> MAKE IT YOURS</p><h2>Build a style<br><em>set concept.</em></h2></div>
+        <p class="section-heading-note">Pair two supplied images into a style-board concept and save it locally. This is a visual styling exercise—not a confirmed matching SKU, bundle, inventory listing or order.</p>
       </div>
       <div class="style-board-card">
         <div class="style-board-controls">
-          <label for="boardPrimary"><span>01 · Main look</span><select id="boardPrimary"><option value="signature">Black Comfort Set</option></select></label>
+          <label for="boardPrimary"><span>01 · Main style</span><select id="boardPrimary"><option value="signature">Black Comfort Set</option></select></label>
           <label for="boardAccent"><span>02 · Pair with</span><select id="boardAccent"><option value="velvet">Velvet Lace Set</option></select></label>
-          <div class="style-board-actions"><button type="button" class="button button-dark" id="buildStyleBoard">Create my moodboard ↗</button><button type="button" class="subtle-button" id="downloadStyleBoard" disabled>Save board PNG ↓</button></div>
+          <div class="style-board-actions"><button type="button" class="button button-dark" id="buildStyleBoard">Build my set concept ↗</button><button type="button" class="subtle-button" id="downloadStyleBoard" disabled>Save style board PNG ↓</button></div>
         </div>
         <div class="style-board-preview" id="styleBoardPreview" hidden aria-live="polite">
           <article><img id="boardPrimaryImage" src="ref-09-blacked-comfort-set.png" alt="Selected main style reference"><p class="product-kicker" id="boardPrimaryKicker">MAIN LOOK</p><h3 id="boardPrimaryName">Black Comfort Set</h3></article>
@@ -275,16 +256,16 @@
         <div class="studio-heading">
           <p class="eyebrow eyebrow-light"><span class="eyebrow-line"></span> YOUR PRIVATE FIT STUDIO</p>
           <h2>See your idea.<br><em>Style it your way.</em></h2>
-          <p>Your selected original product/reference photo is shown in the canvas by default. You can optionally upload your own photo to use a generic manual illustration overlay. There is no AI or automatic fit detection, and personal photos stay in this browser.</p>
+          <p>Choose a product photo first. A user photo can be previewed privately with a generic, adjustable illustration guide; it is not automatic garment transfer or real fit simulation. Personal photos stay in this browser.</p>
           <div class="privacy-pill"><span class="privacy-dot"></span> Local preview · No account · No server upload</div>
-          <div class="studio-steps"><span><b>01</b> Choose from 17 style references</span><span><b>02</b> View its actual photo</span><span><b>03</b> Optional manual overlay</span></div>
+          <div class="studio-steps"><span><b>01</b> Choose from all product and reference images</span><span><b>02</b> View its actual photo</span><span><b>03</b> Optional manual overlay</span></div>
         </div>
         <div class="studio-card">
           <div class="studio-card-top"><div><p class="studio-overline">SELECTED PHOTO PREVIEW</p><h3>Your selected style</h3></div><span class="live-badge"><i></i> PRIVATE</span></div>
           <div class="studio-product-picker">
-            <div class="studio-picker-heading"><div><p class="studio-overline">CHOOSE A REFERENCE</p><h4>17 style options</h4></div><span id="studioProductCount">17 options</span></div>
-            <p class="studio-picker-note">Choose from 10 original references, 4 new BLACKED design concepts, and 3 separate SYRN style-inspiration drawings. Selection changes the main canvas to the selected reference image; the four new concepts have separate product-only detail images. These are references, not confirmed stock SKUs.</p>
-            <div class="studio-product-grid" id="studioProductGrid" role="group" aria-label="Choose one of 17 style references"></div>
+            <div class="studio-picker-heading"><div><p class="studio-overline">CHOOSE A REFERENCE</p><h4>Choose a reference</h4></div><span id="studioProductCount">Loading options…</span></div>
+            <p class="studio-picker-note">Choose from your original references, additional owner-supplied BLACKED concepts, and a separate external-reference group. The main canvas always displays the selected item’s own image. A clean garment overlay is shown only when a verified garment asset exists; no generic demo is substituted.</p>
+            <div class="studio-product-grid" id="studioProductGrid" role="group" aria-label="Choose one of the available style references"></div>
             <div class="studio-selected-look" id="studioSelectedLook" aria-live="polite">
               <div class="studio-selected-media"><img id="studioSelectedImage" src="ref-09-blacked-comfort-set.png" alt="Selected BLACKED reference image"><img id="studioSelectedDetailImage" src="" alt="Selected garment detail reference" hidden></div>
               <div><span class="selected-look-kicker" id="studioSelectedCategory">09 · BLACKED CAMPAIGN</span><h4 id="studioSelectedName">Black Comfort Set</h4><p id="studioSelectedDescription">Your selected original campaign visual.</p><span class="selected-look-note">Reference photo only · actual product specs not confirmed</span></div>
@@ -299,7 +280,7 @@
               <canvas id="tryCanvas" width="720" height="960" aria-label="The exact selected product/reference image. Choose Illustration guide only after uploading your own photo." tabindex="0"></canvas>
               <div class="canvas-badge" id="canvasBadge">SELECTED REFERENCE PHOTO</div>
             </div>
-            <p class="canvas-hint" id="canvasHint">The exact selected style image appears here by default. New BLACKED concepts use their separate product-only image. No demo silhouette is shown as a selected product.</p>
+            <p class="canvas-hint" id="canvasHint">The exact selected reference or its associated clean product view appears here. Generic illustrations are never shown as if they were your selected product.</p>
           </div>
           <div class="studio-controls">
             <div class="control-block upload-control">
@@ -348,10 +329,10 @@
     <section class="fit-section section-wrap section-space" id="fit-guide">
       <div class="fit-intro">
         <p class="eyebrow"><span class="eyebrow-line"></span> FIND YOUR SIZE</p>
-        <h2>A little measuring.<br><em>A more confident choice.</em></h2>
-        <p>Enter measurements to see an initial size estimate against a sample clothing chart. We will replace this starter chart with BLACKED product-specific measurements before it is used for real orders.</p>
+        <h2>A little measuring.<br><em>A more informed choice.</em></h2>
+        <p>Enter measurements to validate your entries and optionally save a Fit Passport on this device. Actual size recommendations stay disabled until verified BLACKED bra, brief and bodysuit charts are configured.</p>
         <div class="fit-callout"><span class="callout-icon" aria-hidden="true">✧</span><div><strong>Good fit starts with good information.</strong><p>Measure over light clothing, keep the tape level, and avoid pulling it too tight.</p></div></div>
-        <a class="text-link" href="#size-chart">View the starter chart <span aria-hidden="true">↓</span></a>
+        <a class="text-link" href="#size-chart">View the size-chart status <span aria-hidden="true">↓</span></a>
       </div>
       <div class="fit-form-card">
         <div class="fit-form-heading"><div><span class="small-number">FIT FINDER / 01</span><h3>Your measurements</h3></div><div class="unit-toggle" role="group" aria-label="Measurement units"><button type="button" class="unit-button is-active" data-unit="in" aria-pressed="true">IN</button><button type="button" class="unit-button" data-unit="cm" aria-pressed="false">CM</button></div></div>
@@ -363,7 +344,7 @@
             <label class="measurement-field"><span>Hips <i>fullest part</i></span><span class="measurement-input"><input id="hips" name="hips" type="number" inputmode="decimal" min="20" max="75" step="0.1" placeholder="e.g. 36" required><small class="unit-label">in</small></span></label>
           </div>
           <p class="form-error" id="fitError" role="alert" hidden></p>
-          <button class="button button-dark button-full" type="submit">Find my starter size <span aria-hidden="true">→</span></button>
+          <button class="button button-dark button-full" type="submit">Check my measurements <span aria-hidden="true">→</span></button>
           <p class="form-privacy"><span aria-hidden="true">◌</span> Measurements are calculated in this browser and are not sent to a server.</p>
           <div class="fit-passport-controls">
             <label class="passport-optin"><input type="checkbox" id="saveFitPassport"><span><strong>Save my Fit Passport on this device</strong><small>Optional. Measurements stay in this browser until you clear them.</small></span></label>
@@ -372,28 +353,32 @@
           </div>
         </form>
         <div class="fit-result" id="fitResult" hidden aria-live="polite">
-          <div class="result-top"><span class="result-check" aria-hidden="true">✓</span><div><p class="small-number">YOUR STARTER ESTIMATE</p><h3>Here’s your guide</h3></div></div>
-          <div class="result-sizes"><div><small>TOP / BUST-BASED</small><strong id="topSizeResult">M</strong></div><div><small>BOTTOM / HIP-BASED</small><strong id="bottomSizeResult">M</strong></div></div>
-          <p class="result-note" id="resultNote">This is a general apparel estimate based on the sample chart, not a bra cup or fit guarantee.</p>
+          <div class="result-top"><span class="result-check" aria-hidden="true">✓</span><div><p class="small-number">YOUR MEASUREMENT CHECK</p><h3>Here’s your guide</h3></div></div>
+          <div class="result-sizes"><div><small>BLACKED TOP SIZE</small><strong id="topSizeResult">M</strong></div><div><small>BLACKED BOTTOM SIZE</small><strong id="bottomSizeResult">M</strong></div></div>
+          <p class="result-note" id="resultNote">No product size is guessed until a verified BLACKED size chart is configured.</p>
           <button type="button" class="text-link" id="editMeasurements">Edit measurements <span aria-hidden="true">↺</span></button>
         </div>
       </div>
     </section>
 
+    <section class="fit-detective-section section-wrap section-space" id="fit-detective">
+      <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> FIT DETECTIVE</p><h2>What feels off?<br><em>Start with a clue.</em></h2></div><p class="section-heading-note">Choose the issue you experience. These are general fitting checks, not a diagnosis or a guaranteed product recommendation.</p></div>
+      <div class="fit-detective-card"><form id="fitDetectiveForm"><fieldset><legend>Which fit issue do you notice most?</legend><div class="fit-issue-grid">
+        <label><input type="radio" name="fitIssue" value="band" required><span><strong>Band rides up</strong><small>Back band moves higher</small></span></label>
+        <label><input type="radio" name="fitIssue" value="straps"><span><strong>Straps slip</strong><small>Shoulder straps fall down</small></span></label>
+        <label><input type="radio" name="fitIssue" value="gap"><span><strong>Cup gaps</strong><small>Extra space in cup</small></span></label>
+        <label><input type="radio" name="fitIssue" value="spill"><span><strong>Spillage / tight cup</strong><small>Coverage feels too small</small></span></label>
+        <label><input type="radio" name="fitIssue" value="wire"><span><strong>Wire feels uncomfortable</strong><small>Pressure or poking</small></span></label>
+        <label><input type="radio" name="fitIssue" value="brief"><span><strong>Brief waistband digs in</strong><small>Waist or leg opening feels tight</small></span></label>
+      </div></fieldset><button class="button button-dark" type="submit">Show fitting checks <span aria-hidden="true">→</span></button></form><div id="fitDetectiveResult" class="fit-detective-result" hidden aria-live="polite"></div></div>
+    </section>
+
     <section class="size-chart-section" id="size-chart">
       <div class="section-wrap size-chart-wrap">
-        <div class="chart-heading"><p class="eyebrow"><span class="eyebrow-line"></span> SIZE NOTES</p><h2>Know your <em>numbers.</em></h2><p>This editable starter chart is for prototype testing only. Final size ranges must be verified against the actual BLACKED garments.</p></div>
-        <div class="chart-card">
-          <div class="chart-card-heading"><span>STARTER SIZE CHART</span><span>INCHES / CM</span></div>
-          <div class="table-scroll"><table><thead><tr><th scope="col">Size</th><th scope="col">Bust</th><th scope="col">Waist</th><th scope="col">Hips</th></tr></thead><tbody>
-            <tr><th scope="row">XS</th><td>28–30 in <small>71–76 cm</small></td><td>22–24 in <small>56–61 cm</small></td><td>30–32 in <small>76–81 cm</small></td></tr>
-            <tr><th scope="row">S</th><td>30–32 in <small>76–81 cm</small></td><td>24–26 in <small>61–66 cm</small></td><td>32–34 in <small>81–86 cm</small></td></tr>
-            <tr><th scope="row">M</th><td>32–34 in <small>81–86 cm</small></td><td>26–28 in <small>66–71 cm</small></td><td>34–36 in <small>86–91 cm</small></td></tr>
-            <tr><th scope="row">L</th><td>34–36 in <small>86–91 cm</small></td><td>28–30 in <small>71–76 cm</small></td><td>36–38 in <small>91–97 cm</small></td></tr>
-            <tr><th scope="row">XL</th><td>36–38 in <small>91–97 cm</small></td><td>30–32 in <small>76–81 cm</small></td><td>38–40 in <small>97–102 cm</small></td></tr>
-            <tr><th scope="row">XXL</th><td>38–40 in <small>97–102 cm</small></td><td>32–34 in <small>81–86 cm</small></td><td>40–42 in <small>102–107 cm</small></td></tr>
-          </tbody></table></div>
-          <p class="chart-footnote"><span aria-hidden="true">ⓘ</span> This is not a final BLACKED size chart. Bra band/cup sizing requires a separate, product-specific chart. If you fall between sizes, use the garment's actual fit notes once available.</p>
+        <div class="chart-heading"><p class="eyebrow"><span class="eyebrow-line"></span> SIZE NOTES</p><h2>Know your <em>numbers.</em></h2><p>Only verified measurements from actual BLACKED garments will appear here. The chart stays unconfigured until product specifications are confirmed.</p></div>
+        <div class="chart-card chart-unconfigured">
+          <div class="chart-card-heading"><span>BLACKED SIZE CHART</span><span>NOT CONFIGURED</span></div>
+          <div class="size-chart-empty"><span aria-hidden="true">⌁</span><h3>Verified measurements will appear here.</h3><p>We have not yet received confirmed BLACKED garment measurements. We will not invent XS–XXL ranges or suggest a product size until actual bra, brief and bodysuit charts are configured.</p><ul><li>Measure bust and underbust for bra guidance.</li><li>Measure waist and hips for briefs.</li><li>Use each garment’s own chart and fit notes.</li></ul></div>
         </div>
       </div>
     </section>
@@ -403,15 +388,20 @@
       <div class="brand-note-copy"><p class="eyebrow"><span class="eyebrow-line"></span> A NOTE FROM BLACKED</p><h2>Comfort isn't a trend.<br><em>It's personal.</em></h2><p>Choosing intimate wear should feel simple, comfortable and yours. BLACKED is being shaped around clear product information, thoughtful design and tools that help you make a more informed choice.</p><p class="signature-note">Move together. Feel better. <span aria-hidden="true">♡</span></p><a class="button button-outline" href="#studio">Try the fit studio <span aria-hidden="true">↗</span></a></div>
     </section>
 
+    <section class="trust-section section-wrap section-space" id="trust-info">
+      <div class="section-heading"><div><p class="eyebrow"><span class="eyebrow-line"></span> BEFORE YOU BUY</p><h2>Details worth<br><em>knowing first.</em></h2></div><p class="section-heading-note">No fake reviews, invented shipping promises, or made-up stock. The public shop will need your real policy and product information before checkout is enabled.</p></div>
+      <div class="trust-grid"><article class="trust-card"><span aria-hidden="true">♡</span><p class="product-kicker">FIT FEEDBACK</p><h3>Customer fit reviews</h3><p>No verified customer reviews have been collected in this prototype yet. When real orders exist, reviews can record “too small / as expected / too large” and comfort feedback.</p><span class="trust-status">NOT CONFIGURED · NO FAKE RATINGS</span></article><article class="trust-card"><span aria-hidden="true">↗</span><p class="product-kicker">DELIVERY &amp; RETURNS</p><h3>Clear policy before purchase</h3><p>Delivery timelines, shipping charges, cancellation and hygiene-related returns/exchanges need to be supplied by the owner before a real checkout goes live.</p><span class="trust-status">OWNER POLICY REQUIRED</span></article><article class="trust-card"><span aria-hidden="true">▣</span><p class="product-kicker">PRIVACY</p><h3>Local by default</h3><p>Try-on photos and Fit Passport measurements remain in the current browser. Clear-photo and clear-profile controls are available; nothing syncs to an account.</p><span class="trust-status">NO SERVER UPLOAD IN THIS BUILD</span></article></div>
+    </section>
+
     <section class="faq-section section-wrap section-space" id="faq">
       <div class="faq-title"><p class="eyebrow"><span class="eyebrow-line"></span> GOOD TO KNOW</p><h2>Clear answers.<br><em>Better choices.</em></h2></div>
       <div class="faq-list">
-        <details><summary>Can I select all 17 style options in Try-On Studio? <span aria-hidden="true">+</span></summary><p>Yes. Pick any of the ten original references, four BLACKED design concepts, or three separately labelled SYRN style-inspiration drawings. The canvas shows the selected reference image; the four new BLACKED concepts also include product-detail photos. The optional personal-photo guide is generic—not an exact garment cut-out or a fit prediction.</p></details>
+        <details><summary>Can I select all available options in Try-On Studio? <span aria-hidden="true">+</span></summary><p>Yes. Pick any catalogued reference or concept. Each selection has its own image mapping. Product-only imagery appears only where an associated asset is provided; external-brand references stay labelled as inspiration and are not BLACKED inventory.</p></details>
         <details><summary>Why does Try-On show a product photo now?<span aria-hidden="true">+</span></summary><p>The canvas defaults to the exact selected reference image, so selecting a different reference changes the main preview. The illustration guide is separate and only becomes available after a personal photo is selected; it does not extract the garment from the campaign artwork.</p></details>
         <details><summary>Does the manual overlay show my actual fit?<span aria-hidden="true">+</span></summary><p>No. It lets you manually position a simple illustration over your own photo. It does not use the selected product image as a garment cut-out, change to match body shape, simulate fabric or determine if a product fits.</p></details>
         <details><summary>Is my photo uploaded anywhere?<span aria-hidden="true">+</span></summary><p>This prototype uses your selected photo inside the browser for previewing and does not send it to a server. Only select photos you have permission to use. If the website is later connected to third-party services, the privacy notice must be updated first.</p></details>
         <details><summary>Are these all confirmed products for sale?<span aria-hidden="true">+</span></summary><p>No. The ten items are your original uploaded images. Some are BLACKED campaign visuals; others are design references, and a few visibly contain other-brand labels or social-media UI. Do not present those as BLACKED stock unless you own/are permitted to use the creative and have confirmed the actual product, construction, sizes and inventory.</p></details>
-        <details><summary>Can the size finder guarantee the right size?<span aria-hidden="true">+</span></summary><p>No. It uses an editable sample chart to demonstrate the sizing flow. It must be replaced with measurements from actual BLACKED products before customers rely on it for orders.</p></details>
+        <details><summary>Can the size finder guarantee the right size?<span aria-hidden="true">+</span></summary><p>No. BLACKED-specific size recommendations stay unavailable until verified product size charts are configured. The Fit Passport stores measurements locally, and Fit Detective gives general troubleshooting guidance only.</p></details>
       </div>
     </section>
 
@@ -428,12 +418,12 @@
       <p>Move together. Feel better.<br><span>A considered starting point for a more confident fit.</span></p>
       <div class="footer-links"><a href="#collection">Collection</a><a href="#studio">Fit Studio</a><a href="#fit-guide">Size Finder</a><a href="#faq">FAQs</a></div>
     </div>
-    <div class="footer-bottom"><span>© <span id="year">2026</span> BLACKED INNERWEAR · WEBSITE PROTOTYPE</span><span>No AI · No external photo upload · No checkout connected</span><a href="#top">Back to top ↑</a></div>
+    <div class="footer-bottom"><span>© <span id="year">2026</span> BLACKED INNERWEAR · PROTOTYPE v0.6.0</span><span>No AI · No external photo upload · No checkout connected</span><a href="#top">Back to top ↑</a></div>
   </footer>
 
   <dialog class="product-dialog" id="productDialog" aria-labelledby="dialogTitle">
     <button type="button" class="dialog-close" id="dialogClose" aria-label="Close product details">×</button>
-    <div class="dialog-grid"><div class="dialog-image-wrap"><img id="dialogImage" src="ref-09-blacked-comfort-set.png" alt=""><img id="dialogProductDetailImage" src="" alt="Selected garment product-detail reference" hidden></div><div class="dialog-copy"><p class="eyebrow"><span class="eyebrow-line"></span> COLLECTION PREVIEW</p><h2 id="dialogTitle">Signature Black</h2><p id="dialogDescription">A timeless black style direction.</p><div class="dialog-divider"></div><p class="dialog-small-label">Preview options</p><div class="dialog-options" role="group" aria-label="Illustration options"><button type="button" class="dialog-option is-selected" data-dialog-style="top" aria-pressed="true">Top</button><button type="button" class="dialog-option" data-dialog-style="bottom" aria-pressed="false">Bottom</button><button type="button" class="dialog-option" data-dialog-style="set" aria-pressed="false">Set</button></div><p class="dialog-note">This is a prototype design preview. Product construction, price and final available sizes have not been confirmed.</p><button type="button" class="button button-dark button-full" id="dialogPreview">Open selected photo in Try-On <span aria-hidden="true">↗</span></button></div></div>
+    <div class="dialog-grid"><div class="dialog-image-column"><div class="dialog-image-wrap"><img id="dialogImage" src="ref-09-blacked-comfort-set.png" alt=""></div><div class="dialog-gallery" id="dialogGallery" aria-label="Product image gallery"></div></div><div class="dialog-copy"><p class="eyebrow"><span class="eyebrow-line"></span> COLLECTION PREVIEW</p><h2 id="dialogTitle">Signature Black</h2><p id="dialogDescription">A timeless black style direction.</p><div class="dialog-divider"></div><p class="dialog-small-label">Product views</p><p class="dialog-note">Swipe the thumbnails to view the supplied campaign, reference or product-detail images. These images do not confirm stock, price, sizing or exact garment construction.</p><button type="button" class="button button-dark button-full" id="dialogPreview">Open selected photo in Try-On <span aria-hidden="true">↗</span></button></div></div>
   </dialog>
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>

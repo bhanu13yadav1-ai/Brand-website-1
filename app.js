@@ -39,7 +39,7 @@
 
   // Collection filtering
   const filterButtons = $$('.filter-chip');
-  const productCards = $$('.product-card');
+  const productCards = $$('.product-card'); // used only for initial structure; filtering queries the live catalog
   filterButtons.forEach(button => {
     button.addEventListener('click', () => {
       const filter = button.dataset.filter;
@@ -48,7 +48,7 @@
         item.classList.toggle('is-active', active);
         item.setAttribute('aria-pressed', String(active));
       });
-      productCards.forEach(card => {
+      $$('.product-card').forEach(card => {
         card.hidden = filter !== 'all' && card.dataset.category !== filter;
       });
     });
@@ -69,10 +69,34 @@
     midnight: { name: 'Midnight Lace', category: '12 · BLACKED DESIGN CONCEPT', image: 'design-12-midnight-lace.png', previewImage: 'design-12-midnight-lace-product.jpg', description: 'Black floral lace with adjustable strappy details and a matching brief; concept inspired by your supplied artwork.', note: 'Concept design only. Confirm final construction, sizing, inventory and commercial product photography before selling.', previewNote: 'BLACKED CONCEPT PRODUCT VIEW · STOCK NOT CONFIRMED' },
     scarlet: { name: 'Scarlet Satin', category: '13 · BLACKED DESIGN CONCEPT', image: 'design-13-scarlet-satin.png', previewImage: 'design-13-scarlet-satin-product.jpg', description: 'A deep burgundy satin-and-lace matching set concept from your supplied artwork.', note: 'Concept design only. The garment-detail image is a visual direction, not evidence of final product availability.', previewNote: 'BLACKED CONCEPT PRODUCT VIEW · STOCK NOT CONFIRMED' },
     ivory: { name: 'Ivory Bloom', category: '14 · BLACKED DESIGN CONCEPT', image: 'design-14-ivory-bloom.png', previewImage: 'design-14-ivory-bloom-product.jpg', description: 'Ivory lingerie with delicate floral embroidery and small bow details, based on your supplied concept image.', note: 'Concept design only. Verify fabric, product construction, sizes and stock before listing for sale.', previewNote: 'BLACKED CONCEPT PRODUCT VIEW · STOCK NOT CONFIRMED' },
-    'syrn-demi': { name: 'Forever Yours Lightly Lined Demi Bra', category: 'SYRN · EXTERNAL STYLE INSPIRATION', image: 'syrn-forever-yours.svg', previewImage: 'syrn-forever-yours.svg', description: 'External style reference: smooth-cup demi bra, adjustable straps and lace accents.', note: 'SYRN is a separate brand. This is an original schematic illustration and is not a BLACKED product or official product photography.', previewNote: 'EXTERNAL SYRN STYLE INSPIRATION · NOT BLACKED STOCK' },
-    'syrn-balconette': { name: 'Forget Me Not Unlined Balconette Bra', category: 'SYRN · EXTERNAL STYLE INSPIRATION', image: 'syrn-forget-me-not.svg', previewImage: 'syrn-forget-me-not.svg', description: 'External style reference: unlined balconette shape, adjustable/convertible straps and lace detailing.', note: 'SYRN is a separate brand. This original schematic is for style inspiration only, not an official photo or a BLACKED product.', previewNote: 'EXTERNAL SYRN STYLE INSPIRATION · NOT BLACKED STOCK' },
-    'syrn-bodysuit': { name: 'The Fantasy Lace Halter Bodysuit', category: 'SYRN · EXTERNAL STYLE INSPIRATION', image: 'syrn-fantasy-bodysuit.svg', previewImage: 'syrn-fantasy-bodysuit.svg', description: 'External style reference: floral lace, halter neckline and open-back bodysuit direction.', note: 'SYRN is a separate brand. This original schematic is not official product photography and is not available for sale through BLACKED.', previewNote: 'EXTERNAL SYRN STYLE INSPIRATION · NOT BLACKED STOCK' },
+    'syrn-demi': { name: 'Showpiece Basque · supplied reference', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-showpiece-basque.jpg', description: 'Cropped product photo from a screenshot you supplied; shown as external style inspiration only.', note: 'Not a BLACKED product or confirmed inventory. No direct external store link is used; commercial reuse requires appropriate rights.', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK', external: true, filterCategory: 'external', sourceType: 'external' },
+    'syrn-balconette': { name: 'Garter Skirt · front reference', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-garter-skirt-front.jpg', description: 'Front-view style reference cropped from your supplied product screenshot, without browser/site navigation.', note: 'External-brand reference only. Not a BLACKED product; do not imply a collaboration or sell it as BLACKED stock.', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK', external: true, filterCategory: 'external', sourceType: 'external' },
+    'syrn-bodysuit': { name: 'Garter Skirt · back reference', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-garter-skirt-back.jpg', description: 'Back-view style reference cropped from a product screenshot you supplied.', note: 'External-brand reference only. Not a BLACKED product; do not imply a collaboration or sell it as BLACKED stock.', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK', external: true, filterCategory: 'external', sourceType: 'external' },
   };
+  // Additional owner-supplied images. External-brand images are separate reference-only options; no external store/site is embedded or linked.
+  Object.assign(products, {
+    'midnight-lace-alt': { name: 'Midnight Lace · alternate concept', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-midnight-lace-editorial.jpg', description: 'Additional black lace style-board visual supplied by you.', note: 'Concept/reference only; inventory, specifications and usage rights are not confirmed.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'midnight-lace-upload': { name: 'Midnight Lace · latest uploaded reference', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-midnight-lace-user-upload.jpg', description: 'A separate black-lace design reference from your latest uploaded set.', note: 'Reference/concept only; it is not confirmation of a stocked BLACKED SKU.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'midnight-sculpt-alt': { name: 'Midnight Sculpt · alternate concept', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-midnight-sculpt-variation.jpg', description: 'Alternate charcoal-and-black lace concept image supplied by you.', note: 'Concept/reference only; this image is not proof of a physical SKU or stock.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'noir-rose': { name: 'Noir Halter & Rose Demi', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-noir-halter-rose-demi.jpg', description: 'A noir halter and rose-demi design direction from your supplied visual.', note: 'Reference concept only; product construction, size range, price and inventory are unconfirmed.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'scarlet-ivory-grid': { name: 'Scarlet Satin & Ivory Bloom', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-scarlet-ivory-grid.jpg', description: 'Two colour and detail directions shown in your uploaded concept sheet.', note: 'Design-reference image only. Confirm exact SKUs and usage rights before public sale.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT GRID · STOCK NOT CONFIRMED' },
+    'curve-comfort': { name: 'Curve Comfort', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-curve-comfort.jpg', description: 'Burgundy lace and fuller-coverage styling direction from your supplied concept.', note: 'Visual concept only. Do not claim fit, stretch, fabric or size availability until the garment is confirmed.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'model-duo': { name: 'Everyday Duo · style reference', category: 'BLACKED CAMPAIGN REFERENCE', image: 'owner-ref-model-duo.jpg', description: 'Two-look styling reference supplied for the BLACKED visual direction.', note: 'Campaign/reference only; not evidence of two confirmed products or a collaboration.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'CAMPAIGN REFERENCE · SKU NOT CONFIRMED' },
+    'duo-campaign': { name: 'Better Together · duo campaign', category: 'BLACKED CAMPAIGN CONCEPT', image: 'owner-ref-blacked-duo-campaign.jpg', description: 'Two-model, matching-confidence campaign concept supplied by you.', note: 'Campaign concept only; verify product details and usage rights before public use.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'CAMPAIGN CONCEPT · SKU NOT CONFIRMED' },
+    'ivory-alt': { name: 'Ivory Bloom · visual variation', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-ivory-bloom-variation.jpg', description: 'An alternate ivory floral embroidery design-reference sheet.', note: 'Concept/reference only, not verified stock; fabric and actual construction are not confirmed.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'move-alt': { name: 'Move Together · alternate campaign', category: 'BLACKED CAMPAIGN REFERENCE', image: 'owner-ref-move-together-alt.jpg', description: 'An additional warm-studio campaign visual supplied by you.', note: 'Campaign/reference only. Confirm any actual products, stock and image rights before selling.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'CAMPAIGN REFERENCE · SKU NOT CONFIRMED' },
+    'cat-cow': { name: 'Cat Cow Flow Together', category: 'BLACKED CAMPAIGN CONCEPT', image: 'owner-ref-cat-cow-flow.jpg', description: 'A movement and wellness campaign concept with the BLACKED visual identity.', note: 'Campaign concept only; not a verified separate garment SKU.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'CAMPAIGN CONCEPT · SKU NOT CONFIRMED' },
+    'bow-lace': { name: 'Bow Lace Collection', category: 'BLACKED DESIGN CONCEPT', image: 'owner-ref-bow-lace-collection.jpg', description: 'Pink lace with contrasting bows and strap-detail styling from your supplied visual.', note: 'Concept only; not a confirmed product, inventory, price or size range.', filterCategory: 'concept', sourceType: 'concept', previewNote: 'BLACKED CONCEPT · STOCK NOT CONFIRMED' },
+    'move-upload': { name: 'Move Together · supplied alternate', category: 'BLACKED CAMPAIGN REFERENCE', image: 'owner-ref-move-together-upload.jpg', description: 'An additional owner-uploaded campaign image for reference.', note: 'Visual reference only; not a new confirmed stock item.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'CAMPAIGN REFERENCE · SKU NOT CONFIRMED' },
+    'stretch-upload': { name: 'Movement & Stretch · supplied alternate', category: 'MOVEMENT DESIGN REFERENCE', image: 'owner-ref-stretch-upload.jpg', description: 'The latest uploaded movement/stretch visual, kept as a separate reference image.', note: 'Design/photo reference only. It does not establish exact product specifications or sale stock.', filterCategory: 'campaign', sourceType: 'campaign', previewNote: 'MOVEMENT REFERENCE · SKU NOT CONFIRMED' },
+    'syrn-garter-pose': { name: 'Garter Skirt · alternate reference', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-garter-skirt-pose.jpg', description: 'Alternate model-view crop from one of the external product screenshots you supplied.', note: 'External-brand reference only; no SYRN website is linked or embedded. Not BLACKED stock.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' },
+    'syrn-luxury': { name: 'Luxury Collection · supplied inspiration', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-luxury.jpg', description: 'A user-supplied external-brand style concept image for design research.', note: 'Image contains external-brand identity. Inspiration only, not BLACKED inventory; obtain rights before public commercial reuse.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' },
+    'syrn-bridal': { name: 'Bridal Edit · supplied inspiration', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-bridal.jpg', description: 'A user-supplied bridal-style external reference image.', note: 'External-brand inspiration only. This prototype does not link to or embed the external brand website.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' },
+    'syrn-gift': { name: 'Gift Collection · supplied inspiration', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-gift.jpg', description: 'A user-provided external-brand gift collection reference.', note: 'External-brand inspiration only; not BLACKED stock or an authorized collaboration.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' },
+    'syrn-romance': { name: 'Soft Romance · supplied inspiration', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-romance.jpg', description: 'A pink lace and floral styling reference supplied by you.', note: 'External-brand inspiration only; not BLACKED inventory or a product for sale.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' },
+    'syrn-garter-front': { name: 'Garter Skirt · front product reference', category: 'EXTERNAL BRAND · DESIGN REFERENCE', image: 'external-ref-syrn-garter-skirt-front.jpg', description: 'Clean crop of the front product photo from your supplied external screenshot.', note: 'Reference only, not BLACKED stock. No direct external-store link has been added.', external: true, filterCategory: 'external', sourceType: 'external', previewNote: 'EXTERNAL DESIGN REFERENCE · NOT BLACKED STOCK' }
+  });
+
   // Product reference metadata for non-commercial prototype decisions. These are visual references, not confirmed SKUs.
   const productMeta = {
     move: { source: 'BLACKED campaign visual', look: 'Charcoal / sporty set', styles: ['movement', 'everyday'], colors: ['black'], coverage: 'Balanced, active-inspired', sku: 'Not confirmed' },
@@ -89,10 +113,57 @@
     midnight: { source: 'BLACKED concept', look: 'Black floral lace / straps', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Minimal-detail reference', sku: 'Concept only' },
     scarlet: { source: 'BLACKED concept', look: 'Burgundy satin / lace', styles: ['lace', 'statement'], colors: ['red'], coverage: 'Balanced', sku: 'Concept only' },
     ivory: { source: 'BLACKED concept', look: 'Ivory floral embroidery', styles: ['lace', 'everyday'], colors: ['pink'], coverage: 'Balanced', sku: 'Concept only' },
-    'syrn-demi': { source: 'External SYRN style inspiration', look: 'Smooth lined demi bra', styles: ['everyday'], colors: ['pink'], coverage: 'Balanced', sku: 'External reference only' },
-    'syrn-balconette': { source: 'External SYRN style inspiration', look: 'Unlined lace balconette', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Lace-detail reference', sku: 'External reference only' },
-    'syrn-bodysuit': { source: 'External SYRN style inspiration', look: 'Floral lace halter bodysuit', styles: ['lace', 'statement'], colors: ['red'], coverage: 'Bodysuit reference', sku: 'External reference only' }
+    'syrn-demi': { source: 'User-supplied external-brand reference', look: 'Ivory basque / lace', styles: ['lace', 'statement'], colors: ['pink'], coverage: 'Basque reference', sku: 'External reference only' },
+    'syrn-balconette': { source: 'User-supplied external-brand reference', look: 'Black garter skirt', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Skirt reference', sku: 'External reference only' },
+    'syrn-bodysuit': { source: 'User-supplied external-brand reference', look: 'Black garter skirt, rear view', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Skirt reference', sku: 'External reference only' },
+    'midnight-lace-alt': { source: 'Owner-supplied concept', look: 'Black floral lace', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'midnight-lace-upload': { source: 'Latest owner-supplied concept', look: 'Black floral lace', styles: ['lace', 'statement'], colors: ['black'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'midnight-sculpt-alt': { source: 'Owner-supplied concept', look: 'Charcoal / black lace', styles: ['lace', 'everyday'], colors: ['black'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'noir-rose': { source: 'Owner-supplied concept', look: 'Black halter / rose demi', styles: ['lace', 'statement'], colors: ['black', 'pink'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'scarlet-ivory-grid': { source: 'Owner-supplied concept board', look: 'Scarlet and ivory lace directions', styles: ['lace', 'statement'], colors: ['red', 'pink'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'curve-comfort': { source: 'Owner-supplied concept', look: 'Burgundy fuller-coverage set', styles: ['everyday', 'lace'], colors: ['red'], coverage: 'More coverage direction', sku: 'Concept only' },
+    'model-duo': { source: 'Owner-supplied campaign reference', look: 'Two-look editorial', styles: ['everyday'], colors: ['black'], coverage: 'Not specified', sku: 'Reference only' },
+    'duo-campaign': { source: 'Owner-supplied campaign concept', look: 'Move / Better Together', styles: ['everyday', 'movement'], colors: ['black', 'red'], coverage: 'Not specified', sku: 'Concept only' },
+    'ivory-alt': { source: 'Owner-supplied concept', look: 'Ivory floral lace', styles: ['lace', 'everyday'], colors: ['pink'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'move-alt': { source: 'Owner-supplied campaign reference', look: 'Movement-inspired', styles: ['movement', 'everyday'], colors: ['black'], coverage: 'Not specified', sku: 'Reference only' },
+    'cat-cow': { source: 'Owner-supplied campaign concept', look: 'Yoga / movement', styles: ['movement'], colors: ['black'], coverage: 'Not specified', sku: 'Concept only' },
+    'bow-lace': { source: 'Owner-supplied concept', look: 'Pink bow lace', styles: ['lace', 'statement'], colors: ['pink'], coverage: 'Not confirmed', sku: 'Concept only' },
+    'move-upload': { source: 'Owner-supplied campaign reference', look: 'Movement-inspired', styles: ['movement', 'everyday'], colors: ['black'], coverage: 'Not specified', sku: 'Reference only' },
+    'stretch-upload': { source: 'Owner-supplied movement reference', look: 'Stretch / active style', styles: ['movement'], colors: ['black'], coverage: 'Not specified', sku: 'Reference only' },
+    'syrn-garter-pose': { source: 'User-supplied external-brand reference', look: 'Garter skirt photo', styles: ['lace', 'statement'], colors: ['black'], coverage: 'External reference', sku: 'External reference only' },
+    'syrn-luxury': { source: 'User-supplied external-brand reference', look: 'Black lace set', styles: ['lace', 'statement'], colors: ['black'], coverage: 'External reference', sku: 'External reference only' },
+    'syrn-bridal': { source: 'User-supplied external-brand reference', look: 'Ivory lace', styles: ['lace'], colors: ['pink'], coverage: 'External reference', sku: 'External reference only' },
+    'syrn-gift': { source: 'User-supplied external-brand reference', look: 'Red gift collection', styles: ['lace', 'statement'], colors: ['red'], coverage: 'External reference', sku: 'External reference only' },
+    'syrn-romance': { source: 'User-supplied external-brand reference', look: 'Pink floral lace', styles: ['lace', 'statement'], colors: ['pink'], coverage: 'External reference', sku: 'External reference only' },
+    'syrn-garter-front': { source: 'User-supplied external-brand reference', look: 'Garter skirt front view', styles: ['lace', 'statement'], colors: ['black'], coverage: 'External reference', sku: 'External reference only' }
   };
+
+  // Add every additional supplied image as its own catalog/reference card (without external store links).
+  function renderAddedCatalogCards() {
+    const grid = $('#productGrid');
+    if (!grid) return;
+    const present = new Set($$('.product-card', grid).map(card => card.dataset.product));
+    Object.entries(products).forEach(([id, product]) => {
+      if (present.has(id)) return;
+      const category = product.filterCategory || (product.external ? 'external' : product.sourceType === 'campaign' ? 'campaign' : 'concept');
+      const card = document.createElement('article');
+      card.className = 'product-card';
+      card.dataset.category = category;
+      card.dataset.product = id;
+      card.innerHTML = `<button class="product-image-button" type="button" data-open-product="${id}" aria-label="Open ${product.name} details"><img src="${product.image}" alt="${product.name} — user-supplied visual reference" loading="lazy"><span class="product-open" aria-hidden="true">↗</span></button><div class="product-meta"><div><p class="product-kicker">${product.category}</p><h3>${product.name}</h3></div><span class="product-mark" aria-hidden="true">${product.external ? '↗' : '♡'}</span></div><p class="product-desc">${product.description}</p><button class="product-link" type="button" data-preview-product="${id}">View selected photo <span aria-hidden="true">→</span></button>`;
+      grid.appendChild(card);
+    });
+  }
+  function updateCatalogFilterCounts() {
+    const cards = $$('.product-card');
+    $$('[data-filter-count]').forEach((span) => {
+      const button = span.closest('[data-filter]');
+      const filter = button?.dataset.filter || 'all';
+      span.textContent = String(filter === 'all' ? cards.length : cards.filter(card => card.dataset.category === filter).length);
+    });
+  }
+  renderAddedCatalogCards();
+  updateCatalogFilterCounts();
 
   // Device-local wishlist: stores only selected reference IDs, never personal photos.
   const wishlistKey = 'blacked-fit-studio-wishlist-v03';
@@ -116,7 +187,7 @@
     if (savedCount) savedCount.textContent = String(savedProducts.size);
     if (!wishlistGrid) return;
     if (!savedProducts.size) {
-      wishlistGrid.innerHTML = '<div class="saved-empty"><span>♡</span><p>Your wishlist is empty. Tap “Save style” on any of the ten references to keep it here.</p></div>';
+      wishlistGrid.innerHTML = '<div class="saved-empty"><span>♡</span><p>Your wishlist is empty. Tap “Save style” on any reference to keep it here.</p></div>';
       return;
     }
     wishlistGrid.innerHTML = [...savedProducts].map(id => {
@@ -164,7 +235,7 @@
   }
 
   // Attach concise controls to each original reference card.
-  productCards.forEach(card => {
+  $$('.product-card').forEach(card => {
     const productId = card.dataset.product;
     const tryButton = card.querySelector('[data-preview-product]');
     if (!productId || !tryButton || card.querySelector('.product-action-row')) return;
@@ -218,8 +289,9 @@
   const dialogDescription = $('#dialogDescription');
   const dialogClose = $('#dialogClose');
   const dialogPreview = $('#dialogPreview');
+  const dialogGallery = $('#dialogGallery');
   let activeProduct = 'signature';
-  let dialogLayer = 'top';
+  let dialogLayer = 'set';
 
   function openProduct(productId) {
     const product = products[productId];
@@ -228,13 +300,16 @@
     dialogTitle.textContent = product.name;
     dialogDescription.textContent = `${product.description} ${product.note}`;
     dialogImage.src = product.image;
-    dialogImage.alt = `${product.name} — collection preview`;
-    dialogLayer = 'top';
-    $$('[data-dialog-style]').forEach(button => {
-      const active = button.dataset.dialogStyle === dialogLayer;
-      button.classList.toggle('is-selected', active);
-      button.setAttribute('aria-pressed', String(active));
-    });
+    dialogImage.alt = `${product.name} — selected reference image`;
+    if (dialogGallery) {
+      const galleryImages = [...new Set([product.image, ...(Array.isArray(product.gallery) ? product.gallery : []), ...(product.previewImage && product.previewImage !== product.image ? [product.previewImage] : [])])];
+      dialogGallery.innerHTML = galleryImages.map((src, index) => `<button type="button" class="dialog-thumb${index === 0 ? ' is-active' : ''}" data-dialog-thumb="${src}" aria-label="View image ${index + 1} of ${galleryImages.length}" aria-pressed="${index === 0 ? 'true' : 'false'}"><img src="${src}" alt="" loading="lazy"></button>`).join('');
+      $$('[data-dialog-thumb]', dialogGallery).forEach(button => button.addEventListener('click', () => {
+        dialogImage.src = button.dataset.dialogThumb; dialogImage.alt = `${product.name} — gallery image`;
+        $$('[data-dialog-thumb]', dialogGallery).forEach(item => { const selected = item === button; item.classList.toggle('is-active', selected); item.setAttribute('aria-pressed', String(selected)); });
+      }));
+    }
+    dialogLayer = 'set';
     if (typeof productDialog.showModal === 'function') {
       productDialog.showModal();
       document.body.classList.add('dialog-open');
@@ -255,14 +330,6 @@
     if (event.target === productDialog) closeProduct();
   });
   productDialog?.addEventListener('close', () => document.body.classList.remove('dialog-open'));
-  $$('[data-dialog-style]').forEach(button => button.addEventListener('click', () => {
-    dialogLayer = button.dataset.dialogStyle;
-    $$('[data-dialog-style]').forEach(item => {
-      const active = item === button;
-      item.classList.toggle('is-selected', active);
-      item.setAttribute('aria-pressed', String(active));
-    });
-  }));
 
   // Manual, browser-local try-on illustration studio. No photo file is posted to a server.
   const canvas = $('#tryCanvas');
@@ -359,7 +426,7 @@
     ctx.fillText(title, canvasW / 2, panelY + 31);
     ctx.fillStyle = '#e8d2d7';
     ctx.font = '12px Arial, sans-serif';
-    const note = product.previewNote || 'SELECTED ORIGINAL REFERENCE · NOT A BODY-FIT SIMULATION';
+    const note = product.previewNote || 'SELECTED REFERENCE · NOT A BODY-FIT SIMULATION';
     ctx.font = '12px Arial, sans-serif';
     ctx.fillText(note.length > 62 ? note.slice(0, 59) + '…' : note, canvasW / 2, panelY + 55);
   }
@@ -518,7 +585,7 @@
     if (manualModeControls) manualModeControls.hidden = isReference;
     if (canvasBadge) canvasBadge.textContent = isReference ? 'SELECTED PRODUCT / REFERENCE PHOTO' : (studioState.photo ? 'YOUR PHOTO · LOCAL' : 'ILLUSTRATION GUIDE');
     if (canvasHint) canvasHint.textContent = isReference
-      ? 'This canvas shows the selected item: garment-detail concept image when available, otherwise its exact original supplied photo. It does not simulate body fit.'
+      ? 'This canvas shows the selected item’s own image: a supplied product-detail concept view when available, otherwise its exact original reference image. It does not simulate body fit.'
       : (studioState.photo
         ? 'Your photo is local to this browser. Drag the generic illustration to explore placement; the selected reference remains above for comparison.'
         : 'This generic illustration is only a positioning guide. Select a product photo to return to the real selected image.');
@@ -752,7 +819,7 @@
     const productId = studioState.selectedProduct || activeProduct || 'signature';
     const product = products[productId];
     if (!product) return;
-    if (studioSelectedImage) { studioSelectedImage.src = product.image; studioSelectedImage.alt = `${product.name} — supplied reference image`; }
+    if (studioSelectedImage) { studioSelectedImage.src = product.image; studioSelectedImage.alt = `${product.name} — supplied campaign or reference image`; }
     if (studioSelectedDetailImage) {
       if (product.previewImage && product.previewImage !== product.image) {
         studioSelectedDetailImage.src = product.previewImage;
@@ -767,6 +834,7 @@
     if (studioSelectedName) studioSelectedName.textContent = product.name;
     if (studioSelectedDescription) studioSelectedDescription.textContent = product.description;
     if (studioProductCount) studioProductCount.textContent = `${Object.keys(products).length} options`;
+    const pickerHeading = $('.studio-picker-heading h4'); if (pickerHeading) pickerHeading.textContent = `${Object.keys(products).length} image options`;
     $$('[data-studio-product]', studioProductGrid || document).forEach(button => {
       const selected = button.dataset.studioProduct === productId;
       button.classList.toggle('is-selected', selected);
@@ -779,9 +847,10 @@
     let lastGroup = '';
     const entries = Object.entries(products);
     studioProductGrid.innerHTML = entries.map(([id, product], index) => {
-      const isExternal = id.startsWith('syrn-');
-      const isConcept = ['sculpt', 'midnight', 'scarlet', 'ivory'].includes(id);
-      const group = isExternal ? 'SYRN STYLE INSPIRATION · EXTERNAL BRAND' : isConcept ? 'ADDED BLACKED DESIGN CONCEPTS' : 'YOUR 10 ORIGINAL REFERENCES';
+      const isExternal = Boolean(product.external) || id.startsWith('syrn-');
+      const isConcept = product.sourceType === 'concept' || ['sculpt', 'midnight', 'scarlet', 'ivory'].includes(id);
+      const isCampaign = product.sourceType === 'campaign';
+      const group = isExternal ? 'USER-SUPPLIED EXTERNAL BRAND REFERENCES · INSPIRATION ONLY' : isConcept ? 'BLACKED DESIGN CONCEPTS · STOCK NOT CONFIRMED' : isCampaign ? 'CAMPAIGN REFERENCES · NOT STOCK SKUS' : 'YOUR ORIGINAL REFERENCES';
       const divider = group !== lastGroup ? `<div class="studio-picker-group-label">${group}</div>` : '';
       lastGroup = group;
       const thumb = product.previewImage || product.image;
@@ -802,7 +871,7 @@
     const suggestedColors = {
       redlace: '#b84f70', blacklace: '#252123', velvet: '#6e4259', rose: '#b84f70', sculpt: '#252123', midnight: '#252123', scarlet: '#70253a', ivory: '#d8c5ad', 'syrn-demi': '#c7978d', 'syrn-balconette': '#242026', 'syrn-bodysuit': '#7d384f',
       butterfly: '#b84f70', move: '#252123', yoga: '#252123', stretch: '#252123',
-      signature: '#252123', together: '#252123'
+      signature: '#252123', together: '#252123', 'midnight-lace-alt': '#252123', 'midnight-lace-upload': '#252123', 'midnight-sculpt-alt': '#252123', 'noir-rose': '#252123', 'scarlet-ivory-grid': '#70253a', 'curve-comfort': '#70253a', 'model-duo': '#252123', 'duo-campaign': '#252123', 'ivory-alt': '#d8c5ad', 'move-alt': '#252123', 'cat-cow': '#252123', 'bow-lace': '#b84f70', 'move-upload': '#252123', 'stretch-upload': '#252123', 'syrn-garter-pose': '#252123', 'syrn-luxury': '#252123', 'syrn-bridal': '#d8c5ad', 'syrn-gift': '#70253a', 'syrn-romance': '#b84f70', 'syrn-garter-front': '#252123'
     };
     studioState.color = suggestedColors[activeProduct] || '#252123';
     updatePreviewModeUI();
@@ -827,7 +896,7 @@
   // Preference-based Style Quiz: deterministic rules only; no AI or external request.
   const styleQuizForm = $('#styleQuizForm');
   const styleQuizResults = $('#styleQuizResults');
-  const quizProductIds = Object.keys(products).filter(id => !id.startsWith('syrn-')); // keep external references separate from BLACKED recommendations
+  const quizProductIds = Object.keys(products).filter(id => !products[id].external && !id.startsWith('syrn-')); // keep external-brand references separate from BLACKED recommendations
   styleQuizForm?.addEventListener('submit', event => {
     event.preventDefault();
     const data = new FormData(styleQuizForm);
@@ -932,21 +1001,14 @@
     }
   });
 
-  // Measurement finder: demo clothing chart only; not a bra band/cup calculator.
+  // Measurement finder validates entries and offers a local Fit Passport; no size is guessed without a verified chart.
   let unit = 'in';
   const measurementIds = ['bust', 'underbust', 'waist', 'hips'];
   const unitButtons = $$('.unit-button');
   const fitForm = $('#fitForm');
   const fitError = $('#fitError');
   const fitResult = $('#fitResult');
-  const fitRanges = [
-    { size: 'XS', bust: [28, 30], waist: [22, 24], hips: [30, 32] },
-    { size: 'S', bust: [30, 32], waist: [24, 26], hips: [32, 34] },
-    { size: 'M', bust: [32, 34], waist: [26, 28], hips: [34, 36] },
-    { size: 'L', bust: [34, 36], waist: [28, 30], hips: [36, 38] },
-    { size: 'XL', bust: [36, 38], waist: [30, 32], hips: [38, 40] },
-    { size: 'XXL', bust: [38, 40], waist: [32, 34], hips: [40, 42] }
-  ];
+  const VERIFIED_BLACKED_SIZE_CHART_CONFIGURED = false; // Set true only after owner supplies verified product-specific charts.
 
   const fitPassportKey = 'blacked-fit-passport-v040';
   const saveFitPassportToggle = $('#saveFitPassport');
@@ -989,20 +1051,6 @@
   function getMeasurementInches(id) {
     const raw = Number($(`#${id}`).value);
     return unit === 'cm' ? raw / 2.54 : raw;
-  }
-  function findSize(value, key) {
-    const first = fitRanges[0][key][0];
-    const last = fitRanges[fitRanges.length - 1][key][1];
-    if (value < first) return { size: 'Below XS', outside: true };
-    if (value > last) return { size: 'Above XXL', outside: true };
-    for (let index = 0; index < fitRanges.length; index += 1) {
-      const range = fitRanges[index][key];
-      const isLast = index === fitRanges.length - 1;
-      if (value >= range[0] && (value < range[1] || (isLast && value <= range[1]))) {
-        return { size: fitRanges[index].size, outside: false };
-      }
-    }
-    return { size: 'Check chart', outside: true };
   }
 
   unitButtons.forEach(button => button.addEventListener('click', () => {
@@ -1068,17 +1116,16 @@
       $('#bust').focus();
       return;
     }
-    const top = findSize(values.bust, 'bust');
-    const bottom = findSize(values.hips, 'hips');
-    const waist = findSize(values.waist, 'waist');
-    $('#topSizeResult').textContent = top.size;
-    $('#bottomSizeResult').textContent = bottom.size;
-    const notes = [];
-    if (top.outside || bottom.outside || waist.outside) notes.push('One or more measurements fall outside the sample chart; do not force a size choice.');
-    else if (waist.size !== bottom.size) notes.push(`Your waist maps to ${waist.size} in the sample chart while hips map to ${bottom.size}. Compare the actual garment measurements and fit notes before choosing.`);
-    if (!top.outside && !bottom.outside && top.size !== bottom.size) notes.push('It is normal for top and bottom sizes to differ; use separate sizes if the final product allows it.');
-    notes.push('This is a general apparel-size illustration, not bra band/cup sizing or a fit guarantee.');
-    $('#resultNote').textContent = notes.join(' ');
+    if (VERIFIED_BLACKED_SIZE_CHART_CONFIGURED) {
+      // Implement a per-product chart mapper here only after real garment data is supplied.
+      $('#topSizeResult').textContent = 'Configured';
+      $('#bottomSizeResult').textContent = 'Configured';
+      $('#resultNote').textContent = 'Your measurements were checked against the configured BLACKED size chart. Check the selected product’s specific notes before deciding.';
+    } else {
+      $('#topSizeResult').textContent = 'Not set';
+      $('#bottomSizeResult').textContent = 'Not set';
+      $('#resultNote').textContent = 'A verified BLACKED product-specific size chart has not been configured yet, so this prototype will not guess a size. Your measurements have been validated locally. Use Fit Detective for general checks and compare against the real garment chart once supplied.';
+    }
     if (saveFitPassportToggle?.checked) {
       try {
         localStorage.setItem(fitPassportKey, JSON.stringify({ values, unit: 'in' }));
@@ -1093,6 +1140,27 @@
   $('#editMeasurements')?.addEventListener('click', () => {
     fitResult.hidden = true;
     $('#bust').focus();
+  });
+
+  // General Fit Detective: educational prompts only, not size diagnosis or product promises.
+  const fitDetectiveForm = $('#fitDetectiveForm');
+  const fitDetectiveResult = $('#fitDetectiveResult');
+  const fitAdvice = {
+    band: { title: 'Check the band first', text: 'A band that rides up may be too loose or not sitting level. Recheck your measurements, fasten on a comfortable secure hook, and compare the actual band measurements on the product chart. Do not size down automatically.' },
+    straps: { title: 'Check strap adjustment and shape', text: 'Adjust straps so they stay in place without digging in. If they continue slipping, strap placement or neckline shape may not suit your preference. Compare product photos and construction details.' },
+    gap: { title: 'Check cup shape and volume', text: 'A cup gap can happen when the cup shape does not match your shape or the volume is too large. Recheck how the band sits and compare the product’s own cup-shape notes; don’t rely on a campaign photo alone.' },
+    spill: { title: 'Recheck coverage and measurements', text: 'Spillage or a tight cup can mean the cup or coverage is too small for you, or the style shape is not right. Re-measure and compare against verified product-specific sizing before choosing.' },
+    wire: { title: 'Comfort comes first', text: 'If an underwire pokes or causes discomfort, take the garment off and check the wire placement and size. You may prefer a wire-free option. A product photo cannot tell you how a wire will feel.' },
+    brief: { title: 'Compare waist and hip measurements', text: 'If a brief waistband digs in, compare both waist and hip measurements with the real product chart, along with leg-opening and rise details. A general label such as M is not enough to predict fit.' }
+  };
+  fitDetectiveForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    const issue = new FormData(fitDetectiveForm).get('fitIssue');
+    const advice = fitAdvice[issue];
+    if (!advice || !fitDetectiveResult) return;
+    fitDetectiveResult.innerHTML = `<p class="product-kicker">YOUR FIT CHECK</p><h3>${advice.title}</h3><p>${advice.text}</p><a class="text-link" href="#collection">Explore product references <span aria-hidden="true">→</span></a>`;
+    fitDetectiveResult.hidden = false;
+    fitDetectiveResult.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   });
 
   // A consistent year display; no analytics, external scripts or tracking are used.

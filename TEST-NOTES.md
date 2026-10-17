@@ -1,25 +1,33 @@
-# BLACKED INNERWEAR Fit Studio v0.5.1 — validation notes
+# BLACKED INNERWEAR Fit Studio v0.6.0 — validation notes
 
-## Checks completed
+## Static checks completed
 
-- `node --check app.js` passes with no JavaScript syntax errors.
+- `node --check app.js` passed with no JavaScript syntax errors at package time.
 - `index.html` passed Python's built-in HTML parser.
-- All 21 local image/SVG file references found in HTML and JavaScript exist in the release folder; raster files passed image verification.
-- All ten original uploaded reference images were compared byte-for-byte against their project copies; all ten are unchanged.
-- The app defines exactly 17 selectable references: 10 originals, 4 BLACKED design concepts and 3 separate SYRN style-inspiration drawings.
-- Static code checks confirm the `drawDemoSilhouette()` function and “MANUAL STYLE PREVIEW” label are removed.
-- Static code checks confirm the canvas draws the selected reference image whenever reference mode is active or no customer photo exists.
-- Static code checks confirm the manual illustration option is disabled until a personal photo is chosen; uploading a photo keeps selected-reference mode as default.
-- No remote AI API, backend photo-upload request, payment API or build dependency is included.
+- Catalog has **37 distinct selectable entries** in the JavaScript data model. These are a mix of owner-provided campaign images, design/reference images, concept artwork and external-brand reference images—not a claim of 37 sellable SKUs.
+- All `40` distinct product `image`/`previewImage` asset references exist: PASS.
+- All `14` distinct `<img src>` references in the HTML exist: PASS.
+- No direct `syrn.com` URL or embed appears in site HTML/JavaScript/CSS. All external-brand reference images are supplied image assets and explicitly marked reference-only.
+- Static source checks confirm the canvas's reference mode uses the selected product's own `previewImage || image`; selected summary uses the supplied campaign/reference image and shows the product-detail concept separately when present.
+- Size guidance does not guess a BLACKED size because verified, product-specific sizing data has not been supplied. Fit Detective is general guidance only.
+- Product prices/stock/reviews/shipping promises have not been invented.
+- No AI API, paid API, package install, backend photo-upload handler or checkout dependency is included.
+
+## P0–P4 implementation status
+
+- **P0 — selected image:** static source verified; browser interaction test still recommended on the target Android phone.
+- **P1 — image gallery/detail:** product modal gallery and local image references implemented; browser interaction test still recommended.
+- **P2 — Fit Passport + Fit Detective:** local opt-in storage/clear and general fitting guidance implemented. Product-specific size output intentionally remains disabled until real size charts are provided.
+- **P3 — Style Finder, comparison, wishlist and set-concept builder:** implemented with local-only data and image selection; the set builder is visual inspiration, not a confirmed matching SKU or order.
+- **P4 — trust, policies, reviews and QA:** honest no-reviews / owner-policy-required states are shown; no checkout/reviews system is connected. Mobile layout and accessibility labels are present.
 
 ## Browser testing limitation
 
-A headless browser smoke test was attempted, but browser navigation was blocked by the runtime's administrator policy. This release therefore does **not** claim a full click-through regression test. Please test the extracted ZIP in your own browser or host before public launch.
+A full automated headless-browser click-through run could not be completed in this environment. This package does **not** claim complete end-to-end browser regression testing. Please open the ZIP in a modern Android browser or deploy a preview and test: selecting each option, modal thumbnails, filters, Style Finder, compare, save/remove wishlist, Fit Detective, Fit Passport save/clear, photo upload/clear, manual mode toggle and PNG downloads.
 
 ## Known limitations
 
-- The 10 original references are not 10 verified sellable products. Several are campaign or design-reference images and need product identity, inventory, pricing, size data and usage-right confirmation.
-- The 4 added BLACKED designs are concept visuals until the physical products are confirmed.
-- The 3 SYRN-inspired options are original schematic illustrations with links to separate official product pages, not copied official product photographs and not BLACKED inventory.
-- Manual overlay is generic and adjustable, not an exact garment cut-out, realistic virtual fitting, or fit prediction.
-- The size guide uses a sample chart, not a verified BLACKED bra size chart.
+- A realistic automatic virtual try-on is not included. The selected item image is shown correctly; the optional personal-photo overlay is generic and manually adjustable. Exact product overlays need clean, transparent garment assets for each specific product.
+- Product photos supplied as campaign posters remain full poster images. Product-detail images are shown separately if available.
+- External-brand reference images are from user-supplied images/screenshots; use them only with appropriate permission for public/commercial release. No external site is linked or embedded.
+- Cart, inventory, checkout, payment processing, synced user accounts and real review submission require a later backend.

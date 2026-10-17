@@ -1,6 +1,8 @@
 BLACKED INNERWEAR Fit Studio
-Version: 0.5.1
+Version: 0.6.0
 Build type: Static HTML/CSS/JavaScript
 AI/API cost: None
-Main fix: Main Try-On canvas uses selected reference image by default; generic demo silhouette removed.
-Options: 10 original references + 4 BLACKED design concepts + 3 SYRN style-inspiration schematics = 17 selector options.
+Catalog: 37 selectable references and concepts (not verified sellable SKUs)
+Main fix: Selected Try-On reference uses the selected image and never falls back to a generic demo silhouette.
+External-brand sources: Only user-supplied images; no direct SYRN website links or embeds.
+P0–P4: Consolidated plan included.
