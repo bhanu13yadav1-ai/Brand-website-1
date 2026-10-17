@@ -1,32 +1,30 @@
-# V1.5 test notes
+# V1.7 Test Notes
 
-## Static checks completed for this package
-- `node --check app.js` passed (no JavaScript syntax errors).
-- Python HTML parser completed successfully.
-- 103 HTML IDs found; no duplicate IDs.
-- All 90 literal JavaScript `$('#id')` selectors resolve to matching HTML IDs.
-- New homepage hero and all bundled `assets/*` paths exist.
-- Legacy Intimates image names not copied into this update package are referenced through the existing public GitHub Pages asset base (`https://bhanu13yadav1-ai.github.io/Brand-website-1/`). Keep the original `ref-*`, `design-*`, and `syrn-*.svg` files in the existing repo.
-- After Dark navigation, category filters, search, sort, product grid, comfort questionnaire and Fit Studio controls are present in HTML/JS.
-- ZIP integrity is checked separately after the archive is created.
+## Static validation
+- `node --check app.js`: PASS
+- HTML parser: PASS
+- Duplicate HTML IDs: none
+- 8 unique 512×512 generated angle WebP files (0° to 315°): verified with Pillow
+- 360 image paths 01–08: present
+- Old macro-close-up frame 09: no longer included/referenced
+- Core scripts/styles and angle frame URLs: cache-busted to `v=1.7`
+- ZIP CRC/integrity: checked after packaging
 
-## Functional paths to test after publishing
-1. Accept/decline age gate.
-2. Homepage banner renders; “Enter After Dark” opens the separate adult section; “Shop Intimates” opens the lingerie catalog.
-3. Mobile menu links route to Intimates, After Dark, Women's Wellness, and Fit Studio.
-4. Intimates default shows lingerie/style references only; Design concepts and External inspiration filter the intended items.
-5. After Dark default shows toys and care entries only; all category filters, search clear, A–Z sort, product dialog, save, compare, and demo bag work.
-6. Home category shortcut tiles and Wellness Studio browse buttons open the After Dark section rather than mixing adult products into Intimates.
-7. Wellness Studio's prior-use questions remain optional; dimensions validate; “pain/too much” answers avoid recommending larger size; answers are not stored.
-8. Fit Studio can upload a person photo and transparent garment PNG separately, then manually resize/rotate/move/export; uploading a campaign poster is not presented as a real cut-out.
+## 360 viewer code paths included
+- Previous/next buttons
+- Slider input
+- 8 thumbnail buttons with active-state updates
+- Front-view reset button
+- Horizontal touch/mouse drag with pointer capture and distance accumulation
+- Keyboard arrows, Home and End
+- Image preloading and missing-asset fallback messaging
+- Matching 45° increments and 0° front wrap-around
 
-## Browser testing status
-- A full browser click-through was attempted in the available runtime, but browser navigation did not complete. No complete end-to-end browser test is claimed.
-- Confirm the listed paths on an Android browser after GitHub Pages deployment.
+## Not claimed as tested
+A full automated browser click-through could not run in this environment: Chromium/Playwright navigation returned `ERR_BLOCKED_BY_ADMINISTRATOR` for both local HTTP and file URLs. Therefore actual touch behavior on Android and all other click flows still need a real-device smoke test after GitHub Pages deployment. No live deployment is performed by this package.
 
-## Important limitations
-- Adult wellness and lingerie stock, pricing, material claims, dimensions and supplier info are not confirmed. Do not present the concepts as available inventory until those facts are verified.
-- Screenshot crops are reference-only pending any relevant usage rights.
-- Fit Studio is manual overlay, not AI virtual try-on.
-- Wishlist and demo bag are browser-local frontend features; no account sync or real checkout exists.
-- 18+ screen is client-side confirmation, not official age verification.
+## Product and service limitations
+- Angle photos are generated concept visuals, not a real manufacturer's synchronized 360° photography.
+- The cart is demo-only; no checkout/payment API is connected.
+- No AI try-on provider, account backend, live prices or inventory is connected.
+- Fit Studio uses a user-supplied transparent garment PNG and manual positioning; it does not extract a garment from a poster.

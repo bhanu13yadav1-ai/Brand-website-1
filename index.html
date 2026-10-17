@@ -5,9 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta name="theme-color" content="#21191d">
   <meta name="description" content="BLACKED — bold intimates, an adults-only After Dark catalogue and a private comfort-first Wellness Studio.">
-  <title>BLACKED — Intimates + After Dark Wellness v1.5</title>
-  <link rel="stylesheet" href="styles.css">
-  <script src="app.js" defer></script>
+  <title>BLACKED — Intimates + After Dark Wellness v1.7</title>
+  <link rel="stylesheet" href="styles.css?v=1.7">
+  <script src="app.js?v=1.7" defer></script>
 </head>
 <body>
   <div class="age-gate" id="ageGate" role="dialog" aria-modal="true" aria-labelledby="ageTitle">
@@ -27,7 +27,7 @@
   <header class="site-header" id="top">
     <a class="brand" href="#home" aria-label="BLACKED home"><span class="brand-mark">B<span>♥</span></span><span class="brand-copy"><strong>BLACKED</strong><small>INTIMATES + WELLNESS</small></span></a>
     <button class="menu-toggle" id="menuToggle" aria-label="Open navigation" aria-expanded="false"><span></span><span></span></button>
-    <nav id="mainNav" class="nav"><a href="#collection">Intimates</a><a class="nav-after-dark" href="#after-dark">After Dark <span>18+</span></a><a href="#wellness-studio">Women’s Wellness</a><a href="#studio">Fit Studio</a><a href="#fit-guide">Size Guide</a><a href="#about">Our Approach</a></nav>
+    <nav id="mainNav" class="nav"><a href="#collection">Intimates</a><a class="nav-after-dark" href="#after-dark">After Dark <span>18+</span></a><a href="#product-360">360° View</a><a href="#wellness-studio">Women’s Wellness</a><a href="#studio">Fit Studio</a><a href="#fit-guide">Size Guide</a><a href="#about">Our Approach</a></nav>
     <div class="header-actions"><button class="icon-btn" id="wishlistJump" aria-label="View saved items">♡ <span id="wishlistCount">0</span></button><button class="bag-btn" id="openCart">Bag <span id="cartCount">0</span></button></div>
   </header>
 
@@ -67,6 +67,31 @@
           <div><p class="eyebrow eyebrow-after-dark"><span class="eyebrow-line"></span> BLACKED AFTER DARK</p><h2 id="afterDarkHeading">A little bold.<br><em>A lot more honest.</em></h2><p class="after-dark-lede">Explore personal-wellness products at your own pace. Compare verified dimensions and material details before choosing. No pressure, no body-shaming.</p></div>
           <div class="after-dark-heading-note"><span class="after-dark-stamp">18+</span><p><strong>Playful, not pushy.</strong><br>Choose what feels right for you; skip anything you do not want to share.</p></div>
         </div>
+        <section class="spin360-section" id="product-360" aria-labelledby="spin360Heading">
+          <div class="spin360-copy">
+            <p class="eyebrow eyebrow-after-dark"><span class="eyebrow-line"></span> INTERACTIVE PRODUCT VIEW</p>
+            <h3 id="spin360Heading">Explore it from <em>every angle.</em></h3>
+            <p>Drag left or right, tap an angle thumbnail, use the arrows, or move the slider. Eight distinct product views cover a full 360° turn; the final angle wraps back to the front. Concept imagery only—not verified supplier photography.</p>
+            <div class="spin360-facts"><span><b>8</b><small>angle frames</small></span><span><b>360°</b><small>full rotation</small></span><span><b>18+</b><small>adult wellness</small></span></div>
+            <a class="btn btn-cream" href="#afterDarkGrid" data-open-massager>Explore massagers <span>→</span></a>
+          </div>
+          <div class="spin360-viewer">
+            <div class="spin360-stage" id="spin360Stage" role="group" aria-label="Interactive concept product angle viewer. Drag horizontally or use arrow keys." tabindex="0">
+              <span class="spin360-badge">360° DEMO · CONCEPT</span>
+              <img id="spin360Image" src="assets/wand-360-frame-01.webp?v=1.7" alt="Concept image of a black wand massager, front angle 0 degrees" width="560" height="560" draggable="false">
+              <span class="spin360-stage-help" id="spin360StageHelp" aria-live="polite">Angle 1 of 8 · 0° · Drag to rotate</span>
+            </div>
+            <div class="spin360-thumbnails" id="spin360Thumbnails" role="group" aria-label="Choose a product viewing angle"></div>
+            <div class="spin360-controls">
+              <button class="spin360-arrow" type="button" id="spin360Prev" aria-label="Previous product angle">←</button>
+              <label class="spin360-range-label" for="spin360Range"><span>Rotate product</span><output id="spin360Output">0°</output><input type="range" id="spin360Range" min="0" max="7" value="0" step="1" aria-label="Rotate through eight concept angle frames"></label>
+              <button class="spin360-arrow" type="button" id="spin360Next" aria-label="Next product angle">→</button>
+            </div>
+            <button class="spin360-reset" type="button" id="spin360Reset">Reset to front view ↺</button>
+            <p class="spin360-disclaimer">Generated concept angles for interface testing, not manufacturer-supplied 360° photography. Materials, dimensions, water resistance, price and stock are not verified.</p>
+          </div>
+        </section>
+
         <div class="after-dark-category-rail" id="afterDarkFilters" role="group" aria-label="Filter After Dark products">
           <button type="button" class="after-dark-filter active" data-after-filter="all" aria-pressed="true">All After Dark <span id="afterDarkCount">7</span></button>
           <button type="button" class="after-dark-filter" data-after-filter="dildo" aria-pressed="false">Dildos & toys</button>
@@ -186,7 +211,7 @@
     <section class="closing-cta"><div class="section-wrap closing-inner"><div><p class="eyebrow eyebrow-light">YOUR COMFORT · YOUR CHOICE</p><h2>Explore what feels<br><em>right for you.</em></h2></div><a class="btn btn-cream" href="#collection">Browse the edit ↗</a></div></section>
   </main>
 
-  <footer class="footer"><div class="section-wrap footer-top"><a class="brand" href="#top"><span class="brand-mark">B<span>♥</span></span><span class="brand-copy"><strong>BLACKED</strong><small>INTIMATES + WELLNESS</small></span></a><p>Style, care and confidence — with clear information at every step.</p><nav><a href="#collection">Intimates</a><a href="#after-dark">After Dark 18+</a><a href="#studio">Fit Studio</a><a href="#faq">FAQs</a></nav></div><div class="section-wrap footer-bottom"><span>© <span id="year"></span> BLACKED · STORE CONCEPT · V1.5</span><span>18+ · NO CHECKOUT CONNECTED · CONCEPT ITEMS NOT VERIFIED STOCK</span><a href="#top">Back to top ↑</a></div></footer>
+  <footer class="footer"><div class="section-wrap footer-top"><a class="brand" href="#top"><span class="brand-mark">B<span>♥</span></span><span class="brand-copy"><strong>BLACKED</strong><small>INTIMATES + WELLNESS</small></span></a><p>Style, care and confidence — with clear information at every step.</p><nav><a href="#collection">Intimates</a><a href="#after-dark">After Dark 18+</a><a href="#studio">Fit Studio</a><a href="#faq">FAQs</a></nav></div><div class="section-wrap footer-bottom"><span>© <span id="year"></span> BLACKED · STORE CONCEPT · V1.7</span><span>18+ · NO CHECKOUT CONNECTED · CONCEPT ITEMS NOT VERIFIED STOCK</span><a href="#top">Back to top ↑</a></div></footer>
 
   <div class="drawer-backdrop" id="drawerBackdrop" hidden></div><aside class="cart-drawer" id="cartDrawer" aria-label="Shopping bag" aria-modal="true" role="dialog" hidden><div class="drawer-head"><div><p class="eyebrow">YOUR EDIT</p><h2>Your bag <span id="drawerCount">0</span></h2></div><button class="close-btn" id="closeCart" aria-label="Close bag">×</button></div><div class="drawer-items" id="cartItems"></div><div class="drawer-foot"><p>Demo bag only. Prices, stock and payments are not connected.</p><button class="btn btn-dark btn-full" id="checkoutDemo">Review order setup</button><button class="text-link" id="clearCart">Clear bag</button></div></aside>
 

@@ -42,7 +42,7 @@
     {id:'syrn-bodysuit', name:'Fantasy Lace Halter Bodysuit', category:'inspiration', label:'EXTERNAL SYRN INSPIRATION', image:'syrn-fantasy-bodysuit.svg', desc:'A separate-brand style reference for a floral-lace halter direction.', note:'SYRN is a separate brand. This is inspiration only, not BLACKED inventory.', concept:true, material:'Not a BLACKED product. See the original brand for verified specifications.', fit:false, externalUrl:'https://syrn.com/products/the-fantasy-lace-halter-bodysuit-afd'},
     {id:'dildo', name:'Silicone Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/silicone-dildo.svg', desc:'A simple personal-wellness product concept in a smooth, easy-to-clean form.', note:'Illustration only. Verify the actual supplier, intended use, dimensions and material specification before offering it for sale.', concept:true, material:'Only list as body-safe silicone if supplier documentation verifies the material.', fit:false},
     {id:'plug', name:'Flared-Base Butt Plug', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/flared-base-plug.svg', desc:'A compact design direction featuring a visible flared base.', note:'Illustration only. The final product must have a secure, appropriately designed flared base and clear size information.', concept:true, material:'Material and dimensions are not yet verified. Follow maker instructions.', fit:false},
-    {id:'pulse', name:'Mini Pulse Massager', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/bullet-massager.svg', desc:'A small personal massager concept with a discreet silhouette.', note:'Illustration only. Check supplier safety, battery, charging and waterproof claims before selling.', concept:true, material:'Actual material, charging and water-resistance specifications are not confirmed.', fit:false},
+    {id:'pulse', name:'Obsidian Wand Massager', category:'toys', label:'PERSONAL WELLNESS CONCEPT · 360° DEMO', image:'assets/wand-massager-studio.webp', fallback:'assets/bullet-massager.svg', desc:'A sleek black wand-style massager concept shown with an interactive eight-view 360° angle study.', note:'Generated concept imagery only. This is not manufacturer-supplied 360° photography; verify supplier, materials, controls, charging, dimensions and stock before listing for sale.', concept:true, material:'Material, battery, charging, water resistance and actual dimensions are not confirmed.', fit:false, viewer360:true},
     {id:'obsidian-xl', name:'Obsidian XL Black Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT · XL', image:'assets/obsidian-xl.svg', searchTerms:'XL black adult toy larger-size dildo', desc:'A larger-size, black-finish adult personal-wellness concept with a smooth, minimalist silhouette.', note:'Concept artwork only. Exact dimensions, firmness, supplier, availability and stock are not confirmed. Do not publish it as 100% silicone until supplier documentation verifies the composition.', concept:true, material:'XL-inspired concept. Confirm insertable length, maximum diameter, actual composition and manufacturer care guidance before listing for sale; do not claim 100% silicone without supplier documentation.', fit:false},
     {id:'lube', name:'Water-Based Lubricant', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/lube-care.svg', desc:'A concept entry for a water-based personal lubricant.', note:'Concept entry only. Confirm the formula, ingredients, expiry date, compatibility and regulatory labelling with a reputable supplier.', concept:true, material:'Formula, ingredients and compatibility are not yet verified.', fit:false},
     {id:'cleaner', name:'Intimate Toy Cleaner', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/toy-cleaner.svg', desc:'A care accessory concept for product-specific cleaning routines.', note:'Concept entry only. Cleaning instructions must match each toy material and manufacturer guidance.', concept:true, material:'Ingredients and material compatibility need supplier confirmation.', fit:false},
@@ -105,7 +105,7 @@
       <button class="product-image" type="button" data-open-product="${p.id}" aria-label="View ${escapeHTML(p.name)} details">${imgMarkup(p)}<span class="product-status">${status}</span></button>
       <div class="product-body"><p class="product-category">${escapeHTML(p.label)}</p><h3>${escapeHTML(p.name)}</h3><p class="product-desc">${escapeHTML(p.desc)}</p><p class="product-price">${moneyOrStatus()}</p>
       <div class="product-actions"><button class="btn btn-dark" type="button" data-add-cart="${p.id}">Add to demo bag</button><button class="save-btn ${isSaved?'saved':''}" type="button" data-save="${p.id}" aria-label="${isSaved?'Unsave':'Save'} ${escapeHTML(p.name)}" aria-pressed="${isSaved}">${isSaved?'♥':'♡'}</button></div>
-      <button class="compare-btn ${isCompared?'selected':''}" type="button" data-compare="${p.id}" aria-pressed="${isCompared}" style="width:100%;margin-top:7px;font-size:10px">${isCompared?'✓ Added to compare':'+ Compare'}</button></div></article>`;
+      <button class="compare-btn ${isCompared?'selected':''}" type="button" data-compare="${p.id}" aria-pressed="${isCompared}" style="width:100%;margin-top:7px;font-size:10px">${isCompared?'✓ Added to compare':'+ Compare'}</button>${p.viewer360?'<button class="spin360-card-link" type="button" data-view-360>View 360° angle demo ↗</button>':''}</div></article>`;
   }
   function renderProducts() {
     const intimateCount = products.filter(p => p.category === 'lingerie').length;
@@ -181,6 +181,7 @@
     updateCartUI();
   }
   $('#afterDarkGrid').addEventListener('click', e => {
+    const view360 = e.target.closest('[data-view-360]'); if (view360) { $('#product-360').scrollIntoView({behavior:'smooth',block:'start'}); return; }
     const add = e.target.closest('[data-add-cart]'); if (add) return addToCart(add.dataset.addCart);
     const save = e.target.closest('[data-save]'); if (save) return toggleSave(save.dataset.save);
     const compare = e.target.closest('[data-compare]'); if (compare) return toggleCompare(compare.dataset.compare);
@@ -548,6 +549,99 @@
   $('#moveGuideUp').addEventListener('click',()=>nudgeGuide(0,-.025));$('#moveGuideDown').addEventListener('click',()=>nudgeGuide(0,.025));$('#moveGuideLeft').addEventListener('click',()=>nudgeGuide(-.025,0));$('#moveGuideRight').addEventListener('click',()=>nudgeGuide(.025,0));
   $('#resetGuidePosition').addEventListener('click',()=>{guidePosition={x:.5,y:.52};$('#guideScale').value='100';$('#guideScaleOut').value='100%';guideScale=1;guideRotation=0;$('#guideRotate').value='0';$('#guideRotateOut').value='0°';drawCanvas();});
   $('#downloadPreview').addEventListener('click',()=>{if(previewMode==='manual'&&!(userPhoto&&userGarment)){toast('Upload both images and activate the garment overlay first.');return;}try{drawCanvas();canvas.toBlob(blob=>{if(!blob){toast('Could not export the preview. Try reloading the product image.');return;}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='blacked-manual-garment-preview.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Preview saved to your device.');},'image/png');}catch(_){toast('Image export failed. Open the website on GitHub Pages and try again.');}});
+
+  // V1.7: Robust eight-view 360° angle viewer.
+  // The 8 images are distinct generated angle crops at 45° intervals. The source
+  // composite's ninth panel was a macro close-up, not a rotation view, so it is excluded.
+  const spinFrames = Array.from({length:8},(_,i)=>`assets/wand-360-frame-${String(i+1).padStart(2,'0')}.webp?v=1.7`);
+  let spinFrameIndex = 0;
+  let spinImageInitialised = false;
+  let spinPointerStart = null;
+  let spinDragRemainder = 0;
+  const spinStage = $('#spin360Stage');
+  const spinImage = $('#spin360Image');
+  const spinRange = $('#spin360Range');
+  const spinThumbnails = $('#spin360Thumbnails');
+  const spinHelp = $('#spin360StageHelp');
+  const spinPreloaded = spinFrames.map((src,index) => {
+    const img = new Image(); img.decoding='async';
+    img.onerror = () => { if (index===spinFrameIndex && spinHelp) spinHelp.textContent='One angle image failed to load. Re-upload the complete assets folder, then refresh.'; };
+    img.src=src; return img;
+  });
+  const spinAngle = index => ((index % spinFrames.length) + spinFrames.length) % spinFrames.length * 45;
+
+  function renderSpinThumbnails() {
+    if (!spinThumbnails) return;
+    spinThumbnails.innerHTML = spinFrames.map((src,i)=>`<button class="spin360-thumb${i===spinFrameIndex?' is-active':''}" type="button" data-spin-thumb="${i}" aria-label="Show ${i*45} degree view" aria-pressed="${i===spinFrameIndex?'true':'false'}"><img src="${src}" alt="" loading="lazy" draggable="false"><span>${i*45}°</span></button>`).join('');
+  }
+  function showSpinFrame(index) {
+    spinFrameIndex = ((Number(index)||0) % spinFrames.length + spinFrames.length) % spinFrames.length;
+    const degrees = spinAngle(spinFrameIndex);
+    const src = spinFrames[spinFrameIndex];
+    if (spinImage && (!spinImageInitialised || spinImage.getAttribute('src') !== src || (spinImage.complete && spinImage.naturalWidth===0))) {
+      spinImageInitialised = true;
+      spinImage.dataset.fallbackApplied = '';
+      spinImage.src = src;
+      spinImage.alt = `Generated concept image of a black wand massager, ${degrees} degree viewing angle of a full 360 degree rotation`;
+    }
+    if (spinRange) spinRange.value = String(spinFrameIndex);
+    const out = $('#spin360Output'); if (out) out.textContent = `${degrees}°`;
+    if (spinHelp) spinHelp.textContent = `ANGLE ${spinFrameIndex+1} / ${spinFrames.length} · ${degrees}° · DRAG TO ROTATE`;
+    if (spinThumbnails) spinThumbnails.querySelectorAll('[data-spin-thumb]').forEach(button => {
+      const active = Number(button.dataset.spinThumb)===spinFrameIndex;
+      button.classList.toggle('is-active',active); button.setAttribute('aria-pressed',String(active));
+    });
+  }
+  if (spinImage) {
+    spinImage.onerror = () => {
+      if (spinImage.dataset.fallbackApplied === 'yes') {
+        if (spinHelp) spinHelp.textContent = 'Product image missing. Upload the complete assets folder, then refresh.';
+        spinImage.alt = 'Product image could not load; please upload the project assets folder.';
+        return;
+      }
+      spinImage.dataset.fallbackApplied = 'yes';
+      spinImage.src = 'assets/wand-massager-studio.webp?v=1.7';
+      if (spinHelp) spinHelp.textContent = 'Angle frame missing. Showing the product image; re-upload the full assets folder to restore rotation.';
+    };
+  }
+  $('#spin360Prev')?.addEventListener('click',()=>showSpinFrame(spinFrameIndex-1));
+  $('#spin360Next')?.addEventListener('click',()=>showSpinFrame(spinFrameIndex+1));
+  $('#spin360Reset')?.addEventListener('click',()=>showSpinFrame(0));
+  spinRange?.addEventListener('input',e=>showSpinFrame(Number(e.target.value)));
+  spinThumbnails?.addEventListener('click',e=>{const button=e.target.closest('[data-spin-thumb]');if(button)showSpinFrame(Number(button.dataset.spinThumb));});
+  spinStage?.addEventListener('pointerdown',e=>{
+    if(e.pointerType==='mouse'&&e.button!==0)return;
+    spinPointerStart={x:e.clientX,y:e.clientY}; spinDragRemainder=0;
+    try { spinStage.setPointerCapture(e.pointerId); } catch(_) {}
+    spinStage.classList.add('is-dragging');
+    e.preventDefault();
+  });
+  spinStage?.addEventListener('pointermove',e=>{
+    if(!spinPointerStart)return;
+    spinDragRemainder += e.clientX - spinPointerStart.x;
+    spinPointerStart={x:e.clientX,y:e.clientY};
+    // One view change per ~20px so slow and fast drags both feel responsive on mobile.
+    while(spinDragRemainder <= -20){showSpinFrame(spinFrameIndex+1);spinDragRemainder+=20;}
+    while(spinDragRemainder >= 20){showSpinFrame(spinFrameIndex-1);spinDragRemainder-=20;}
+    e.preventDefault();
+  });
+  const endSpinDrag=()=>{spinPointerStart=null;spinDragRemainder=0;spinStage?.classList.remove('is-dragging');};
+  spinStage?.addEventListener('pointerup',endSpinDrag);
+  spinStage?.addEventListener('pointercancel',endSpinDrag);
+  spinStage?.addEventListener('lostpointercapture',endSpinDrag);
+  spinStage?.addEventListener('keydown',e=>{
+    if(e.key==='ArrowRight'){showSpinFrame(spinFrameIndex+1);e.preventDefault();}
+    else if(e.key==='ArrowLeft'){showSpinFrame(spinFrameIndex-1);e.preventDefault();}
+    else if(e.key==='Home'){showSpinFrame(0);e.preventDefault();}
+    else if(e.key==='End'){showSpinFrame(spinFrames.length-1);e.preventDefault();}
+  });
+  renderSpinThumbnails();
+  showSpinFrame(0);
+
+  $$('[data-open-massager]').forEach(link=>link.addEventListener('click',()=>{
+    const button=$('#afterDarkFilters [data-after-filter="massager"]');
+    if(button){activeAfterDarkFilter='massager';renderAfterDarkProducts();}
+  }));
 
   // Quick share helper for current saved list, used as a useful zero-backend feature.
   $('#wishlistJump').title='Show or hide saved styles';

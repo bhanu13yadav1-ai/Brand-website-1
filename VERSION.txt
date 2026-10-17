@@ -1,9 +1,6 @@
-BLACKED — INTIMATES + AFTER DARK WELLNESS
-Version: 1.5
-Build: Static HTML / CSS / JavaScript
-Release focus: Branded campaign homepage, separate After Dark 18+ product area, stronger distinction between Intimates and adult wellness catalogue.
-New homepage campaign: assets/home-after-dark-hero.webp
-After Dark categories: Dildos & toys; Anal wellness; Massagers; Lube, care & storage.
-Features: independent adult catalogue search/filter/sort, product dialogs, existing local save/compare/demo bag, separate Women's Wellness questionnaire.
-Not connected: real price/stock, backend, checkout/payment, customer account, supplier data, or AI virtual try-on.
-Age gate: client-side 18+ confirmation only; not formal age verification.
+BLACKED Intimates + After Dark Wellness
+Version: 1.7
+Build type: Static HTML/CSS/JavaScript
+New: corrected eight-view 360-degree concept viewer with 45-degree increments, thumbnails, reset, arrows, slider, keyboard and touch drag.
+Cache busting: core assets and angle frames use v=1.7 query strings to help refresh stale mobile browsers.
+Important: angle frames are generated concept imagery, not verified supplier photography. No AI try-on, inventory, live price, checkout or payment backend is connected.
