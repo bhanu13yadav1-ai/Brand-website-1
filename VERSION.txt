@@ -1,6 +1,5 @@
 BLACKED — Intimates + Wellness Studio
-Version: 1.1
-Type: Static HTML/CSS/JavaScript prototype
-Key fix: personal-wellness SVG art is embedded in app.js as a data URI, so image cards still render if the /assets folder is omitted during mobile GitHub uploads.
-Fit Studio: upload no longer switches modes automatically; manual mode is explicitly described; guide positioning has non-drag arrow controls.
-Limitations: no live AI try-on, live stock/pricing, orders, checkout, payment or user accounts.
+Version: 1.4
+New: screenshot-inspired storefront discovery with cropped category imagery, scrollable wellness style reference cards, quick category filters, and safe product/reference labels.
+Image handling: homepage crop images are embedded as data URIs; editable JPG copies are included in assets/.
+Privacy: wellness questionnaire answers are processed in page memory only; they are not written to localStorage or sent to a server.

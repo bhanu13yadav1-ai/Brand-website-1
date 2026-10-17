@@ -1,42 +1,42 @@
-# BLACKED — Intimates + Wellness Studio (Big Update v1.1)
+# BLACKED — Intimates + Wellness Studio (Big Update v1.4)
 
 Mobile-first static HTML/CSS/JavaScript prototype for the existing BLACKED project.
 
-## Included features
-- Adult age-confirmation screen (front-end confirmation only; not age verification)
-- Refreshed premium BLACKED visual style
-- 23 catalogue options: 10 original reference images, 4 BLACKED design concepts, 3 separately-labelled external SYRN inspiration items, plus 3 personal-wellness toy concepts and 3 care/accessory concepts
-- Search and category filters
-- Local wishlist with device storage where allowed
-- Side-by-side compare for up to three items
-- Demo bag with quantity changes and remove/clear actions
-- Product detail dialog
-- Manual Fit Studio with local photo preview, draggable generic guide, scale control and PNG export
-- Mobile navigation and clear notes about concepts, materials, stock, sizing and checkout
-- Non-explicit SVG product illustrations embedded inside `app.js` so product images do not break if the `assets/` directory is missed during upload
-- More explicit Fit Studio mode guidance, photo upload stays in reference mode until the user opts into the manual guide, and arrow buttons move the guide without dragging
+## What's new in v1.4
+- New storefront discovery area inspired by the user's reference screenshots: circular category shortcuts, a horizontal “wellness style references” rail, scrolling topic chips, and mobile-friendly next/previous buttons.
+- Four category photos and two product-reference photos have been cropped from screenshots supplied by the user. The crops exclude the source shop logo, pricing, promo claims, and most surrounding browser/site UI.
+- The reference-photo cards are explicitly labeled as visual references and are not represented as verified BLACKED SKUs, stock, sale prices, ratings, or best-sellers.
+- Homepage crop images are embedded directly into the HTML, so they continue to render if the separate `assets/` folder is accidentally omitted. Editable crop copies remain in `assets/`.
+- Quick category buttons filter the existing catalogue and scroll down to it.
 
-## Important truth-in-labeling / launch notes
-- Product wellness items are concept entries, not verified inventory. Confirm supplier, composition, dimensions, safety information, packaging, local requirements, prices and available stock before offering them for sale.
-- The shopping bag is a front-end demo only. No real order, checkout, payment, inventory, or customer account backend is implemented.
-- Fit Studio is not AI virtual try-on. It shows a reference photo or overlays a generic adjustable illustration on a photo selected locally in the browser. It does not extract garments from photos or predict size/fit.
-- Existing campaign/design images are reused from the published GitHub Pages URL to avoid redistributing the source image files in this package. For a fully self-contained offline package, copy the original `ref-*` and `design-*` image assets from the current repo into this package and switch the image paths in `app.js` to relative paths.
-- The age confirmation is a simple client-side gate and is not identity/age verification.
+## Included features from earlier versions
+- Client-side 18+ confirmation screen (not identity or age verification).
+- Premium BLACKED visual style and mobile navigation.
+- 24 catalogue options: 10 original image references, 4 BLACKED concepts, 3 separately labeled external SYRN style references, 4 personal-wellness concepts, and 3 care/accessory concepts. (Catalog item count is computed from the current source; all entries marked as concepts/references remain unverified inventory.)
+- Search, category filters, device-local wishlist, side-by-side compare (up to 3), demo bag with quantity/remove controls, product detail dialog.
+- Separate Women’s Wellness Studio questionnaire with optional prior-use/comfort reference questions. Answers are not saved or sent to a server.
+- Manual Fit Studio with local photo preview and transparent garment-cutout overlay, position/scale/rotation controls and PNG export. It is not an AI try-on model.
+- Size guide and rule-based style finder.
 
-## Deploy to the existing GitHub Pages repo on a phone
+## Image rights and product truth
+- Newly cropped product/category photos came from screenshots you supplied. They are for prototype/reference use only. Obtain the applicable rights or replace them with your own authorized product photos before commercial/public marketing.
+- Cropped image subjects are visual examples only. They do not verify brand, manufacturer, composition, safety certifications, dimensions, stock, price, discount, shipping or customer ratings.
+- Older campaign and concept images still load from the existing public GitHub Pages URL. Preserve the original `ref-*`, `design-*`, and `syrn-*.svg` files in that repository.
+- Do not use other-brand or campaign/reference images as actual BLACKED sales listings unless you have permission and verified inventory details.
+
+## Important limitations
+- The bag is a front-end demo only. There is no real checkout, payment provider, inventory sync, customer account, order service, or backend.
+- Fit Studio manually overlays a separate transparent garment PNG over a local photo. It does not extract a garment from an ad, generate AI fitting, or predict fit.
+- Product wellness entries are concepts. Confirm supplier, composition, dimensions, cleaning instructions, legal labeling, pricing, stock and available sizes before selling.
+- The age screen is a simple client-side confirmation, not formal age verification.
+
+## Deploy on GitHub Pages from a phone
 1. Download and extract this ZIP.
-2. Keep the existing `ref-*` and `design-*` image files in the repo. They are still used by the catalogue via the current public Pages URL.
-3. Upload/replace `index.html`, `styles.css`, and `app.js` from this package at the repository root. The new wellness illustrations are embedded in `app.js`, so uploading `assets/` is not required for those product cards to render (keep the folder if you want the editable SVG source files).
-4. Commit changes and wait for GitHub Pages to finish publishing. Then open the site in a browser and refresh; if an old build remains cached, close/reopen the page or clear site cache.
-5. Test the age gate, catalogue filters, search, product details, save, compare, demo bag and Fit Studio on Android before public launch.
+2. Replace `index.html`, `styles.css`, `app.js`, `VERSION.txt`, `README.md`, `RESEARCH-AND-UPGRADE-PLAN.md`, and `TEST-NOTES.md` in the existing repository.
+3. Upload the full `assets/` folder as well (includes editable SVGs and the source JPEG crops). The new homepage crops are embedded too, so those top sections can render even if the folder is omitted.
+4. Do not delete existing `ref-*`, `design-*`, and `syrn-*.svg` source images used by the older collection and the Fit Studio.
+5. Commit and wait for GitHub Pages to publish. Refresh the website; if an old build appears, close/reopen the tab or clear the site's cache.
+6. Test on Android: age gate, category shortcuts, popular-style rail arrows and swipe, search, filters, product popup, wishlist, compare, demo bag, Wellness Studio answers, garment PNG upload and preview export.
 
 ## No API keys needed
-This static preview doesn't require paid services or API keys. Real AI fitting, live product catalogues and payment processing require separate compatible services/backend work.
-
-
-## V1.1 image and preview improvements
-
-- All locally authored SVG illustrations are embedded as data URIs in the JavaScript and used by the image helper and fallback handler. This specifically addresses broken personal-wellness images when the `/assets` folder is not uploaded.
-- Legacy campaign/design photos remain served from the project's existing GitHub Pages URL, so that original repository's `ref-*`, `design-*`, and `syrn-*.svg` assets should remain published.
-- Uploading a personal photo no longer automatically switches to the guide. The visitor explicitly taps the manual guide button.
-- Keyboard/touch-friendly arrow controls provide a non-drag way to reposition the generic guide.
+This prototype needs no paid APIs or API keys. A real AI try-on and live shopping checkout require separate provider/backend integration.

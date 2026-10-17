@@ -13,7 +13,8 @@
     "assets/lube-care.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmOGYwZWMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlN2Q0ZDEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iYm90dGxlIj48c3RvcCBzdG9wLWNvbG9yPSIjZjdlNmU0Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZGNhNmI1Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MjAiIHJ4PSIyNiIgZmlsbD0idXJsKCNiZykiLz48ZWxsaXBzZSBjeD0iMjUwIiBjeT0iNDQyIiByeD0iMTA1IiByeT0iMTgiIGZpbGw9IiNjMmFhYTgiIG9wYWNpdHk9Ii40Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUwIDI5MCkiPjxyZWN0IHg9Ii02MiIgeT0iLTExMiIgd2lkdGg9IjEyNCIgaGVpZ2h0PSIyMjYiIHJ4PSIyOCIgZmlsbD0idXJsKCNib3R0bGUpIiBzdHJva2U9IiNiYjg5OTkiIHN0cm9rZS13aWR0aD0iNCIvPjxyZWN0IHg9Ii0zNSIgeT0iLTE1NSIgd2lkdGg9IjcwIiBoZWlnaHQ9IjQ5IiByeD0iOCIgZmlsbD0iIzc3NDM1NCIvPjxyZWN0IHg9Ii0yMyIgeT0iLTE3NCIgd2lkdGg9IjQ2IiBoZWlnaHQ9IjIzIiByeD0iNSIgZmlsbD0iIzM3MjcyZSIvPjxyZWN0IHg9Ii00NiIgeT0iLTI4IiB3aWR0aD0iOTIiIGhlaWdodD0iNjgiIHJ4PSI4IiBmaWxsPSIjZmZmN2Y0IiBvcGFjaXR5PSIuODUiLz48dGV4dCB4PSIwIiB5PSIwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiM3MDQyNTUiPkNBUkU8L3RleHQ+PHBhdGggZD0iTS0yMCAxNiBRMCAtNiAyMCAxNiBRMCAzOSAtMjAgMTZaIiBmaWxsPSIjYzI3ZTk1Ii8+PC9nPjx0ZXh0IHg9IjI1MCIgeT0iNTAwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgbGV0dGVyLXNwYWNpbmc9IjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM0OTM2M2UiPkNBUkUgRVNTRU5USUFMPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iNTI4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3NzU4NjEiPkNPTkNFUFQgUFJFVklFVzwvdGV4dD48L3N2Zz4K",
     "assets/toy-cleaner.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmOGYwZWMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlN2Q0ZDEiLz48L2xpbmVhckdyYWRpZW50PjwvZGVmcz48cmVjdCB3aWR0aD0iNTAwIiBoZWlnaHQ9IjYyMCIgcng9IjI2IiBmaWxsPSJ1cmwoI2JnKSIvPjxlbGxpcHNlIGN4PSIyNTAiIGN5PSI0NDEiIHJ4PSI5NCIgcnk9IjE4IiBmaWxsPSIjYzJhYWE4IiBvcGFjaXR5PSIuNCIvPjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDI1MCAyOTApIj48cmVjdCB4PSItNTgiIHk9Ii0xMTAiIHdpZHRoPSIxMTYiIGhlaWdodD0iMjIwIiByeD0iMjAiIGZpbGw9IiNkNmRmZTAiIHN0cm9rZT0iIzcxODI4NiIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHJlY3QgeD0iLTMwIiB5PSItMTU4IiB3aWR0aD0iNjAiIGhlaWdodD0iNTIiIHJ4PSI4IiBmaWxsPSIjODE5Njk5Ii8+PHJlY3QgeD0iLTE3IiB5PSItMTgwIiB3aWR0aD0iMzQiIGhlaWdodD0iMjQiIHJ4PSI1IiBmaWxsPSIjMzU0NjRhIi8+PHJlY3QgeD0iLTQ0IiB5PSItMjgiIHdpZHRoPSI4OCIgaGVpZ2h0PSI3MCIgcng9IjgiIGZpbGw9IiNmYWZmZmIiLz48dGV4dCB4PSIwIiB5PSIwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjIiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM0YTVkNjAiPkNMRUFOPC90ZXh0PjxwYXRoIGQ9Ik0wIDE0IEMtMjUgMzYgLTE3IDUwIDAgNTUgQzE3IDUwIDI1IDM2IDAgMTRaIiBmaWxsPSIjOWFiMGIzIi8+PC9nPjx0ZXh0IHg9IjI1MCIgeT0iNTAwIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIyMCIgbGV0dGVyLXNwYWNpbmc9IjQiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM0OTM2M2UiPlRPWSBDTEVBTkVSPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iNTI4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3NzU4NjEiPkNPTkNFUFQgUFJFVklFVzwvdGV4dD48L3N2Zz4K",
     "assets/storage-pouch.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4Mj0iMSIgeTI9IjEiPjxzdG9wIHN0b3AtY29sb3I9IiNmOGYwZWMiLz48c3RvcCBvZmZzZXQ9IjEiIHN0b3AtY29sb3I9IiNlN2Q0ZDEiLz48L2xpbmVhckdyYWRpZW50PjxsaW5lYXJHcmFkaWVudCBpZD0iZmFicmljIj48c3RvcCBzdG9wLWNvbG9yPSIjYTg3NThhIi8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjNjg0MzU0Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MjAiIHJ4PSIyNiIgZmlsbD0idXJsKCNiZykiLz48ZWxsaXBzZSBjeD0iMjUwIiBjeT0iNDQ1IiByeD0iMTI5IiByeT0iMjAiIGZpbGw9IiNjMmFhYTgiIG9wYWNpdHk9Ii40Ii8+PGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMjUwIDI5MikiPjxwYXRoIGQ9Ik0tMTE1IC0xMDAgUTAgLTEzMiAxMTUgLTEwMCBMMTAzIDExNiBRMCAxNDUgLTEwMyAxMTZaIiBmaWxsPSJ1cmwoI2ZhYnJpYykiIHN0cm9rZT0iIzZjNDg1YSIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHBhdGggZD0iTS0xMTIgLTkzIFEwIC03MCAxMTIgLTkzIiBzdHJva2U9IiNlYmNjZDciIHN0cm9rZS13aWR0aD0iNSIgZmlsbD0ibm9uZSIvPjxwYXRoIGQ9Ik0tODEgLTYwIFEwIC0zNSA4MSAtNjAiIHN0cm9rZT0iI2Q2YTViOCIgc3Ryb2tlLXdpZHRoPSIzIiBmaWxsPSJub25lIi8+PHRleHQgeD0iMCIgeT0iMTgiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjE3IiBsZXR0ZXItc3BhY2luZz0iNCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iI2ZmZjVmNiI+QjwvdGV4dD48cGF0aCBkPSJNLTkwIDExOCBRMCAxMzkgOTAgMTE4IiBzdHJva2U9IiNkOGFmYmQiIHN0cm9rZS13aWR0aD0iMiIgZmlsbD0ibm9uZSIvPjwvZz48dGV4dCB4PSIyNTAiIHk9IjUwMCIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjAiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNDkzNjNlIj5TVE9SQUdFIFBPVUNIPC90ZXh0Pjx0ZXh0IHg9IjI1MCIgeT0iNTI4IiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMSIgbGV0dGVyLXNwYWNpbmc9IjMiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZpbGw9IiM3NzU4NjEiPkNPTkNFUFQgUFJFVklFVzwvdGV4dD48L3N2Zz4K",
-    "assets/placeholder-lingerie.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjhlZWU5Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTRjZmM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MjAiIHJ4PSIyOCIgZmlsbD0idXJsKCNnKSIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjI1NSIgcj0iMTI1IiBmaWxsPSIjZmZmOGY0IiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMTU1IDIxMCBDMTYwIDE2NSAyMDAgMTYwIDIzMCAyMDIgTDI1MCAyNDUgTDI3MCAyMDIgQzMwMCAxNjAgMzQwIDE2NSAzNDUgMjEwIEwzNzUgMzI1IFEyNTAgMzc0IDEyNSAzMjVaIiBmaWxsPSIjMzEyNjJjIiBzdHJva2U9IiM4ZTVkNmQiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0xNDUgMjk1IFEyNTAgMzQyIDM1NSAyOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5YWNiOCIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHBhdGggZD0iTTI1MCAyNDggTDI1MCAzMzciIHN0cm9rZT0iI2MzOGRhMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHRleHQgeD0iMjUwIiB5PSI0OTAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBsZXR0ZXItc3BhY2luZz0iNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5MzYzZSI+QkxBQ0tFRDwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjUyMiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzc1ODYxIj5DT05DRVBUIFBSRVZJRVc8L3RleHQ+PC9zdmc+Cg=="
+    "assets/obsidian-xl.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIiByb2xlPSJpbWciIGFyaWEtbGFiZWxsZWRieT0idCBkIj48dGl0bGUgaWQ9InQiPk9ic2lkaWFuIFhMIHBlcnNvbmFsIHdlbGxuZXNzIGNvbmNlcHQ8L3RpdGxlPjxkZXNjIGlkPSJkIj5BYnN0cmFjdCBwcm9kdWN0LW9ubHkgaWxsdXN0cmF0aW9uIG9mIGEgZGFyayBzaWxpY29uZSBwZXJzb25hbCB3ZWxsbmVzcyBkZXZpY2Ugb24gYSB3YXJtIG5ldXRyYWwgYmFja2dyb3VuZC4gQ29uY2VwdCBhcnR3b3JrLCBub3QgYSB2ZXJpZmllZCBwcm9kdWN0LjwvZGVzYz48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImJnIiB4MT0iMCIgeTE9IjAiIHgyPSIxIiB5Mj0iMSI+PHN0b3Agc3RvcC1jb2xvcj0iI2ZiZjVmMCIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iI2VhZGJkNCIvPjwvbGluZWFyR3JhZGllbnQ+PGxpbmVhckdyYWRpZW50IGlkPSJzaWwiIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIwIj48c3RvcCBzdG9wLWNvbG9yPSIjMTgxNTE5Ii8+PHN0b3Agb2Zmc2V0PSIuMzYiIHN0b3AtY29sb3I9IiMzZDMzM2QiLz48c3RvcCBvZmZzZXQ9Ii42MyIgc3RvcC1jb2xvcj0iIzIxMWMyMiIvPjxzdG9wIG9mZnNldD0iMSIgc3RvcC1jb2xvcj0iIzBlMGQxMCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHdpZHRoPSI1MDAiIGhlaWdodD0iNjIwIiByeD0iMjgiIGZpbGw9InVybCgjYmcpIi8+PGVsbGlwc2UgY3g9IjI1MCIgY3k9IjQzNyIgcng9IjEyNiIgcnk9IjIyIiBmaWxsPSIjN2Y2MDY4IiBvcGFjaXR5PSIuMTYiLz48ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyNTAgMjg1KSI+PGVsbGlwc2UgY3g9IjAiIGN5PSIxMjIiIHJ4PSI5NSIgcnk9IjIyIiBmaWxsPSIjMzAyNTJlIiBvcGFjaXR5PSIuMTMiLz48cmVjdCB4PSItODMiIHk9IjkzIiB3aWR0aD0iMTY2IiBoZWlnaHQ9IjM2IiByeD0iMTciIGZpbGw9IiMyNDIwMjciIHN0cm9rZT0iIzY5NTI1ZSIgc3Ryb2tlLXdpZHRoPSIzIi8+PHBhdGggZD0iTS00OSAxMDEgQy01OSA0NCAtNTMgLTM3IC0zNCAtMTEyIEMtMjUgLTE0NyAtMTIgLTE2NCAwIC0xNjcgQzEyIC0xNjQgMjUgLTE0NyAzNCAtMTEyIEM1MyAtMzcgNTkgNDQgNDkgMTAxIFoiIGZpbGw9InVybCgjc2lsKSIgc3Ryb2tlPSIjNjU1MTVkIiBzdHJva2Utd2lkdGg9IjMiLz48cGF0aCBkPSJNLTIwIC0xMjMgQy0yOSAtNjcgLTI4IDI0IC0xNyA4NyIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjZTlkY2UwIiBzdHJva2Utd2lkdGg9IjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgb3BhY2l0eT0iLjE5Ii8+PGVsbGlwc2UgY3g9IjAiIGN5PSItMTY1IiByeD0iMTciIHJ5PSI4IiBmaWxsPSIjNTE0MzRmIiBvcGFjaXR5PSIuNyIvPjwvZz48dGV4dCB4PSIyNTAiIHk9IjUwMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZvbnQtd2VpZ2h0PSI3MDAiIGxldHRlci1zcGFjaW5nPSI1IiBmaWxsPSIjMzAyNTJlIj5PQlNJRElBTiBYTDwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjUzMCIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSIzIiBmaWxsPSIjODA2YTc0Ij5CTEFDSyBQRVJTT05BTCBXRUxMTkVTUzwvdGV4dD48cmVjdCB4PSIxNDQiIHk9IjU1NCIgd2lkdGg9IjIxMiIgaGVpZ2h0PSIyOCIgcng9IjE0IiBmaWxsPSIjZmZmYWY3IiBvcGFjaXR5PSIuOSIvPjx0ZXh0IHg9IjI1MCIgeT0iNTcyIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0iQXJpYWwsc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxMCIgZm9udC13ZWlnaHQ9IjcwMCIgbGV0dGVyLXNwYWNpbmc9IjIiIGZpbGw9IiM5YTYzNzkiPlNJWkUgQ09OQ0VQVCDCtyBOT1QgRk9SIFNBTEUgWUVUPC90ZXh0Pjwvc3ZnPg==",
+    "assets/placeholder-lingerie.svg": "data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MDAgNjIwIj48ZGVmcz48bGluZWFyR3JhZGllbnQgaWQ9ImciIHgxPSIwIiB5MT0iMCIgeDI9IjEiIHkyPSIxIj48c3RvcCBzdG9wLWNvbG9yPSIjZjhlZWU5Ii8+PHN0b3Agb2Zmc2V0PSIxIiBzdG9wLWNvbG9yPSIjZTRjZmM5Ii8+PC9saW5lYXJHcmFkaWVudD48L2RlZnM+PHJlY3Qgd2lkdGg9IjUwMCIgaGVpZ2h0PSI2MjAiIHJ4PSIyOCIgZmlsbD0idXJsKCNnKSIvPjxjaXJjbGUgY3g9IjI1MCIgY3k9IjI1NSIgcj0iMTI1IiBmaWxsPSIjZmZmOGY0IiBvcGFjaXR5PSIuNzUiLz48cGF0aCBkPSJNMTU1IDIxMCBDMTYwIDE2NSAyMDAgMTYwIDIzMCAyMDIgTDI1MCAyNDUgTDI3MCAyMDIgQzMwMCAxNjAgMzQwIDE2NSAzNDUgMjEwIEwzNzUgMzI1IFEyNTAgMzc0IDEyNSAzMjVaIiBmaWxsPSIjMzEyNjJjIiBzdHJva2U9IiM4ZTVkNmQiIHN0cm9rZS13aWR0aD0iNSIvPjxwYXRoIGQ9Ik0xNDUgMjk1IFEyNTAgMzQyIDM1NSAyOTUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iI2Q5YWNiOCIgc3Ryb2tlLXdpZHRoPSI2Ii8+PHBhdGggZD0iTTI1MCAyNDggTDI1MCAzMzciIHN0cm9rZT0iI2MzOGRhMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+PHRleHQgeD0iMjUwIiB5PSI0OTAiIGZvbnQtZmFtaWx5PSJBcmlhbCxzYW5zLXNlcmlmIiBmb250LXNpemU9IjIzIiBsZXR0ZXItc3BhY2luZz0iNyIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZmlsbD0iIzQ5MzYzZSI+QkxBQ0tFRDwvdGV4dD48dGV4dCB4PSIyNTAiIHk9IjUyMiIgZm9udC1mYW1pbHk9IkFyaWFsLHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMTIiIGxldHRlci1zcGFjaW5nPSI0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmaWxsPSIjNzc1ODYxIj5DT05DRVBUIFBSRVZJRVc8L3RleHQ+PC9zdmc+Cg==",
   };
   const image = file => {
     if (typeof file !== 'string') return EMBEDDED_ASSETS['assets/placeholder-lingerie.svg'];
@@ -42,6 +43,7 @@
     {id:'dildo', name:'Silicone Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/silicone-dildo.svg', desc:'A simple personal-wellness product concept in a smooth, easy-to-clean form.', note:'Illustration only. Verify the actual supplier, intended use, dimensions and material specification before offering it for sale.', concept:true, material:'Only list as body-safe silicone if supplier documentation verifies the material.', fit:false},
     {id:'plug', name:'Flared-Base Butt Plug', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/flared-base-plug.svg', desc:'A compact design direction featuring a visible flared base.', note:'Illustration only. The final product must have a secure, appropriately designed flared base and clear size information.', concept:true, material:'Material and dimensions are not yet verified. Follow maker instructions.', fit:false},
     {id:'pulse', name:'Mini Pulse Massager', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/bullet-massager.svg', desc:'A small personal massager concept with a discreet silhouette.', note:'Illustration only. Check supplier safety, battery, charging and waterproof claims before selling.', concept:true, material:'Actual material, charging and water-resistance specifications are not confirmed.', fit:false},
+    {id:'obsidian-xl', name:'Obsidian XL Black Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT · XL', image:'assets/obsidian-xl.svg', searchTerms:'XL black adult toy larger-size dildo', desc:'A larger-size, black-finish adult personal-wellness concept with a smooth, minimalist silhouette.', note:'Concept artwork only. Exact dimensions, firmness, supplier, availability and stock are not confirmed. Do not publish it as 100% silicone until supplier documentation verifies the composition.', concept:true, material:'XL-inspired concept. Confirm insertable length, maximum diameter, actual composition and manufacturer care guidance before listing for sale; do not claim 100% silicone without supplier documentation.', fit:false},
     {id:'lube', name:'Water-Based Lubricant', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/lube-care.svg', desc:'A concept entry for a water-based personal lubricant.', note:'Concept entry only. Confirm the formula, ingredients, expiry date, compatibility and regulatory labelling with a reputable supplier.', concept:true, material:'Formula, ingredients and compatibility are not yet verified.', fit:false},
     {id:'cleaner', name:'Intimate Toy Cleaner', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/toy-cleaner.svg', desc:'A care accessory concept for product-specific cleaning routines.', note:'Concept entry only. Cleaning instructions must match each toy material and manufacturer guidance.', concept:true, material:'Ingredients and material compatibility need supplier confirmation.', fit:false},
     {id:'pouch', name:'Discreet Storage Pouch', category:'care', label:'ACCESSORY CONCEPT', image:'assets/storage-pouch.svg', desc:'A soft pouch concept for clean, private storage between uses.', note:'Concept entry only. Actual fabric, dimensions and availability are not confirmed.', concept:true, material:'Fabric and care instructions to be confirmed.', fit:false}
@@ -59,6 +61,9 @@
   let previewMode = 'reference';
   let userPhoto = null;
   let userPhotoUrl = null;
+  let userGarment = null;
+  let userGarmentUrl = null;
+  let guideRotation = 0;
   let guideScale = 1;
   let guidePosition = {x:.5, y:.52};
   let dragging = false;
@@ -103,7 +108,7 @@
     const matched = products.filter(p => {
       const filterMatch = activeFilter === 'all' || (activeFilter === 'concept' ? p.concept : p.category === activeFilter);
       const query = searchText.trim().toLowerCase();
-      const searchMatch = !query || [p.name,p.desc,p.label,p.category].join(' ').toLowerCase().includes(query);
+      const searchMatch = !query || [p.name,p.desc,p.label,p.category,p.searchTerms||''].join(' ').toLowerCase().includes(query);
       const savedMatch = !onlySaved || saved.has(p.id);
       return filterMatch && searchMatch && savedMatch;
     });
@@ -187,6 +192,158 @@
   });
   $('#quizResults').addEventListener('click', e => { const b=e.target.closest('[data-quiz-open]'); if(b) openProductDialog(b.dataset.quizOpen); });
 
+  // Private, optional Wellness Studio questionnaire. Answers stay in page memory only:
+  // no localStorage, cookies, network requests, or account profile are used for these answers.
+  const comfortForm = $('#comfortFinderForm');
+  const previousSizePanel = $('#previousSizePanel');
+  const previousUseQuestion = $('#previousUseQuestion');
+  const sizeGoalQuestion = $('#sizeGoalQuestion');
+  const comfortResults = $('#comfortFinderResults');
+  const comfortValidation = $('#comfortValidation');
+  function refreshWellnessQuestions() {
+    if (!comfortForm) return;
+    const category = comfortForm.querySelector('input[name="comfortCategory"]:checked')?.value || '';
+    const isToyQuestionRelevant = ['dildo', 'anal', 'unsure'].includes(category);
+    const previousUse = new FormData(comfortForm).get('previousUse');
+    if (previousUseQuestion) previousUseQuestion.hidden = !isToyQuestionRelevant;
+    if (sizeGoalQuestion) sizeGoalQuestion.hidden = !isToyQuestionRelevant;
+    if (previousSizePanel) previousSizePanel.hidden = !isToyQuestionRelevant || previousUse !== 'yes';
+    if (!isToyQuestionRelevant) {
+      comfortForm.querySelectorAll('input[name="previousUse"], input[name="previousComfort"], input[name="sizeGoal"]').forEach(input => { input.checked = false; });
+    }
+    if (!isToyQuestionRelevant || previousUse !== 'yes') {
+      comfortForm.querySelectorAll('input[name="previousComfort"]').forEach(input => { input.checked = false; });
+      const diameterInput = $('#previousDiameter'); const lengthInput = $('#previousLength');
+      if (diameterInput) diameterInput.value = ''; if (lengthInput) lengthInput.value = '';
+    }
+  }
+  comfortForm?.querySelectorAll('input[name="comfortCategory"]').forEach(input => input.addEventListener('change', refreshWellnessQuestions));
+  comfortForm?.querySelectorAll('input[name="previousUse"]').forEach(input => input.addEventListener('change', refreshWellnessQuestions));
+
+  function wellnessCandidateIds(category) {
+    if (category === 'dildo') return ['dildo', 'obsidian-xl'];
+    if (category === 'anal') return ['plug'];
+    if (category === 'external') return ['pulse'];
+    if (category === 'care') return ['lube', 'cleaner', 'pouch'];
+    if (category === 'intimates') return [];
+    return ['pulse', 'dildo', 'plug'];
+  }
+  function comfortCard(product) {
+    return `<article class="comfort-product-card">
+      <div class="comfort-product-image">${imgMarkup(product)}</div>
+      <div class="comfort-product-copy"><p class="product-category">${escapeHTML(product.label)}</p><h4>${escapeHTML(product.name)}</h4><p>${escapeHTML(product.desc)}</p><button type="button" class="btn btn-ghost btn-small" data-comfort-open="${escapeHTML(product.id)}">View concept details</button></div>
+    </article>`;
+  }
+  function formatCm(value) {
+    return Number(value).toLocaleString(undefined, {maximumFractionDigits:1, minimumFractionDigits:0});
+  }
+  comfortForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    if (!comfortResults) return;
+    if (comfortValidation) { comfortValidation.hidden = true; comfortValidation.textContent = ''; }
+    const data = new FormData(comfortForm);
+    const category = String(data.get('comfortCategory') || 'unsure');
+    const previousUse = String(data.get('previousUse') || 'skip');
+    const comfort = String(data.get('previousComfort') || 'skip');
+    const sizeGoal = String(data.get('sizeGoal') || 'unsure');
+    const diameterRaw = $('#previousDiameter')?.value.trim() || '';
+    const lengthRaw = $('#previousLength')?.value.trim() || '';
+    const diameter = diameterRaw === '' ? null : Number(diameterRaw);
+    const length = lengthRaw === '' ? null : Number(lengthRaw);
+
+    // All fields remain optional, but values that are entered must be plausible and parseable.
+    if ((diameter !== null && (!Number.isFinite(diameter) || diameter < 0.5 || diameter > 10)) ||
+        (length !== null && (!Number.isFinite(length) || length < 1 || length > 35))) {
+      if (comfortValidation) {
+        comfortValidation.textContent = 'Please check the optional dimensions: widest diameter 0.5–10 cm and usable length 1–35 cm. You can also leave them blank.';
+        comfortValidation.hidden = false;
+      }
+      return;
+    }
+    const hasDimensions = diameter !== null || length !== null;
+    let title = 'Your comfort guide';
+    let guidance = '';
+    let safety = '';
+    const note = 'This is a preference guide, not a medical assessment or a promise of fit. The wellness products currently shown are concepts and do not have verified dimensions.';
+
+    if (category === 'intimates') {
+      title = 'Your innerwear fit next step';
+      guidance = 'Use the clothing size guide to compare bust, waist and hip measurements with a verified garment chart. Hip circumference is more useful for clothing fit than a label such as “ass size”.';
+      safety = 'The current BLACKED sample chart is for demonstration only. Check actual garment measurements before choosing a size.';
+    } else if (category === 'care') {
+      title = 'Care-first shortlist';
+      guidance = 'Prioritise the correct product-specific cleaning instructions, material compatibility and ingredient details. Do not assume one cleaner or lubricant works with every material.';
+      safety = 'Supplier specifications and availability are not yet verified for the care concepts in this prototype.';
+    } else if (comfort === 'pain' && ['dildo', 'anal', 'unsure'].includes(category)) {
+      title = 'Let comfort lead';
+      guidance = 'Because you selected pain or significant discomfort, this guide will not recommend sizing up. Pause use if something hurts; do not force insertion or keep going through pain.';
+      safety = 'If pain is repeated or persistent, or there is bleeding or injury, stop and seek advice from a qualified healthcare professional.';
+    } else if (previousUse === 'first' && ['dildo', 'anal', 'unsure'].includes(category)) {
+      title = 'A gentle place to start';
+      guidance = 'You do not need to know a previous size. Compare products only when maximum diameter and usable length are listed. A compact, tapered design may be easier to handle for some people, but comfort varies person to person.';
+      safety = category === 'anal'
+        ? 'For anal use, choose a toy specifically designed for it with a secure flared base, use suitable lubricant, go slowly and stop if there is pain.'
+        : 'Use products only as intended, follow the manufacturer’s instructions, and stop if there is pain or significant discomfort.';
+    } else {
+      if (hasDimensions && previousUse === 'yes') {
+        const parts = [];
+        if (diameter !== null) parts.push(`about ${formatCm(diameter)} cm widest diameter`);
+        if (length !== null) parts.push(`about ${formatCm(length)} cm usable length`);
+        guidance = `Your own comparison reference from last time: ${parts.join(' and ')}. These are your remembered measurements, not a guaranteed safe size or a product match.`;
+      } else if (previousUse === 'yes') {
+        guidance = 'You can use the comfort you remember without entering measurements. If you want a more useful comparison, check the previous product’s packaging or specifications for maximum diameter and usable length.';
+      } else {
+        guidance = 'Choose “compare sizes” only when the product listing gives actual dimensions. You can skip private experience questions and browse concepts without sharing measurements.';
+      }
+      if (comfort === 'too-much') {
+        guidance += ' Since you marked the previous size as too much, prioritise a smaller or easier-to-control option rather than sizing up.';
+      } else if (sizeGoal === 'compact') {
+        guidance += ' Your current preference is a compact option; look for clearly listed dimensions and an easy-to-control shape.';
+      } else if (sizeGoal === 'similar') {
+        guidance += ' To compare with a familiar size, match the manufacturer’s listed maximum diameter and usable length—not just labels such as “medium” or “XL”.';
+      } else if (sizeGoal === 'larger') {
+        guidance += ' You selected larger options to explore. A past size does not guarantee that a larger one will be comfortable; compare verified dimensions carefully and progress gradually.';
+      } else {
+        guidance += ' Your best next step is comparing verified dimensions, material and care information before selecting any product.';
+      }
+      safety = category === 'anal'
+        ? 'For anal use, choose a product specifically designed for it with a secure flared base, use suitable lubricant and stop if there is pain.'
+        : 'Use every product as intended, follow its care instructions and stop if there is pain or significant discomfort.';
+    }
+
+    const concepts = wellnessCandidateIds(category).map(id => productById.get(id)).filter(Boolean);
+    const referenceLine = hasDimensions && previousUse === 'yes' && ['dildo', 'anal', 'unsure'].includes(category)
+      ? `<p class="comfort-reference"><strong>Your private size reference:</strong> ${diameter !== null ? `${formatCm(diameter)} cm diameter` : 'diameter not entered'} · ${length !== null ? `${formatCm(length)} cm usable length` : 'usable length not entered'}. This answer is not saved after leaving or refreshing the page.</p>`
+      : '';
+    const browseFilter = category === 'intimates' ? 'lingerie' : (category === 'care' ? 'care' : 'toys');
+    const browseLabel = category === 'intimates' ? 'Open innerwear collection →' : category === 'care' ? 'Browse care concepts →' : 'Browse relevant concepts →';
+    comfortResults.innerHTML = `<div class="comfort-result-heading"><span class="micro-label">YOUR COMFORT SUMMARY</span><h3>${escapeHTML(title)}</h3><p>${escapeHTML(guidance)}</p>${referenceLine}<div class="comfort-safety-note comfort-result-safety"><strong>Keep in mind</strong><p>${escapeHTML(safety)}</p></div><p class="comfort-result-disclaimer">${escapeHTML(note)}</p><div class="comfort-result-actions"><button type="button" class="btn btn-dark" data-comfort-browse="${browseFilter}">${browseLabel}</button><button type="button" class="btn btn-ghost" id="comfortEditAnswers">Edit answers</button></div></div>${concepts.length ? `<div class="comfort-products-wrap"><h4>Concepts to review</h4><div class="comfort-products-grid">${concepts.map(comfortCard).join('')}</div></div>` : ''}`;
+    comfortResults.hidden = false;
+    comfortResults.scrollIntoView({behavior:'smooth', block:'nearest'});
+  });
+  comfortForm?.addEventListener('reset', () => {
+    // Wait until the browser clears the input controls before resetting dependent panels.
+    setTimeout(() => {
+      refreshWellnessQuestions();
+      if (comfortResults) { comfortResults.hidden = true; comfortResults.innerHTML = ''; }
+      if (comfortValidation) { comfortValidation.hidden = true; comfortValidation.textContent = ''; }
+    }, 0);
+  });
+  comfortResults?.addEventListener('click', e => {
+    const open = e.target.closest('[data-comfort-open]');
+    if (open) { openProductDialog(open.dataset.comfortOpen); return; }
+    const browse = e.target.closest('[data-comfort-browse]');
+    if (browse) {
+      activeFilter = browse.dataset.comfortBrowse || 'toys';
+      onlySaved = false; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true;
+      renderProducts(); $('#collection').scrollIntoView({behavior:'smooth', block:'start'});
+      return;
+    }
+    if (e.target.closest('#comfortEditAnswers')) {
+      comfortResults.hidden = true; comfortForm.scrollIntoView({behavior:'smooth', block:'start'});
+    }
+  });
+
   // Measurement estimator uses a sample chart; it is not a bra band/cup calculator.
   const sampleRanges = [
     {size:'XS', bust:[71,76], waist:[56,61], hips:[76,81]}, {size:'S', bust:[76,81], waist:[61,66], hips:[81,86]},
@@ -196,7 +353,8 @@
   const sampleSize = (value,key) => { if(value < sampleRanges[0][key][0]) return 'Below XS'; if(value > sampleRanges[sampleRanges.length-1][key][1]) return 'Above XXL'; const found=sampleRanges.find((r,i)=>value>=r[key][0]&&(value<r[key][1]||(i===sampleRanges.length-1&&value<=r[key][1]))); return found?.size || 'Check chart'; };
   $('#sizeForm').addEventListener('submit', e => { e.preventDefault(); const vals={bust:Number($('#measureBust').value),waist:Number($('#measureWaist').value),hips:Number($('#measureHips').value)}; if(Object.values(vals).some(v=>!Number.isFinite(v)||v<=0)){ $('#sizeResult').textContent='Please enter all three measurements as positive centimetre values.'; return; } const bustSize=sampleSize(vals.bust,'bust'),waistSize=sampleSize(vals.waist,'waist'),hipSize=sampleSize(vals.hips,'hips'); $('#sizeResult').textContent=`Sample estimate only — top / bust: ${bustSize}; waist: ${waistSize}; hips / bottom: ${hipSize}. This is not verified BLACKED sizing or bra cup-size guidance.`; });
 
-  // Fit Studio: actual product reference view or generic manual overlay on a local photo.
+  // Fit Studio v1.2: no more fake generic bra/brief shapes. A manual overlay requires
+  // the visitor's photo plus a transparent PNG of the actual garment cut-out.
   const canvas=$('#tryCanvas');const ctx=canvas.getContext('2d');
   const canvasW=canvas.width,canvasH=canvas.height;
   function getSelected(){return productById.get(selectedProduct)||productById.get('sculpt');}
@@ -218,57 +376,155 @@
     };
     loadNext();
   }
+  let currentPhotoRect = null;
+  function drawPhotoContain(photo) {
+    const ratio=Math.min(canvasW/photo.naturalWidth,canvasH/photo.naturalHeight);
+    const w=photo.naturalWidth*ratio,h=photo.naturalHeight*ratio;
+    const x=(canvasW-w)/2,y=(canvasH-h)/2;
+    ctx.drawImage(photo,x,y,w,h);
+    return {x,y,w,h};
+  }
   function drawCanvas() {
     ctx.clearRect(0,0,canvasW,canvasH);ctx.fillStyle='#ede0dc';ctx.fillRect(0,0,canvasW,canvasH);
-    if(previewMode==='manual'&&userPhoto) {
-      const ratio=Math.min(canvasW/userPhoto.naturalWidth,canvasH/userPhoto.naturalHeight);const w=userPhoto.naturalWidth*ratio,h=userPhoto.naturalHeight*ratio;ctx.drawImage(userPhoto,(canvasW-w)/2,(canvasH-h)/2,w,h);
-      const sc=guideScale;const cx=guidePosition.x*canvasW,cy=guidePosition.y*canvasH;ctx.save();ctx.translate(cx,cy);ctx.scale(sc,sc);ctx.fillStyle='rgba(38,27,34,.83)';ctx.strokeStyle='rgba(255,235,241,.88)';ctx.lineWidth=3;
-      // Illustrative top layer — generic shape only, never represented as a cut-out from the selected product.
-      ctx.beginPath();ctx.moveTo(-100,-30);ctx.bezierCurveTo(-118,-100,-55,-128,-28,-77);ctx.lineTo(0,-24);ctx.lineTo(28,-77);ctx.bezierCurveTo(55,-128,118,-100,100,-30);ctx.lineTo(75,34);ctx.quadraticCurveTo(0,60,-75,34);ctx.closePath();ctx.fill();ctx.stroke();
-      ctx.beginPath();ctx.moveTo(-72,-60);ctx.quadraticCurveTo(-58,-150,-30,-123);ctx.moveTo(72,-60);ctx.quadraticCurveTo(58,-150,30,-123);ctx.stroke();
-      ctx.fillStyle='rgba(38,27,34,.82)';ctx.beginPath();ctx.moveTo(-88,105);ctx.quadraticCurveTo(-45,125,0,112);ctx.quadraticCurveTo(45,125,88,105);ctx.lineTo(60,165);ctx.lineTo(28,207);ctx.quadraticCurveTo(0,190,-28,207);ctx.lineTo(-60,165);ctx.closePath();ctx.fill();ctx.stroke();ctx.restore();
-      ctx.fillStyle='rgba(255,250,247,.88)';ctx.fillRect(0,canvasH-48,canvasW,48);ctx.fillStyle='#4e3742';ctx.font='600 12px Arial';ctx.textAlign='center';ctx.fillText('MANUAL GUIDE · NOT A FIT SIMULATION',canvasW/2,canvasH-19);return;
+    currentPhotoRect = null;
+    if(previewMode==='manual' && userPhoto) {
+      currentPhotoRect = drawPhotoContain(userPhoto);
+      if(userGarment) {
+        const sc=guideScale;
+        const baseW=canvasW*.43;
+        const baseH=canvasH*.40;
+        const ratio=Math.min(baseW/userGarment.naturalWidth,baseH/userGarment.naturalHeight);
+        const w=userGarment.naturalWidth*ratio*sc;
+        const h=userGarment.naturalHeight*ratio*sc;
+        const photoRect=currentPhotoRect || {x:0,y:0,w:canvasW,h:canvasH};
+        const cx=photoRect.x+guidePosition.x*photoRect.w,cy=photoRect.y+guidePosition.y*photoRect.h;
+        ctx.save();ctx.translate(cx,cy);ctx.rotate(guideRotation*Math.PI/180);
+        ctx.drawImage(userGarment,-w/2,-h/2,w,h);ctx.restore();
+        ctx.fillStyle='rgba(255,250,247,.90)';ctx.fillRect(0,canvasH-48,canvasW,48);
+        ctx.fillStyle='#4e3742';ctx.font='600 12px Arial';ctx.textAlign='center';
+        ctx.fillText('UPLOADED GARMENT CUT-OUT · MANUAL POSITION ONLY',canvasW/2,canvasH-19);
+      } else {
+        ctx.fillStyle='rgba(39,29,35,.84)';ctx.fillRect(28,canvasH*.40,canvasW-56,118);
+        ctx.fillStyle='#fff8f5';ctx.textAlign='center';ctx.font='700 18px Arial';ctx.fillText('Real garment image required',canvasW/2,canvasH*.40+38);
+        ctx.font='12px Arial';ctx.fillText('Upload a transparent PNG cut-out below.',canvasW/2,canvasH*.40+64);
+        ctx.fillText('A campaign poster is not a garment cut-out.',canvasW/2,canvasH*.40+86);
+      }
+      return;
     }
-    const p=getSelected(); if(!referenceImage || !referenceImage.naturalWidth){ctx.fillStyle='#4e3742';ctx.textAlign='center';ctx.font='600 22px Arial';ctx.fillText('BLACKED',canvasW/2,canvasH/2-8);ctx.font='13px Arial';ctx.fillText(p.name,canvasW/2,canvasH/2+20);}else{const r=Math.min((canvasW-28)/referenceImage.naturalWidth,(canvasH-94)/referenceImage.naturalHeight);const w=referenceImage.naturalWidth*r,h=referenceImage.naturalHeight*r;ctx.drawImage(referenceImage,(canvasW-w)/2,(canvasH-60-h)/2,w,h);}
+    const p=getSelected();
+    if(!referenceImage || !referenceImage.naturalWidth){ctx.fillStyle='#4e3742';ctx.textAlign='center';ctx.font='600 22px Arial';ctx.fillText('BLACKED',canvasW/2,canvasH/2-8);ctx.font='13px Arial';ctx.fillText(p.name,canvasW/2,canvasH/2+20);}
+    else {const r=Math.min((canvasW-28)/referenceImage.naturalWidth,(canvasH-94)/referenceImage.naturalHeight);const w=referenceImage.naturalWidth*r,h=referenceImage.naturalHeight*r;ctx.drawImage(referenceImage,(canvasW-w)/2,(canvasH-60-h)/2,w,h);}
     ctx.fillStyle='rgba(34,24,29,.88)';ctx.fillRect(0,canvasH-60,canvasW,60);ctx.fillStyle='#fff6f4';ctx.textAlign='center';ctx.font='700 18px Arial';ctx.fillText(p.name.length>34?p.name.slice(0,31)+'…':p.name,canvasW/2,canvasH-35);ctx.font='10px Arial';ctx.fillStyle='#e2cbd3';ctx.fillText(p.concept?'CONCEPT PREVIEW · STOCK NOT CONFIRMED':'CAMPAIGN REFERENCE',canvasW/2,canvasH-16);
   }
   const studioSelect = $('#studioProduct');
   const studioProducts = products.filter(p => p.fit);
-  studioSelect.innerHTML = studioProducts.map(p => `<option value=\"${p.id}\">${escapeHTML(p.name)}</option>`).join('');
+  studioSelect.innerHTML = studioProducts.map(p => `<option value="${p.id}">${escapeHTML(p.name)}</option>`).join('');
   studioSelect.value = studioProducts.some(p => p.id === selectedProduct) ? selectedProduct : studioProducts[0]?.id || 'signature';
   selectedProduct = studioSelect.value;
   $('#studioTitle').textContent = getSelected().name;
-  $('#studioProduct').addEventListener('change',e=>{selectedProduct=e.target.value;const p=getSelected();$('#studioTitle').textContent=p.name;referenceImage=null;referenceImageKey='';loadReference(p);$('#studioStatus').textContent=`${p.name} selected. This reference view is not an automatic fitting simulation.`;});
+  studioSelect.addEventListener('change',e=>{selectedProduct=e.target.value;const p=getSelected();$('#studioTitle').textContent=p.name;referenceImage=null;referenceImageKey='';loadReference(p);$('#studioStatus').textContent=`${p.name} selected. This reference view is not an automatic fitting simulation.`;});
+
   function syncGuideControls() {
-    const active = Boolean(userPhoto) && previewMode === 'manual';
+    const hasBoth = Boolean(userPhoto && userGarment);
+    const active = hasBoth && previewMode === 'manual';
+    $('#manualMode').disabled = !hasBoth;
     $('#guideScale').disabled = !active;
+    $('#guideRotate').disabled = !active;
     ['moveGuideUp','moveGuideDown','moveGuideLeft','moveGuideRight','resetGuidePosition'].forEach(id => { const el = $('#'+id); if (el) el.disabled = !active; });
     const help = $('#modeHelp');
-    if (help) help.textContent = !userPhoto
-      ? 'Step 1: upload your own photo below. Then the manual guide can be opened. This is not AI fitting.'
-      : modeIsManualMessage(previewMode);
+    if (help) {
+      if (!userPhoto && !userGarment) help.textContent = 'Upload your photo and a transparent PNG of the actual garment. The tool never draws a fake bra/brief shape.';
+      else if (!userPhoto) help.textContent = 'Garment cut-out ready. Upload your own photo too, then tap “My photo + garment cutout”.';
+      else if (!userGarment) help.textContent = 'Your photo is ready. Add a transparent garment PNG to overlay the real product image; a campaign poster will not work as a cut-out.';
+      else help.textContent = modeIsManualMessage(previewMode);
+    }
   }
   function modeIsManualMessage(mode) { return mode === 'manual'
-    ? 'Manual guide active: adjust the generic illustration. It is not the selected garment and does not predict fit. Your photo stays in this browser.'
-    : 'Your photo is ready. Tap “My photo + guide” when you want to open the generic manual guide. No image is sent to a server in this prototype.'; }
-  function setPreviewMode(mode){if(mode==='manual'&&!userPhoto){toast('Upload your own photo first.');return;}previewMode=mode;$('#referenceMode').classList.toggle('active',mode==='reference');$('#manualMode').classList.toggle('active',mode==='manual');$('#referenceMode').setAttribute('aria-pressed',String(mode==='reference'));$('#manualMode').setAttribute('aria-pressed',String(mode==='manual'));$('#manualMode').disabled=!userPhoto;$('#canvasTag').textContent=mode==='reference'?'SELECTED REFERENCE':'YOUR PHOTO · MANUAL GUIDE';syncGuideControls();drawCanvas();}
-  $('#referenceMode').addEventListener('click',()=>setPreviewMode('reference'));$('#manualMode').addEventListener('click',()=>setPreviewMode('manual'));
-  $('#photoUpload').addEventListener('change',e=>{const file=e.target.files&&e.target.files[0];if(!file)return;const allowed=['image/jpeg','image/png','image/webp'];if(!allowed.includes(file.type)){toast('Choose a JPG, PNG or WEBP image.');e.target.value='';return;}if(file.size>12*1024*1024){toast('Image is over 12 MB. Choose a smaller file.');e.target.value='';return;}const url=URL.createObjectURL(file);const im=new Image();im.onload=()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=im;userPhotoUrl=url;$('#manualMode').disabled=false;setPreviewMode('reference');$('#studioStatus').textContent='Photo ready in this browser. Tap “My photo + guide” to open the manual overlay when you are ready. No photo was sent to a server.';e.target.value='';};im.onerror=()=>{URL.revokeObjectURL(url);e.target.value='';toast('Could not open that image. Try another file.');};im.src=url;});
-  $('#clearPhoto').addEventListener('click',()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=null;userPhotoUrl=null;$('#photoUpload').value='';$('#manualMode').disabled=true;setPreviewMode('reference');$('#studioStatus').textContent='Personal photo cleared from the preview.';syncGuideControls();});
+    ? 'Manual overlay active: this is the transparent garment PNG you uploaded, positioned by you. It is not AI fitting or a fit prediction. Your images stay in this browser.'
+    : 'Both images are ready. Tap “My photo + garment cutout” when you want to position the garment yourself. No images are sent to a server in this prototype.'; }
+  function setPreviewMode(mode){if(mode==='manual'&&!(userPhoto&&userGarment)){toast('Upload both your photo and a transparent garment PNG first.');return;}previewMode=mode;$('#referenceMode').classList.toggle('active',mode==='reference');$('#manualMode').classList.toggle('active',mode==='manual');$('#referenceMode').setAttribute('aria-pressed',String(mode==='reference'));$('#manualMode').setAttribute('aria-pressed',String(mode==='manual'));$('#canvasTag').textContent=mode==='reference'?'SELECTED REFERENCE':'YOUR PHOTO · REAL CUT-OUT';syncGuideControls();drawCanvas();}
+  $('#referenceMode').addEventListener('click',()=>setPreviewMode('reference'));
+  $('#manualMode').addEventListener('click',()=>setPreviewMode('manual'));
+
+  $('#photoUpload').addEventListener('change',e=>{
+    const file=e.target.files&&e.target.files[0];if(!file)return;
+    const allowed=['image/jpeg','image/png','image/webp'];
+    if(!allowed.includes(file.type)){toast('Choose a JPG, PNG or WEBP photo.');e.target.value='';return;}
+    if(file.size>12*1024*1024){toast('Photo is over 12 MB. Choose a smaller file.');e.target.value='';return;}
+    const url=URL.createObjectURL(file);const im=new Image();
+    im.onload=()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=im;userPhotoUrl=url;previewMode='reference';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent=userGarment?'Photo and garment are ready. Tap “My photo + garment cutout” to position the real uploaded PNG.':'Photo ready. Now upload a transparent garment PNG. No image was sent to a server.';e.target.value='';};
+    im.onerror=()=>{URL.revokeObjectURL(url);e.target.value='';toast('Could not open that photo. Try another file.');};im.src=url;
+  });
+  function pngLooksTransparent(img) {
+    try {
+      const probe=document.createElement('canvas');probe.width=12;probe.height=12;
+      const pctx=probe.getContext('2d',{willReadFrequently:true});pctx.drawImage(img,0,0,12,12);
+      const px=pctx.getImageData(0,0,12,12).data;
+      const corners=[0,11,11*12,11*12+11];
+      return corners.some(i=>px[i*4+3]<245);
+    } catch (_) { return false; }
+  }
+  $('#garmentUpload').addEventListener('change',e=>{
+    const file=e.target.files&&e.target.files[0];if(!file)return;
+    if(file.type!=='image/png'){toast('For a clean overlay, choose a transparent-background PNG cut-out.');e.target.value='';return;}
+    if(file.size>12*1024*1024){toast('Garment PNG is over 12 MB. Choose a smaller file.');e.target.value='';return;}
+    const url=URL.createObjectURL(file);const im=new Image();
+    im.onload=()=>{
+      if(!pngLooksTransparent(im)){URL.revokeObjectURL(url);e.target.value='';toast('This PNG looks like it has a solid background. Remove its background, then upload the transparent cut-out.');return;}
+      if(userGarmentUrl)URL.revokeObjectURL(userGarmentUrl);userGarment=im;userGarmentUrl=url;syncGuideControls();drawCanvas();
+      $('#studioStatus').textContent=userPhoto?'Garment cut-out ready. Tap “My photo + garment cutout” to position it.':'Garment cut-out ready. Now upload your photo.';
+      e.target.value='';
+    };
+    im.onerror=()=>{URL.revokeObjectURL(url);e.target.value='';toast('Could not open that PNG. Try exporting it again.');};im.src=url;
+  });
+  $('#clearPhoto').addEventListener('click',()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=null;userPhotoUrl=null;$('#photoUpload').value='';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent='Your photo was cleared from the preview.';});
+  $('#clearGarment').addEventListener('click',()=>{if(userGarmentUrl)URL.revokeObjectURL(userGarmentUrl);userGarment=null;userGarmentUrl=null;$('#garmentUpload').value='';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent='Garment cut-out cleared. Upload a transparent PNG to position a real product image.';});
   $('#guideScale').addEventListener('input',e=>{guideScale=Number(e.target.value)/100;$('#guideScaleOut').value=`${e.target.value}%`;if(previewMode==='manual')drawCanvas();});
+  $('#guideRotate').addEventListener('input',e=>{guideRotation=Number(e.target.value);$('#guideRotateOut').value=`${guideRotation}°`;if(previewMode==='manual')drawCanvas();});
   function canvasCoords(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvasW/r.width,y:(e.clientY-r.top)*canvasH/r.height};}
-  canvas.addEventListener('pointerdown',e=>{if(previewMode!=='manual'||!userPhoto)return;dragging=true;const p=canvasCoords(e);dragStart={pointer:p,base:{...guidePosition}};canvas.setPointerCapture?.(e.pointerId);e.preventDefault();});
-  canvas.addEventListener('pointermove',e=>{if(!dragging||!dragStart)return;const p=canvasCoords(e);guidePosition.x=Math.max(.18,Math.min(.82,dragStart.base.x+(p.x-dragStart.pointer.x)/canvasW));guidePosition.y=Math.max(.23,Math.min(.77,dragStart.base.y+(p.y-dragStart.pointer.y)/canvasH));drawCanvas();});
+  canvas.addEventListener('pointerdown',e=>{if(previewMode!=='manual'||!userPhoto||!userGarment)return;dragging=true;const p=canvasCoords(e);dragStart={pointer:p,base:{...guidePosition}};canvas.setPointerCapture?.(e.pointerId);e.preventDefault();});
+  canvas.addEventListener('pointermove',e=>{if(!dragging||!dragStart)return;const p=canvasCoords(e);const rect=currentPhotoRect||{w:canvasW,h:canvasH};guidePosition.x=Math.max(.08,Math.min(.92,dragStart.base.x+(p.x-dragStart.pointer.x)/rect.w));guidePosition.y=Math.max(.08,Math.min(.92,dragStart.base.y+(p.y-dragStart.pointer.y)/rect.h));drawCanvas();});
   const stopDrag=()=>{dragging=false;dragStart=null;};canvas.addEventListener('pointerup',stopDrag);canvas.addEventListener('pointercancel',stopDrag);
-  function nudgeGuide(dx,dy){if(previewMode!=='manual'||!userPhoto){toast('Upload a photo and activate My photo + guide first.');return;}guidePosition.x=Math.max(.18,Math.min(.82,guidePosition.x+dx));guidePosition.y=Math.max(.23,Math.min(.77,guidePosition.y+dy));drawCanvas();}
+  function nudgeGuide(dx,dy){if(previewMode!=='manual'||!userPhoto||!userGarment){toast('Upload both a photo and a transparent garment PNG first.');return;}guidePosition.x=Math.max(.08,Math.min(.92,guidePosition.x+dx));guidePosition.y=Math.max(.08,Math.min(.92,guidePosition.y+dy));drawCanvas();}
   $('#moveGuideUp').addEventListener('click',()=>nudgeGuide(0,-.025));$('#moveGuideDown').addEventListener('click',()=>nudgeGuide(0,.025));$('#moveGuideLeft').addEventListener('click',()=>nudgeGuide(-.025,0));$('#moveGuideRight').addEventListener('click',()=>nudgeGuide(.025,0));
-  $('#resetGuidePosition').addEventListener('click',()=>{guidePosition={x:.5,y:.52};$('#guideScale').value='100';$('#guideScaleOut').value='100%';guideScale=1;drawCanvas();});
-  $('#downloadPreview').addEventListener('click',()=>{try{drawCanvas();canvas.toBlob(blob=>{if(!blob){toast('Could not export the preview. Try reloading the product image.');return;}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='blacked-fit-studio-preview.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Preview saved to your device.');},'image/png');}catch(_){toast('Image export failed. When testing locally, use the GitHub Pages website so image-origin restrictions do not block the export.');}});
+  $('#resetGuidePosition').addEventListener('click',()=>{guidePosition={x:.5,y:.52};$('#guideScale').value='100';$('#guideScaleOut').value='100%';guideScale=1;guideRotation=0;$('#guideRotate').value='0';$('#guideRotateOut').value='0°';drawCanvas();});
+  $('#downloadPreview').addEventListener('click',()=>{if(previewMode==='manual'&&!(userPhoto&&userGarment)){toast('Upload both images and activate the garment overlay first.');return;}try{drawCanvas();canvas.toBlob(blob=>{if(!blob){toast('Could not export the preview. Try reloading the product image.');return;}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='blacked-manual-garment-preview.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Preview saved to your device.');},'image/png');}catch(_){toast('Image export failed. Open the website on GitHub Pages and try again.');}});
 
   // Quick share helper for current saved list, used as a useful zero-backend feature.
   $('#wishlistJump').title='Show or hide saved styles';
   const shareLabel=document.createElement('button');shareLabel.type='button';shareLabel.className='btn btn-ghost btn-small';shareLabel.textContent='Share saved list';shareLabel.style.marginTop='12px';shareLabel.addEventListener('click',async()=>{const list=[...saved].map(id=>productById.get(id)?.name).filter(Boolean);if(!list.length){toast('Save a few styles first.');return;}const text='My BLACKED style shortlist: '+list.join(', ')+'. Product prices and availability are not confirmed.';try{if(navigator.share)await navigator.share({title:'My BLACKED shortlist',text});else if(navigator.clipboard){await navigator.clipboard.writeText(text);toast('Shortlist copied to clipboard.');}else toast(text);}catch(_){}});
   const savedPanel=document.createElement('div');savedPanel.className='saved-share';savedPanel.appendChild(shareLabel);$('#collection').appendChild(savedPanel);
+
+
+  // V1.4 storefront shortcut controls. These only filter the existing local prototype catalogue.
+  document.addEventListener('click', event => {
+    const shortcut = event.target.closest('[data-shop-filter]');
+    if (shortcut) {
+      event.preventDefault();
+      const nextFilter = shortcut.dataset.shopFilter;
+      const allowed = ['all','lingerie','toys','care','concept','inspiration'];
+      activeFilter = allowed.includes(nextFilter) ? nextFilter : 'toys';
+      onlySaved = false;
+      searchText = '';
+      const search = $('#productSearch');
+      const clear = $('#clearSearch');
+      if (search) search.value = '';
+      if (clear) clear.hidden = true;
+      renderProducts();
+      $('#collection')?.scrollIntoView({behavior:'smooth', block:'start'});
+      toast(activeFilter === 'care' ? 'Care & accessories selected.' : activeFilter === 'concept' ? 'Design concepts selected.' : 'Catalogue filtered for your selection.');
+      return;
+    }
+    const railButton = event.target.closest('[data-rail-step]');
+    if (railButton) {
+      const rail = $('#featuredRail');
+      if (!rail) return;
+      const direction = Number(railButton.dataset.railStep) < 0 ? -1 : 1;
+      const card = rail.querySelector('.featured-style-card');
+      const distance = card ? card.getBoundingClientRect().width + 16 : 300;
+      rail.scrollBy({left: direction * distance, behavior:'smooth'});
+    }
+  });
 
   $('#year').textContent=String(new Date().getFullYear());
   syncGuideControls();
