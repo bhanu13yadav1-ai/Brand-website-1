@@ -1,14 +1,19 @@
-# V1.8 Test Notes
+# V1.9 Test Notes
 
-## Static checks performed
-- Standalone HTML generated with inline CSS and inline application JavaScript.
-- Critical local project assets are represented as data URLs in the standalone HTML, including the campaign hero and all eight `wand-360-frame-*.webp` images.
-- Main view panel IDs and tab controls use unique IDs and explicit `data-view` values.
-- The viewer uses eight frames (0°, 45°, 90°, 135°, 180°, 225°, 270°, 315°) with wrapped previous/next state, range updates and active thumbnail state.
-- Boyfriend planner uses client-side static suggestions; it does not transmit or persist form answers.
-- Product price/availability remains clearly labelled as unconfirmed; demo bag is not checkout.
+## Checks completed
+- JavaScript syntax: `node --check app.js` passed.
+- HTML parsed with BeautifulSoup; 130 stable IDs detected, no duplicate IDs.
+- Five separate page panels exist: Home, Intimates, Boyfriend, After Dark 18+, Women's Wellness.
+- Navigation buttons target those panels; active tab handling is present in the app script.
+- Eight 360 angle image files are included as actual local files; thumbnail code uses `./assets/wand-360-frame-01.webp` through `08.webp`.
+- All asset files from V1.8 embedded map were materialized as local files, and current user-supplied editorial references are saved as separate optimized WebP files.
+- ZIP integrity verified after packaging.
 
-## Known limitations
-- A full real-device browser click-through could not be performed in this build environment. The package should be tested on GitHub Pages after upload.
-- The legacy user-supplied `ref-*`, `design-*` and `syrn-*.svg` images are not redistributed in this package; Intimates image cards rely on the existing root-level files on the user's repository. The new hero/360/wellness assets are embedded.
-- Generated 360 images are concept angles, not supplier-verified product photography.
+## Browser-test limitation
+The browser automation runtime returned `ERR_BLOCKED_BY_ADMINISTRATOR` for both file and localhost navigation. Therefore this build does **not** claim a complete automated click-through pass. Please verify the deployed GitHub Pages site on Android. The 360 controls are wired to update a single frame index used by arrows, slider, thumbnails, drag, and reset.
+
+## Known product limitations
+- 360° uses generated concept frames, not official supplier photography or a true 3D model.
+- Original supplied campaign images are references, not proof of sellable stock, material, dimensions, price, or reviews.
+- Fit Studio manual mode still needs a transparent garment cutout; it is not AI virtual try-on.
+- Demo bag is not a real checkout/payment flow.

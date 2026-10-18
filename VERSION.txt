@@ -1,4 +1,5 @@
-BLACKED Big Update
-Version: 1.8
-Deployment format: self-contained index.html; CSS, JavaScript and project assets are embedded in that file.
-Main changes: true tabs for Intimates, Boyfriend, After Dark 18+ and Women’s Wellness; dark neon storefront theme; home top-picks grid; boyfriend planner; embedded local 360 angle frames and key product imagery.
+BLACKED Big Update V1.9
+Build: 2026-10-18
+
+Sections: Home, Intimates, Boyfriend, After Dark 18+, Women’s Wellness.
+Images are local paths under assets/ to reduce base64/HTML breakage.
