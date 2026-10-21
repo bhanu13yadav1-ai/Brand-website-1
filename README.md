@@ -1,22 +1,19 @@
-# BLACKED Big Update V1.9
+# BLACKED Fusion V1 — Asset Handling (Step 3.3)
 
-## What changed
-- Rebuilt image strategy: hero and 360 frames load from a real local `assets/` folder included in this ZIP, rather than a huge embedded data map. Upload the whole folder.
-- Separate clickable tabs: Home, Intimates, Boyfriend, After Dark 18+, Women’s Wellness.
-- Kept the storefront feature set: search, category filtering, wishlist, compare, demo bag, boyfriend planner, size guide, local photo Fit Studio, private comfort quiz, 360 frame viewer.
-- Added eight BLACKED editorial reference images from the supplied assets as individual local files (editorial inspiration, not confirmed inventory).
-- Missing images should degrade to fallback rather than being treated as real stock.
+## Bundled and verified locally
+- `blacked-icon.svg` — app icon.
+- `supplied/muslim-collection-four-panel-original.png` — the user-supplied four-panel artwork, preserved byte-for-byte.
+- `muslim-collection/*.webp` — four individually decoded crops from that artwork, used in the Muslim-Inspired Collection · Noor Edit (Coming Soon).
 
-## Android/GitHub deployment
-1. Back up the current repository first.
-2. Extract this ZIP.
-3. Upload `index.html`, `styles.css`, `app.js`, `VERSION.txt`, and the full `assets/` folder to the repository root; preserve the folder names.
-4. Keep existing `ref-*`, `design-*` and `syrn-*.svg` files in the repo if you still need the older catalog cards.
-5. Commit, wait for GitHub Pages, then refresh the site with a full reload.
+## Historical image files still pending local bundling
+The legacy innerwear, Sanskari, 360-frame, Boyfriend and Wellness image files are listed in `registry/REMOTE-ASSET-REGISTRY.json` and still use their recorded public raw-GitHub URLs. Their filenames were matched to repository listings, but their actual bytes have not been downloaded, SHA-256 checked or decoded in this runtime. Do not say this project has a complete local asset bundle.
 
-## Honest limitations
-- 360° viewer switches among eight generated concept frames; these are not a verified supplier turntable or true 3D model.
-- Adult product entries are design concepts until supplier, price, dimensions, materials, stock and relevant usage/safety details are verified.
-- Fit Studio is manual overlay, not automatic AI try-on.
-- The checkout/cart is demo-only; no real payment, order submission or backend.
-- Static checks passed (JS syntax, duplicate IDs, local asset paths, ZIP integrity). Automated browser navigation was blocked by the environment administrator policy, so test on deployed GitHub Pages before public launch.
+When the three original repository ZIPs are uploaded, import the original files—not unrelated replacements—then update `catalog.js`, this registry and `ASSET-IMPORT-MAP.csv` together. Preserve product/campaign distinctions and label concept art honestly.
+
+
+## Step 3.3 — additional user-supplied collections
+- Five new source originals are preserved byte-for-byte under `supplied/collection-additions/`. Their optimized local WebP display versions are stored in `muslim-collection/`, `christian-collection/` and `sanskari-collection/`.
+- Muslim-Inspired · Noor Edit: six cards (four original panel crops plus two new images).
+- Christian-Inspired Collection: one Coming Soon concept card.
+- Sanskari Edit: twelve cards (the ten originals plus two new user-supplied references).
+- `1000201195.png` and the four newly re-uploaded WebPs hash-match assets already stored in Step 3.2; they were not duplicated.

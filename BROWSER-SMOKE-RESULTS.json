@@ -1,0 +1,59 @@
+{
+  "test_scope": "Chromium in-memory page with the exact current HTML/CSS/JS embedded. Navigation to localhost/file URLs is blocked by this runtime; this does NOT verify GitHub Pages, physical Android, cache service worker, or deployed resource headers.",
+  "viewport_results": [
+    {
+      "viewport": 320,
+      "docWidth": 320,
+      "bodyWidth": 320,
+      "active": "home",
+      "width": 320,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 360,
+      "docWidth": 360,
+      "bodyWidth": 360,
+      "active": "home",
+      "width": 360,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 390,
+      "docWidth": 390,
+      "bodyWidth": 390,
+      "active": "home",
+      "width": 390,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 430,
+      "docWidth": 430,
+      "bodyWidth": 430,
+      "active": "home",
+      "width": 430,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 1440,
+      "docWidth": 1440,
+      "bodyWidth": 1440,
+      "active": "home",
+      "width": 1440,
+      "no_horizontal_overflow": true
+    }
+  ],
+  "interaction_results": {
+    "mobile_menu_open_close": "PASS",
+    "nav_to_innerwear": "PASS",
+    "sanskari_and_coming_soon": "PASS",
+    "wellness_content": "PASS",
+    "notes_navigation_and_copy_fallback": "PASS"
+  },
+  "console_errors": [],
+  "page_errors": [],
+  "failed_requests": [],
+  "all_six_views_and_active_states": "PASS",
+  "hash_deep_link_navigation": "PASS",
+  "horizontal_overflow_widths": [],
+  "overall": "PASS"
+}

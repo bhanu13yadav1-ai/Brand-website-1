@@ -1,0 +1,141 @@
+{
+  "scope": "Local Python HTTP server; validates package-root routing and bundled user images only. Does not test public GitHub Pages or remote historical image URLs.",
+  "base": "http://127.0.0.1:35395/",
+  "results": [
+    {
+      "path": "index.html",
+      "status": 200,
+      "bytes": 49921,
+      "content_type": "text/html"
+    },
+    {
+      "path": "styles.css?v=step3-3",
+      "status": 200,
+      "bytes": 32456,
+      "content_type": "text/css"
+    },
+    {
+      "path": "catalog.js?v=step3-3",
+      "status": 200,
+      "bytes": 17276,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "app.js?v=step3-3",
+      "status": 200,
+      "bytes": 63174,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "sw.js",
+      "status": 200,
+      "bytes": 3464,
+      "content_type": "text/javascript"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "status": 200,
+      "bytes": 483,
+      "content_type": "application/manifest+json"
+    },
+    {
+      "path": "assets/blacked-icon.svg",
+      "status": 200,
+      "bytes": 612,
+      "content_type": "image/svg+xml"
+    },
+    {
+      "path": "assets/supplied/muslim-collection-four-panel-original.png",
+      "status": 200,
+      "bytes": 3350486,
+      "content_type": "image/png"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-e-noor.webp",
+      "status": 200,
+      "bytes": 93914,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-ki-roshni.webp",
+      "status": 200,
+      "bytes": 90332,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-noor-ka-nasha.webp",
+      "status": 200,
+      "bytes": 92918,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-se-raat-tak.webp",
+      "status": 200,
+      "bytes": 92520,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-tradition-outside-desire-inside.webp",
+      "status": 200,
+      "bytes": 232638,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-elegance-begins-within.webp",
+      "status": 200,
+      "bytes": 227598,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/christian-collection/christian-grace-has-never-looked-so-bold.webp",
+      "status": 200,
+      "bytes": 191890,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/sanskari-collection/sanskari-outside-dangerous-new.webp",
+      "status": 200,
+      "bytes": 103164,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/sanskari-collection/sanskari-outside-bold-within.webp",
+      "status": 200,
+      "bytes": 247492,
+      "content_type": "image/webp"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200454(2).jpg",
+      "status": 200,
+      "bytes": 370234,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200455(3).jpg",
+      "status": 200,
+      "bytes": 364564,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200453(2).png",
+      "status": 200,
+      "bytes": 2999947,
+      "content_type": "image/png"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200456(2).jpg",
+      "status": 200,
+      "bytes": 206532,
+      "content_type": "image/jpeg"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200479.png",
+      "status": 200,
+      "bytes": 3239331,
+      "content_type": "image/png"
+    }
+  ],
+  "expected_count": 22,
+  "passed_count": 22,
+  "overall": "PASS"
+}

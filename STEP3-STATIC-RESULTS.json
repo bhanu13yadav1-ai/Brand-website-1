@@ -1,0 +1,38 @@
+{
+  "status": "PASS",
+  "scope": "Static local paths and decoding of user-supplied Muslim, Christian and Sanskari collection assets. Does not validate actual live HTTP, remote legacy binaries, GitHub Pages or device browser.",
+  "root_entry_files": [
+    "index.html",
+    "styles.css",
+    "catalog.js",
+    "app.js",
+    "sw.js",
+    "manifest.webmanifest",
+    "assets/blacked-icon.svg"
+  ],
+  "unique_html_ids": 191,
+  "nav_views": [
+    "home",
+    "innerwear",
+    "sanskari",
+    "boyfriend",
+    "wellness",
+    "wheels",
+    "more"
+  ],
+  "page_views": [
+    "home",
+    "innerwear",
+    "sanskari",
+    "boyfriend",
+    "wellness",
+    "wheels",
+    "more"
+  ],
+  "missing_local_refs": [],
+  "legacy_remote_image_reference_count": 65,
+  "raw_github_url_literal_occurrences_in_html_and_catalog": 6,
+  "legacy_remote_binary_bundle_status": "BLOCKED — repository source ZIPs unavailable",
+  "new_collection_assets": "PASS",
+  "local_collection_asset_count": 9
+}

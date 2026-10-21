@@ -1,0 +1,3 @@
+Local Python HTTP server: PASS
+22/22 root entry files, original uploaded collection images and optimized gallery assets returned HTTP 200. This does not test GitHub Pages or remote historical image URLs.
+See STEP3-LOCAL-HTTP-RESULTS.json.

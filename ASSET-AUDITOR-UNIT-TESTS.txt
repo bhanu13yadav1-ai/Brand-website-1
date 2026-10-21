@@ -1,0 +1,7 @@
+test_case_only_mismatch_is_reported (qa.test_repo_asset_audit.RepoAssetAuditTests.test_case_only_mismatch_is_reported) ... ok
+test_html_css_js_paths_and_duplicates (qa.test_repo_asset_audit.RepoAssetAuditTests.test_html_css_js_paths_and_duplicates) ... ok
+
+----------------------------------------------------------------------
+Ran 2 tests in 0.004s
+
+OK

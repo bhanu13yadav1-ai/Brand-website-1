@@ -1,751 +1,750 @@
 (() => {
   'use strict';
-  const $ = (s, root = document) => root.querySelector(s);
-  const $$ = (s, root = document) => [...root.querySelectorAll(s)];
-  const ASSET_BASE = './';
-  // V1.9 uses local assets in the ZIP. Upload the complete assets/ folder.
-  const image = file => {
-    if (typeof file !== 'string') return './assets/placeholder-lingerie.svg';
-    if (file.startsWith('data:')) return file;
-    if (file.startsWith('assets/')) return './' + file;
-    return ASSET_BASE + file;
+
+  const $ = (selector, root = document) => root.querySelector(selector);
+  const $$ = (selector, root = document) => [...root.querySelectorAll(selector)];
+  const C = window.BLK;
+  if (!C) { document.body.insertAdjacentHTML('afterbegin', '<p role="alert">Content registry failed to load. Ensure catalog.js is uploaded beside index.html.</p>'); return; }
+
+  const STORAGE = {
+    wishlist: 'blacked-fit-studio-wishlist-v03',
+    legacyWishlist: 'blacked31Wishlist',
+    bag: 'blacked31Bag',
+    fitNote: 'blacked31FitNote',
+    passport: 'blacked-fit-passport-v040',
+    drafts: 'blacked-brand-studio-drafts-v1'
   };
-  const products = [
-    {id:'signature', name:'Black Comfort Set', category:'lingerie', label:'BLACKED CAMPAIGN', image:'assets/ref-09-blacked-comfort-set.webp', desc:'Comfort-led black matching-set campaign direction.', note:'Campaign visual; exact garment SKU and stock are not confirmed.', concept:false, material:'Product composition and care instructions must be confirmed.', fit:true},
-    {id:'move', name:'Move Together', category:'lingerie', label:'BLACKED CAMPAIGN', image:'assets/ref-01-blacked-move-together.webp', desc:'A movement-inspired look built around easy, everyday confidence.', note:'Campaign visual, not a verified catalogue SKU.', concept:false, material:'Materials and garment specifications to be confirmed.', fit:true},
-    {id:'yoga', name:'Yoga Together', category:'lingerie', label:'BLACKED CAMPAIGN', image:'assets/ref-02-blacked-yoga-together.webp', desc:'A warm studio campaign visual with a movement-inspired mood.', note:'Campaign visual only; not a separate verified product SKU.', concept:false, material:'Materials and garment specifications to be confirmed.', fit:true},
-    {id:'redlace', name:'Red Lace Bodysuit', category:'lingerie', label:'DESIGN REFERENCE', image:'assets/ref-03-red-lace-bodysuit-reference.webp', desc:'Red lace and strappy construction inspiration from your supplied reference.', note:'Reference only. Verify image-use rights and actual product details before selling.', concept:true, material:'Not a confirmed BLACKED product. Material and construction not verified.', fit:true},
-    {id:'stretch', name:'Movement & Stretch', category:'lingerie', label:'SHOOT REFERENCE', image:'assets/ref-04-movement-stretch-reference.webp', desc:'A movement-focused shoot reference for a comfort-led brand direction.', note:'Reference image only. Product identity and usage rights must be confirmed.', concept:true, material:'Not a verified product listing.', fit:true},
-    {id:'blacklace', name:'Black Lace Cut-Out Set', category:'lingerie', label:'DESIGN REFERENCE', image:'assets/ref-05-black-lace-cutout-reference.webp', desc:'Black lace pattern, cut-out and matching-set style direction.', note:'Reference image includes other-brand text; do not list as BLACKED stock without rights and a verified product.', concept:true, material:'Material and garment construction not verified.', fit:true},
-    {id:'velvet', name:'Velvet Lace Set', category:'lingerie', label:'DESIGN REFERENCE', image:'assets/ref-06-velvet-lace-reference.webp', desc:'Pink velvet with black-lace detailing as a supplied style reference.', note:'Reference only. Confirm product identity, design rights and specifications.', concept:true, material:'Material and garment construction not verified.', fit:true},
-    {id:'rose', name:'Rose Strap Mannequin Set', category:'lingerie', label:'PRODUCT DETAIL REFERENCE', image:'ref-07-rose-strap-mannequin-reference.jpg', desc:'Red straps with rose and pearl-inspired decorative details.', note:'Original screenshot reference only; verify rights and the complete garment before listing.', concept:true, material:'Material and full garment details not confirmed.', fit:true},
-    {id:'butterfly', name:'Pink Butterfly Lace Detail', category:'lingerie', label:'DETAIL REFERENCE', image:'ref-08-pink-butterfly-detail-reference.jpg', desc:'Pink butterfly-inspired lace detailing reference.', note:'Detail reference only. This image does not verify a complete product or SKU.', concept:true, material:'Material and full garment details not confirmed.', fit:true},
-    {id:'together', name:'Better Together', category:'lingerie', label:'BLACKED CAMPAIGN', image:'assets/ref-10-blacked-better-together.webp', desc:'A warm premium lifestyle campaign direction for a black matching set.', note:'Campaign visual, not a separate verified product SKU.', concept:false, material:'Materials and garment specifications to be confirmed.', fit:true},
-    {id:'sculpt', name:'Midnight Sculpt', category:'lingerie', label:'BLACKED DESIGN CONCEPT', image:'assets/placeholder-lingerie.svg', fallback:'assets/placeholder-lingerie.svg', desc:'Charcoal tones with contrasting black lace details.', note:'Concept preview only. Production status and stock are not confirmed.', concept:true, material:'Concept material direction only; final composition is not set.', fit:true},
-    {id:'midnight', name:'Midnight Lace', category:'lingerie', label:'BLACKED DESIGN CONCEPT', image:'assets/placeholder-lingerie.svg', fallback:'assets/placeholder-lingerie.svg', desc:'An elegant black lace and adjustable-strap concept.', note:'Concept preview only. Not confirmed for sale.', concept:true, material:'Concept material direction only; final composition is not set.', fit:true},
-    {id:'scarlet', name:'Scarlet Satin', category:'lingerie', label:'BLACKED DESIGN CONCEPT', image:'assets/placeholder-lingerie.svg', fallback:'assets/placeholder-lingerie.svg', desc:'A deep berry satin-and-lace matching-set concept.', note:'Concept preview only. Final construction and stock are not confirmed.', concept:true, material:'Concept material direction only; final composition is not set.', fit:true},
-    {id:'ivory', name:'Ivory Bloom', category:'lingerie', label:'BLACKED DESIGN CONCEPT', image:'assets/placeholder-lingerie.svg', fallback:'assets/placeholder-lingerie.svg', desc:'Ivory tones with delicate floral-inspired detailing.', note:'Concept preview only. Not confirmed for sale.', concept:true, material:'Concept material direction only; final composition is not set.', fit:true},
-    {id:'syrn-demi', name:'Forever Yours Demi Bra', category:'inspiration', label:'EXTERNAL SYRN INSPIRATION', image:'assets/placeholder-lingerie.svg', desc:'A separate-brand style reference for a smooth-cup demi silhouette.', note:'SYRN is a separate brand. This is inspiration only, not BLACKED inventory.', concept:true, material:'Not a BLACKED product. See the original brand for verified specifications.', fit:false, externalUrl:'https://syrn.com/products/forever-yours-lightly-lined-smooth-demi-bra-bab'},
-    {id:'syrn-balconette', name:'Forget Me Not Balconette', category:'inspiration', label:'EXTERNAL SYRN INSPIRATION', image:'assets/placeholder-lingerie.svg', desc:'A separate-brand style reference for an unlined balconette shape.', note:'SYRN is a separate brand. This is inspiration only, not BLACKED inventory.', concept:true, material:'Not a BLACKED product. See the original brand for verified specifications.', fit:false, externalUrl:'https://syrn.com/products/forget-me-not-unlined-balconette-bra-dwm'},
-    {id:'syrn-bodysuit', name:'Fantasy Lace Halter Bodysuit', category:'inspiration', label:'EXTERNAL SYRN INSPIRATION', image:'assets/placeholder-lingerie.svg', desc:'A separate-brand style reference for a floral-lace halter direction.', note:'SYRN is a separate brand. This is inspiration only, not BLACKED inventory.', concept:true, material:'Not a BLACKED product. See the original brand for verified specifications.', fit:false, externalUrl:'https://syrn.com/products/the-fantasy-lace-halter-bodysuit-afd'},
-    {id:'dildo', name:'Silicone Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/silicone-dildo.svg', desc:'A simple personal-wellness product concept in a smooth, easy-to-clean form.', note:'Illustration only. Verify the actual supplier, intended use, dimensions and material specification before offering it for sale.', concept:true, material:'Only list as body-safe silicone if supplier documentation verifies the material.', fit:false},
-    {id:'plug', name:'Flared-Base Butt Plug', category:'toys', label:'PERSONAL WELLNESS CONCEPT', image:'assets/flared-base-plug.svg', desc:'A compact design direction featuring a visible flared base.', note:'Illustration only. The final product must have a secure, appropriately designed flared base and clear size information.', concept:true, material:'Material and dimensions are not yet verified. Follow maker instructions.', fit:false},
-    {id:'pulse', name:'Obsidian Wand Massager', category:'toys', label:'PERSONAL WELLNESS CONCEPT · 360° DEMO', image:'assets/wand-massager-studio.webp', fallback:'assets/bullet-massager.svg', desc:'A sleek black wand-style massager concept shown with an interactive eight-view 360° angle study.', note:'Generated concept imagery only. This is not manufacturer-supplied 360° photography; verify supplier, materials, controls, charging, dimensions and stock before listing for sale.', concept:true, material:'Material, battery, charging, water resistance and actual dimensions are not confirmed.', fit:false, viewer360:true},
-    {id:'obsidian-xl', name:'Obsidian XL Black Dildo', category:'toys', label:'PERSONAL WELLNESS CONCEPT · XL', image:'assets/obsidian-xl.svg', searchTerms:'XL black adult toy larger-size dildo', desc:'A larger-size, black-finish adult personal-wellness concept with a smooth, minimalist silhouette.', note:'Concept artwork only. Exact dimensions, firmness, supplier, availability and stock are not confirmed. Do not publish it as 100% silicone until supplier documentation verifies the composition.', concept:true, material:'XL-inspired concept. Confirm insertable length, maximum diameter, actual composition and manufacturer care guidance before listing for sale; do not claim 100% silicone without supplier documentation.', fit:false},
-    {id:'lube', name:'Water-Based Lubricant', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/lube-care.svg', desc:'A concept entry for a water-based personal lubricant.', note:'Concept entry only. Confirm the formula, ingredients, expiry date, compatibility and regulatory labelling with a reputable supplier.', concept:true, material:'Formula, ingredients and compatibility are not yet verified.', fit:false},
-    {id:'cleaner', name:'Intimate Toy Cleaner', category:'care', label:'CARE ESSENTIAL CONCEPT', image:'assets/toy-cleaner.svg', desc:'A care accessory concept for product-specific cleaning routines.', note:'Concept entry only. Cleaning instructions must match each toy material and manufacturer guidance.', concept:true, material:'Ingredients and material compatibility need supplier confirmation.', fit:false},
-    {id:'pouch', name:'Discreet Storage Pouch', category:'care', label:'ACCESSORY CONCEPT', image:'assets/storage-pouch.svg', desc:'A soft pouch concept for clean, private storage between uses.', note:'Concept entry only. Actual fabric, dimensions and availability are not confirmed.', concept:true, material:'Fabric and care instructions to be confirmed.', fit:false}
-  ];
-  const productById = new Map(products.map(p => [p.id, p]));
-  const moneyOrStatus = () => 'Price to be confirmed';
-  let activeFilter = 'all';
-  let activeAfterDarkFilter = 'all';
-  let afterDarkSearchText = '';
-  let afterDarkSort = 'recommended';
-  let searchText = '';
-  let onlySaved = false;
-  const saved = new Set(readArray('blacked-v10-saved').filter(id => productById.has(id)));
-  const cart = new Map(Object.entries(readObject('blacked-v10-cart')).filter(([id, q]) => productById.has(id) && Number(q) > 0).map(([id,q]) => [id, Math.min(99, Math.floor(Number(q)))]));
-  const compared = new Set();
-  let selectedProduct = 'sculpt';
-  let activeDialogProduct = null;
-  let previewMode = 'reference';
-  let userPhoto = null;
-  let userPhotoUrl = null;
-  let userGarment = null;
-  let userGarmentUrl = null;
-  let guideRotation = 0;
-  let guideScale = 1;
-  let guidePosition = {x:.5, y:.52};
-  let dragging = false;
-  let dragStart = null;
-  let referenceImage = null;
-  let referenceImageKey = '';
-  let toastTimer;
+  const safeRead = (key, fallback) => { try { const raw = localStorage.getItem(key); return raw === null ? fallback : JSON.parse(raw); } catch { return fallback; } };
+  const safeWrite = (key, value) => { try { localStorage.setItem(key, JSON.stringify(value)); return true; } catch { return false; } };
+  const safeRemove = key => { try { localStorage.removeItem(key); return true; } catch { return false; } };
+  const escapeHtml = value => String(value ?? '').replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch]));
+  function setImageSource(img, src, alt) {
+    if (!img) return;
+    img.hidden = false;
+    if (alt !== undefined) img.alt = alt;
+    const frame = img.closest('.media-frame, .product-media, .gallery-open, .detail-image');
+    const fallback = frame?.querySelector('.media-fallback');
+    if (fallback) fallback.hidden = true;
+    frame?.classList.remove('asset-unavailable');
+    img.src = src;
+  }
+  const allProducts = C.products;
+  const productById = new Map(allProducts.map(product => [product.id, product]));
+  const state = {
+    view: 'home',
+    activeProductId: 'signature',
+    detailProductId: null,
+    wishlist: new Set([
+      ...(Array.isArray(safeRead(STORAGE.wishlist, [])) ? safeRead(STORAGE.wishlist, []) : []),
+      ...(Array.isArray(safeRead(STORAGE.legacyWishlist, [])) ? safeRead(STORAGE.legacyWishlist, []) : [])
+    ].filter(value => typeof value === 'string')),
+    compare: [],
+    bag: Array.isArray(safeRead(STORAGE.bag, [])) ? safeRead(STORAGE.bag, []).filter(item => item && typeof item === 'object') : [],
+    photoUrl: null,
+    fitNote: (() => { const value = safeRead('blacked31FitNote', null); return value && typeof value === 'object' && !Array.isArray(value) ? { label: typeof value.label === 'string' ? value.label.slice(0,100) : '', notes: typeof value.notes === 'string' ? value.notes.slice(0,2000) : '' } : null; })(),
+    lastDirtyPrompt: null,
+    dirtyCategory: 'flirting',
+    dirtyRotation: 0,
+    wheelRotations: { dildo: 0, plug: 0, boyfriend: 0 },
+    measureUnit: 'cm',
+    lightboxItems: [],
+    lightboxIndex: 0
+  };
 
-  function readArray(key) { try { const v = JSON.parse(localStorage.getItem(key) || '[]'); return Array.isArray(v) ? v : []; } catch (_) { return []; } }
-  function readObject(key) { try { const v = JSON.parse(localStorage.getItem(key) || '{}'); return v && typeof v === 'object' && !Array.isArray(v) ? v : {}; } catch (_) { return {}; } }
-  function persist(key, val) { try { localStorage.setItem(key, JSON.stringify(val)); return true; } catch (_) { toast('This browser blocked saving. The feature will work until you close this page.'); return false; } }
-  function toast(message) { const el = $('#toast'); if (!el) return; el.textContent = message; el.classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => el.classList.remove('show'), 2800); }
-  function categoryName(p) { return p.category === 'lingerie' ? 'Intimates' : p.category === 'toys' ? 'Personal wellness' : p.category === 'inspiration' ? 'External inspiration' : 'Care & accessories'; }
-  function fallbackImage(p) { return image(p.fallback || (p.category === 'lingerie' ? 'assets/placeholder-lingerie.svg' : p.category === 'toys' ? 'assets/bullet-massager.svg' : 'assets/lube-care.svg')); }
-  function imgMarkup(p, extra = '') { const imageClass = (p.category === 'toys' || p.category === 'care') ? 'wellness-product-image' : 'catalog-product-image'; return `<img class="${imageClass}" ${extra} src="${image(p.image)}" alt="${escapeHTML(p.name)}" width="500" height="620" decoding="async" loading="lazy" onerror="this.onerror=null;this.src='${fallbackImage(p)}'">`; }
-  function escapeHTML(value) { return String(value).replace(/[&<>"']/g, ch => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[ch])); }
-
-  // Age gate. This is a respectful front-end confirmation, not identity verification.
-  const ageGate = $('#ageGate');
-  const underage = $('#underageScreen');
-  try { if (localStorage.getItem('blacked-adult-confirmed') === 'yes') ageGate.hidden = true; } catch (_) {}
-  $('#ageConfirm').addEventListener('click', () => { try { localStorage.setItem('blacked-adult-confirmed','yes'); } catch (_) {} ageGate.hidden = true; toast('Welcome to BLACKED.'); });
-  $('#ageDecline').addEventListener('click', () => { ageGate.hidden = true; underage.hidden = false; });
-  $('#returnAge').addEventListener('click', () => { underage.hidden = true; ageGate.hidden = false; });
-
-  // Responsive navigation.
+  const nav = $('#primaryNav');
   const menuToggle = $('#menuToggle');
-  const mainNav = $('#mainNav');
-  menuToggle.addEventListener('click', () => { const open = menuToggle.getAttribute('aria-expanded') !== 'true'; menuToggle.setAttribute('aria-expanded', String(open)); menuToggle.setAttribute('aria-label', open ? 'Close navigation' : 'Open navigation'); mainNav.classList.toggle('open', open); });
-  $$('a', mainNav).forEach(a => a.addEventListener('click', () => { menuToggle.setAttribute('aria-expanded','false'); menuToggle.setAttribute('aria-label','Open navigation'); mainNav.classList.remove('open'); }));
-
-  function productCard(p) {
-    const isSaved = saved.has(p.id), isCompared = compared.has(p.id);
-    const status = p.category === 'inspiration' ? 'REFERENCE' : p.concept ? 'CONCEPT' : 'CAMPAIGN';
-    return `<article class="product-card" data-product-card="${p.id}">
-      <button class="product-image" type="button" data-open-product="${p.id}" aria-label="View ${escapeHTML(p.name)} details">${imgMarkup(p)}<span class="product-status">${status}</span></button>
-      <div class="product-body"><p class="product-category">${escapeHTML(p.label)}</p><h3>${escapeHTML(p.name)}</h3><p class="product-desc">${escapeHTML(p.desc)}</p><p class="product-price">${moneyOrStatus()}</p>
-      <div class="product-actions"><button class="btn btn-dark" type="button" data-add-cart="${p.id}">Add to demo bag</button><button class="save-btn ${isSaved?'saved':''}" type="button" data-save="${p.id}" aria-label="${isSaved?'Unsave':'Save'} ${escapeHTML(p.name)}" aria-pressed="${isSaved}">${isSaved?'♥':'♡'}</button></div>
-      <button class="compare-btn ${isCompared?'selected':''}" type="button" data-compare="${p.id}" aria-pressed="${isCompared}" style="width:100%;margin-top:7px;font-size:10px">${isCompared?'✓ Added to compare':'+ Compare'}</button>${p.viewer360?'<button class="spin360-card-link" type="button" data-view-360>View 360° angle demo ↗</button>':''}</div></article>`;
+  const navButtons = $$('[data-view]');
+  const views = $$('[data-page]');
+  const toastEl = $('#toast');
+  let toastTimer = 0;
+  function toast(message) {
+    if (!toastEl) return;
+    toastEl.textContent = message;
+    toastEl.hidden = false;
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(() => { toastEl.hidden = true; }, 2600);
   }
-  function renderProducts() {
-    const intimateCount = products.filter(p => p.category === 'lingerie').length;
-    const matched = products.filter(p => {
-      let filterMatch;
-      if (onlySaved) filterMatch = true;
-      else if (activeFilter === 'all') filterMatch = p.category === 'lingerie';
-      else if (activeFilter === 'concept') filterMatch = p.category === 'lingerie' && p.concept;
-      else if (activeFilter === 'inspiration') filterMatch = p.category === 'inspiration';
-      else filterMatch = p.category === 'lingerie';
-      const query = searchText.trim().toLowerCase();
-      const searchMatch = !query || [p.name,p.desc,p.label,p.category,p.searchTerms||''].join(' ').toLowerCase().includes(query);
-      const savedMatch = !onlySaved || saved.has(p.id);
-      return filterMatch && searchMatch && savedMatch;
-    });
-    $('#productGrid').innerHTML = matched.map(productCard).join('');
-    $('#emptyState').hidden = matched.length > 0;
-    $('#allCount').textContent = intimateCount;
-    $('#wishlistCount').textContent = saved.size;
-    $('#filterRow').querySelectorAll('[data-filter]').forEach(button => {
-      const active = !onlySaved && button.dataset.filter === activeFilter;
-      button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
-    });
-    $('#wishlistJump').classList.toggle('saved-view', onlySaved);
-    updateCompare(); updateCartUI();
-    renderAfterDarkProducts();
-  }
-  $('#filterRow').addEventListener('click', e => { const btn = e.target.closest('[data-filter]'); if (!btn) return; activeFilter = btn.dataset.filter; onlySaved = false; renderProducts(); });
-  $('#productSearch').addEventListener('input', e => { searchText = e.target.value; $('#clearSearch').hidden = !searchText; renderProducts(); });
-  $('#clearSearch').addEventListener('click', () => { $('#productSearch').value = ''; searchText = ''; $('#clearSearch').hidden = true; renderProducts(); $('#productSearch').focus(); });
-  $('#wishlistJump').addEventListener('click', () => { onlySaved = !onlySaved; activeFilter = 'all'; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true; renderProducts(); $('#collection').scrollIntoView({behavior:'smooth'}); toast(onlySaved ? 'Showing your saved items.' : 'Showing the full collection.'); });
-  $('#wellnessShop').addEventListener('click', () => { activeAfterDarkFilter='all'; renderAfterDarkProducts(); });
 
-  function toggleSave(id) { if (!productById.has(id)) return; if (saved.has(id)) { saved.delete(id); toast('Removed from saved styles.'); } else { saved.add(id); toast('Saved on this device.'); } persist('blacked-v10-saved',[...saved]); renderProducts(); if (activeDialogProduct === id) syncDialogSave(); }
-  function addToCart(id) { if (!productById.has(id)) return; cart.set(id, Math.min(99,(cart.get(id)||0)+1)); persist('blacked-v10-cart',Object.fromEntries(cart)); renderProducts(); toast(`${productById.get(id).name} added to your demo bag.`); openCart(); }
-  function toggleCompare(id) { if (compared.has(id)) compared.delete(id); else { if (compared.size >= 3) { toast('Compare up to three items at a time.'); return; } compared.add(id); } renderProducts(); }
-  $('#productGrid').addEventListener('click', e => {
-    const add = e.target.closest('[data-add-cart]'); if (add) return addToCart(add.dataset.addCart);
-    const save = e.target.closest('[data-save]'); if (save) return toggleSave(save.dataset.save);
-    const compare = e.target.closest('[data-compare]'); if (compare) return toggleCompare(compare.dataset.compare);
-    const detail = e.target.closest('[data-open-product]'); if (detail) openProductDialog(detail.dataset.openProduct);
+  function activateView(name, options = {}) {
+    const target = views.find(view => view.dataset.page === name);
+    if (!target) return false;
+    state.view = name;
+    views.forEach(view => {
+      const active = view === target;
+      view.hidden = !active;
+      view.classList.toggle('active', active);
+      view.setAttribute('aria-hidden', String(!active));
+    });
+    navButtons.forEach(button => {
+      const active = button.dataset.view === name;
+      button.classList.toggle('active', active);
+      if (active) button.setAttribute('aria-current', 'page');
+      else button.removeAttribute('aria-current');
+    });
+    nav?.classList.remove('open');
+    menuToggle?.setAttribute('aria-expanded', 'false');
+    if (options.updateHash !== false && history.replaceState && location.protocol !== 'about:') {
+      history.replaceState(null, '', `#${name}`);
+    }
+    if (options.scroll !== false) window.scrollTo({ top: 0, behavior: options.behavior || 'auto' });
+    return true;
+  }
+  navButtons.forEach(button => button.addEventListener('click', () => activateView(button.dataset.view)));
+  $$('[data-go]').forEach(button => button.addEventListener('click', () => {
+    activateView(button.dataset.go);
+    const category = button.dataset.dirtyCategory;
+    if (category && C.dirtyCategories[category]) selectDirtyCategory(category);
+  }));
+  $$('[data-home-link]').forEach(link => link.addEventListener('click', event => { event.preventDefault(); activateView('home'); }));
+  menuToggle?.addEventListener('click', () => {
+    const isOpen = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', String(isOpen));
   });
-
-  // The After Dark catalogue is a separate destination from the Intimates catalogue.
-  function adultType(p) {
-    if (['dildo','obsidian-xl'].includes(p.id)) return 'dildo';
-    if (p.id === 'plug') return 'anal';
-    if (p.id === 'pulse') return 'massager';
-    if (p.category === 'care') return 'care';
-    return 'other';
-  }
-  function renderAfterDarkProducts() {
-    const grid = $('#afterDarkGrid');
-    if (!grid) return;
-    const allAdult = products.filter(p => p.category === 'toys' || p.category === 'care');
-    let matched = allAdult.filter(p => {
-      const type = adultType(p);
-      const filterMatch = activeAfterDarkFilter === 'all' || (activeAfterDarkFilter === 'care' ? type === 'care' : type === activeAfterDarkFilter);
-      const q = afterDarkSearchText.trim().toLowerCase();
-      const searchMatch = !q || [p.name,p.desc,p.label,p.material,p.searchTerms||'',type].join(' ').toLowerCase().includes(q);
-      return filterMatch && searchMatch;
-    });
-    if (afterDarkSort === 'az') matched = matched.slice().sort((a,b) => a.name.localeCompare(b.name));
-    grid.innerHTML = matched.map(productCard).join('');
-    $('#afterDarkEmpty').hidden = matched.length > 0;
-    $('#afterDarkCount').textContent = allAdult.length;
-    const labels = { all: 'all After Dark concepts and care items', dildo: 'dildos and toys', anal: 'anal-wellness concepts', massager: 'massager concepts', care: 'lubricant, care and storage concepts' };
-    $('#afterDarkActiveFilter').textContent = `Showing ${matched.length} ${labels[activeAfterDarkFilter] || 'items'}` + (afterDarkSearchText.trim() ? ` matching “${afterDarkSearchText.trim()}”` : '');
-    $('#afterDarkFilters')?.querySelectorAll('[data-after-filter]').forEach(button => {
-      const active = button.dataset.afterFilter === activeAfterDarkFilter;
-      button.classList.toggle('active', active); button.setAttribute('aria-pressed', String(active));
-    });
-    updateCartUI();
-  }
-  $('#afterDarkGrid').addEventListener('click', e => {
-    const view360 = e.target.closest('[data-view-360]'); if (view360) { $('#product-360').scrollIntoView({behavior:'smooth',block:'start'}); return; }
-    const add = e.target.closest('[data-add-cart]'); if (add) return addToCart(add.dataset.addCart);
-    const save = e.target.closest('[data-save]'); if (save) return toggleSave(save.dataset.save);
-    const compare = e.target.closest('[data-compare]'); if (compare) return toggleCompare(compare.dataset.compare);
-    const detail = e.target.closest('[data-open-product]'); if (detail) openProductDialog(detail.dataset.openProduct);
+  window.addEventListener('hashchange', () => {
+    const requested = decodeURIComponent(location.hash.slice(1));
+    activateView(requested || 'home', { updateHash: false, scroll: false });
   });
-  $('#afterDarkFilters').addEventListener('click', e => { const button = e.target.closest('[data-after-filter]'); if (!button) return; activeAfterDarkFilter = button.dataset.afterFilter; renderAfterDarkProducts(); });
-  $('#afterDarkSearch').addEventListener('input', e => { afterDarkSearchText = e.target.value; $('#clearAfterDarkSearch').hidden = !afterDarkSearchText; renderAfterDarkProducts(); });
-  $('#clearAfterDarkSearch').addEventListener('click', () => { $('#afterDarkSearch').value = ''; afterDarkSearchText = ''; $('#clearAfterDarkSearch').hidden = true; renderAfterDarkProducts(); $('#afterDarkSearch').focus(); });
-  $('#afterDarkSort').addEventListener('change', e => { afterDarkSort = e.target.value; renderAfterDarkProducts(); });
+  const initialView = decodeURIComponent(location.hash.slice(1));
+  activateView(views.some(view => view.dataset.page === initialView) ? initialView : 'home', { updateHash: false, scroll: false });
 
-  function updateCompare() {
-    const section = $('#compareSection'); const grid = $('#compareGrid');
-    section.hidden = compared.size === 0;
-    if (!compared.size) { grid.innerHTML=''; return; }
-    grid.innerHTML = [...compared].map(id => { const p=productById.get(id); if (!p) return ''; return `<article class="compare-item">${imgMarkup(p)}<h4>${escapeHTML(p.name)}</h4><p>${escapeHTML(categoryName(p))} · ${p.concept?'Concept / availability unconfirmed':'Campaign reference'}</p><p>${moneyOrStatus()}</p><button class="btn btn-ghost btn-small" data-compare-remove="${id}">Remove</button></article>`; }).join('');
+  // Any image failure becomes a neutral labelled placeholder; never swap in an unrelated asset.
+  document.addEventListener('error', event => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    img.hidden = true;
+    if (img.id === 'fitOverlayImage') { $('#overlayAvailability').textContent='Mapped overlay image unavailable. Reference/local photo remains available; no substitute overlay is used.'; return; }
+    if (img.id === 'fitUserPhoto') { $('#fitStageStatus').textContent='Local photo preview could not be rendered; choose another file.'; return; }
+    const frame = img.closest('.media-frame, .product-media, .gallery-open, .detail-image');
+    const fallback = frame?.querySelector('.media-fallback');
+    if (fallback) fallback.hidden = false;
+    frame?.classList.add('asset-unavailable');
+  }, true);
+  document.addEventListener('load', event => {
+    const img = event.target;
+    if (!(img instanceof HTMLImageElement)) return;
+    if (img.complete && img.naturalWidth > 0) {
+      const frame = img.closest('.media-frame, .product-media, .gallery-open, .detail-image');
+      const fallback = frame?.querySelector('.media-fallback');
+      if (fallback) fallback.hidden = true;
+      frame?.classList.remove('asset-unavailable');
+    }
+  }, true);
+
+  function persistWishlist() {
+    const items = [...state.wishlist];
+    const a = safeWrite(STORAGE.wishlist, items);
+    // Keep the previous Fusion 3.1 key compatible on the same GitHub Pages origin.
+    const b = safeWrite(STORAGE.legacyWishlist, items);
+    if (!a && !b) toast('Browser storage is blocked; saved style works only for this session.');
   }
-  $('#compareGrid').addEventListener('click', e => { const b=e.target.closest('[data-compare-remove]'); if (b) { compared.delete(b.dataset.compareRemove); renderProducts(); } });
-  $('#clearCompare').addEventListener('click', () => { compared.clear(); renderProducts(); });
-
-  // Product details dialog.
+  function renderProductCard(product, savedView = false) {
+    const saved = state.wishlist.has(product.id);
+    return `<article class="product-card" data-product-id="${escapeHtml(product.id)}">
+      <button class="product-media media-frame" type="button" data-details="${escapeHtml(product.id)}" aria-label="Open details for ${escapeHtml(product.name)}">
+        <img loading="lazy" decoding="async" src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)} — ${escapeHtml(product.tag)}" crossorigin="anonymous">
+        <span class="media-fallback" hidden>Original image unavailable. Check the asset source or try again later.</span>
+        <span class="media-badge">${escapeHtml(product.tag)}</span>
+        <span class="save-button" role="button" aria-label="${saved ? 'Remove saved style' : 'Save style'} ${escapeHtml(product.name)}" aria-pressed="${saved}" data-save="${escapeHtml(product.id)}">${saved ? '♥' : '♡'}</span>
+      </button>
+      <div class="product-copy"><h3>${escapeHtml(product.name)}</h3><p>${escapeHtml(product.description)}</p><div class="product-actions">
+        <button class="small-button" type="button" data-details="${escapeHtml(product.id)}">Details</button>
+        <button class="small-button" type="button" data-compare="${escapeHtml(product.id)}" aria-pressed="${state.compare.includes(product.id)}">${state.compare.includes(product.id) ? 'Compared ✓' : 'Compare'}</button>
+        ${savedView ? `<button class="small-button" type="button" data-remove-save="${escapeHtml(product.id)}">Remove</button>` : ''}
+      </div></div></article>`;
+  }
+  function renderCatalog() {
+    const search = ($('#catalogSearch')?.value || '').trim().toLocaleLowerCase();
+    const category = $('#catalogCategory')?.value || 'all';
+    const sort = $('#catalogSort')?.value || 'featured';
+    let items = allProducts.filter(product => {
+      const content = `${product.name} ${product.description} ${product.category} ${product.tag}`.toLocaleLowerCase();
+      return (!search || content.includes(search)) && (category === 'all' || product.category === category);
+    });
+    if (sort === 'name-asc') items.sort((a,b) => a.name.localeCompare(b.name));
+    if (sort === 'name-desc') items.sort((a,b) => b.name.localeCompare(a.name));
+    $('#catalogCount').textContent = `${items.length} references`;
+    $('#catalogGrid').innerHTML = items.map(product => renderProductCard(product)).join('');
+    $('#catalogEmpty').hidden = items.length > 0;
+    renderWishlist();
+    renderCompare();
+  }
+  function renderWishlist() {
+    const known = [...state.wishlist].map(id => productById.get(id)).filter(Boolean);
+    $('#wishlistCount').textContent = `${state.wishlist.size} saved`;
+    $('#wishlistGrid').innerHTML = known.length ? known.map(product => renderProductCard(product, true)).join('') : '<p class="empty-state">No mapped saved styles to display yet. Existing unknown saved IDs remain retained in browser storage.</p>';
+  }
+  function toggleWishlist(id) {
+    if (!productById.has(id)) return;
+    if (state.wishlist.has(id)) { state.wishlist.delete(id); toast('Removed from saved styles.'); }
+    else { state.wishlist.add(id); toast('Saved on this device.'); }
+    persistWishlist(); renderCatalog(); updateDialogButtons();
+  }
+  function renderCompare() {
+    const known = state.compare.map(id => productById.get(id)).filter(Boolean);
+    const grid = $('#compareGrid');
+    if (!known.length) { grid.innerHTML = '<p class="empty-state">Add references using “Compare”.</p>'; return; }
+    grid.innerHTML = known.map(product => `<article class="compare-item"><img src="${escapeHtml(product.image)}" alt="${escapeHtml(product.name)}" loading="lazy" crossorigin="anonymous"><h3>${escapeHtml(product.name)}</h3><p><strong>Category:</strong> ${escapeHtml(product.category)}</p><p><strong>Type:</strong> ${escapeHtml(product.type)}</p><p>Price, sizes, material, stock: <strong>Not confirmed</strong></p><button class="small-button" type="button" data-remove-compare="${escapeHtml(product.id)}">Remove</button></article>`).join('');
+  }
+  function toggleCompare(id) {
+    if (!productById.has(id)) return;
+    if (state.compare.includes(id)) state.compare = state.compare.filter(item => item !== id);
+    else if (state.compare.length >= 3) { toast('Compare up to three references at a time.'); return; }
+    else state.compare.push(id);
+    renderCatalog(); renderCompare(); updateDialogButtons();
+    toast(state.compare.includes(id) ? 'Added to comparison.' : 'Removed from comparison.');
+  }
   const productDialog = $('#productDialog');
-  function openProductDialog(id) { const p=productById.get(id); if(!p) return; activeDialogProduct=id; const ext=$('#dialogExternal'); ext.hidden=!p.externalUrl; if(p.externalUrl){ext.href=p.externalUrl;} else {ext.removeAttribute('href');} $('#dialogImage').src=image(p.image); $('#dialogImage').alt=p.name; $('#dialogImage').onerror=()=>{ $('#dialogImage').onerror=null; $('#dialogImage').src=fallbackImage(p); }; $('#dialogCategory').textContent=p.label; $('#dialogTitle').textContent=p.name; $('#dialogDescription').textContent=p.desc+' '+p.note; $('#dialogPrice').textContent=moneyOrStatus(); $('#dialogMaterial').textContent=p.material; syncDialogSave(); if (typeof productDialog.showModal==='function') productDialog.showModal(); else productDialog.setAttribute('open',''); document.body.classList.add('modal-open'); }
-  function syncDialogSave() { const b=$('#dialogSave'); const yes=saved.has(activeDialogProduct); b.textContent=yes?'♥ Saved on this device':'♡ Save style'; b.setAttribute('aria-pressed',String(yes)); }
-  $('#closeProduct').addEventListener('click', closeProductDialog);
-  productDialog.addEventListener('click', e => { if(e.target===productDialog) closeProductDialog(); });
-  productDialog.addEventListener('close', () => document.body.classList.remove('modal-open'));
-  function closeProductDialog() { if(typeof productDialog.close==='function' && productDialog.open) productDialog.close(); else productDialog.removeAttribute('open'); document.body.classList.remove('modal-open'); }
-  $('#dialogAdd').addEventListener('click', () => { const id=activeDialogProduct; closeProductDialog(); if(id) addToCart(id); });
-  $('#dialogSave').addEventListener('click', () => { if(activeDialogProduct) toggleSave(activeDialogProduct); });
-
-  // Local demo cart. No live order, stock or payment API is configured.
-  function openCart() { $('#cartDrawer').hidden=false; $('#drawerBackdrop').hidden=false; document.body.classList.add('modal-open'); renderCart(); }
-  function closeCart() { $('#cartDrawer').hidden=true; $('#drawerBackdrop').hidden=true; document.body.classList.remove('modal-open'); }
-  $('#openCart').addEventListener('click',openCart); $('#closeCart').addEventListener('click',closeCart); $('#drawerBackdrop').addEventListener('click',closeCart);
-  function updateCartUI() { const total=[...cart.values()].reduce((a,b)=>a+b,0); $('#cartCount').textContent=total; $('#drawerCount').textContent=total; }
-  function renderCart() {
-    const items=$('#cartItems'); const entries=[...cart.entries()].filter(([id,q])=>productById.has(id)&&q>0);
-    if(!entries.length) { items.innerHTML='<div class="cart-empty"><div style="font-size:32px;color:#b46a85">♡</div><p>Your bag is empty.</p><p>Save a style or add a concept to explore the demo bag.</p></div>'; updateCartUI(); return; }
-    items.innerHTML=entries.map(([id,q])=>{const p=productById.get(id); return `<article class="cart-item">${imgMarkup(p)}<div><h3>${escapeHTML(p.name)}</h3><p>${moneyOrStatus()}</p><div class="qty-controls"><button data-qty="-1" data-id="${id}" aria-label="Decrease quantity">−</button><span>${q}</span><button data-qty="1" data-id="${id}" aria-label="Increase quantity">+</button></div></div><button class="remove-item" data-remove-cart="${id}">Remove</button></article>`;}).join(''); updateCartUI();
+  function openProduct(id) {
+    const product = productById.get(id);
+    if (!product) return;
+    state.detailProductId = id;
+    $('#productDialogTitle').textContent = product.name;
+    setImageSource($('#productDialogImage'), product.image, `${product.name} — reference preview`);
+    $('#productDialogType').textContent = product.tag;
+    $('#productDialogDescription').textContent = product.description;
+    $('#productDialogDetails').textContent = product.details;
+    updateDialogButtons();
+    openDialog(productDialog);
   }
-  $('#cartItems').addEventListener('click',e=>{const qty=e.target.closest('[data-qty]');if(qty){const id=qty.dataset.id,next=(cart.get(id)||0)+Number(qty.dataset.qty);if(next<=0)cart.delete(id);else cart.set(id,Math.min(99,next));persist('blacked-v10-cart',Object.fromEntries(cart));renderCart();renderProducts();return;}const remove=e.target.closest('[data-remove-cart]');if(remove){cart.delete(remove.dataset.removeCart);persist('blacked-v10-cart',Object.fromEntries(cart));renderCart();renderProducts();}});
-  $('#clearCart').addEventListener('click',()=>{cart.clear();persist('blacked-v10-cart',{});renderCart();renderProducts();toast('Demo bag cleared.');});
-  $('#checkoutDemo').addEventListener('click',()=>toast('Online ordering is not connected. Add verified prices, inventory, business details and a secure checkout before accepting orders.'));
+  function updateDialogButtons() {
+    const product = productById.get(state.detailProductId);
+    if (!product) return;
+    $('#saveProductFromDialog').textContent = state.wishlist.has(product.id) ? 'Remove saved style' : 'Save style';
+    $('#compareProductFromDialog').textContent = state.compare.includes(product.id) ? 'Remove from compare' : 'Compare';
+  }
+  function openDialog(dialog) {
+    if (!dialog) return;
+    try { if (!dialog.open) dialog.showModal(); }
+    catch { dialog.setAttribute('open',''); }
+  }
+  function closeDialog(dialog) {
+    if (!dialog) return;
+    try { if (dialog.open) dialog.close(); else dialog.removeAttribute('open'); }
+    catch { dialog.removeAttribute('open'); }
+  }
+  $$('[data-close-dialog]').forEach(button => button.addEventListener('click', () => closeDialog($('#'+button.dataset.closeDialog))));
+  [productDialog, $('#lightboxDialog')].forEach(dialog => dialog?.addEventListener('click', event => { if (event.target === dialog) closeDialog(dialog); }));
 
-  // Style finder: deterministic suggestions only (no AI or fit/medical claims).
-  $('#styleQuiz').addEventListener('submit', e => {
-    e.preventDefault();
-    const category = $('#quizCategory').value;
-    const mood = $('#quizMood').value;
-    let pool = products.filter(p => category === 'lace' ? ['redlace','blacklace','velvet','butterfly','midnight','scarlet','syrn-balconette','syrn-bodysuit'].includes(p.id) : p.category === category);
-    if (category === 'lingerie' && mood === 'comfort') pool = pool.filter(p => ['signature','move','yoga','stretch','together'].includes(p.id));
-    if (category === 'lingerie' && mood === 'lace') pool = pool.filter(p => ['redlace','blacklace','velvet','butterfly','midnight','scarlet','ivory'].includes(p.id));
-    if (category === 'lingerie' && mood === 'bold') pool = pool.filter(p => ['redlace','blacklace','rose','scarlet','midnight'].includes(p.id));
-    if (category === 'lingerie' && mood === 'simple') pool = pool.filter(p => ['signature','ivory','move','together'].includes(p.id));
-    if (category === 'lace' && mood === 'simple') pool = pool.filter(p => ['velvet','ivory','butterfly','midnight'].includes(p.id));
-    if (category === 'toys' && mood === 'simple') pool = pool.filter(p => ['pulse','lube'].includes(p.id));
-    if (!pool.length) pool = products.filter(p => p.category === category);
-    const picks = pool.slice(0,3);
-    $('#quizResults').innerHTML = picks.length ? `<div class=\"quiz-results-grid\">${picks.map(p=>`<article class=\"quiz-result\">${imgMarkup(p)}<div><strong>${escapeHTML(p.name)}</strong><small>${escapeHTML(p.label)} · ${moneyOrStatus()}</small><button type=\"button\" class=\"btn btn-dark btn-small\" data-quiz-open=\"${p.id}\">View details</button></div></article>`).join('')}</div>` : '<p class=\"helper\">No suggestions for that combination yet. Try another preference.</p>';
-    toast('Your style edit is ready.');
+  function renderBag() {
+    const count = state.bag.reduce((sum, item) => sum + Math.max(1, Number(item.qty) || 1), 0);
+    $('#bagCount').textContent = `${count} item${count === 1 ? '' : 's'}`;
+    if (!state.bag.length) { $('#bagPanel').innerHTML = '<p class="empty-state">Your demo bag is empty.</p>'; return; }
+    $('#bagPanel').innerHTML = `<div class="issue-list">${state.bag.map((item,index) => {
+      const id = String(item.id || 'legacy-item'); const name = String(item.name || productById.get(id)?.name || 'Saved demo item');
+      const p = Number(item.price); const qty = Math.max(1, Math.min(99, parseInt(item.qty,10) || 1));
+      return `<div class="issue-item"><div><h3>${escapeHtml(name)}</h3><p>Demo item · no real order. ${Number.isFinite(p) && p > 0 ? 'Sample value ₹'+p.toFixed(0) : 'Price not configured.'}</p><div class="button-row"><button class="small-button" type="button" data-bag-step="${index}" data-step="-1">−</button><span class="chip">Qty ${qty}</span><button class="small-button" type="button" data-bag-step="${index}" data-step="1">+</button><button class="small-button" type="button" data-bag-remove="${index}">Remove</button></div></div></div>`;
+    }).join('')}</div><p class="micro-note">Sample data only. No purchase or checkout is available.</p>`;
+  }
+  function addDemoBag(id) {
+    const product = productById.get(id);
+    if (!product) return;
+    const existing = state.bag.find(item => item.id === id);
+    if (existing) existing.qty = Math.min(99,(Number(existing.qty)||1)+1);
+    else state.bag.push({id, name:product.name, price:0, image:product.image, qty:1, source:'V1 demo'});
+    safeWrite(STORAGE.bag, state.bag); renderBag(); toast('Added to demo bag only—not a real order.');
+  }
+
+  // Style Finder only filters fields explicitly present in the content registry.
+  function claimStatus(product) {
+    if (product.type === 'external-reference') return 'external';
+    if (product.type === 'concept') return 'concept';
+    return 'reference';
+  }
+  function renderStyleFinder() {
+    const category = $('#styleOccasion').value;
+    const type = $('#styleMood').value;
+    const claim = $('#styleColour').value;
+    const matches = allProducts.filter(product =>
+      (category === 'all' || product.category === category) &&
+      (type === 'all' || product.type === type) &&
+      (claim === 'all' || claimStatus(product) === claim)
+    );
+    $('#styleFinderResults').innerHTML = matches.slice(0,8).map(product => renderProductCard(product)).join('');
+    $('#styleFinderEmpty').hidden = matches.length > 0;
+    $('#styleFinderStatus').textContent = `${matches.length} reference(s) match the selected, recorded catalogue fields. Unknown colour, fabric and fit attributes are not inferred.`;
+  }
+  $('#runStyleFinder').addEventListener('click', renderStyleFinder);
+  $('#resetStyleFinder').addEventListener('click', () => {
+    $('#styleOccasion').value='all'; $('#styleMood').value='all'; $('#styleColour').value='all'; renderStyleFinder();
   });
-  $('#quizResults').addEventListener('click', e => { const b=e.target.closest('[data-quiz-open]'); if(b) openProductDialog(b.dataset.quizOpen); });
+  ['styleOccasion','styleMood','styleColour'].forEach(id => $('#'+id).addEventListener('change', renderStyleFinder));
 
-  // Private, optional Wellness Studio questionnaire. Answers stay in page memory only:
-  // no localStorage, cookies, network requests, or account profile are used for these answers.
-  const comfortForm = $('#comfortFinderForm');
-  const previousSizePanel = $('#previousSizePanel');
-  const previousUseQuestion = $('#previousUseQuestion');
-  const sizeGoalQuestion = $('#sizeGoalQuestion');
-  const comfortResults = $('#comfortFinderResults');
-  const comfortValidation = $('#comfortValidation');
-  function refreshWellnessQuestions() {
-    if (!comfortForm) return;
-    const category = comfortForm.querySelector('input[name="comfortCategory"]:checked')?.value || '';
-    const isToyQuestionRelevant = ['dildo', 'anal', 'unsure'].includes(category);
-    const previousUse = new FormData(comfortForm).get('previousUse');
-    if (previousUseQuestion) previousUseQuestion.hidden = !isToyQuestionRelevant;
-    if (sizeGoalQuestion) sizeGoalQuestion.hidden = !isToyQuestionRelevant;
-    if (previousSizePanel) previousSizePanel.hidden = !isToyQuestionRelevant || previousUse !== 'yes';
-    if (!isToyQuestionRelevant) {
-      comfortForm.querySelectorAll('input[name="previousUse"], input[name="previousComfort"], input[name="sizeGoal"]').forEach(input => { input.checked = false; });
-    }
-    if (!isToyQuestionRelevant || previousUse !== 'yes') {
-      comfortForm.querySelectorAll('input[name="previousComfort"]').forEach(input => { input.checked = false; });
-      const diameterInput = $('#previousDiameter'); const lengthInput = $('#previousLength');
-      if (diameterInput) diameterInput.value = ''; if (lengthInput) lengthInput.value = '';
-    }
+  // Build-a-set / Style Board: the board is a visual concept, not a claim of compatibility or availability.
+  function fillStyleBoardSelects() {
+    const options = allProducts.map(product => `<option value="${escapeHtml(product.id)}">${escapeHtml(product.name)} · ${escapeHtml(product.tag)}</option>`).join('');
+    $('#boardPrimary').innerHTML = options; $('#boardAccent').innerHTML = options;
+    $('#boardPrimary').value = 'signature'; $('#boardAccent').value = 'midnight';
+    renderStyleBoard();
   }
-  comfortForm?.querySelectorAll('input[name="comfortCategory"]').forEach(input => input.addEventListener('change', refreshWellnessQuestions));
-  comfortForm?.querySelectorAll('input[name="previousUse"]').forEach(input => input.addEventListener('change', refreshWellnessQuestions));
-
-  function wellnessCandidateIds(category) {
-    if (category === 'dildo') return ['dildo', 'obsidian-xl'];
-    if (category === 'anal') return ['plug'];
-    if (category === 'external') return ['pulse'];
-    if (category === 'care') return ['lube', 'cleaner', 'pouch'];
-    if (category === 'intimates') return [];
-    return ['pulse', 'dildo', 'plug'];
+  function renderStyleBoard() {
+    const primary = productById.get($('#boardPrimary').value) || allProducts[0];
+    const accent = productById.get($('#boardAccent').value) || allProducts[1];
+    setImageSource($('#boardPrimaryImage'),primary.image,`${primary.name} reference`);
+    setImageSource($('#boardAccentImage'),accent.image,`${accent.name} reference`);
+    $('#boardPrimaryName').textContent = primary.name; $('#boardAccentName').textContent = accent.name;
+    $('#styleBoardStatus').textContent = `Board contains ${primary.name} + ${accent.name}. Both are references/concepts; fit, matching, stock and price are not confirmed.`;
   }
-  function comfortCard(product) {
-    return `<article class="comfort-product-card">
-      <div class="comfort-product-image">${imgMarkup(product)}</div>
-      <div class="comfort-product-copy"><p class="product-category">${escapeHTML(product.label)}</p><h4>${escapeHTML(product.name)}</h4><p>${escapeHTML(product.desc)}</p><button type="button" class="btn btn-ghost btn-small" data-comfort-open="${escapeHTML(product.id)}">View concept details</button></div>
-    </article>`;
-  }
-  function formatCm(value) {
-    return Number(value).toLocaleString(undefined, {maximumFractionDigits:1, minimumFractionDigits:0});
-  }
-  comfortForm?.addEventListener('submit', e => {
-    e.preventDefault();
-    if (!comfortResults) return;
-    if (comfortValidation) { comfortValidation.hidden = true; comfortValidation.textContent = ''; }
-    const data = new FormData(comfortForm);
-    const category = String(data.get('comfortCategory') || 'unsure');
-    const previousUse = String(data.get('previousUse') || 'skip');
-    const comfort = String(data.get('previousComfort') || 'skip');
-    const sizeGoal = String(data.get('sizeGoal') || 'unsure');
-    const diameterRaw = $('#previousDiameter')?.value.trim() || '';
-    const lengthRaw = $('#previousLength')?.value.trim() || '';
-    const diameter = diameterRaw === '' ? null : Number(diameterRaw);
-    const length = lengthRaw === '' ? null : Number(lengthRaw);
-
-    // All fields remain optional, but values that are entered must be plausible and parseable.
-    if ((diameter !== null && (!Number.isFinite(diameter) || diameter < 0.5 || diameter > 10)) ||
-        (length !== null && (!Number.isFinite(length) || length < 1 || length > 35))) {
-      if (comfortValidation) {
-        comfortValidation.textContent = 'Please check the optional dimensions: widest diameter 0.5–10 cm and usable length 1–35 cm. You can also leave them blank.';
-        comfortValidation.hidden = false;
-      }
-      return;
-    }
-    const hasDimensions = diameter !== null || length !== null;
-    let title = 'Your comfort guide';
-    let guidance = '';
-    let safety = '';
-    const note = 'This is a preference guide, not a medical assessment or a promise of fit. The wellness products currently shown are concepts and do not have verified dimensions.';
-
-    if (category === 'intimates') {
-      title = 'Your innerwear fit next step';
-      guidance = 'Use the clothing size guide to compare bust, waist and hip measurements with a verified garment chart. Hip circumference is more useful for clothing fit than a label such as “ass size”.';
-      safety = 'The current BLACKED sample chart is for demonstration only. Check actual garment measurements before choosing a size.';
-    } else if (category === 'care') {
-      title = 'Care-first shortlist';
-      guidance = 'Prioritise the correct product-specific cleaning instructions, material compatibility and ingredient details. Do not assume one cleaner or lubricant works with every material.';
-      safety = 'Supplier specifications and availability are not yet verified for the care concepts in this prototype.';
-    } else if (comfort === 'pain' && ['dildo', 'anal', 'unsure'].includes(category)) {
-      title = 'Let comfort lead';
-      guidance = 'Because you selected pain or significant discomfort, this guide will not recommend sizing up. Pause use if something hurts; do not force insertion or keep going through pain.';
-      safety = 'If pain is repeated or persistent, or there is bleeding or injury, stop and seek advice from a qualified healthcare professional.';
-    } else if (previousUse === 'first' && ['dildo', 'anal', 'unsure'].includes(category)) {
-      title = 'A gentle place to start';
-      guidance = 'You do not need to know a previous size. Compare products only when maximum diameter and usable length are listed. A compact, tapered design may be easier to handle for some people, but comfort varies person to person.';
-      safety = category === 'anal'
-        ? 'For anal use, choose a toy specifically designed for it with a secure flared base, use suitable lubricant, go slowly and stop if there is pain.'
-        : 'Use products only as intended, follow the manufacturer’s instructions, and stop if there is pain or significant discomfort.';
-    } else {
-      if (hasDimensions && previousUse === 'yes') {
-        const parts = [];
-        if (diameter !== null) parts.push(`about ${formatCm(diameter)} cm widest diameter`);
-        if (length !== null) parts.push(`about ${formatCm(length)} cm usable length`);
-        guidance = `Your own comparison reference from last time: ${parts.join(' and ')}. These are your remembered measurements, not a guaranteed safe size or a product match.`;
-      } else if (previousUse === 'yes') {
-        guidance = 'You can use the comfort you remember without entering measurements. If you want a more useful comparison, check the previous product’s packaging or specifications for maximum diameter and usable length.';
-      } else {
-        guidance = 'Choose “compare sizes” only when the product listing gives actual dimensions. You can skip private experience questions and browse concepts without sharing measurements.';
-      }
-      if (comfort === 'too-much') {
-        guidance += ' Since you marked the previous size as too much, prioritise a smaller or easier-to-control option rather than sizing up.';
-      } else if (sizeGoal === 'compact') {
-        guidance += ' Your current preference is a compact option; look for clearly listed dimensions and an easy-to-control shape.';
-      } else if (sizeGoal === 'similar') {
-        guidance += ' To compare with a familiar size, match the manufacturer’s listed maximum diameter and usable length—not just labels such as “medium” or “XL”.';
-      } else if (sizeGoal === 'larger') {
-        guidance += ' You selected larger options to explore. A past size does not guarantee that a larger one will be comfortable; compare verified dimensions carefully and progress gradually.';
-      } else {
-        guidance += ' Your best next step is comparing verified dimensions, material and care information before selecting any product.';
-      }
-      safety = category === 'anal'
-        ? 'For anal use, choose a product specifically designed for it with a secure flared base, use suitable lubricant and stop if there is pain.'
-        : 'Use every product as intended, follow its care instructions and stop if there is pain or significant discomfort.';
-    }
-
-    const concepts = wellnessCandidateIds(category).map(id => productById.get(id)).filter(Boolean);
-    const referenceLine = hasDimensions && previousUse === 'yes' && ['dildo', 'anal', 'unsure'].includes(category)
-      ? `<p class="comfort-reference"><strong>Your private size reference:</strong> ${diameter !== null ? `${formatCm(diameter)} cm diameter` : 'diameter not entered'} · ${length !== null ? `${formatCm(length)} cm usable length` : 'usable length not entered'}. This answer is not saved after leaving or refreshing the page.</p>`
-      : '';
-    const browseFilter = category === 'intimates' ? 'lingerie' : (category === 'care' ? 'care' : 'toys');
-    const browseLabel = category === 'intimates' ? 'Open innerwear collection →' : category === 'care' ? 'Browse care concepts →' : 'Browse relevant concepts →';
-    comfortResults.innerHTML = `<div class="comfort-result-heading"><span class="micro-label">YOUR COMFORT SUMMARY</span><h3>${escapeHTML(title)}</h3><p>${escapeHTML(guidance)}</p>${referenceLine}<div class="comfort-safety-note comfort-result-safety"><strong>Keep in mind</strong><p>${escapeHTML(safety)}</p></div><p class="comfort-result-disclaimer">${escapeHTML(note)}</p><div class="comfort-result-actions"><button type="button" class="btn btn-dark" data-comfort-browse="${browseFilter}">${browseLabel}</button><button type="button" class="btn btn-ghost" id="comfortEditAnswers">Edit answers</button></div></div>${concepts.length ? `<div class="comfort-products-wrap"><h4>Concepts to review</h4><div class="comfort-products-grid">${concepts.map(comfortCard).join('')}</div></div>` : ''}`;
-    comfortResults.hidden = false;
-    comfortResults.scrollIntoView({behavior:'smooth', block:'nearest'});
+  $('#buildStyleBoard').addEventListener('click', () => { renderStyleBoard(); toast('Style board refreshed.'); });
+  $('#boardPrimary').addEventListener('change', renderStyleBoard); $('#boardAccent').addEventListener('change', renderStyleBoard);
+  $('#exportStyleBoardJson').addEventListener('click', () => {
+    const primary=productById.get($('#boardPrimary').value), accent=productById.get($('#boardAccent').value);
+    downloadBlob('blacked-style-board.json',JSON.stringify({schemaVersion:1,type:'reference-board',createdAt:new Date().toISOString(),items:[primary,accent].filter(Boolean).map(p=>({id:p.id,name:p.name,category:p.category,type:p.type,image:p.image,details:p.details})),disclaimer:'Concept board only. Not verified product compatibility, inventory or price.'},null,2));
   });
-  comfortForm?.addEventListener('reset', () => {
-    // Wait until the browser clears the input controls before resetting dependent panels.
-    setTimeout(() => {
-      refreshWellnessQuestions();
-      if (comfortResults) { comfortResults.hidden = true; comfortResults.innerHTML = ''; }
-      if (comfortValidation) { comfortValidation.hidden = true; comfortValidation.textContent = ''; }
-    }, 0);
-  });
-  comfortResults?.addEventListener('click', e => {
-    const open = e.target.closest('[data-comfort-open]');
-    if (open) { openProductDialog(open.dataset.comfortOpen); return; }
-    const browse = e.target.closest('[data-comfort-browse]');
-    if (browse) {
-      const target = browse.dataset.comfortBrowse || 'toys';
-      if (target === 'toys' || target === 'care') {
-        activeAfterDarkFilter = target === 'care' ? 'care' : 'all';
-        afterDarkSearchText = ''; $('#afterDarkSearch').value = ''; $('#clearAfterDarkSearch').hidden = true;
-        renderAfterDarkProducts(); $('#after-dark').scrollIntoView({behavior:'smooth', block:'start'});
-      } else {
-        activeFilter = target === 'lingerie' ? 'all' : target;
-        onlySaved = false; searchText = ''; $('#productSearch').value = ''; $('#clearSearch').hidden = true;
-        renderProducts(); $('#collection').scrollIntoView({behavior:'smooth', block:'start'});
-      }
-      return;
-    }
-    if (e.target.closest('#comfortEditAnswers')) {
-      comfortResults.hidden = true; comfortForm.scrollIntoView({behavior:'smooth', block:'start'});
-    }
-  });
-
-  // Measurement estimator uses a sample chart; it is not a bra band/cup calculator.
-  const sampleRanges = [
-    {size:'XS', bust:[71,76], waist:[56,61], hips:[76,81]}, {size:'S', bust:[76,81], waist:[61,66], hips:[81,86]},
-    {size:'M', bust:[81,86], waist:[66,71], hips:[86,91]}, {size:'L', bust:[86,91], waist:[71,76], hips:[91,97]},
-    {size:'XL', bust:[91,97], waist:[76,81], hips:[97,102]}, {size:'XXL', bust:[97,102], waist:[81,86], hips:[102,107]}
-  ];
-  const sampleSize = (value,key) => { if(value < sampleRanges[0][key][0]) return 'Below XS'; if(value > sampleRanges[sampleRanges.length-1][key][1]) return 'Above XXL'; const found=sampleRanges.find((r,i)=>value>=r[key][0]&&(value<r[key][1]||(i===sampleRanges.length-1&&value<=r[key][1]))); return found?.size || 'Check chart'; };
-  $('#sizeForm').addEventListener('submit', e => { e.preventDefault(); const vals={bust:Number($('#measureBust').value),waist:Number($('#measureWaist').value),hips:Number($('#measureHips').value)}; if(Object.values(vals).some(v=>!Number.isFinite(v)||v<=0)){ $('#sizeResult').textContent='Please enter all three measurements as positive centimetre values.'; return; } const bustSize=sampleSize(vals.bust,'bust'),waistSize=sampleSize(vals.waist,'waist'),hipSize=sampleSize(vals.hips,'hips'); $('#sizeResult').textContent=`Sample estimate only — top / bust: ${bustSize}; waist: ${waistSize}; hips / bottom: ${hipSize}. This is not verified BLACKED sizing or bra cup-size guidance.`; });
-
-  // Fit Studio v1.2: no more fake generic bra/brief shapes. A manual overlay requires
-  // the visitor's photo plus a transparent PNG of the actual garment cut-out.
-  const canvas=$('#tryCanvas');const ctx=canvas.getContext('2d');
-  const canvasW=canvas.width,canvasH=canvas.height;
-  function getSelected(){return productById.get(selectedProduct)||productById.get('sculpt');}
-  function loadReference(p) {
-    const primary = image(p.image);
-    const backup = fallbackImage(p);
-    const candidates = [...new Set([primary, backup].filter(Boolean))];
-    if(referenceImageKey===primary && referenceImage && referenceImage.complete) { drawCanvas(); return; }
-    referenceImageKey = primary; referenceImage = null;
-    let attempt = 0;
-    const loadNext = () => {
-      const src = candidates[attempt];
-      if (!src) { referenceImage = null; drawCanvas(); return; }
-      const im = new Image();
-      if (src.startsWith(ASSET_BASE)) im.crossOrigin = 'anonymous';
-      im.onload = () => { if (referenceImageKey === primary) { referenceImage = im; drawCanvas(); } };
-      im.onerror = () => { attempt += 1; if (attempt < candidates.length) loadNext(); else if (referenceImageKey === primary) { referenceImage = null; drawCanvas(); } };
-      im.src = src;
-    };
-    loadNext();
-  }
-  let currentPhotoRect = null;
-  function drawPhotoContain(photo) {
-    const ratio=Math.min(canvasW/photo.naturalWidth,canvasH/photo.naturalHeight);
-    const w=photo.naturalWidth*ratio,h=photo.naturalHeight*ratio;
-    const x=(canvasW-w)/2,y=(canvasH-h)/2;
-    ctx.drawImage(photo,x,y,w,h);
-    return {x,y,w,h};
-  }
-  function drawCanvas() {
-    ctx.clearRect(0,0,canvasW,canvasH);ctx.fillStyle='#ede0dc';ctx.fillRect(0,0,canvasW,canvasH);
-    currentPhotoRect = null;
-    if(previewMode==='manual' && userPhoto) {
-      currentPhotoRect = drawPhotoContain(userPhoto);
-      if(userGarment) {
-        const sc=guideScale;
-        const baseW=canvasW*.43;
-        const baseH=canvasH*.40;
-        const ratio=Math.min(baseW/userGarment.naturalWidth,baseH/userGarment.naturalHeight);
-        const w=userGarment.naturalWidth*ratio*sc;
-        const h=userGarment.naturalHeight*ratio*sc;
-        const photoRect=currentPhotoRect || {x:0,y:0,w:canvasW,h:canvasH};
-        const cx=photoRect.x+guidePosition.x*photoRect.w,cy=photoRect.y+guidePosition.y*photoRect.h;
-        ctx.save();ctx.translate(cx,cy);ctx.rotate(guideRotation*Math.PI/180);
-        ctx.drawImage(userGarment,-w/2,-h/2,w,h);ctx.restore();
-        ctx.fillStyle='rgba(255,250,247,.90)';ctx.fillRect(0,canvasH-48,canvasW,48);
-        ctx.fillStyle='#4e3742';ctx.font='600 12px Arial';ctx.textAlign='center';
-        ctx.fillText('UPLOADED GARMENT CUT-OUT · MANUAL POSITION ONLY',canvasW/2,canvasH-19);
-      } else {
-        ctx.fillStyle='rgba(39,29,35,.84)';ctx.fillRect(28,canvasH*.40,canvasW-56,118);
-        ctx.fillStyle='#fff8f5';ctx.textAlign='center';ctx.font='700 18px Arial';ctx.fillText('Real garment image required',canvasW/2,canvasH*.40+38);
-        ctx.font='12px Arial';ctx.fillText('Upload a transparent PNG cut-out below.',canvasW/2,canvasH*.40+64);
-        ctx.fillText('A campaign poster is not a garment cut-out.',canvasW/2,canvasH*.40+86);
-      }
-      return;
-    }
-    const p=getSelected();
-    if(!referenceImage || !referenceImage.naturalWidth){ctx.fillStyle='#4e3742';ctx.textAlign='center';ctx.font='600 22px Arial';ctx.fillText('BLACKED',canvasW/2,canvasH/2-8);ctx.font='13px Arial';ctx.fillText(p.name,canvasW/2,canvasH/2+20);}
-    else {const r=Math.min((canvasW-28)/referenceImage.naturalWidth,(canvasH-94)/referenceImage.naturalHeight);const w=referenceImage.naturalWidth*r,h=referenceImage.naturalHeight*r;ctx.drawImage(referenceImage,(canvasW-w)/2,(canvasH-60-h)/2,w,h);}
-    ctx.fillStyle='rgba(34,24,29,.88)';ctx.fillRect(0,canvasH-60,canvasW,60);ctx.fillStyle='#fff6f4';ctx.textAlign='center';ctx.font='700 18px Arial';ctx.fillText(p.name.length>34?p.name.slice(0,31)+'…':p.name,canvasW/2,canvasH-35);ctx.font='10px Arial';ctx.fillStyle='#e2cbd3';ctx.fillText(p.concept?'CONCEPT PREVIEW · STOCK NOT CONFIRMED':'CAMPAIGN REFERENCE',canvasW/2,canvasH-16);
-  }
-  const studioSelect = $('#studioProduct');
-  const studioProducts = products.filter(p => p.fit);
-  studioSelect.innerHTML = studioProducts.map(p => `<option value="${p.id}">${escapeHTML(p.name)}</option>`).join('');
-  studioSelect.value = studioProducts.some(p => p.id === selectedProduct) ? selectedProduct : studioProducts[0]?.id || 'signature';
-  selectedProduct = studioSelect.value;
-  $('#studioTitle').textContent = getSelected().name;
-  studioSelect.addEventListener('change',e=>{selectedProduct=e.target.value;const p=getSelected();$('#studioTitle').textContent=p.name;referenceImage=null;referenceImageKey='';loadReference(p);$('#studioStatus').textContent=`${p.name} selected. This reference view is not an automatic fitting simulation.`;});
-
-  function syncGuideControls() {
-    const hasBoth = Boolean(userPhoto && userGarment);
-    const active = hasBoth && previewMode === 'manual';
-    $('#manualMode').disabled = !hasBoth;
-    $('#guideScale').disabled = !active;
-    $('#guideRotate').disabled = !active;
-    ['moveGuideUp','moveGuideDown','moveGuideLeft','moveGuideRight','resetGuidePosition'].forEach(id => { const el = $('#'+id); if (el) el.disabled = !active; });
-    const help = $('#modeHelp');
-    if (help) {
-      if (!userPhoto && !userGarment) help.textContent = 'Upload your photo and a transparent PNG of the actual garment. The tool never draws a fake bra/brief shape.';
-      else if (!userPhoto) help.textContent = 'Garment cut-out ready. Upload your own photo too, then tap “My photo + garment cutout”.';
-      else if (!userGarment) help.textContent = 'Your photo is ready. Add a transparent garment PNG to overlay the real product image; a campaign poster will not work as a cut-out.';
-      else help.textContent = modeIsManualMessage(previewMode);
-    }
-  }
-  function modeIsManualMessage(mode) { return mode === 'manual'
-    ? 'Manual overlay active: this is the transparent garment PNG you uploaded, positioned by you. It is not AI fitting or a fit prediction. Your images stay in this browser.'
-    : 'Both images are ready. Tap “My photo + garment cutout” when you want to position the garment yourself. No images are sent to a server in this prototype.'; }
-  function setPreviewMode(mode){if(mode==='manual'&&!(userPhoto&&userGarment)){toast('Upload both your photo and a transparent garment PNG first.');return;}previewMode=mode;$('#referenceMode').classList.toggle('active',mode==='reference');$('#manualMode').classList.toggle('active',mode==='manual');$('#referenceMode').setAttribute('aria-pressed',String(mode==='reference'));$('#manualMode').setAttribute('aria-pressed',String(mode==='manual'));$('#canvasTag').textContent=mode==='reference'?'SELECTED REFERENCE':'YOUR PHOTO · REAL CUT-OUT';syncGuideControls();drawCanvas();}
-  $('#referenceMode').addEventListener('click',()=>setPreviewMode('reference'));
-  $('#manualMode').addEventListener('click',()=>setPreviewMode('manual'));
-
-  $('#photoUpload').addEventListener('change',e=>{
-    const file=e.target.files&&e.target.files[0];if(!file)return;
-    const allowed=['image/jpeg','image/png','image/webp'];
-    if(!allowed.includes(file.type)){toast('Choose a JPG, PNG or WEBP photo.');e.target.value='';return;}
-    if(file.size>12*1024*1024){toast('Photo is over 12 MB. Choose a smaller file.');e.target.value='';return;}
-    const url=URL.createObjectURL(file);const im=new Image();
-    im.onload=()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=im;userPhotoUrl=url;previewMode='reference';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent=userGarment?'Photo and garment are ready. Tap “My photo + garment cutout” to position the real uploaded PNG.':'Photo ready. Now upload a transparent garment PNG. No image was sent to a server.';e.target.value='';};
-    im.onerror=()=>{URL.revokeObjectURL(url);e.target.value='';toast('Could not open that photo. Try another file.');};im.src=url;
-  });
-  function pngLooksTransparent(img) {
+  $('#downloadStyleBoard').addEventListener('click', async () => {
+    const primary=productById.get($('#boardPrimary').value), accent=productById.get($('#boardAccent').value);
+    if(!primary||!accent) { $('#styleBoardStatus').textContent='Choose two references first.'; return; }
+    const canvas=document.createElement('canvas');canvas.width=1200;canvas.height=780;const ctx=canvas.getContext('2d');
+    if(!ctx){$('#styleBoardStatus').textContent='PNG export is not available in this browser.';return;}
+    ctx.fillStyle='#100b10';ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle='#ffb5d2';ctx.font='bold 18px system-ui';ctx.fillText('BLACKED · STYLE BOARD',50,52);
+    ctx.fillStyle='#e8cc91';ctx.font='bold 12px system-ui';ctx.fillText('REFERENCE ONLY · NOT CONFIRMED STOCK',50,78);
+    const loadImage = src => new Promise((resolve,reject)=>{const img=new Image();img.crossOrigin='anonymous';img.onload=()=>resolve(img);img.onerror=()=>reject(new Error('image failed'));img.src=src;});
     try {
-      const probe=document.createElement('canvas');probe.width=12;probe.height=12;
-      const pctx=probe.getContext('2d',{willReadFrequently:true});pctx.drawImage(img,0,0,12,12);
-      const px=pctx.getImageData(0,0,12,12).data;
-      const corners=[0,11,11*12,11*12+11];
-      return corners.some(i=>px[i*4+3]<245);
-    } catch (_) { return false; }
-  }
-  $('#garmentUpload').addEventListener('change',e=>{
-    const file=e.target.files&&e.target.files[0];if(!file)return;
-    if(file.type!=='image/png'){toast('For a clean overlay, choose a transparent-background PNG cut-out.');e.target.value='';return;}
-    if(file.size>12*1024*1024){toast('Garment PNG is over 12 MB. Choose a smaller file.');e.target.value='';return;}
-    const url=URL.createObjectURL(file);const im=new Image();
-    im.onload=()=>{
-      if(!pngLooksTransparent(im)){URL.revokeObjectURL(url);e.target.value='';toast('This PNG looks like it has a solid background. Remove its background, then upload the transparent cut-out.');return;}
-      if(userGarmentUrl)URL.revokeObjectURL(userGarmentUrl);userGarment=im;userGarmentUrl=url;syncGuideControls();drawCanvas();
-      $('#studioStatus').textContent=userPhoto?'Garment cut-out ready. Tap “My photo + garment cutout” to position it.':'Garment cut-out ready. Now upload your photo.';
-      e.target.value='';
-    };
-    im.onerror=()=>{URL.revokeObjectURL(url);e.target.value='';toast('Could not open that PNG. Try exporting it again.');};im.src=url;
-  });
-  $('#clearPhoto').addEventListener('click',()=>{if(userPhotoUrl)URL.revokeObjectURL(userPhotoUrl);userPhoto=null;userPhotoUrl=null;$('#photoUpload').value='';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent='Your photo was cleared from the preview.';});
-  $('#clearGarment').addEventListener('click',()=>{if(userGarmentUrl)URL.revokeObjectURL(userGarmentUrl);userGarment=null;userGarmentUrl=null;$('#garmentUpload').value='';setPreviewMode('reference');syncGuideControls();$('#studioStatus').textContent='Garment cut-out cleared. Upload a transparent PNG to position a real product image.';});
-  $('#guideScale').addEventListener('input',e=>{guideScale=Number(e.target.value)/100;$('#guideScaleOut').value=`${e.target.value}%`;if(previewMode==='manual')drawCanvas();});
-  $('#guideRotate').addEventListener('input',e=>{guideRotation=Number(e.target.value);$('#guideRotateOut').value=`${guideRotation}°`;if(previewMode==='manual')drawCanvas();});
-  function canvasCoords(e){const r=canvas.getBoundingClientRect();return{x:(e.clientX-r.left)*canvasW/r.width,y:(e.clientY-r.top)*canvasH/r.height};}
-  canvas.addEventListener('pointerdown',e=>{if(previewMode!=='manual'||!userPhoto||!userGarment)return;dragging=true;const p=canvasCoords(e);dragStart={pointer:p,base:{...guidePosition}};canvas.setPointerCapture?.(e.pointerId);e.preventDefault();});
-  canvas.addEventListener('pointermove',e=>{if(!dragging||!dragStart)return;const p=canvasCoords(e);const rect=currentPhotoRect||{w:canvasW,h:canvasH};guidePosition.x=Math.max(.08,Math.min(.92,dragStart.base.x+(p.x-dragStart.pointer.x)/rect.w));guidePosition.y=Math.max(.08,Math.min(.92,dragStart.base.y+(p.y-dragStart.pointer.y)/rect.h));drawCanvas();});
-  const stopDrag=()=>{dragging=false;dragStart=null;};canvas.addEventListener('pointerup',stopDrag);canvas.addEventListener('pointercancel',stopDrag);
-  function nudgeGuide(dx,dy){if(previewMode!=='manual'||!userPhoto||!userGarment){toast('Upload both a photo and a transparent garment PNG first.');return;}guidePosition.x=Math.max(.08,Math.min(.92,guidePosition.x+dx));guidePosition.y=Math.max(.08,Math.min(.92,guidePosition.y+dy));drawCanvas();}
-  $('#moveGuideUp').addEventListener('click',()=>nudgeGuide(0,-.025));$('#moveGuideDown').addEventListener('click',()=>nudgeGuide(0,.025));$('#moveGuideLeft').addEventListener('click',()=>nudgeGuide(-.025,0));$('#moveGuideRight').addEventListener('click',()=>nudgeGuide(.025,0));
-  $('#resetGuidePosition').addEventListener('click',()=>{guidePosition={x:.5,y:.52};$('#guideScale').value='100';$('#guideScaleOut').value='100%';guideScale=1;guideRotation=0;$('#guideRotate').value='0';$('#guideRotateOut').value='0°';drawCanvas();});
-  $('#downloadPreview').addEventListener('click',()=>{if(previewMode==='manual'&&!(userPhoto&&userGarment)){toast('Upload both images and activate the garment overlay first.');return;}try{drawCanvas();canvas.toBlob(blob=>{if(!blob){toast('Could not export the preview. Try reloading the product image.');return;}const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download='blacked-manual-garment-preview.png';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1500);toast('Preview saved to your device.');},'image/png');}catch(_){toast('Image export failed. Open the website on GitHub Pages and try again.');}});
-
-  // V1.7: Robust eight-view 360° angle viewer.
-  // The 8 images are distinct generated angle crops at 45° intervals. The source
-  // composite's ninth panel was a macro close-up, not a rotation view, so it is excluded.
-  const spinFrames = Array.from({length:8},(_,i)=>`./assets/wand-360-frame-${String(i+1).padStart(2,'0')}.webp`);
-  let spinFrameIndex = 0;
-  let spinImageInitialised = false;
-  let spinPointerStart = null;
-  let spinDragRemainder = 0;
-  const spinStage = $('#spin360Stage');
-  const spinImage = $('#spin360Image');
-  const spinRange = $('#spin360Range');
-  const spinThumbnails = $('#spin360Thumbnails');
-  const spinHelp = $('#spin360StageHelp');
-  const spinPreloaded = spinFrames.map((src,index) => {
-    const img = new Image(); img.decoding='async';
-    img.onerror = () => { if (index===spinFrameIndex && spinHelp) spinHelp.textContent='One angle image failed to load. Reset the viewer or refresh this page.'; };
-    img.src=src; return img;
-  });
-  const spinAngle = index => ((index % spinFrames.length) + spinFrames.length) % spinFrames.length * 45;
-
-  function renderSpinThumbnails() {
-    if (!spinThumbnails) return;
-    spinThumbnails.innerHTML = spinFrames.map((src,i)=>`<button class="spin360-thumb${i===spinFrameIndex?' is-active':''}" type="button" data-spin-thumb="${i}" aria-label="Show ${i*45} degree view" aria-pressed="${i===spinFrameIndex?'true':'false'}"><img src="${src}" alt="" loading="lazy" draggable="false"><span>${i*45}°</span></button>`).join('');
-  }
-  function showSpinFrame(index) {
-    spinFrameIndex = ((Number(index)||0) % spinFrames.length + spinFrames.length) % spinFrames.length;
-    const degrees = spinAngle(spinFrameIndex);
-    const src = spinFrames[spinFrameIndex];
-    if (spinImage && (!spinImageInitialised || spinImage.getAttribute('src') !== src || (spinImage.complete && spinImage.naturalWidth===0))) {
-      spinImageInitialised = true;
-      spinImage.dataset.fallbackApplied = '';
-      spinImage.src = src;
-      spinImage.alt = `Generated concept image of a black wand massager, ${degrees} degree viewing angle of a full 360 degree rotation`;
+      const images=await Promise.all([loadImage(primary.image),loadImage(accent.image)]);
+      const drawContain=(img,x,y,w,h)=>{const ratio=Math.min(w/img.naturalWidth,h/img.naturalHeight);const iw=img.naturalWidth*ratio,ih=img.naturalHeight*ratio;ctx.drawImage(img,x+(w-iw)/2,y+(h-ih)/2,iw,ih);};
+      drawContain(images[0],45,105,535,555);drawContain(images[1],620,105,535,555);
+      ctx.fillStyle='#fff7fb';ctx.font='bold 19px system-ui';ctx.fillText(primary.name,50,700);ctx.fillText(accent.name,625,700);
+      ctx.fillStyle='#c5b5c1';ctx.font='13px system-ui';ctx.fillText('Concept board. Verify real product details, compatibility and image rights.',50,738);
+      const link=document.createElement('a');link.href=canvas.toDataURL('image/png');link.download='blacked-style-board.png';link.click();
+      $('#styleBoardStatus').textContent='PNG board downloaded. It contains reference imagery only, not a product or fit claim.';
+    } catch {
+      $('#styleBoardStatus').textContent='PNG export could not draw a remote source image (network/CORS restriction). Export the board JSON now; Step 3 will package verified originals locally and retest PNG export.';
     }
-    if (spinRange) spinRange.value = String(spinFrameIndex);
-    const out = $('#spin360Output'); if (out) out.textContent = `${degrees}°`;
-    if (spinHelp) spinHelp.textContent = `ANGLE ${spinFrameIndex+1} / ${spinFrames.length} · ${degrees}° · DRAG TO ROTATE`;
-    if (spinThumbnails) spinThumbnails.querySelectorAll('[data-spin-thumb]').forEach(button => {
-      const active = Number(button.dataset.spinThumb)===spinFrameIndex;
-      button.classList.toggle('is-active',active); button.setAttribute('aria-pressed',String(active));
-    });
-  }
-  if (spinImage) {
-    spinImage.onerror = () => {
-      if (spinImage.dataset.fallbackApplied === 'yes') {
-        if (spinHelp) spinHelp.textContent = 'Product image missing. Reset the viewer or refresh this page.';
-        spinImage.alt = 'Product image could not load; use Reset to front view and try again.';
-        return;
-      }
-      spinImage.dataset.fallbackApplied = 'yes';
-      spinImage.src = image('assets/wand-massager-studio.webp');
-      if (spinHelp) spinHelp.textContent = 'Angle frame unavailable. Showing the embedded product image instead.';
-    };
-  }
-  $('#spin360Prev')?.addEventListener('click',()=>showSpinFrame(spinFrameIndex-1));
-  $('#spin360Next')?.addEventListener('click',()=>showSpinFrame(spinFrameIndex+1));
-  $('#spin360Reset')?.addEventListener('click',()=>showSpinFrame(0));
-  spinRange?.addEventListener('input',e=>showSpinFrame(Number(e.target.value)));
-  spinThumbnails?.addEventListener('click',e=>{const button=e.target.closest('[data-spin-thumb]');if(button)showSpinFrame(Number(button.dataset.spinThumb));});
-  spinStage?.addEventListener('pointerdown',e=>{
-    if(e.pointerType==='mouse'&&e.button!==0)return;
-    spinPointerStart={x:e.clientX,y:e.clientY}; spinDragRemainder=0;
-    try { spinStage.setPointerCapture(e.pointerId); } catch(_) {}
-    spinStage.classList.add('is-dragging');
-    e.preventDefault();
   });
-  spinStage?.addEventListener('pointermove',e=>{
-    if(!spinPointerStart)return;
-    spinDragRemainder += e.clientX - spinPointerStart.x;
-    spinPointerStart={x:e.clientX,y:e.clientY};
-    // One view change per ~20px so slow and fast drags both feel responsive on mobile.
-    while(spinDragRemainder <= -20){showSpinFrame(spinFrameIndex+1);spinDragRemainder+=20;}
-    while(spinDragRemainder >= 20){showSpinFrame(spinFrameIndex-1);spinDragRemainder-=20;}
-    e.preventDefault();
-  });
-  const endSpinDrag=()=>{spinPointerStart=null;spinDragRemainder=0;spinStage?.classList.remove('is-dragging');};
-  spinStage?.addEventListener('pointerup',endSpinDrag);
-  spinStage?.addEventListener('pointercancel',endSpinDrag);
-  spinStage?.addEventListener('lostpointercapture',endSpinDrag);
-  spinStage?.addEventListener('keydown',e=>{
-    if(e.key==='ArrowRight'){showSpinFrame(spinFrameIndex+1);e.preventDefault();}
-    else if(e.key==='ArrowLeft'){showSpinFrame(spinFrameIndex-1);e.preventDefault();}
-    else if(e.key==='Home'){showSpinFrame(0);e.preventDefault();}
-    else if(e.key==='End'){showSpinFrame(spinFrames.length-1);e.preventDefault();}
-  });
-  renderSpinThumbnails();
-  showSpinFrame(0);
 
-  $$('[data-open-massager]').forEach(link=>link.addEventListener('click',()=>{
-    const button=$('#afterDarkFilters [data-after-filter="massager"]');
-    if(button){activeAfterDarkFilter='massager';renderAfterDarkProducts();}
+  // Secret Fantasy Corner creates only an on-screen prompt; prompts/preferences are not stored or transmitted.
+  const fantasyPrompts = {
+    mystery: {
+      gentle:['Imagine a mysterious first meeting in a quiet, rain-soaked café. What would make the conversation feel comfortable?','Create a fictional slow-burn romance scene with a clear, respectful invitation.'],
+      playful:['Invent a dramatic secret-admirer note that makes both fictional adults laugh.','Describe a mysterious date setting using three details and no pressure.'],
+      bold:['Write a confident, cinematic line for two fictional adults who both welcome the flirtation.','Discuss which kinds of mystery feel exciting and which feel uncomfortable.']
+    },
+    flirty: {
+      gentle:['Share a compliment that feels sincere and easy to receive.','Ask your partner what kind of flirting feels fun rather than awkward.'],
+      playful:['Invent a cheeky double-meaning one-liner that is funny, not insulting.','Create a private nickname you both like; either person can veto it.'],
+      bold:['Try a confident but respectful line, then let the other person choose the next move.','Describe a bold date invitation that leaves an easy way to say no.']
+    },
+    romantic: {
+      gentle:['Describe a small gesture that makes you feel remembered.','Plan a quiet evening with a favourite song and an honest conversation.'],
+      playful:['Make a romantic movie scene out of an ordinary walk together.','Trade one sincere compliment and one silly prediction about your next date.'],
+      bold:['Describe a romantic setting with tension and anticipation, without assuming anyone owes a response.','Ask what helps each of you feel wanted and respected.']
+    },
+    roleplay: {
+      gentle:['Pick a fictional setting and agree on roles, boundaries and a simple way to pause.','Plan a fictional meet-cute scene where both adults can change the story at any time.'],
+      playful:['Play two fictional strangers meeting at a bookshop; stop whenever either wants.','Write two lines of dialogue for a playful, mutually welcomed fictional encounter.'],
+      bold:['Design a bold fictional roleplay opener only after agreeing on the scenario and limits.','Talk through what is on-limits, off-limits and “maybe another time” before starting a scenario.']
+    },
+    boundaries: {
+      gentle:['Ask: “Would you enjoy talking about this, or shall we choose something else?”','Each person names one thing that helps them feel safe enough to be honest.'],
+      playful:['Make a green/yellow/red list of topics you both like, might discuss later, or want to skip.','Create a friendly pause phrase that means “let’s slow down” without explaining why.'],
+      bold:['Discuss one curiosity and one clear boundary, then thank each other for being honest.','Agree that either person can change their mind at any time, without guilt or pressure.']
+    }
+  };
+  let currentFantasyPrompt='';
+  $('#generateFantasy').addEventListener('click',()=>{
+    if(!$('#fantasyConsent').checked){$('#fantasyStatus').textContent='Please acknowledge the adult/consent note first.';toast('Confirm the consent note first.');return;}
+    const mood=$('#fantasyMood').value,boldness=$('#fantasyBoldness').value;const pool=fantasyPrompts[mood]?.[boldness]||fantasyPrompts.romantic.gentle;
+    currentFantasyPrompt=pool[Math.floor(Math.random()*pool.length)];$('#fantasyResult').textContent=currentFantasyPrompt;$('#fantasyStatus').textContent='Generated locally; not saved to storage and not sent to a server.';
+  });
+  $('#copyFantasy').addEventListener('click',()=>copyText(currentFantasyPrompt,$('#fantasyStatus')));
+
+  // Fit Studio: current selected product and its matching overlay stay tied to one product ID.
+  function setStudioProduct(id) {
+    const product = productById.get(id) || productById.get('signature');
+    state.activeProductId = product.id;
+    $('#fitProductLabel').textContent = product.name;
+    setImageSource($('#fitReferenceImage'), product.image, `${product.name} reference preview`);
+    $('#fitOverlayImage').hidden = true;
+    $('#fitOverlayImage').removeAttribute('src');
+    $('#fitOverlayImage').style.width = `${$('#overlayScale').value}%`;
+    $('#fitOverlayImage').style.opacity = String(Number($('#overlayOpacity').value)/100);
+    $('#fitOverlayImage').style.left = `${$('#overlayX').value}%`;
+    $('#fitOverlayImage').style.top = `${$('#overlayY').value}%`;
+    $('#overlayAvailability').textContent = product.overlay ? 'A product-specific concept overlay is mapped. It is illustrative, not a reliable fit/size prediction.' : 'No product-specific overlay is mapped for this reference. Reference preview only; no substitute overlay is used.';
+    if (state.photoUrl) drawPhotoPreview();
+    else { $('#fitReferenceImage').hidden = false; $('#fitUserPhoto').hidden = true; $('#fitStageStatus').textContent = 'Reference preview. No personal photo selected.'; }
+  }
+  function drawPhotoPreview() {
+    const product = productById.get(state.activeProductId);
+    setImageSource($('#fitUserPhoto'), state.photoUrl, 'Your selected local photo preview');
+    $('#fitUserPhoto').hidden = false;
+    $('#fitReferenceImage').hidden = true;
+    if (product?.overlay) {
+      $('#fitOverlayImage').src = product.overlay;
+      $('#fitOverlayImage').hidden = false;
+      $('#fitOverlayImage').style.width = `${$('#overlayScale').value}%`;
+      $('#fitOverlayImage').style.opacity = String(Number($('#overlayOpacity').value)/100);
+      $('#fitOverlayImage').style.left = `${$('#overlayX').value}%`;
+      $('#fitOverlayImage').style.top = `${$('#overlayY').value}%`;
+      $('#fitStageStatus').textContent = 'Local photo + mapped illustrative overlay. This does not simulate physical fit.';
+    } else {
+      $('#fitOverlayImage').hidden = true;
+      $('#fitStageStatus').textContent = 'Local photo preview only; no product-specific overlay is available for this reference.';
+    }
+  }
+  $('#fitPhotoUpload').addEventListener('change', event => {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    if (!file.type.startsWith('image/')) { toast('Please choose an image file.'); event.target.value=''; return; }
+    if (file.size > 15 * 1024 * 1024) { toast('Choose an image under 15 MB.'); event.target.value=''; return; }
+    if (state.photoUrl) URL.revokeObjectURL(state.photoUrl);
+    state.photoUrl = URL.createObjectURL(file);
+    drawPhotoPreview();
+    toast('Photo preview loaded locally in this browser.');
+  });
+  $('#clearFitPhoto').addEventListener('click', () => {
+    if (state.photoUrl) URL.revokeObjectURL(state.photoUrl);
+    state.photoUrl = null; $('#fitPhotoUpload').value=''; $('#fitUserPhoto').removeAttribute('src'); $('#fitUserPhoto').hidden = true; $('#fitOverlayImage').hidden = true; $('#fitReferenceImage').hidden = false;
+    $('#fitStageStatus').textContent = 'Photo cleared from the visible preview. No upload was performed.';
+    toast('Photo cleared from preview.');
+  });
+  function updateOverlayControls() {
+    const scale = $('#overlayScale').value, opacity = $('#overlayOpacity').value, x = $('#overlayX').value, y = $('#overlayY').value;
+    $('#overlayScaleValue').textContent = `${scale}%`; $('#overlayOpacityValue').textContent = `${opacity}%`; $('#overlayXValue').textContent = `${x}%`; $('#overlayYValue').textContent = `${y}%`;
+    $('#fitOverlayImage').style.width = `${scale}%`; $('#fitOverlayImage').style.opacity = String(Number(opacity)/100); $('#fitOverlayImage').style.left = `${x}%`; $('#fitOverlayImage').style.top = `${y}%`;
+  }
+  ['overlayScale','overlayOpacity','overlayX','overlayY'].forEach(id => $('#'+id).addEventListener('input', updateOverlayControls));
+  $('#resetOverlay').addEventListener('click', () => {
+    $('#overlayScale').value='38'; $('#overlayOpacity').value='85'; $('#overlayX').value='50'; $('#overlayY').value='48'; updateOverlayControls();
+    if (state.photoUrl) drawPhotoPreview(); else setStudioProduct(state.activeProductId);
+    toast('Fit preview reset.');
+  });
+  $('#downloadFitPreview').addEventListener('click', () => {
+    if (!state.photoUrl) { toast('Choose your own photo first.'); return; }
+    const product = productById.get(state.activeProductId);
+    const canvas = document.createElement('canvas'); canvas.width=800; canvas.height=1000;
+    const ctx = canvas.getContext('2d'); if (!ctx) { toast('Preview export is not supported here.'); return; }
+    const photo = new Image(); photo.onload = () => {
+      try {
+        ctx.fillStyle='#160f16'; ctx.fillRect(0,0,canvas.width,canvas.height);
+        const ratio=Math.min(canvas.width/photo.naturalWidth,canvas.height/photo.naturalHeight); const w=photo.naturalWidth*ratio, h=photo.naturalHeight*ratio;
+        ctx.drawImage(photo,(canvas.width-w)/2,(canvas.height-h)/2,w,h);
+        const save = () => {
+          try { const link=document.createElement('a'); link.href=canvas.toDataURL('image/png'); link.download='blacked-fit-preview.png'; link.click(); toast('Preview downloaded. It is illustrative, not a fit result.'); }
+          catch { toast('Export was blocked because an external asset cannot be safely drawn. Step 3 will bundle verified assets locally.'); }
+        };
+        if (product?.overlay) {
+          const overlay = new Image(); overlay.crossOrigin='anonymous'; overlay.onload=()=>{ctx.globalAlpha=Number($('#overlayOpacity').value)/100; const ow=canvas.width*Number($('#overlayScale').value)/100; const oh=ow*(overlay.naturalHeight/overlay.naturalWidth); const ox=canvas.width*Number($('#overlayX').value)/100-ow/2; const oy=canvas.height*Number($('#overlayY').value)/100-oh/2; ctx.drawImage(overlay,ox,oy,ow,oh);ctx.globalAlpha=1;save();}; overlay.onerror=save; overlay.src=product.overlay;
+        } else save();
+      } catch { toast('Could not render this preview. You can still clear it or try another image.'); }
+    };
+    photo.onerror=()=>toast('Local image could not be rendered. Choose another image.'); photo.src=state.photoUrl;
+  });
+
+  // Fit Passport: read the legacy keys, but only persist new measurements if the user opts in.
+  function restoreFitPassport() {
+    const profile = safeRead(STORAGE.passport, null);
+    if (profile && profile.values && typeof profile.values === 'object') {
+      const mul = profile.unit === 'in' ? 2.54 : 1;
+      for (const [field,id] of [['bust','fitBust'],['underbust','fitUnderbust'],['waist','fitWaist'],['hips','fitHips']]) {
+        const input = $('#'+id); const value = Number(profile.values[field]);
+        if (Number.isFinite(value) && value > 0) input.value = String(Math.round(value*mul*10)/10);
+      }
+      $('#saveFitPassport').checked = true;
+      $('#fitPassportStatus').textContent = 'An existing Fit Passport was restored from this device. Check the values before relying on them.';
+    }
+  }
+  $('#saveFitNotes').addEventListener('click', () => {
+    const fields = {bust:Number($('#fitBust').value),underbust:Number($('#fitUnderbust').value),waist:Number($('#fitWaist').value),hips:Number($('#fitHips').value)};
+    const supplied = Object.values(fields).some(value => value > 0);
+    for (const [name,value] of Object.entries(fields)) if ($('#fit'+name[0].toUpperCase()+name.slice(1)).value && (!Number.isFinite(value) || value < 30 || value > 250)) { $('#fitPassportStatus').textContent = `${name} value must be between 30 and 250 cm, or left blank.`; return; }
+    if (!$('#saveFitPassport').checked) { $('#fitPassportStatus').textContent = 'To persist measurements, opt in using the checkbox. Current values will not be saved.'; toast('Measurements not saved.'); return; }
+    if (!supplied) { $('#fitPassportStatus').textContent = 'Enter at least one valid measurement before saving.'; return; }
+    const valuesInches = Object.fromEntries(Object.entries(fields).map(([key,value]) => [key, value > 0 ? Math.round((value/2.54)*100)/100 : null]));
+    if (safeWrite(STORAGE.passport,{values:valuesInches,unit:'in',updatedAt:new Date().toISOString()})) $('#fitPassportStatus').textContent = 'Fit Passport saved on this device only. Clear it below when no longer needed.';
+    else $('#fitPassportStatus').textContent = 'Browser storage is unavailable. Measurements remain unsaved.';
+  });
+  $('#clearFitPassport').addEventListener('click', () => {
+    safeRemove(STORAGE.passport); ['fitBust','fitUnderbust','fitWaist','fitHips'].forEach(id=>$('#'+id).value=''); $('#saveFitPassport').checked=false;
+    $('#fitPassportStatus').textContent = 'Saved Fit Passport cleared from this browser. Other legacy data was not touched.';
+    toast('Fit Passport cleared.');
+  });
+
+  // Preserve the earlier Fusion 3.1 label + notes feature and storage key. This is independent of Fit Passport measurements.
+  function renderLegacyFitNote() {
+    const note = state.fitNote;
+    $('#fitNoteLabel').value = note?.label || '';
+    $('#fitNotes').value = note?.notes || '';
+    $('#fitNoteSummary').textContent = note && (note.label || note.notes) ? `${note.label || 'Fit note'}: ${note.notes || 'No extra notes.'}` : 'No fit notes saved yet.';
+  }
+  renderLegacyFitNote();
+  if (state.fitNote && (state.fitNote.label || state.fitNote.notes)) $('#fitNoteStatus').textContent = 'An existing fit note was restored from this device.';
+  $('#saveFitNote').addEventListener('click', () => {
+    const label = $('#fitNoteLabel').value.trim().slice(0,100);
+    const notes = $('#fitNotes').value.trim().slice(0,2000);
+    if (!label && !notes) { $('#fitNoteStatus').textContent = 'Add a label or note first.'; return; }
+    state.fitNote = { label, notes };
+    if (safeWrite(STORAGE.fitNote, state.fitNote)) $('#fitNoteStatus').textContent = 'Fit note saved on this device only.';
+    else $('#fitNoteStatus').textContent = 'Browser storage is unavailable. The note is available for this session only.';
+    renderLegacyFitNote();
+    if (safeRead(STORAGE.fitNote, null)) $('#fitNoteStatus').textContent = 'Fit note saved on this device only.';
+    toast('Fit note saved locally.');
+  });
+  $('#clearFitNote').addEventListener('click', () => {
+    state.fitNote = null;
+    safeRemove(STORAGE.fitNote);
+    $('#fitNoteLabel').value = ''; $('#fitNotes').value = '';
+    $('#fitNoteSummary').textContent = 'No fit notes saved yet.';
+    $('#fitNoteStatus').textContent = 'Fit note cleared. Other saved data was not changed.';
+    toast('Fit note cleared.');
+  });
+  $('#runFitDetective').addEventListener('click', () => {
+    const guides = {
+      band: 'Check that the band sits level around your body. If it rides up, feels painfully tight or leaves skin injury, stop and review the garment instructions and sizing chart. No calculator can guarantee a fit.',
+      strap: 'Adjust straps gently, then check whether the band is supporting the garment. Strap slip/digging can have several causes; do not keep wearing something that hurts.',
+      cup: 'Compare the garment shape and size guidance with your body comfort. Spillage or gaping does not reveal a single guaranteed size; try the seller’s documented fit guide if available.',
+      brief: 'Check whether the waist and leg opening feel comfortably secure without pinching or painful pressure. Use the actual garment’s waist/hip chart if one is verified.',
+      general: 'Note what feels comfortable, what shifts while moving and any points of pressure. If pain, numbness or skin injury continues, stop wearing the garment and seek appropriate advice.'
+    };
+    $('#fitDetectiveResult').textContent = guides[$('#fitProblem').value] || guides.general;
+  });
+
+  // 8-frame concept viewer; image names are source-mapped and explicitly labelled as generated concepts.
+  let angleIndex = 0;
+  function showAngle(next) {
+    angleIndex = (next + C.wheelFrames.length) % C.wheelFrames.length;
+    const frame = C.wheelFrames[angleIndex];
+    setImageSource($('#angleImage'), frame.image, `Illustrative concept angle ${angleIndex+1} of ${C.wheelFrames.length}: ${frame.name}`);
+    $('#angleSlider').value = String(angleIndex); $('#angleLabel').textContent = `${String(angleIndex+1).padStart(2,'0')} / ${String(C.wheelFrames.length).padStart(2,'0')} · ${frame.name}`;
+  }
+  $('#anglePrev').addEventListener('click',()=>showAngle(angleIndex-1));
+  $('#angleNext').addEventListener('click',()=>showAngle(angleIndex+1));
+  $('#angleSlider').addEventListener('input',event=>showAngle(Number(event.target.value)));
+
+  // Sanskari, Boyfriend and Wellness galleries share the same truthful image fallback / lightbox behavior.
+  function renderGallery(items, targetId, className = 'gallery-grid', type = 'gallery') {
+    const target=$('#'+targetId);
+    target.className=className;
+    target.innerHTML=items.map((item,index)=>`<article class="gallery-card"><button class="gallery-open media-frame" type="button" data-gallery="${escapeHtml(type)}" data-gallery-index="${index}" aria-label="Preview ${escapeHtml(item.title)}"><img loading="lazy" decoding="async" crossorigin="anonymous" src="${escapeHtml(item.image)}" alt="${escapeHtml(item.title)}"><span class="media-fallback" hidden>Original image unavailable. See the asset report.</span></button><div class="gallery-copy"><h3>${escapeHtml(item.title)}</h3><p>${escapeHtml(item.type || item.note || 'Illustrative reference; specifications not verified.')}</p></div></article>`).join('');
+  }
+  renderGallery(C.sanskari,'sanskariGrid','sanskari-grid','sanskari');
+  renderGallery(C.muslimCollection,'muslimGrid','gallery-grid muslim-grid','muslim');
+  renderGallery(C.christianCollection,'christianGrid','gallery-grid christian-grid','christian');
+  renderGallery(C.boyfriendGallery,'boyfriendGallery','gallery-grid','boyfriend');
+  renderGallery(C.wellnessGallery,'wellnessGallery','gallery-grid','wellness');
+  function collectionItems(type) { return type === 'sanskari' ? C.sanskari : type === 'muslim' ? C.muslimCollection : type === 'christian' ? C.christianCollection : type === 'boyfriend' ? C.boyfriendGallery : C.wellnessGallery; }
+  function openLightbox(type,index) {
+    const items=collectionItems(type); const item=items[index]; if(!item) return;
+    $('#lightboxTitle').textContent=item.title; setImageSource($('#lightboxImage'),item.image,item.title);
+    $('#lightboxCaption').textContent=item.type || item.note || 'Campaign reference only; not verified product inventory.';
+    openDialog($('#lightboxDialog'));
+  }
+
+  // Original wheel location 1 + 2: remain within Wellness; adult self-attestation is explicit.
+  const wheelResultLines = {
+    dildo: {
+      small:['Compact-format concept selected. Review the manufacturer’s actual dimensions and safety instructions.','Compact preference selected for this demo. This is not medical advice.'],
+      medium:['Medium-format concept selected. Check actual product dimensions and comfort guidance.','Medium preference selected for this demo only; it is not a verified product recommendation.'],
+      large:['Larger-format concept selected. Never push through pain or discomfort; verify real dimensions.','Larger preference selected for this demo only.'],
+      compact:['Compact-format concept selected. Check the real manufacturer details.'], standard:['Standard-format concept selected. Verify the actual item dimensions.'], wide:['Wider-format concept selected. This demo does not recommend a specific product.'],
+      surprise:['Surprise category selected for fun. Verify product safety and manufacturer instructions before any real purchase.']
+    },
+    plug: {
+      compact:['Compact preference selected. Use only a body-safe product designed for this purpose and follow its instructions.'],
+      standard:['Standard preference selected. This demo does not verify exact dimensions or safety certifications.'],
+      wide:['Wider preference selected. Comfort and safety are individual; never continue through pain.'],
+      surprise:['Surprise category selected for fun, not a product recommendation.']
+    },
+    boyfriend: {
+      gentle:['Easygoing vibe: choose a cosy public date and ask what would feel comfortable for both.','Easygoing pick: share a no-pressure plan and keep the timing flexible.'],
+      playful:['Playful vibe: trade one kind compliment and one silly question.','Playful pick: choose a tiny shared challenge that either person can skip.'],
+      bold:['Bold banter: try a confident compliment, then leave room for the other person’s response.','Bold pick: agree on a date idea together; no answer is owed.'],
+      surprise:['Demo surprise: a small thoughtful message or public date idea. This is not a redeemable deal.']
+    }
+  };
+  function spinOriginalWheel(type) {
+    const ageChecked = type === 'boyfriend' ? $('#boyAdultConfirm').checked : $('#wellnessAdultConfirm').checked;
+    if (!ageChecked) { toast('Please confirm that you are 18 or older first.'); (type==='boyfriend' ? $('#boyAdultConfirm') : $('#wellnessAdultConfirm')).focus(); return; }
+    const selectId = type==='dildo' ? 'dildoPreference' : type==='plug' ? 'plugPreference' : 'boyPreference';
+    const resultId = type==='dildo' ? 'dildoResult' : type==='plug' ? 'plugResult' : 'boyResult';
+    const visualId = type==='dildo' ? 'dildoWheelVisual' : type==='plug' ? 'plugWheelVisual' : 'boyWheelVisual';
+    const selected=$('#'+selectId).value;
+    const eligible=selected==='surprise' ? (type==='dildo'?['small','medium','large']:type==='plug'?['compact','standard','wide']:['gentle','playful','bold']) : [selected];
+    const key=eligible[Math.floor(Math.random()*eligible.length)];
+    const lines=(wheelResultLines[type][key]||wheelResultLines[type].surprise);
+    const line=lines[Math.floor(Math.random()*lines.length)];
+    state.wheelRotations[type] += 720 + Math.floor(Math.random()*360);
+    $('#'+visualId).style.transform=`rotate(${state.wheelRotations[type]}deg)`;
+    $('#'+resultId).textContent= type==='boyfriend' ? `${line} No real discount code or checkout is connected.` : line;
+  }
+  $('#spinDildoWheel').addEventListener('click',()=>spinOriginalWheel('dildo'));
+  $('#spinPlugWheel').addEventListener('click',()=>spinOriginalWheel('plug'));
+  $('#spinBoyWheel').addEventListener('click',()=>spinOriginalWheel('boyfriend'));
+  $('#resetBoyWheel').addEventListener('click',()=>{state.wheelRotations.boyfriend=0;$('#boyWheelVisual').style.transform='rotate(0deg)';$('#boyPreference').selectedIndex=0;$('#boyResult').textContent='Round reset. Choose a vibe, confirm 18+, and spin again. No real discount is connected.';});
+  function resetOriginalWheel(type) {
+    const resultId=type==='dildo'?'dildoResult':'plugResult';
+    const selectId=type==='dildo'?'dildoPreference':'plugPreference';
+    const visualId=type==='dildo'?'dildoWheelVisual':'plugWheelVisual';
+    state.wheelRotations[type]=0; $('#'+visualId).style.transform='rotate(0deg)'; $('#'+selectId).selectedIndex=0;
+    $('#'+resultId).textContent='Round reset. Choose a preference, confirm 18+, and spin again.';
+  }
+  $('#resetDildoWheel').addEventListener('click',()=>resetOriginalWheel('dildo'));
+  $('#resetPlugWheel').addEventListener('click',()=>resetOriginalWheel('plug'));
+
+  // Original 3rd wheel inside Boyfriend; all outcomes are optional non-real offers.
+  const boyfriendWheelResults = {
+    gentle:'Easygoing result: plan a calm coffee or bookshop date. Sample reward is illustrative only.',
+    playful:'Playful result: trade one silly compliment and choose the playlist together. Sample reward is illustrative only.',
+    bold:'Bold banter result: share a confident but respectful message. Sample reward is illustrative only.',
+    surprise:'Surprise result: plan a small thoughtful moment. No real discount, purchase or booking is created.'
+  };
+
+  // New Dirty/Wild wheel: category state controls the prompt pool; skip/reset are real behaviors.
+  function selectDirtyCategory(category) {
+    if (!C.dirtyCategories[category]) return;
+    state.dirtyCategory=category;
+    $$('#dirtyCategoryButtons .category-chip').forEach(button=>{
+      const active=button.dataset.dirtyCategory===category;
+      button.setAttribute('aria-pressed',String(active));
+    });
+    $('#dirtyWheelResult').innerHTML=`<span class="result-kicker">${escapeHtml(C.dirtyCategories[category].label)}</span><strong>Ready when you are.</strong><p>Spin for an optional prompt. You can skip or stop at any time.</p>`;
+  }
+  function renderDirtyCategoryButtons() {
+    $('#dirtyCategoryButtons').innerHTML=Object.entries(C.dirtyCategories).map(([key,info])=>`<button class="category-chip" type="button" data-dirty-category="${escapeHtml(key)}" aria-pressed="${key===state.dirtyCategory}">${escapeHtml(info.label)}</button>`).join('');
+  }
+  renderDirtyCategoryButtons();
+  $('#dirtyCategoryButtons').addEventListener('click',event=>{const button=event.target.closest('[data-dirty-category]');if(button)selectDirtyCategory(button.dataset.dirtyCategory);});
+  function chooseDirtyPrompt() {
+    if (!$('#dirtyAdultConfirm').checked) { toast('Please confirm that you are 18 or older first.'); $('#dirtyAdultConfirm').focus(); return; }
+    const category=C.dirtyCategories[state.dirtyCategory];
+    if(!category) return;
+    const available=category.prompts.filter(prompt=>prompt!==state.lastDirtyPrompt);
+    const pool=available.length?available:category.prompts;
+    const prompt=pool[Math.floor(Math.random()*pool.length)];
+    state.lastDirtyPrompt=prompt;
+    state.dirtyRotation += 1080 + Math.floor(Math.random()*720);
+    $('#dirtyWheelVisual').style.transform=`rotate(${state.dirtyRotation}deg)`;
+    $('#dirtyWheelResult').innerHTML=`<span class="result-kicker">${escapeHtml(category.label.toUpperCase())} · OPTIONAL PROMPT</span><strong>${escapeHtml(prompt)}</strong><p>Both people may pass or stop. A prompt is never a requirement.</p>`;
+    $('#dirtyWheelStatus').textContent='Prompt generated in this browser. It has not been published or sent to anyone.';
+  }
+  $('#spinDirtyWheel').addEventListener('click',chooseDirtyPrompt);
+  $('#skipDirtyPrompt').addEventListener('click',()=>{if(!$('#dirtyAdultConfirm').checked){toast('Please confirm that you are 18 or older first.');return;}chooseDirtyPrompt();$('#dirtyWheelStatus').textContent='Skipped or replaced with another optional prompt.';});
+  $('#resetDirtyWheel').addEventListener('click',()=>{state.lastDirtyPrompt=null;state.dirtyRotation=0;$('#dirtyWheelVisual').style.transform='rotate(0deg)';$('#dirtyWheelResult').innerHTML='<span class="result-kicker">YOUR RESULT</span><strong>Choose a category and spin.</strong><p>You may skip any prompt, with no explanation required.</p>';$('#dirtyWheelStatus').textContent='Round reset.';});
+
+  // Date planner and message helper. Outputs are locally generated; no messaging service is connected.
+  const dateIdeas = {
+    cozy: {low:['Make tea or coffee at home and trade three favourite songs.','Take a calm evening walk in a public, familiar place.'],medium:['Visit a quiet café and try a dessert you have not shared before.','Pick a bookstore or gallery and choose one thing to discuss.'],special:['Reserve a quiet dinner after confirming both schedules.','Plan a cosy evening with a shared playlist and favourite food.']},
+    playful:{low:['Take a photo walk and find three funny details.','Play a quick question game over snacks.'],medium:['Visit a board-game café or arcade and take turns choosing games.','Try a new street-food spot in a busy, public area.'],special:['Plan a themed date night with a dress colour or music mood you both agree on.']},
+    creative:{low:['Draw portraits of each other in five minutes—bad drawings welcome.','Make a playlist for a fictional film you invent together.'],medium:['Try a pottery, painting or cooking workshop.','Visit a museum or local art market and pick a favourite work.'],special:['Book a short class or creative experience that both people choose.']},
+    outdoors:{low:['Go for a daytime walk in a public park and bring water.','Watch sunset from a familiar public place.'],medium:['Try a botanical garden, cycling path or guided public tour.'],special:['Plan a day trip with transport, weather and return details checked together.']},
+    romantic:{low:['Write one appreciation note each and read them only if both want to.','Make dinner together and each choose one song.'],medium:['Plan a sunset café visit and leave time for unhurried conversation.'],special:['Choose a dinner or event together, confirm budget and timing first.']}
+  };
+  $('#makeDate').addEventListener('click',()=>{
+    const mood=$('#dateMood').value, budget=$('#dateBudget').value;
+    const options=dateIdeas[mood]?.[budget]||dateIdeas[mood]?.medium||dateIdeas.cozy.low;
+    $('#dateResult').textContent=options[Math.floor(Math.random()*options.length)]+' Check preferences and logistics together; this is an idea, not a booking.';
+  });
+  const messageBank = {
+    sweet:{thinking:['You crossed my mind today, so I wanted to send a little smile your way.','No big reason—just wanted you to know I appreciate you.'],date:['Want to plan a small date this week? You choose the mood, I’ll help with the details.'],thanks:['Thank you for making time for me. It meant more than I said.'],conversation:['What is one little thing that made your day better?'],boundary:['Can we talk about what feels comfortable for both of us? I want us both to feel heard.']},
+    playful:{thinking:['Important notice: you have been nominated for making me smile.','I was going to act mysterious, but then I remembered I like talking to you.'],date:['Your mission, should you accept: choose snacks. I’ll choose the playlist.'],thanks:['Thanks for being excellent company. Five stars; would hang out again.'],conversation:['Quick question: what is your most unnecessary but strongest opinion?'],boundary:['Tiny serious moment: what is a good way for us to say “pause” if something feels off?']},
+    honest:{thinking:['I have been thinking about you and wanted to say it plainly.','I like the time we spend together. Just wanted to be honest about that.'],date:['I would enjoy seeing you. Are you free sometime this week? No pressure if not.'],thanks:['I appreciated what you did. Thank you for showing up.'],conversation:['How have you really been feeling lately? I’m here to listen.'],boundary:['I want us to be able to say what we like or do not like without feeling judged.']},
+    apology:{thinking:['I owe you an apology for how I handled that. I want to listen and understand.'],date:['When you feel ready, could we talk and make a better plan together?'],thanks:['Thank you for hearing me out. I know trust comes from actions, not only words.'],conversation:['Can I listen to your side without interrupting?'],boundary:['I want to understand the boundary I crossed and respect what you need next.']},
+    flirty:{thinking:['I had a clever line ready, but then your smile distracted the whole plan.','You make an ordinary day feel a little less ordinary.'],date:['Coffee with me? I’ll bring the conversation; you bring your favourite opinion.'],thanks:['That little moment with you is still making me smile.'],conversation:['What is your idea of a perfect little escape from a busy day?'],boundary:['I like the flirting, and I also want to check that this tone feels good for you.']}
+  };
+  let currentMessage='';
+  $('#makeMessage').addEventListener('click',()=>{
+    const tone=$('#messageTone').value, moment=$('#messageMoment').value;
+    const pool=messageBank[tone]?.[moment]||messageBank.sweet.thinking;
+    currentMessage=pool[Math.floor(Math.random()*pool.length)]; $('#messageResult').textContent=currentMessage; $('#messageCopyStatus').textContent='Edit the wording so it sounds like you before sending.';
+  });
+  async function copyText(text, statusEl) {
+    if (!text) { if(statusEl) statusEl.textContent='Create or select some text first.'; return; }
+    try { await navigator.clipboard.writeText(text); if(statusEl)statusEl.textContent='Copied.'; toast('Copied to clipboard.'); }
+    catch {
+      const area=document.createElement('textarea'); area.value=text; area.setAttribute('aria-label','Text selected for manual copy'); area.style.position='fixed'; area.style.opacity='0'; document.body.append(area); area.select();
+      let selected=false; try { selected=document.execCommand('copy'); } catch {}
+      area.remove(); if(statusEl)statusEl.textContent=selected?'Copied.':'Clipboard access is blocked. Select and copy the visible text manually.';
+    }
+  }
+  $('#copyMessage').addEventListener('click',()=>copyText(currentMessage,$('#messageCopyStatus')));
+  const conversationPrompts=[
+    'What helps you feel appreciated and understood?', 'What is a boundary that helps you feel safe and respected?', 'What would make our next date feel easy and enjoyable?', 'What is one small thing we could do to make more time for each other?', 'Is there a topic you would like to discuss—or would rather skip today?'
+  ];
+  let currentConversationPrompt=conversationPrompts[0];
+  $('#nextConversationPrompt').addEventListener('click',()=>{let next=currentConversationPrompt;while(next===currentConversationPrompt&&conversationPrompts.length>1)next=conversationPrompts[Math.floor(Math.random()*conversationPrompts.length)];currentConversationPrompt=next;$('#conversationPrompt').textContent=next;$('#conversationCopyStatus').textContent='';});
+  $('#copyConversationPrompt').addEventListener('click',()=>copyText(currentConversationPrompt,$('#conversationCopyStatus')));
+
+  // Local Brand Studio drafts: real edit/save/export actions, no fake GitHub publish button.
+  let drafts=Array.isArray(safeRead(STORAGE.drafts,[]))?safeRead(STORAGE.drafts,[]):[];
+  function renderDrafts() {
+    $('#draftCount').textContent=`${drafts.length} draft${drafts.length===1?'':'s'}`;
+    const target=$('#draftList');
+    if(!drafts.length){target.innerHTML='<p class="empty-state">No local drafts yet.</p>';return;}
+    target.innerHTML=drafts.map(draft=>`<article class="issue-item"><div><h3>${escapeHtml(draft.title)}</h3><p><strong>Section:</strong> ${escapeHtml(draft.section)} · ${draft.conceptOnly?'Concept/reference':'Unverified content'}</p><p>${escapeHtml(draft.description||'No description added.')}</p>${draft.image?`<p class="micro-note">Image source/file name: ${escapeHtml(draft.image)}</p>`:''}<div class="button-row"><button class="small-button" type="button" data-draft-export="${escapeHtml(draft.id)}">Export this draft</button><button class="small-button" type="button" data-draft-delete="${escapeHtml(draft.id)}">Delete</button></div></div></article>`).join('');
+  }
+  let draftImageObjectUrl=null;
+  $('#draftLocalImage').addEventListener('change',event=>{
+    const file=event.target.files?.[0]; if(draftImageObjectUrl) URL.revokeObjectURL(draftImageObjectUrl); draftImageObjectUrl=null;
+    if(!file){$('#draftImagePreview').hidden=true;return;}
+    if(!file.type.startsWith('image/')||file.size>15*1024*1024){toast('Choose an image under 15 MB.');event.target.value='';$('#draftImagePreview').hidden=true;return;}
+    draftImageObjectUrl=URL.createObjectURL(file);$('#draftImagePreviewImg').src=draftImageObjectUrl;$('#draftImagePreview').hidden=false;$('#draftImageUrl').value=file.name;
+  });
+  $('#brandDraftForm').addEventListener('submit',event=>{
+    event.preventDefault();
+    const title=$('#draftTitle').value.trim(); if(!title){$('#draftStatus').textContent='Add a title first.';return;}
+    const draft={id:`draft-${Date.now()}-${Math.random().toString(36).slice(2,7)}`,title,section:$('#draftSection').value,description:$('#draftDescription').value.trim(),image:$('#draftImageUrl').value.trim(),conceptOnly:$('#draftConceptOnly').checked,createdAt:new Date().toISOString()};
+    drafts.unshift(draft); if(!safeWrite(STORAGE.drafts,drafts)) $('#draftStatus').textContent='Saved for this session only; browser storage is blocked.'; else $('#draftStatus').textContent='Draft saved in local browser storage. It is not published to GitHub.';
+    $('#draftTitle').value='';$('#draftDescription').value='';if(!$('#draftLocalImage').files?.length)$('#draftImageUrl').value='';$('#draftConceptOnly').checked=true;renderDrafts();toast('Local draft saved.');
+  });
+  function downloadBlob(filename, content, mime='application/json') {
+    const blob=new Blob([content],{type:mime});const url=URL.createObjectURL(blob);const a=document.createElement('a');a.href=url;a.download=filename;document.body.append(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  }
+  $('#exportDrafts').addEventListener('click',()=>downloadBlob('blacked-brand-studio-drafts.json',JSON.stringify({schemaVersion:1,exportedAt:new Date().toISOString(),drafts},null,2)));
+  $('#draftList').addEventListener('click',event=>{
+    const del=event.target.closest('[data-draft-delete]'); if(del){drafts=drafts.filter(d=>d.id!==del.dataset.draftDelete);safeWrite(STORAGE.drafts,drafts);renderDrafts();toast('Draft deleted.');return;}
+    const one=event.target.closest('[data-draft-export]');if(one){const draft=drafts.find(d=>d.id===one.dataset.draftExport);if(draft)downloadBlob(`${draft.section}-draft.json`,JSON.stringify(draft,null,2));}
+  });
+  $('#clearDrafts').addEventListener('click',()=>{drafts=[];safeWrite(STORAGE.drafts,drafts);renderDrafts();toast('Local drafts cleared.');});
+
+  const checkpointText=$('#checkpointText');
+  $('#copyCheckpoint').addEventListener('click',()=>copyText(checkpointText?.textContent||'',$('#copyStatus')));
+  $('#downloadCheckpoint').addEventListener('click',()=>downloadBlob('BLACKED-V1-STEP3-HANDOFF.txt',checkpointText?.textContent||'','text/plain;charset=utf-8'));
+
+  // Global interaction delegation for catalogue cards, galleries and legacy bag data.
+  document.addEventListener('click',event=>{
+    const save=event.target.closest('[data-save]'); if(save){event.preventDefault();event.stopPropagation();toggleWishlist(save.dataset.save);return;}
+    const removeSave=event.target.closest('[data-remove-save]'); if(removeSave){toggleWishlist(removeSave.dataset.removeSave);return;}
+    const compare=event.target.closest('[data-compare]'); if(compare){toggleCompare(compare.dataset.compare);return;}
+    const removeCompare=event.target.closest('[data-remove-compare]');if(removeCompare){state.compare=state.compare.filter(id=>id!==removeCompare.dataset.removeCompare);renderCatalog();renderCompare();return;}
+    const detail=event.target.closest('[data-details]'); if(detail){openProduct(detail.dataset.details);return;}
+    const gallery=event.target.closest('[data-gallery]');if(gallery){openLightbox(gallery.dataset.gallery,Number(gallery.dataset.galleryIndex));return;}
+    const bagRemove=event.target.closest('[data-bag-remove]');if(bagRemove){state.bag.splice(Number(bagRemove.dataset.bagRemove),1);safeWrite(STORAGE.bag,state.bag);renderBag();toast('Removed from demo bag.');return;}
+    const bagStep=event.target.closest('[data-bag-step]');if(bagStep){const i=Number(bagStep.dataset.bagStep);const item=state.bag[i];if(item){item.qty=Math.max(0,Math.min(99,(Number(item.qty)||1)+Number(bagStep.dataset.step)));if(item.qty===0)state.bag.splice(i,1);safeWrite(STORAGE.bag,state.bag);renderBag();}return;}
+  });
+  $('#catalogSearch').addEventListener('input',renderCatalog);
+  $('#catalogCategory').addEventListener('change',renderCatalog);
+  $('#catalogSort').addEventListener('change',renderCatalog);
+  $('#clearCatalogFilters').addEventListener('click',()=>{$('#catalogSearch').value='';$('#catalogCategory').value='all';$('#catalogSort').value='featured';renderCatalog();});
+  $('#clearCompare').addEventListener('click',()=>{state.compare=[];renderCatalog();renderCompare();toast('Comparison cleared.');});
+  $('#saveProductFromDialog').addEventListener('click',()=>{if(state.detailProductId)toggleWishlist(state.detailProductId);});
+  $('#compareProductFromDialog').addEventListener('click',()=>{if(state.detailProductId)toggleCompare(state.detailProductId);});
+  $('#fitProductFromDialog').addEventListener('click',()=>{const id=state.detailProductId;closeDialog(productDialog);setStudioProduct(id);activateView('innerwear');setTimeout(()=>$('#fitStudioTitle').scrollIntoView({behavior:'smooth',block:'start'}),50);});
+  $('#addDemoBag').addEventListener('click',()=>{if(state.detailProductId)addDemoBag(state.detailProductId);});
+
+  // Size conversion: exact units only, no universal sizing claim.
+  function updateMeasureResult() {
+    const value=Number($('#measureValue').value);if(!Number.isFinite(value)||value<0||value>400){$('#measureResult').textContent='Enter a measurement from 0 to 400.';return;}
+    const other=state.measureUnit==='cm'?value/2.54:value*2.54;
+    $('#measureResult').textContent=state.measureUnit==='cm'?`${value} cm = ${other.toFixed(2)} in`:`${value} in = ${other.toFixed(2)} cm`;
+  }
+  $('#measureValue').addEventListener('input',updateMeasureResult);
+  $$('[data-unit]').forEach(button=>button.addEventListener('click',()=>{
+    const requested=button.dataset.unit;if(requested===state.measureUnit)return;
+    const current=Number($('#measureValue').value);if(Number.isFinite(current)&&current>=0&&current<=400)$('#measureValue').value=(requested==='in'?current/2.54:current*2.54).toFixed(2).replace(/\.00$/,'');
+    state.measureUnit=requested;$$('[data-unit]').forEach(node=>{const active=node===button;node.classList.toggle('active',active);node.setAttribute('aria-pressed',String(active));});updateMeasureResult();
   }));
 
-  // Quick share helper for current saved list, used as a useful zero-backend feature.
-  $('#wishlistJump').title='Show or hide saved styles';
-  const shareLabel=document.createElement('button');shareLabel.type='button';shareLabel.className='btn btn-ghost btn-small';shareLabel.textContent='Share saved list';shareLabel.style.marginTop='12px';shareLabel.addEventListener('click',async()=>{const list=[...saved].map(id=>productById.get(id)?.name).filter(Boolean);if(!list.length){toast('Save a few styles first.');return;}const text='My BLACKED style shortlist: '+list.join(', ')+'. Product prices and availability are not confirmed.';try{if(navigator.share)await navigator.share({title:'My BLACKED shortlist',text});else if(navigator.clipboard){await navigator.clipboard.writeText(text);toast('Shortlist copied to clipboard.');}else toast(text);}catch(_){}});
-  const savedPanel=document.createElement('div');savedPanel.className='saved-share';savedPanel.appendChild(shareLabel);$('#collection').appendChild(savedPanel);
+  // Make every wheel input actionable and the current category explicit.
+  $('#dildoPreference').addEventListener('change',()=>$('#dildoResult').textContent=`Preference changed to ${$('#dildoPreference').selectedOptions[0].text}. Confirm 18+ and spin to get a demo prompt.`);
+  $('#plugPreference').addEventListener('change',()=>$('#plugResult').textContent=`Preference changed to ${$('#plugPreference').selectedOptions[0].text}. Confirm 18+ and spin to get a demo prompt.`);
+  $('#boyPreference').addEventListener('change',()=>$('#boyResult').textContent=`Vibe changed to ${$('#boyPreference').selectedOptions[0].text}. Confirm 18+ and spin to get a local prompt.`);
 
+  // Final delegated controls for detail modal and wheel state changes.
+  $('#productDialog').addEventListener('close',()=>{state.detailProductId=null;});
+  restoreFitPassport(); updateOverlayControls(); setStudioProduct(state.activeProductId); showAngle(0); fillStyleBoardSelects(); renderStyleFinder(); renderCatalog(); renderBag(); renderDrafts(); updateMeasureResult();
 
-  // V1.4 storefront shortcut controls. These only filter the existing local prototype catalogue.
-  document.addEventListener('click', event => {
-    const shortcut = event.target.closest('[data-shop-filter]');
-    if (shortcut) {
-      event.preventDefault();
-      const nextFilter = shortcut.dataset.shopFilter;
-      if (nextFilter === 'toys' || nextFilter === 'care') {
-        activeAfterDarkFilter = nextFilter === 'care' ? 'care' : 'all';
-        renderAfterDarkProducts();
-        $('#after-dark')?.scrollIntoView({behavior:'smooth', block:'start'});
-        toast(nextFilter === 'care' ? 'Care & accessories opened in After Dark.' : 'After Dark catalogue opened.');
-        return;
-      }
-      const allowed = ['all','concept','inspiration'];
-      activeFilter = allowed.includes(nextFilter) ? nextFilter : 'all';
-      onlySaved = false;
-      searchText = '';
-      const search = $('#productSearch');
-      const clear = $('#clearSearch');
-      if (search) search.value = '';
-      if (clear) clear.hidden = true;
-      renderProducts();
-      $('#collection')?.scrollIntoView({behavior:'smooth', block:'start'});
-      toast(activeFilter === 'concept' ? 'Intimates design concepts selected.' : 'Intimates catalogue filtered.');
-      return;
-    }
-  });
-
-  $('#year').textContent=String(new Date().getFullYear());
-  syncGuideControls();
-  renderProducts();renderCart();loadReference(getSelected());drawCanvas();
-
-  // V1.8: standalone home picks, real main-section tabs, and interactive Boyfriend planner.
-  const homePickGrid = $('#homeTopPicksGrid');
-  const viewPicks = ['signature','sculpt','pulse','dildo','plug','lube'].map(id=>productById.get(id)).filter(Boolean);
-  if (homePickGrid) {
-    homePickGrid.innerHTML = viewPicks.map(productCard).join('');
-    homePickGrid.addEventListener('click', e => {
-      const add=e.target.closest('[data-add-cart]'); if(add) return addToCart(add.dataset.addCart);
-      const save=e.target.closest('[data-save]'); if(save) return toggleSave(save.dataset.save);
-      const compare=e.target.closest('[data-compare]'); if(compare) return toggleCompare(compare.dataset.compare);
-      const detail=e.target.closest('[data-open-product]'); if(detail) return openProductDialog(detail.dataset.openProduct);
-      const spin=e.target.closest('[data-view-360]'); if(spin){activateView('afterdark');setTimeout(()=>$('#product-360')?.scrollIntoView({behavior:'smooth',block:'start'}),60);}
-    });
+  // PWA shell cache is scoped to this repository path; remote campaign images are deliberately not cached as if local.
+  if ('serviceWorker' in navigator && /^https?:$/.test(location.protocol) && !location.hostname.includes('localhost') && !location.hostname.endsWith('.test')) {
+    window.addEventListener('load',()=>navigator.serviceWorker.register('./sw.js').catch(()=>{ /* visible UI continues without offline cache */ }));
   }
-  const viewTitles={home:'Home',intimates:'Intimates',boyfriend:'Boyfriend',afterdark:'After Dark 18+',wellness:'Women’s Wellness'};
-  function activateView(view, scroll=true) {
-    if (!viewTitles[view]) view='home';
-    document.querySelectorAll('[data-view]').forEach(panel => { panel.hidden=panel.dataset.view!==view; });
-    document.querySelectorAll('[data-view-tab]').forEach(button => {
-      const active=button.dataset.viewTab===view;
-      button.setAttribute('aria-selected',String(active));
-      button.classList.toggle('is-active',active);
-    });
-    document.body.dataset.activeView=view;
-    const menu=$('#mainNav'); const menuToggle=$('#menuToggle');
-    if(menu) menu.classList.remove('open');
-    if(menuToggle){menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Open navigation');}
-    if(view==='afterdark') renderAfterDarkProducts();
-    if(scroll) window.scrollTo({top:0,behavior:'smooth'});
-  }
-  document.addEventListener('click',event=>{const button=event.target.closest('[data-view-tab]');if(button)activateView(button.dataset.viewTab,true);});
-  // Any existing in-page link automatically opens its owning tab before scrolling.
-  document.addEventListener('click', event=>{
-    const link=event.target.closest('a[href^="#"]');
-    if(!link) return;
-    const targetId=link.getAttribute('href').slice(1);
-    if(!targetId) return;
-    const target=document.getElementById(targetId);
-    if(!target) return;
-    const panel=target.closest('[data-view]');
-    if(panel && panel.dataset.view!==document.body.dataset.activeView){
-      event.preventDefault();
-      activateView(panel.dataset.view,false);
-      requestAnimationFrame(()=>target.scrollIntoView({behavior:'smooth',block:'start'}));
-    }
-  });
-  // Category shortcuts select the correct actual page tab, not a hidden section.
-  document.addEventListener('click',event=>{
-    const shortcut=event.target.closest('[data-shop-filter]');
-    if(!shortcut) return;
-    const key=shortcut.dataset.shopFilter;
-    activateView((key==='toys'||key==='care')?'afterdark':'intimates',false);
-    requestAnimationFrame(()=>window.scrollTo({top:0,behavior:'smooth'}));
-  },true);
-  const boyfriendForm=$('#boyfriendPlannerForm');
-  const boyfriendResults=$('#boyfriendPlannerResults');
-  const boyfriendIdeas={
-    date:{cozy:['A no-phone dinner at home','Cook one new dish together and make a shared playlist.','low'],playful:['Two-person challenge night','Pick a board game, mini quiz or a friendly cook-off.','low'],adventure:['A surprise local mini-date','Choose a new café, bookstore, walk or activity neither of you has tried.','mid'],romantic:['A memory-lane evening','Recreate your first conversation, favourite snack or shared photo moment.','mid']},
-    'gift-him':{cozy:['A comfort kit','Pair a favourite snack with a book, T-shirt or small everyday item he actually uses.','low'],playful:['A hobby-led surprise','Choose an accessory for his favourite game, sport, music or hobby.','mid'],adventure:['An experience voucher','Plan a workshop, match, trail, show or short outing around his interests.','high'],romantic:['A personal note + keepsake','Write three things you appreciate and pair it with one meaningful small gift.','low']},
-    'gift-her':{cozy:['A soft reset basket','Add her favourite tea/snack, a comfort item and a handwritten note.','low'],playful:['A choose-your-own-date card','Make three mini plans and let her choose the one she likes most.','low'],adventure:['An experience picked around her interests','Plan a class, show, brunch, gallery visit or short day out she has actually mentioned.','mid'],romantic:['A thoughtful detail','Use a remembered preference—not a guess—to choose a keepsake, flowers or a planned experience.','mid']},
-    couple:{cozy:['Slow evening, shared playlist','Cook, chat and choose a film together with phones set aside.','low'],playful:['Mini bucket-list draw','Write five things you both want to try and draw one to plan next.','low'],adventure:['Try something new together','Choose a shared class, new place or activity that both people actively want.','high'],romantic:['A mutual appreciation ritual','Each share one favourite memory, one appreciation and one idea for next month.','low']},
-    conversation:{cozy:['Ten-minute check-in','Ask “What would make this week feel easier for you?” and listen without fixing.','none'],playful:['Question-card evening','Take turns asking a fun, non-pressuring question and allow either person to skip.','none'],adventure:['Dream-plan together','Each choose a place or experience and build a no-pressure mini plan.','none'],romantic:['Appreciation + request','Share one thing you value and one small thing that would help you feel closer.','none']}
-  };
-  function renderBoyfriendPlan(type,mood,budget){
-    const byType=boyfriendIdeas[type]||boyfriendIdeas.date;
-    const idea=byType[mood]||byType.cozy;
-    const budgetText=budget==='none'?'No purchase needed':budget==='low'?'Keep it under ₹1,000':budget==='mid'?'Aim for ₹1,000–₹2,500':'Use the higher budget only if it suits both of you';
-    boyfriendResults.innerHTML=`<article class="boyfriend-result-card"><strong>YOUR IDEA</strong><h4>${escapeHTML(idea[0])}</h4><p>${escapeHTML(idea[1])}</p><p><b>Budget guide:</b> ${escapeHTML(budgetText)}. This is a planning suggestion, not a product price.</p><button type="button" data-copy-boyfriend="${escapeHTML(idea[0]+' — '+idea[1]+' Budget: '+budgetText)}">Copy idea ↗</button></article><article class="boyfriend-result-card"><strong>MAKE IT PERSONAL</strong><h4>One thoughtful detail</h4><p>Use a preference your partner has actually shared, and ask before planning anything intimate or surprising.</p><button type="button" data-copy-boyfriend="Ask what would make the plan feel good for both of us.">Copy prompt ↗</button></article><article class="boyfriend-result-card"><strong>KEEP IT MUTUAL</strong><h4>Comfort comes first</h4><p>Agree on boundaries and let either person change the plan. No gift or activity creates an obligation.</p><button type="button" data-view-tab="wellness">Explore Wellness →</button></article>`;
-    boyfriendResults.hidden=false;
-  }
-  boyfriendForm?.addEventListener('submit',event=>{event.preventDefault();renderBoyfriendPlan($('#boyfriendPlanType').value,$('#boyfriendMood').value,$('#boyfriendBudget').value);});
-  document.querySelectorAll('[data-boyfriend-preset]').forEach(button=>button.addEventListener('click',()=>{if($('#boyfriendPlanType'))$('#boyfriendPlanType').value=button.dataset.boyfriendPreset;$('#boyfriendPlannerArea')?.scrollIntoView({behavior:'smooth',block:'start'});renderBoyfriendPlan($('#boyfriendPlanType').value,$('#boyfriendMood').value,$('#boyfriendBudget').value);}));
-  document.querySelector('[data-scroll-boyfriend-quiz]')?.addEventListener('click',()=>$('#boyfriendPlannerArea')?.scrollIntoView({behavior:'smooth',block:'start'}));
-  document.addEventListener('click',async event=>{
-    const copy=event.target.closest('[data-copy-boyfriend]');
-    if(copy){const val=copy.dataset.copyBoyfriend;try{await navigator.clipboard.writeText(val);toast('Idea copied.');}catch(_){toast(val);}return;}
-  });
-  // Start on Home and set both desktop/mobile tabs consistently.
-  activateView('home',false);
-
 })();

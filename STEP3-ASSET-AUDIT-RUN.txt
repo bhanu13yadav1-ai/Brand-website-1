@@ -1,0 +1,4 @@
+Source files: 87 | code files scanned: 5
+Explicit local refs: 18 | missing: 0
+External refs logged: 3 | JS basename literals for mapping: 71
+Exact duplicate image groups: 0

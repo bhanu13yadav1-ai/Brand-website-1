@@ -1,0 +1,4 @@
+BLACKED V1 — STATIC ACCESSIBILITY GUARDRAILS
+Language: en | title: 'BLACKED Fusion V1 — Feature Integration' | main landmarks: 1
+Named navs: 1 | pages labelled: 7/7 | buttons reviewed: 64 | images: 10
+RESULT: PASS — static semantic checks only; not a full WCAG audit or screen-reader/device test.

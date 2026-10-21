@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="BLACKED Fusion icon">
+  <rect width="512" height="512" rx="112" fill="#100b10"/>
+  <rect x="28" y="28" width="456" height="456" rx="94" fill="#ff4b98"/>
+  <path d="M160 118h105c73 0 112 33 112 86 0 34-19 59-50 70 39 10 61 38 61 75 0 62-47 100-126 100H160V118zm87 131c31 0 48-12 48-35s-17-34-48-34h-23v69h23zm8 131c34 0 54-14 54-39 0-26-20-39-54-39h-31v78h31z" fill="#fff7fb"/>
+  <path d="M386 96c-18-24-55-16-55 13 0 22 55 53 55 53s55-31 55-53c0-29-37-37-55-13z" transform="translate(-10 8) scale(.72)" fill="#ffe0ee"/>
+</svg>

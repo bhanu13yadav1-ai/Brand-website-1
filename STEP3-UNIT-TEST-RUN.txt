@@ -1,0 +1,13 @@
+test_all_six_muslim_cards_are_mapped_to_local_assets (qa.test_step3_release.Step3ReleaseTests.test_all_six_muslim_cards_are_mapped_to_local_assets) ... ok
+test_christian_and_sanskari_collections_are_wired (qa.test_step3_release.Step3ReleaseTests.test_christian_and_sanskari_collections_are_wired) ... ok
+test_five_uploaded_source_originals_are_hash_recorded_and_preserved (qa.test_step3_release.Step3ReleaseTests.test_five_uploaded_source_originals_are_hash_recorded_and_preserved) ... ok
+test_import_map_has_consistent_csv_shape (qa.test_step3_release.Step3ReleaseTests.test_import_map_has_consistent_csv_shape) ... ok
+test_previous_muslim_original_hash_is_preserved (qa.test_step3_release.Step3ReleaseTests.test_previous_muslim_original_hash_is_preserved) ... ok
+test_reuploaded_muslim_sources_are_marked_as_duplicates (qa.test_step3_release.Step3ReleaseTests.test_reuploaded_muslim_sources_are_marked_as_duplicates) ... ok
+test_root_resources_are_versioned_and_flat (qa.test_step3_release.Step3ReleaseTests.test_root_resources_are_versioned_and_flat) ... ok
+test_service_worker_isolated_and_updated (qa.test_step3_release.Step3ReleaseTests.test_service_worker_isolated_and_updated) ... ok
+
+----------------------------------------------------------------------
+Ran 8 tests in 0.018s
+
+OK

@@ -1,0 +1,395 @@
+{
+  "root": "/mnt/data/BLACKED_V1_STEP2",
+  "source_file_count": 59,
+  "source_code_files_scanned": 5,
+  "explicit_local_reference_count": 10,
+  "missing_reference_count": 0,
+  "missing_references": [],
+  "checked_references": [
+    {
+      "source": "sw.js",
+      "attribute": "js-literal",
+      "value": "./css/styles.css",
+      "kind": "js",
+      "normalized_path": "css/styles.css",
+      "status": "FOUND"
+    },
+    {
+      "source": "sw.js",
+      "attribute": "js-literal",
+      "value": "./js/catalog.js",
+      "kind": "js",
+      "normalized_path": "js/catalog.js",
+      "status": "FOUND"
+    },
+    {
+      "source": "sw.js",
+      "attribute": "js-literal",
+      "value": "./js/app.js",
+      "kind": "js",
+      "normalized_path": "js/app.js",
+      "status": "FOUND"
+    },
+    {
+      "source": "sw.js",
+      "attribute": "js-literal",
+      "value": "./manifest.webmanifest",
+      "kind": "js",
+      "normalized_path": "manifest.webmanifest",
+      "status": "FOUND"
+    },
+    {
+      "source": "sw.js",
+      "attribute": "js-literal",
+      "value": "./assets/blacked-icon.svg",
+      "kind": "js",
+      "normalized_path": "assets/blacked-icon.svg",
+      "status": "FOUND"
+    },
+    {
+      "source": "index.html",
+      "attribute": "href",
+      "value": "manifest.webmanifest",
+      "kind": "markup",
+      "normalized_path": "manifest.webmanifest",
+      "status": "FOUND"
+    },
+    {
+      "source": "index.html",
+      "attribute": "href",
+      "value": "css/styles.css",
+      "kind": "markup",
+      "normalized_path": "css/styles.css",
+      "status": "FOUND"
+    },
+    {
+      "source": "index.html",
+      "attribute": "src",
+      "value": "js/catalog.js",
+      "kind": "markup",
+      "normalized_path": "js/catalog.js",
+      "status": "FOUND"
+    },
+    {
+      "source": "index.html",
+      "attribute": "src",
+      "value": "js/app.js",
+      "kind": "markup",
+      "normalized_path": "js/app.js",
+      "status": "FOUND"
+    },
+    {
+      "source": "js/app.js",
+      "attribute": "js-literal",
+      "value": "./sw.js",
+      "kind": "js",
+      "normalized_path": "sw.js",
+      "status": "FOUND"
+    }
+  ],
+  "external_reference_count": 3,
+  "external_references": [
+    {
+      "source": "index.html",
+      "value": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/sanskari-edit-campaign.png"
+    },
+    {
+      "source": "index.html",
+      "value": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-09-blacked-comfort-set.png"
+    },
+    {
+      "source": "index.html",
+      "value": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-01-front.webp"
+    }
+  ],
+  "basename_only_js_literals_for_manual_mapping": [
+    {
+      "source": "js/app.js",
+      "value": "blacked-style-board.json"
+    },
+    {
+      "source": "js/app.js",
+      "value": "blacked-style-board.png"
+    },
+    {
+      "source": "js/app.js",
+      "value": "blacked-fit-preview.png"
+    },
+    {
+      "source": "js/app.js",
+      "value": "blacked-brand-studio-drafts.json"
+    },
+    {
+      "source": "js/app.js",
+      "value": "${draft.section}-draft.json"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-01-blacked-move-together.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-02-blacked-yoga-together.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-03-red-lace-bodysuit-reference.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-04-movement-stretch-reference.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-05-black-lace-cutout-reference.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "cutout-black-lace-set.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-06-velvet-lace-reference.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-07-rose-strap-mannequin-reference.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-08-pink-butterfly-detail-reference.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-09-blacked-comfort-set.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "ref-10-blacked-better-together.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-11-midnight-sculpt.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-11-midnight-sculpt-product.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-12-midnight-lace.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-12-midnight-lace-product.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "cutout-black-lace-set.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-13-scarlet-satin.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-13-scarlet-satin-product.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "cutout-scarlet-satin-set.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-14-ivory-bloom.png"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "design-14-ivory-bloom-product.jpg"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "cutout-ivory-bloom-set.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "look-black-lace.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "look-entry-shareef.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "look-pallu-shareef.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "look-sanskari-blue.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "look-aankhein.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "01-pallu-shareef.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "02-sanskari-raat.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "03-mirror-knows.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "04-taiyaari-masoom.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "05-entry-shareef.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "06-sweet-face-dark-mood.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "07-shareef-nazar.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "08-raat-shareef.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "09-sanskari-outside-banner.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "10-sanskari-outside-dangerous.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-01.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-02.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-03.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-04.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-05.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-06.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "boyfriend-cafe-07.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "silver-gems.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "silver-heart.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "silver-pink-gem.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "plush-campaign-yellow.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "plush-campaign-white.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "plush-campaign-pink.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "product-warning-reference.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "purple-pink-product.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "pink-accessories-flatlay.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "dark-product-flatlay.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "red-heart-closeup.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "dual-massager-box.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "pink-cuffs-editorial.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "animated-product.gif"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-01-front.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-02-front-three-quarter.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-03-side-quarter.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-04-rear-three-quarter.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-05-rear.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-06-rear-opposite.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-07-side-opposite.webp"
+    },
+    {
+      "source": "js/catalog.js",
+      "value": "360-demo-08-front-opposite.webp"
+    }
+  ],
+  "basename_only_literal_count": 71,
+  "exact_duplicate_image_groups": [],
+  "exact_duplicate_image_group_count": 0,
+  "scope_note": "Static path audit only. It cannot prove that external URLs load or that runtime-generated paths are correct. Test the deployed site separately."
+}

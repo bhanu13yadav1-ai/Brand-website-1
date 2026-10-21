@@ -1,0 +1,34 @@
+source_repository,source_file_or_pattern,proposed_local_section,asset_type,notes,status
+Brand-website-3,01-pallu-shareef.webp,Sanskari Edit,campaign poster,Keep original individual image; do not crop contact sheet,TO_IMPORT
+Brand-website-3,02-sanskari-raat.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,03-mirror-knows.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,04-taiyaari-masoom.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,05-entry-shareef.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,06-sweet-face-dark-mood.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,07-shareef-nazar.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,08-raat-shareef.webp,Sanskari Edit,campaign poster,Keep original individual image,TO_IMPORT
+Brand-website-3,09-sanskari-outside-banner.webp,Sanskari Edit,campaign banner,Verify banner aspect ratio,TO_IMPORT
+Brand-website-3,10-sanskari-outside-dangerous.webp,Sanskari Edit,campaign poster,Keep correct per-card mapping,TO_IMPORT
+Brand-website-3,ref-01 through ref-10,Innerwear / Fit Studio,campaign/reference images,Reference art is not confirmed stock,TO_IMPORT
+Brand-website-3,design-11 through design-14,Innerwear / Fit Studio,concept images,Label as concept until verified,TO_IMPORT
+Brand-website-3,cutout-*.webp,Fit Studio,garment overlay/cutout,Use only for matching product ID; verify transparency,TO_IMPORT
+Brand-website-3,360-demo-01 through 360-demo-08,Fit Studio,concept angle frames,Not a genuine physical 360-degree scan,TO_IMPORT
+Brand-website-3,owner-ref-*.jpg/png,Campaign research,owner supplied reference,Confirm intended placement and usage,TO_IMPORT
+Brand-website-3,companion-*.webp,Boyfriend / Plus-One,illustrative scenes,Not real companion listings/providers,TO_IMPORT
+Brand-website-4f,campaign-*.webp,Sanskari Edit,campaign reference,Some exact byte duplicates exist; map with hashes before dedupe,TO_IMPORT
+Brand-website-4f,look-*.webp,Innerwear / Sanskari,editorial reference,Don't infer physical stock from campaign,TO_IMPORT
+Brand-website-4f,wellness-app-reference.webp,Wellness,UI reference screenshot,Reference screenshot not product inventory,TO_IMPORT
+Brand-website-4f,wand-360-frame-*.webp,Wellness,concept angle frames,Check whether the original 9-frame family is required,TO_IMPORT
+Brand-website-full-finally-,assets/new-gallery/*,Sanskari Edit,additional campaign gallery,Delta patch; verify target/source before integrating,REVIEW_TARGET
+Brand-website-full-finally-,assets/new-wellness/*,Wellness,additional reference gallery,Delta patch; verify image rights/spec claims,REVIEW_TARGET
+1000201092.png,assets/supplied/muslim-collection-four-panel-original.png,Muslim-Inspired Collection · Noor Edit,Original supplied campaign artwork,Exact supplied original preserved; not proof of product stock/specifications,PASS
+1000201092.png,assets/muslim-collection/muslim-noor-ka-nasha.webp,Muslim-Inspired Collection · Noor Edit,Optimized WebP panel crop,Noor Ka Nasha; Derived crop for distinct gallery card; collection remains Coming Soon,PASS
+1000201092.png,assets/muslim-collection/muslim-shaam-e-noor.webp,Muslim-Inspired Collection · Noor Edit,Optimized WebP panel crop,Shaam E Noor; Derived crop for distinct gallery card; collection remains Coming Soon,PASS
+1000201092.png,assets/muslim-collection/muslim-shaam-ki-roshni.webp,Muslim-Inspired Collection · Noor Edit,Optimized WebP panel crop,Shaam Ki Roshni; Derived crop for distinct gallery card; collection remains Coming Soon,PASS
+1000201092.png,assets/muslim-collection/muslim-shaam-se-raat-tak.webp,Muslim-Inspired Collection · Noor Edit,Optimized WebP panel crop,Shaam Se Raat Tak; Derived crop for distinct gallery card; collection remains Coming Soon,PASS
+User upload,1000200454(2).jpg,Muslim-Inspired Collection · Noor Edit,campaign artwork,Preserved original under assets/supplied/collection-additions; optimized local WebP is shown in gallery,LOCAL_BUNDLED
+User upload,1000200455(3).jpg,Muslim-Inspired Collection · Noor Edit,campaign artwork,Preserved original under assets/supplied/collection-additions; optimized local WebP is shown in gallery,LOCAL_BUNDLED
+User upload,1000200453(2).png,Christian-Inspired Collection · Coming Soon,concept campaign artwork,Kept as Coming Soon; not an official religious endorsement or verified product,LOCAL_BUNDLED
+User upload,1000200456(2).jpg,Sanskari Collection,campaign artwork,Additional separate image; not a confirmed product SKU,LOCAL_BUNDLED
+User upload,1000200479.png,Sanskari Collection,campaign artwork,Additional separate image; not a confirmed product SKU,LOCAL_BUNDLED
+User upload,1000201195.png + 1000201199/1200/1201/1203.webp,Muslim-Inspired Collection · Noor Edit,original panel board and four individual crops,Exact duplicates of four-panel original and crop files already bundled in Step 3.2; no duplicate asset copies added,ALREADY_PRESENT_SHA256_MATCH

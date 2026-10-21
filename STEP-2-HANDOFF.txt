@@ -1,0 +1,37 @@
+BLACKED WEBSITE — STEP 2 HANDOFF (COPY/PASTE)
+
+Project rules: Follow the original 14-rule MASTER PROMPT verbatim at docs/MASTER-PROMPT-14-RULES-VERBATIM.txt. Do not silently delete working features/data, do not substitute unrelated images, and do not report unrun tests as passed. Work in phases; record each phase in its end note. Keep the three source repositories read-only and do not upload this candidate over a live site.
+
+Source repositories inspected:
+1. https://github.com/bhanu13yadav1-ai/Brand-website-3
+2. https://github.com/bhanu13yadav1-ai/Brand-website-4f
+3. https://github.com/bhanu13yadav1-ai/Brand-website-full-finally-
+
+Step 2 candidate location: /mnt/data/BLACKED_V1_STEP2/
+Main entry: index.html
+CSS: css/styles.css
+App logic: js/app.js
+Content/asset registry: js/catalog.js
+Asset source map: assets/registry/REMOTE-ASSET-REGISTRY.json
+QA report: qa/QA-RESULTS.md
+Step 2 end note: docs/PHASE-2-END-NOTE.md
+14-rule memory: docs/MASTER-MEMORY-NOTES.txt
+
+Current verified candidate checks:
+- node --check js/app.js, js/catalog.js, sw.js: PASS
+- python qa/step2_static_check.py: PASS; 189 unique HTML IDs, 7 view/nav targets matched, no explicit local shell-resource errors
+- python -m unittest qa/test_repo_asset_audit.py -v: PASS, 2/2
+- python qa/accessibility_static_check.py: PASS for limited static semantics only
+- python qa/step2_browser_smoke.py: PASS, 54/54 checks in an in-memory Chromium harness; no unexpected console errors/page exceptions; no horizontal overflow at 320/360/390/430/1440 CSS px
+- All raw GitHub image requests were intercepted with a test PNG in browser tests; this does NOT prove real image delivery or original image appearance.
+
+Features in candidate: 19 mapped catalogue cards, search/filter/sort, wishlist keys blacked-fit-studio-wishlist-v03 and blacked31Wishlist, compare cap 3, demo bag key blacked31Bag, Fit Studio local photo/manual product-specific overlay, Fit Passport key blacked-fit-passport-v040 (stored inches), restored legacy Fit Notes key blacked31FitNote, Fit Detective, 8-frame concept viewer, Style Finder/Board, original Dildo wheel in Wellness, Butt Plug wheel in Wellness, Boyfriend size/vibe wheel, new 10-category Dirty/Wild wheel, Boyfriend date/message/copy/prompts, 10 Sanskari gallery cards, Muslim/Christian Coming Soon, Wellness education and 14 references, Brand Studio local drafts + JSON export.
+
+NOT COMPLETE / blockers:
+1. Source roadmap for Brand-website-3 mentions 43 reference/concept cards; current Step 2 catalogue has only 19. Rule 2 is therefore still incomplete. Step 3 must compare source item IDs/metadata and restore every compatible entry or document an exact blocker.
+2. 65 filenames used by the current content were found in current source repo root listings (39 from Brand-website-3, 5 from Brand-website-4f, 21 from Brand-website-full-finally-), but the original binary files were not downloaded, hash checked or bundled. Raw GitHub URLs remain runtime dependencies. Rule 3 image root-cause fix is NOT COMPLETE.
+3. The browser harness uses fake fixture images and an in-memory storage shim; it does not test actual raw image HTTP/CORS, real localStorage across origin reload, actual service-worker install/update, GitHub Pages or physical Android.
+4. Brand Studio does not publish to GitHub. Secure publish requires an authorized protected GitHub Actions workflow or backend; never expose a token in public JS.
+5. GitHub connector is read-only (push:false). No source repository was modified, committed or deployed.
+
+Next Step 3: obtain all three source ZIP archives; run qa/repo_asset_audit.py on each; compare the complete catalogue; restore all source cards; hash/decode/verify original images, bundle them locally, fix paths and service-worker CORE; re-run all smoke/regression tests, responsive/accessibility/performance/security checks; produce final ZIP and a PASS/FAIL/NOT TESTED/BLOCKED release report. Do not claim live deployment or physical-device testing without doing it.

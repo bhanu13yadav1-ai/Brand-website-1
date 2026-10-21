@@ -1,0 +1,11 @@
+{
+  "file": "preview-muslim-390.png",
+  "viewport": "390 CSS px wide",
+  "active_view": "Sanskari page · Coming Soon collection cards",
+  "contents": [
+    "6 Muslim-Inspired Noor Edit cards",
+    "1 Christian-Inspired Coming Soon preview"
+  ],
+  "images": "All new collection WebPs are local and decoded for this preview. Legacy GitHub-hosted Sanskari images use fixture imagery in smoke-test context.",
+  "scope": "Static in-memory Chromium preview of collection-card UI only; not live GitHub Pages or physical Android testing."
+}

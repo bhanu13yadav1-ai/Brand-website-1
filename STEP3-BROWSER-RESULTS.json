@@ -1,0 +1,294 @@
+{
+  "scope": "In-memory Chromium UI smoke tests for Step 3.3 collection updates. All raw GitHub image URLs are intercepted and replaced with a test PNG, so this does not verify genuine image delivery, image contents, GitHub Pages, service worker deployment or physical Android.",
+  "viewport_results": [
+    {
+      "viewport": 320,
+      "document": 320,
+      "body": 320,
+      "width": 320,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 360,
+      "document": 360,
+      "body": 360,
+      "width": 360,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 390,
+      "document": 390,
+      "body": 390,
+      "width": 390,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 430,
+      "document": 430,
+      "body": 430,
+      "width": 430,
+      "no_horizontal_overflow": true
+    },
+    {
+      "viewport": 1440,
+      "document": 1440,
+      "body": 1440,
+      "width": 1440,
+      "no_horizontal_overflow": true
+    }
+  ],
+  "tests": {
+    "initial_render": {
+      "result": "PASS",
+      "detail": "title=BLACKED Fusion V1 \u2014 Step 3.3 Collection Expansion, background=rgb(16, 11, 16), catalogue cards=19"
+    },
+    "responsive_no_overflow": {
+      "result": "PASS",
+      "detail": "[{'viewport': 320, 'document': 320, 'body': 320, 'width': 320, 'no_horizontal_overflow': True}, {'viewport': 360, 'document': 360, 'body': 360, 'width': 360, 'no_horizontal_overflow': True}, {'viewport': 390, 'document': 390, 'body': 390, 'width': 390, 'no_horizontal_overflow': True}, {'viewport': 430, 'document': 430, 'body': 430, 'width': 430, 'no_horizontal_overflow': True}, {'viewport': 1440, 'document': 1440, 'body': 1440, 'width': 1440, 'no_horizontal_overflow': True}]"
+    },
+    "mobile_menu_opens": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "nav_innerwear": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "legacy_fit_note_restored": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "legacy_fit_note_save": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "legacy_fit_note_clear": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "nav_sanskari": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "religion_previews": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "muslim_six_cards_present": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "muslim_local_images_decode": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "muslim_preview_opens_lightbox": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "muslim_new_artwork_lightbox": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "christian_coming_soon_artwork_present": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "christian_artwork_lightbox": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "new_sanskari_artworks_present": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "catalog_search": {
+      "result": "PASS",
+      "detail": "matching cards=3"
+    },
+    "catalog_category_filter": {
+      "result": "PASS",
+      "detail": "cards=4"
+    },
+    "catalog_sort": {
+      "result": "PASS",
+      "detail": "first=Aankhein Neeche"
+    },
+    "catalog_reset": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "wishlist_save": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "wishlist_local_storage_key": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "compare_three_items": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "compare_max_three": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "product_detail_dialog": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "demo_bag": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "local_photo_preview": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "selected_product_fit_state": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "product_specific_overlay": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "clear_local_photo": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "fit_passport_saved": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "fit_passport_clear": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "fit_detective": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "eight_frame_viewer": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "cm_in_converter": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "wellness_wheel_age_gate": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "original_dildo_wheel": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dildo_wheel_reset": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "original_plug_wheel": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "plug_wheel_reset": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "wellness_education": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "wellness_reference_gallery": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "date_planner": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "message_generator": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "message_copy_action": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "boyfriend_wheel_age_gate": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "original_boyfriend_wheel": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "boyfriend_wheel_repeat": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "boyfriend_wheel_reset": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "conversation_prompts": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "secret_fantasy_prompt": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dirty_wild_ten_categories": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dirty_wild_category_result": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dirty_wild_avoids_immediate_repeat": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dirty_wild_skip": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "dirty_wild_reset": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "brand_studio_local_draft": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "brand_studio_json_export": {
+      "result": "PASS",
+      "detail": "blacked-brand-studio-drafts.json"
+    },
+    "brand_studio_delete": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "checkpoint_download": {
+      "result": "PASS",
+      "detail": ""
+    },
+    "missing_image_fallback": {
+      "result": "PASS",
+      "detail": ""
+    }
+  },
+  "console_errors": [],
+  "expected_fixture_errors": [
+    "Failed to load resource: the server responded with a status of 404 (Not Found)"
+  ],
+  "page_errors": [],
+  "failed_requests": [],
+  "network_image_fixture": "test PNG supplied for every raw.githubusercontent.com image path",
+  "overall": "PASS"
+}

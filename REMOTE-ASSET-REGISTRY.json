@@ -1,0 +1,1030 @@
+{
+  "schema_version": 1,
+  "purpose": "Trace every Step 2 catalogue media path to its original source repository.",
+  "audit_result": {
+    "catalogue_image_refs": 65,
+    "filename_matches_in_current_repository_listings": 65,
+    "source_repositories": 3,
+    "local_binaries_in_step2_zip": 0,
+    "actual_raw_image_http_delivery_tested": false,
+    "image_bytes_sha256_verified": false,
+    "status": "PARTIAL__SOURCE_FILENAME_PRESENCE_VERIFIED__BINARY_BUNDLE_BLOCKED"
+  },
+  "limitations": [
+    "GitHub connector permissions are read-only and do not expose repository binary archives to the local runtime.",
+    "The Step 2 browser smoke harness intercepts raw GitHub image requests with a test fixture to test UI behaviors, not the real image content.",
+    "Step 3 must obtain the full source archives, compare hashes, validate image decoding/dimensions, then move selected binaries under the local assets tree and remove runtime raw-host dependency."
+  ],
+  "assets": [
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "animated-product.gif",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/animated-product.gif",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-01.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-01.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-02.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-02.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-03.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-03.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-04.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-04.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-05.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-05.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-06.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-06.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "boyfriend-cafe-07.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/boyfriend-cafe-07.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "dark-product-flatlay.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/dark-product-flatlay.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "dual-massager-box.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/dual-massager-box.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "pink-accessories-flatlay.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/pink-accessories-flatlay.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "pink-cuffs-editorial.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/pink-cuffs-editorial.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "plush-campaign-pink.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/plush-campaign-pink.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "plush-campaign-white.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/plush-campaign-white.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "plush-campaign-yellow.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/plush-campaign-yellow.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "product-warning-reference.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/product-warning-reference.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "purple-pink-product.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/purple-pink-product.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "red-heart-closeup.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/red-heart-closeup.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "silver-gems.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/silver-gems.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "silver-heart.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/silver-heart.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-full-finally-",
+      "source_branch": "main",
+      "source_root_filename": "silver-pink-gem.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-full-finally-/main/silver-pink-gem.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "01-pallu-shareef.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/01-pallu-shareef.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "02-sanskari-raat.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/02-sanskari-raat.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "03-mirror-knows.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/03-mirror-knows.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "04-taiyaari-masoom.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/04-taiyaari-masoom.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "05-entry-shareef.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/05-entry-shareef.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "06-sweet-face-dark-mood.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/06-sweet-face-dark-mood.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "07-shareef-nazar.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/07-shareef-nazar.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "08-raat-shareef.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/08-raat-shareef.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "09-sanskari-outside-banner.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/09-sanskari-outside-banner.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "10-sanskari-outside-dangerous.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/10-sanskari-outside-dangerous.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-01-front.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-01-front.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-02-front-three-quarter.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-02-front-three-quarter.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-03-side-quarter.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-03-side-quarter.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-04-rear-three-quarter.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-04-rear-three-quarter.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-05-rear.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-05-rear.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-06-rear-opposite.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-06-rear-opposite.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-07-side-opposite.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-07-side-opposite.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "360-demo-08-front-opposite.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/360-demo-08-front-opposite.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "cutout-black-lace-set.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/cutout-black-lace-set.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "cutout-ivory-bloom-set.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/cutout-ivory-bloom-set.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "cutout-scarlet-satin-set.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/cutout-scarlet-satin-set.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-11-midnight-sculpt-product.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-11-midnight-sculpt-product.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-11-midnight-sculpt.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-11-midnight-sculpt.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-12-midnight-lace-product.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-12-midnight-lace-product.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-12-midnight-lace.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-12-midnight-lace.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-13-scarlet-satin-product.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-13-scarlet-satin-product.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-13-scarlet-satin.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-13-scarlet-satin.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-14-ivory-bloom-product.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-14-ivory-bloom-product.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "design-14-ivory-bloom.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/design-14-ivory-bloom.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-01-blacked-move-together.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-01-blacked-move-together.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-02-blacked-yoga-together.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-02-blacked-yoga-together.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-03-red-lace-bodysuit-reference.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-03-red-lace-bodysuit-reference.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-04-movement-stretch-reference.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-04-movement-stretch-reference.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-05-black-lace-cutout-reference.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-05-black-lace-cutout-reference.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-06-velvet-lace-reference.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-06-velvet-lace-reference.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-07-rose-strap-mannequin-reference.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-07-rose-strap-mannequin-reference.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-08-pink-butterfly-detail-reference.jpg",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-08-pink-butterfly-detail-reference.jpg",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-09-blacked-comfort-set.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-09-blacked-comfort-set.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-3",
+      "source_branch": "main",
+      "source_root_filename": "ref-10-blacked-better-together.png",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-3/main/ref-10-blacked-better-together.png",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-4f",
+      "source_branch": "main",
+      "source_root_filename": "look-aankhein.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-4f/main/look-aankhein.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-4f",
+      "source_branch": "main",
+      "source_root_filename": "look-black-lace.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-4f/main/look-black-lace.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-4f",
+      "source_branch": "main",
+      "source_root_filename": "look-entry-shareef.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-4f/main/look-entry-shareef.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-4f",
+      "source_branch": "main",
+      "source_root_filename": "look-pallu-shareef.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-4f/main/look-pallu-shareef.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    },
+    {
+      "source_repository": "bhanu13yadav1-ai/Brand-website-4f",
+      "source_branch": "main",
+      "source_root_filename": "look-sanskari-blue.webp",
+      "source_url": "https://raw.githubusercontent.com/bhanu13yadav1-ai/Brand-website-4f/main/look-sanskari-blue.webp",
+      "exact_filename_found_in_current_github_root_listing": true,
+      "binary_downloaded_or_hash_verified": false,
+      "sha256": null,
+      "local_bundle_path": null,
+      "step2_status": "SOURCE_LISTING_MATCH__BINARY_NOT_BUNDLED",
+      "usage": [
+        "referenced by js/catalog.js"
+      ],
+      "warning": "Filename presence in a repository listing is not proof that the binary loaded in a browser or that it has been legally cleared for commercial use."
+    }
+  ],
+  "step3_local_assets": [
+    {
+      "path": "assets/muslim-collection/muslim-noor-ka-nasha.webp",
+      "source": "user-supplied 1000201092.png crop",
+      "status": "locally bundled and decoded"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-e-noor.webp",
+      "source": "user-supplied 1000201092.png crop",
+      "status": "locally bundled and decoded"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-ki-roshni.webp",
+      "source": "user-supplied 1000201092.png crop",
+      "status": "locally bundled and decoded"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-se-raat-tak.webp",
+      "source": "user-supplied 1000201092.png crop",
+      "status": "locally bundled and decoded"
+    }
+  ],
+  "root_path_fix": {
+    "from": [
+      "css/styles.css",
+      "js/catalog.js",
+      "js/app.js"
+    ],
+    "to": [
+      "styles.css",
+      "catalog.js",
+      "app.js"
+    ],
+    "reason": "match root-level static deployment and avoid missing nested folders"
+  }
+}

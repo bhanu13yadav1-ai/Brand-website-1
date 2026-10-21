@@ -1,0 +1,17 @@
+STEP 3 SAFE TEST-DEPLOYMENT CHECKLIST
+WARNING: This candidate must not overwrite the live production repository yet: 65 legacy image binaries and the complete 43-item catalogue migration are still incomplete. Use a temporary repository/branch for a first preview.
+1. Back up the live repository before uploading.
+2. Extract the provided ZIP. It contains files at the repository root (index.html, styles.css, catalog.js, app.js, sw.js, manifest.webmanifest) plus assets/ and docs/.
+3. Upload/update all root entry files and the full assets/ folder together in one commit. Do not upload only index.html or the ZIP file itself.
+4. Preserve exact names/case and nested assets/muslim-collection/ and assets/supplied/ paths.
+5. After Pages deploys, open in a private tab and confirm fonts/colors/layout/menu first; then confirm the four Muslim preview images; then test wheels and other interactions.
+6. Existing legacy reference images remain remotely hosted in the current candidate; the complete binary bundling remains blocked until the three source repo ZIPs are supplied.
+7. This read-only session has not committed or deployed to GitHub.
+
+
+STEP 3.2 ADDENDUM
+The stylesheet and JavaScript now sit at the ZIP root and are requested with ?v=step3-3. The service-worker generation is blacked-fusion-v1-step3-3. Test in a temporary branch first, upload every file and the whole assets/ tree together, and confirm the hosted CSS load. This candidate does not bundle the 65 old remote image binaries or restore the full 43-item catalogue.
+
+
+STEP 3.3 COLLECTION ADDITIONS
+Muslim-Inspired Noor Edit: 6 cards (4 existing panel crops + 2 new images). Christian-Inspired Coming Soon: 1 preview. Sanskari: 12 campaign references (10 original mapped entries + 2 additions). The 5 new source originals are preserved byte-for-byte and optimized local WebP variants are wired into the galleries. The re-uploaded panel board and four crops were exact duplicates and were not duplicated.

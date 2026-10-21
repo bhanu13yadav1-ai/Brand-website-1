@@ -1,0 +1,44 @@
+BLACKED V1 — STEP 3.3 HANDOFF (COPY/PASTE)
+Date: 21 October 2026
+
+MASTER RULES
+- Follow exact 14-rule prompt in docs/MASTER-PROMPT-14-RULES-VERBATIM.txt.
+- Preserve existing features/data; never claim unrun tests pass.
+
+USER-REPORTED ISSUE FIXED IN SOURCE CANDIDATE
+- User screenshot `qa/user-screenshot-unformatted-2026-10-21.png` shows default serif/native controls. Step 2 used nested CSS/JS paths. Step 3.3 places `styles.css`, `catalog.js`, `app.js` beside `index.html`, with versioned URLs `?v=step3-3`, and uses service-worker cache generation `blacked-fusion-v1-step3-3`.
+- This is a local candidate fix only. Live GitHub Pages has not been modified or tested. Upload all files/assets together, not only index.html.
+
+NEW MUSLIM-INSPIRED COLLECTION
+- Original image `assets/supplied/muslim-collection-four-panel-original.png` preserved byte-for-byte.
+- Six local WebP cards in `assets/muslim-collection/`: the four original crops plus Tradition Outside, Desire Inside and Elegance Begins Within.
+- Added to Muslim-Inspired Collection · Noor Edit, explicitly labelled Coming Soon. No checkout is wired; “Shop Now” text is embedded artwork.
+
+LATEST TESTS
+- JS syntax (app/catalog/SW): PASS.
+- Static paths/HTML: PASS; 191 unique IDs, 7/7 views matched, no missing local HTML paths.
+- In-memory Chromium: 61/61 PASS, no overflow at 320/360/390/430/1440 px; historical raw-GitHub images are mocked for UI tests.
+- Asset-auditor tests: 2/2 PASS; new release regression tests: 5/5 PASS.
+- Local HTTP: 12/12 root entry/manifest/icon/Muslim original+crop paths HTTP 200.
+- Accessibility semantic guardrails: PASS, limited scope.
+
+BLOCKERS
+- 65 old image binaries are still remote; source ZIP archives were not available, so bytes/hashes/decoding/real network loads are not verified.
+- Catalogue remains 19 mapped entries vs older roadmap describing 43.
+- No secure GitHub publisher; Brand Studio is local drafts + JSON export.
+- Live GitHub Pages, physical Android, real service-worker install/update: NOT TESTED. No GitHub repo was changed.
+
+NEXT
+1. Back up repository and test in a temporary branch/repo.
+2. Extract this ZIP and upload all top-level files plus complete `assets/` tree together.
+3. Confirm styling, navigation, and four Muslim local cards load.
+4. Obtain full ZIPs for all three source repos, bundle/hash/decode legacy images, restore full 43-item source catalogue, and run full regression.
+5. Perform live Pages + Android test before calling it production-ready.
+
+
+LATEST CHECKPOINT — STEP 3.3 COLLECTION EXPANSION
+Muslim-Inspired · Noor Edit has six local card images: 4 existing crops + 2 new concepts. Christian-Inspired Coming Soon now has 1 local preview card. Sanskari has 12 mapped campaign references including 2 new supplied artworks. The user's 5 unique new originals are byte-preserved under assets/supplied/collection-additions and 5 display WebPs are local; the uploaded 4-panel PNG and four panel WebPs were exact duplicates of files already in Step 3.2 and were not duplicated. Catalog/lightbox/service-worker paths were updated, cache version is step3-3. All collection images are concept references. Live Pages and physical Android remain NOT TESTED; complete legacy image/catalogue migration remains BLOCKED until source repository ZIPs are provided.
+
+
+CURRENT STEP 3.3 TEST SUMMARY
+Browser smoke: 61/61 assertions PASS. Local HTTP: 22/22 paths PASS. Release unit tests: 8/8 PASS. Asset-auditor tests: 2/2 PASS. New images: Muslim 6 cards, Christian Coming Soon 1 card, Sanskari 12 cards. Five unique supplied source originals preserved byte-for-byte; five WebP delivery files decoded. The re-uploaded four-panel image/four crops were exact duplicates and not copied twice. Public GitHub Pages, real remote image fetch, and physical Android remain NOT TESTED. Do not call this a final production release.

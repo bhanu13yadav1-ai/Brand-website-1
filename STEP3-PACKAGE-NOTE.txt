@@ -1,0 +1,6 @@
+BLACKED Fusion V1 — STEP 3.3 COLLECTION EXPANSION CANDIDATE
+Date: 2026-10-21
+
+Added two Muslim-Inspired Noor Edit images (six Muslim gallery cards total), one Christian-Inspired Coming Soon concept preview, and two additional Sanskari campaign references (12 cards total). Five new source images are preserved byte-for-byte and five optimized WebPs are used in local gallery paths. Five duplicate Muslim artwork uploads were hash-matched to assets already present and were not duplicated.
+
+Latest checks: browser 61/61; local HTTP 22/22; release regression tests 8/8; asset audit tests 2/2; static refs PASS. Live GitHub Pages and physical Android remain NOT TESTED. 65 legacy image binaries / full 43-entry catalog reconciliation / secure GitHub publishing remain blocked or incomplete. Do not deploy as final production yet.

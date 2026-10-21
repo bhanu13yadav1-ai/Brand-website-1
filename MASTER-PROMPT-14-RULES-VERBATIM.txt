@@ -1,0 +1,814 @@
+14 rule shai sa note karna 
+Ok ya sab karna hai jo apna reserch kiya hai usna sth sab kuvh pehla note kar lo or ya decide kro ke kitne pase  ma hoga ya sab or har pase ka end ma kya kya hua ab tak copy paste forma ma dena like a note remeber ka liya fir start karna hai v1  MASTER PROMPT — NEXT MAJOR WEBSITE VERSION
+
+Senior Full-Stack Development + UI/UX + Research + QA + Performance + Security
+
+PROJECT MISSION
+
+Upgrade my existing website into a significantly better, complete, stable, premium-quality, mobile-first experience.
+
+Act as a Senior Full-Stack Developer, Senior QA Engineer, UI/UX Designer, Web Performance Engineer, Security Reviewer, Accessibility Tester, and Researcher.
+
+The current website contains multiple bugs, images are not loading correctly, some features require improvement, and the sections need better organization. I want a complete, properly researched and tested next version—not just a visual redesign or a few code changes.
+
+Primary priorities:
+
+1. Preserve all existing features and fix their bugs.
+2. Identify and fix the real causes of image-loading failures.
+3. Correct the wheel feature in all three previously requested locations.
+4. Add a dedicated Dirty/Wild Wheel and Boyfriend Section.
+5. Improve the research, content, usability, and organization of every relevant section.
+6. Create the Wellness & Size Guide section.
+7. Build a dedicated Sanskari collection and highlight Muslim and Christian collections as Coming Soon.
+8. Improve the technical architecture, performance, accessibility, security, and responsive design.
+9. Test the entire website and report genuine results before declaring the release complete.
+
+Do not claim a feature works without verifying it. Do not remove a working feature to make implementation easier. Do not replace the existing website with an unrelated template.
+
+
+---
+
+RULE 1 — AUDIT THE COMPLETE EXISTING WEBSITE FIRST
+
+Before making any changes, inspect the actual project and understand how it works.
+
+1. Examine the complete accessible repository, folder structure, source files, stylesheets, scripts, assets, dependencies, configuration, and deployment setup.
+2. Inspect the currently deployed website if its URL is available.
+3. Identify the current version, application architecture, existing features, incomplete features, and known bugs.
+4. Create a complete inventory of all screens, sections, buttons, interactive components, and important user journeys.
+5. Identify which features work correctly, which work partially, and which are broken.
+6. Check existing project requirements and previous instructions to understand the intended behavior.
+7. Identify all three previously requested wheel locations.
+8. Record image-loading errors, console errors, failed network requests, navigation issues, layout problems, and data-persistence problems.
+9. Inspect existing code before deciding whether a framework or build system is necessary.
+10. Create a prioritized implementation and testing plan.
+
+Do not assume the cause of a problem before investigating it.
+
+Repository rules
+
+Use the actual repository and website associated with this task. Do not invent a repository URL, assume access to a repository that has not been supplied, or modify an unrelated project.
+
+If repository or deployment access is unavailable, explain the limitation clearly and work with the source files that are actually accessible.
+
+Deliverable before implementation: a feature inventory, a list of observed bugs, a root-cause investigation plan, and a list of features that must be preserved.
+
+
+---
+
+RULE 2 — PRESERVE ALL EXISTING FEATURES AND USER DATA
+
+The next version must be an upgrade of the existing website, not a replacement that loses previously implemented functionality.
+
+1. Preserve every existing working feature unless a change is explicitly required.
+2. Fix broken or incomplete functionality instead of simply deleting it.
+3. Preserve existing navigation, settings, saved content, and other supported user data.
+4. Avoid destructive changes to the storage format, database, or application state.
+5. Keep existing functionality compatible with the new sections.
+6. Do not rename, relocate, or remove important screens without checking their existing behavior and documenting the reason.
+7. Create a regression checklist before starting the implementation.
+8. Compare the old and new versions to identify missing features and unexpected changes.
+9. If a feature cannot be preserved, explain why and offer a safe migration or alternative.
+10. Never use a redesigned homepage as proof that the complete website is working.
+
+New sections must integrate with the existing application instead of creating disconnected or conflicting implementations.
+
+
+---
+
+RULE 3 — FIX ALL IMAGE-LOADING PROBLEMS AT THE ROOT CAUSE
+
+Image loading is one of the highest-priority bugs.
+
+Investigate the actual reason images fail to appear. Do not assume that HTML alone causes the problem.
+
+Investigate
+
+- Missing image files.
+- Incorrect filenames, file extensions, or letter casing.
+- Incorrect relative and absolute paths.
+- GitHub Pages subdirectory and base-path problems, if applicable.
+- Failed external image URLs.
+- Unsupported or incorrectly served image formats.
+- CSS rules that hide images or assign incorrect dimensions.
+- JavaScript errors that prevent image rendering.
+- Lazy-loading failures.
+- Network errors, CORS restrictions, and incorrect content types where relevant.
+- Service-worker caching and outdated deployed assets.
+- Incorrect build output paths.
+- Failed imports and missing asset references.
+
+Implementation requirements
+
+1. Fix the actual root cause, not just the visible symptom.
+2. Verify that every required local image exists.
+3. Verify every required image URL and production asset path.
+4. Use the correct image for the correct section or card.
+5. Preserve supplied reference images and product designs wherever applicable.
+6. Never replace an unavailable image with an unrelated image without approval.
+7. Use consistent image dimensions, appropriate aspect ratios, and responsive sizing.
+8. Optimize images for performance without visibly damaging their quality.
+9. Load important above-the-fold images promptly.
+10. Add a sensible fallback for genuinely unavailable images.
+11. Avoid broken-image icons, empty image containers, and accidental stretching.
+12. Test image loading after a fresh page load, refresh, and production deployment.
+
+Acceptance criteria
+
+All required local images must exist and all required image references must be verified. Any unavailable external asset must be reported.
+
+Do not claim all images are fixed solely because the page builds successfully.
+
+
+---
+
+RULE 4 — FIX THE WHEEL FEATURE IN ALL THREE REQUESTED LOCATIONS
+
+The existing wheel feature must work properly in all three previously requested locations.
+
+First, use the source code, prior requirements, and existing interface to identify the exact three locations. Do not guess their names.
+
+For each location
+
+1. Confirm the wheel appears in the correct section.
+2. Verify that it opens and displays correctly.
+3. Fix incorrect positioning, sizing, clipping, layering, and responsive layout.
+4. Verify that every control responds to user interaction.
+5. Test rotation, selection, animation, and result handling wherever implemented.
+6. Ensure that the displayed result corresponds to the selected wheel category.
+7. Prevent duplicate event listeners and conflicting application state.
+8. Ensure the wheel does not interfere with scrolling, navigation, or other overlays.
+9. Verify that repeated interactions do not break the component.
+10. Check the component after a refresh and after navigating away and back.
+11. Ensure it works on Android touchscreens and desktop browsers.
+12. Test each location independently and test the complete experience.
+
+Use reusable components or shared logic where suitable, but retain location-specific functionality.
+
+If all three locations use the same underlying component, fix the component and still verify its behavior in every location.
+
+Mandatory acceptance criterion: All three locations must be identified by exact section names and relevant source-file paths, and each must pass its individual functional tests.
+
+Do not mark this requirement as complete if one location remains broken or has not been tested.
+
+
+---
+
+RULE 5 — IMPROVE THE TECHNICAL ARCHITECTURE; DO NOT RELY ON A MONOLITHIC HTML FILE
+
+Investigate whether the current structure contributes to the bugs and maintenance problems.
+
+HTML can display images and support working websites. Therefore, do not automatically blame HTML. Identify the actual problem and choose an appropriate architecture.
+
+Technical structure
+
+- Use semantic HTML for page structure.
+- Use organized CSS for layout, styling, responsive behavior, and shared design rules.
+- Use JavaScript modules or an appropriate framework for application logic and interactive components.
+- Separate content, styling, reusable UI, data handling, and business logic.
+- Organize assets in predictable locations.
+- Use consistent naming conventions.
+- Keep configuration and environment-specific settings organized.
+- Avoid unnecessarily large files containing the entire application.
+- Avoid duplicate implementations of the same component.
+- Avoid introducing unnecessary frameworks and dependencies.
+- Preserve compatibility with the existing hosting environment.
+
+If vanilla JavaScript is sufficient, organize it properly instead of migrating to a framework without a clear benefit.
+
+If a framework or build system is genuinely necessary, configure it properly and verify that the production deployment works.
+
+Code quality requirements
+
+- No missing imports or exports.
+- No broken script or stylesheet references.
+- No undefined functions used by active features.
+- No duplicate event handlers.
+- No conflicting styles that break existing components.
+- No broken navigation routes.
+- No accidental hardcoded paths that fail in production.
+- No exposed API keys, credentials, or private secrets.
+- No fake implementations that only appear functional.
+
+The final codebase must be maintainable, understandable, and suitable for further upgrades.
+
+
+---
+
+RULE 6 — RESEARCH DARK FANTASY, DIRTY THEMES, AND PRIVATE ADULT INTERESTS RESPONSIBLY
+
+Research adult relationship interests, dark-romance themes, fantasy-inspired storytelling, flirting, privacy, and consensual intimacy before designing these sections.
+
+The goal is to develop engaging, mature concepts for consenting adults who may prefer to discuss some romantic interests privately rather than publicly.
+
+Research these themes
+
+- Dark romance and mysterious attraction.
+- Secret crushes and private romantic fantasies.
+- Forbidden-love storytelling between consenting adults.
+- Flirting and bold double-meaning conversations.
+- Confident romantic dynamics.
+- Private couple roleplay and fantasy-inspired characters.
+- Trust, boundaries, and consensual power dynamics.
+- Romantic tension and anticipation.
+- Secret confessions and intimate conversations.
+- Playful, adventurous couple challenges.
+- Premium adult-themed campaign and content concepts.
+
+Use credible relationship education material, reputable surveys, and relevant psychology research where appropriate.
+
+Research standards
+
+1. Prefer reliable and relevant sources.
+2. Distinguish research findings from personal opinions and creative interpretation.
+3. Do not invent statistics or claim that all women enjoy the same fantasies.
+4. Do not stereotype people based on gender, clothing, religion, or cultural background.
+5. Turn findings into practical content categories, creative prompts, and website features.
+6. Keep the experience intended for adults.
+7. Use suggestive, playful, bold, and mature content appropriate to the product and platform.
+8. Maintain clear consent, personal boundaries, and the ability to skip any activity.
+9. Do not normalize coercion, threats, manipulation, or non-consensual behavior.
+10. Do not expose people's private fantasies or sensitive personal information.
+
+Use the research to create thoughtful content rather than making unsupported claims about what people secretly want.
+
+
+---
+
+RULE 7 — CREATE A COMPLETE WELLNESS & BODY-EDUCATION SECTION
+
+Build a dedicated Women's Wellness & Body Education section with beginner-friendly, medically responsible content.
+
+The purpose is to help adult women understand body measurements, select correctly sized clothing, learn accurate anatomy, and recognize when professional medical advice may be needed.
+
+Keep educational content clearly separated from romantic and adult-themed promotional content.
+
+A. Bra and clothing size guide
+
+Cover:
+
+- Bust and underbust measurements.
+- Band-size measurements.
+- Bra cup-size concepts.
+- Waist and hip measurements.
+- Underwear and brief sizing.
+- Garment fit and product-specific size charts.
+- How to measure accurately with a measuring tape.
+- How to use measurements to select a size.
+- How to choose between sizes when measurements fall between ranges.
+- Common sizing mistakes.
+- Signs that a garment is too tight, too loose, or uncomfortable.
+- Differences between brands and national sizing systems.
+
+Support centimetres and inches where appropriate.
+
+Do not invent universal sizing conversions. Make clear that sizing differs between brands, products, and countries.
+
+A size calculator must use a documented method, validate its inputs, and be tested against the stated sizing rules.
+
+B. External genital anatomy guide
+
+Explain the difference between the vulva and the vagina using correct medical terminology.
+
+Cover the basic anatomy of the vulva, labia, clitoris, and vaginal opening, with appropriate educational diagrams where useful.
+
+Explain normal anatomical variation and basic external hygiene in clear, respectful language.
+
+Avoid shaming, myths, unnecessary examinations, and misleading claims about normal body appearance.
+
+C. Virginity myths and medical accuracy
+
+Provide medically accurate educational information about virginity and the hymen.
+
+Explicitly explain that virginity is not a medical diagnosis and that no reliable physical examination can establish whether someone has had sexual intercourse.
+
+The appearance of the hymen cannot reliably determine sexual history.
+
+Do not create a guide claiming someone can check their virginity by inspecting the hymen or vagina. Do not recommend inserting objects or fingers for this purpose.
+
+Focus on accurate anatomy education, body awareness, hygiene, and the importance of consulting a qualified healthcare professional when needed.
+
+D. When to seek medical guidance
+
+Explain in simple language that symptoms such as persistent pain, unusual bleeding, sores, unusual discharge, or other concerning changes may require professional medical evaluation.
+
+Do not diagnose users or present general educational information as a replacement for medical care.
+
+E. Wellness UI and content quality
+
+- Use readable typography and clearly separated topics.
+- Use simple diagrams only when they improve understanding.
+- Include reliable medical references.
+- Include a content review date.
+- Keep sensitive content appropriately labelled.
+- Make the section easy to navigate on mobile devices.
+- Avoid presenting unsupported health claims as facts.
+
+The final Wellness section must be genuinely useful, evidence-based, accessible, and clearly organized.
+
+
+---
+
+RULE 8 — DIVIDE THE WEBSITE INTO CLEAR, LOGICAL SECTIONS
+
+The website must feel organized rather than crowded or confusing.
+
+Inspect the existing information architecture and build a section map before changing navigation.
+
+Suggested information architecture
+
+1. Home / Main Dashboard.
+2. Existing core features.
+3. Dirty / Wild Wheel.
+4. Boyfriend / Couples Zone.
+5. Adult-themed creative concepts.
+6. Sanskari Collection.
+7. Muslim-Inspired Collection — Coming Soon.
+8. Christian-Inspired Collection — Coming Soon.
+9. Wellness & Body Education.
+10. Size Guide.
+11. Research and Educational Resources.
+12. About, Privacy, Safety, and Settings, where appropriate.
+
+This is a proposed structure. Map it to the actual existing application and preserve current functionality. Do not blindly duplicate sections or introduce confusing navigation.
+
+Navigation requirements
+
+- Clear section headings.
+- Consistent navigation and visual hierarchy.
+- Easy-to-recognize primary actions.
+- Logical grouping of related features.
+- Simple navigation on mobile.
+- Correct destinations for every navigation item.
+- Proper back navigation or a clear route to return.
+- Distinct loading, empty, error, and unavailable states.
+- No dead links or fake buttons.
+- No unnecessary nested menus.
+- No accidental duplication of content.
+
+A user should be able to understand where features are located within a few seconds.
+
+
+---
+
+RULE 9 — CREATE A SPECIAL SANSKARI COLLECTION AND FUTURE-THEME PREVIEWS
+
+Create a dedicated Sanskari Collection that acts as a reusable home for current and future creative concepts.
+
+The Sanskari section must contain real content and reusable components, not just a decorative heading.
+
+Required functionality
+
+- A dedicated section and navigation entry.
+- Multiple concept cards.
+- Clear concept titles and short descriptions.
+- Consistent layouts and image handling.
+- Reusable content components.
+- Consistent product presentation where products are shown.
+- A maintainable structure for adding future concepts.
+- Working navigation and interactive controls.
+
+Muslim-inspired and Christian-inspired collections
+
+Create premium preview cards for:
+
+- Muslim-Inspired Collection — Coming Soon
+- Christian-Inspired Collection — Coming Soon
+
+Make these upcoming sections visually noticeable without making the interface crowded.
+
+Use appropriate, respectful visual themes and tasteful romantic storytelling. Where appropriate, use playful and suggestive double meanings without relying on offensive stereotypes.
+
+Do not imply that a person's religion determines their private interests. Do not falsely present unfinished collections as fully available.
+
+Coming Soon functionality
+
+- Clearly label upcoming features.
+- Use verified, suitable assets or intentionally designed previews.
+- Do not display broken image placeholders.
+- Do not create buttons that pretend to open unfinished features.
+- Ensure future collections can be added without rewriting the entire application.
+
+
+---
+
+RULE 10 — CREATE A DEDICATED 18+ DIRTY / WILD WHEEL
+
+Add a dedicated Dirty / Wild Wheel (18+) with a premium, bold, playful, mature visual identity.
+
+The new wheel must be a functional feature integrated with the existing website.
+
+Do not remove or overwrite the original wheel. Preserve its original behavior while adding the new mode.
+
+Wheel categories
+
+Create separately selectable categories such as:
+
+1. Flirty & Teasing.
+2. Dirty Double Meanings.
+3. Bold Couple Challenges.
+4. Romantic but Spicy.
+5. Wild Fantasy Prompts.
+6. Truth or Dare for Couples.
+7. Secret Crush & Confessions.
+8. Boyfriend Challenges.
+9. Private Fantasy Conversations.
+10. Dark Romance & Mystery.
+
+Provide varied, creative, suggestive prompts intended for consenting adults. The content can be bold and playful without relying on graphic sexual descriptions.
+
+Wheel functionality
+
+- Choose a category.
+- Spin the wheel.
+- Show a clear result.
+- Spin again.
+- Reset the current round.
+- Avoid immediate repeated results where practical.
+- Keep the selected category synchronized with the displayed wheel.
+- Provide a clear way to exit or change categories.
+- Display appropriate 18+ content labels and warnings.
+- Ensure the interface is easy to use with one hand on mobile.
+
+Interaction and safety
+
+- Every button must work as expected.
+- The animation must finish reliably and reveal the correct result.
+- Repeated spins must not cause duplicate event handlers or broken state.
+- Users must be free to skip any prompt without pressure.
+- Do not include dangerous, coercive, or non-consensual challenges.
+- Do not label a wheel result as mandatory.
+- Do not claim that participation is private unless the implementation actually supports that claim.
+
+Testing requirements
+
+Test random selection, result correctness, category switching, animation, repeat behavior, reset behavior, keyboard interactions where applicable, responsive layout, and all three original wheel locations.
+
+Also test the new Dirty/Wild Wheel as a separate mode.
+
+
+---
+
+RULE 11 — CREATE A DEDICATED BOYFRIEND / COUPLES SECTION
+
+Create a complete Boyfriend Zone — Private Couple Vibes section for consenting adults.
+
+It must have its own clear navigation entry, distinct visual identity, content categories, reusable cards, and working interactions.
+
+Do not make it just a heading with a few links.
+
+A. Flirty Boyfriend
+
+Include playful flirting, compliments, teasing conversations, date invitations, and double-meaning messages.
+
+B. Bold Couple Challenges
+
+Include consensual truth-or-dare prompts, playful couple games, creative date challenges, and confidence-building activities.
+
+C. Secret Fantasy Corner
+
+Include romantic and fantasy-inspired conversation starters that help adults discuss private interests, boundaries, expectations, and comfort levels with their partners.
+
+Focus on communication and mutual consent.
+
+D. Romantic + Wild
+
+Include romantic moments, mysterious date ideas, playful roleplay concepts, adventurous couple prompts, and bold but non-graphic creative content.
+
+E. Boyfriend Special Wheel
+
+Connect the Boyfriend Section directly to the Dirty/Wild Wheel.
+
+Where appropriate, open the wheel with boyfriend or couple categories already selected.
+
+Ensure category selection and results remain correct.
+
+F. Messages & Double-Meaning Teasers
+
+Provide short, original, creative messages, flirty captions, suggestive teasers, playful confessions, and romantic one-liners for private conversations.
+
+Organize content into meaningful categories instead of placing everything in a single long list.
+
+Design requirements
+
+- Premium and mature visual appearance.
+- Easy-to-read cards.
+- Consistent typography and spacing.
+- Clear section titles.
+- Responsive layouts.
+- Functional buttons and category filters.
+- Appropriate adult-content labels.
+- No unrelated images.
+- No broken assets.
+- No fake save, share, chat, or privacy functionality.
+
+Privacy and data protection
+
+Do not publish private fantasies, messages, or personal details without explicit consent.
+
+If accounts or saved content exist, enforce appropriate access controls. Do not collect sensitive personal information unnecessarily.
+
+Never describe content as encrypted, anonymous, or private unless the technical implementation genuinely provides that protection.
+
+
+---
+
+RULE 12 — APPLY PROFESSIONAL DESIGN, PERFORMANCE, ACCESSIBILITY, AND SECURITY STANDARDS
+
+The next version should represent a meaningful improvement in product quality, not merely a new version number.
+
+A. Visual design
+
+- Mobile-first design, especially for Android phones.
+- Premium, polished appearance.
+- Clear visual hierarchy.
+- Consistent typography, spacing, icons, and component behavior.
+- Readable content and comfortable touch targets.
+- Well-separated sections and navigation.
+- Appropriate color contrast.
+- Minimal unnecessary clutter.
+- Consistent image presentation.
+- Responsive layouts without accidental horizontal scrolling.
+- Appropriate loading, error, empty, and success states.
+- Smooth, purposeful animations.
+- Respect reduced-motion settings where applicable.
+
+Avoid overly small text, overcrowded cards, excessive borders, and unnecessary shadows.
+
+B. Performance
+
+- Optimize images and asset delivery.
+- Avoid unnecessary JavaScript and external dependencies.
+- Prevent duplicate network requests where practical.
+- Avoid blocking the main interface with excessive processing.
+- Use appropriate caching.
+- Handle slow networks and failed requests gracefully.
+- Ensure updates do not leave users trapped on stale application versions.
+- Test initial loading and important interactions.
+
+C. Data integrity
+
+- Preserve supported user data and settings.
+- Avoid destructive storage or database changes.
+- Validate saved data before migrations.
+- Keep existing backup and restore features functional where present.
+- Handle missing or outdated saved data gracefully.
+- Do not expose private user data through analytics or public profiles.
+
+D. Security and privacy
+
+- Do not commit private credentials or secrets.
+- Validate inputs.
+- Review authentication and authorization if a backend exists.
+- Do not assume hidden admin screens are secure.
+- Protect sensitive content with appropriate access controls.
+- Obtain appropriate consent for analytics or sensitive data collection.
+- Avoid unnecessary collection of personal information.
+- Test security-relevant behavior before claiming it is production-ready.
+
+E. Maintainability
+
+- Reuse components where it reduces duplication.
+- Keep the application logic understandable.
+- Document complex behavior.
+- Avoid unnecessary abstractions.
+- Keep dependencies appropriate for the project.
+- Make future content updates easy.
+- Avoid breaking unrelated features during visual changes.
+
+
+---
+
+RULE 13 — FOLLOW A STRICT SENIOR-LEVEL TESTING AND RELEASE PROCESS
+
+Testing is mandatory. Do not consider the project complete just because it compiles or looks correct in one screenshot.
+
+Phase 1: Baseline testing
+
+Before implementing changes, record:
+
+- Existing features and their current behavior.
+- Existing broken features.
+- Image-loading failures.
+- Browser-console errors.
+- Network errors.
+- Navigation failures.
+- Mobile layout issues.
+- Data persistence behavior.
+- Existing build and deployment results.
+
+Phase 2: Incremental implementation
+
+Implement changes in understandable steps.
+
+After changing an important component, test it before proceeding to dependent features.
+
+Preserve working functionality and avoid unrelated rewrites.
+
+Phase 3: Automated testing
+
+Run the checks supported by the actual project:
+
+- Syntax checks.
+- Production build checks.
+- Linting and type checks where configured.
+- Unit tests for important business logic.
+- Integration tests for connected components.
+- Navigation and asset-path checks.
+- Data persistence and migration checks.
+- Dependency and security checks where appropriate.
+
+Do not invent test results or report tests as passed when they were not executed.
+
+Phase 4: Functional testing
+
+Test all major features, including:
+
+- Existing navigation and screens.
+- Image loading.
+- Wheel feature in all three original locations.
+- Dirty/Wild Wheel.
+- Wheel categories and results.
+- Boyfriend Section navigation and interactions.
+- Sanskari Collection.
+- Muslim and Christian Coming Soon previews.
+- Wellness and Size Guide.
+- Forms and input validation.
+- Data saving and restoration where applicable.
+- Loading and error states.
+- Mobile menus, overlays, and buttons.
+- Browser refresh and navigation between sections.
+
+Phase 5: Responsive testing
+
+Check realistic viewport widths, including approximately:
+
+- 320 px.
+- 360 px.
+- 390 px.
+- 430 px.
+- Desktop widths.
+
+Test on Android Chrome and additional browsers where available.
+
+Check actual touch interactions, scrolling, wheel animations, modals, overlays, text wrapping, and image cropping.
+
+Do not claim physical-device testing if only browser emulation was used.
+
+Phase 6: Regression testing
+
+Compare the updated version against the baseline.
+
+Verify that:
+
+- No existing working feature disappeared.
+- No previously working button became inactive.
+- No page became inaccessible.
+- No required image path broke.
+- No saved user data was unexpectedly lost.
+- No duplicate event listeners were introduced.
+- No new console or network errors appeared.
+- No new layout problem was introduced in existing sections.
+
+Phase 7: Production testing and deployment
+
+If deployment access is available and authorized:
+
+1. Build the production version.
+2. Verify the actual build output.
+3. Confirm the hosting and routing configuration.
+4. Deploy using the existing approved workflow.
+5. Open the deployed website.
+6. Confirm that images, scripts, stylesheets, and routes load correctly.
+7. Check relevant caching and service-worker behavior.
+8. Test the main user journeys on the deployed version.
+9. Retest the original three wheel locations.
+10. Record any remaining failures.
+
+If deployment access is unavailable, provide the completed source changes and exact deployment instructions. Do not claim the live site has been updated when it has not.
+
+Release acceptance criteria
+
+A release cannot be declared complete while a known critical bug remains unfixed.
+
+Every major requirement must receive one of these statuses:
+
+- PASS — tested and passed.
+- FAIL — tested and failed.
+- NOT TESTED — could not be verified.
+- BLOCKED — requires unavailable access, credentials, source code, or hardware.
+
+Do not promise literally zero bugs. Provide evidence of the testing performed and honestly list any remaining limitations.
+
+
+---
+
+RULE 14 — DELIVER THE COMPLETE NEXT VERSION WITH A SENIOR-LEVEL REPORT
+
+Work as an experienced engineer accountable for the final product.
+
+After implementation and testing, deliver the following:
+
+A. Project summary
+
+1. Final version number.
+2. Summary of significant improvements.
+3. List of preserved existing features.
+4. List of new features.
+5. List of major fixes.
+6. Explanation of important architecture changes.
+
+B. Image-loading report
+
+Explain:
+
+- The actual causes of the original image failures.
+- The source files or configuration that were fixed.
+- How image paths were verified.
+- Whether all required assets were verified in production.
+- Any remaining unavailable images or external dependencies.
+
+C. Wheel report
+
+Provide the exact names of the three original wheel locations.
+
+For each location, specify:
+
+- Relevant source files.
+- The bug that was identified.
+- The fix that was applied.
+- The tests that were executed.
+- The result of each test.
+
+Also report the new Dirty/Wild Wheel and how it integrates with the Boyfriend Section.
+
+D. Content and research report
+
+List the research sources actually used for:
+
+- Dark fantasy and adult relationship themes.
+- Creative content categories.
+- Women's wellness and body education.
+- Clothing measurement and sizing guidance.
+- Medical anatomy information.
+
+Explain any important research limitations. Do not invent sources or research findings.
+
+E. Section and navigation report
+
+Show the final section structure and confirm which screens and features are new, changed, preserved, or unavailable.
+
+F. Testing report
+
+Provide a table containing:
+
+- Test or feature.
+- Test method.
+- Result: PASS, FAIL, NOT TESTED, or BLOCKED.
+- Relevant issue or evidence.
+- Remaining action if required.
+
+Include image testing, wheel testing, Boyfriend Section testing, wellness navigation, responsive testing, regression testing, and production checks where applicable.
+
+G. Code and deployment report
+
+Provide:
+
+- Important files created.
+- Important files modified.
+- Important files removed, with reasons.
+- Build results.
+- Deployment results.
+- Exact unresolved bugs.
+- Any remaining limitations.
+- Final repository URL or ZIP package, if available.
+- Live website URL only after verifying it.
+
+H. Non-negotiable rules
+
+- Research before implementing research-dependent content.
+- Inspect the actual source code before modifying it.
+- Preserve working features and data.
+- Do not invent missing requirements.
+- Do not use unrelated or fake images.
+- Do not build fake functionality.
+- Do not hide test failures.
+- Do not report unexecuted tests as passed.
+- Do not stop after improving the homepage.
+- Do not declare success simply because the build is successful.
+- Do not claim deployment or live-site verification without actually performing it.
+- Explain exact blockers instead of pretending unfinished work is complete.
+
+FINAL EXECUTION INSTRUCTION
+
+Begin with a complete audit of the existing website.
+
+Then identify root causes, prioritize bugs, map the existing features, and create an implementation plan. Implement the fixes and new sections, test each major component, perform regression testing, fix discovered failures, and test again.
+
+The final result must be a complete, stable, well-organized, responsive, maintainable next version with properly functioning images, all three original wheel locations, a dedicated Dirty/Wild Wheel, a fully integrated Boyfriend Section, a useful Wellness & Size Guide, a reusable Sanskari Collection, and clearly labelled Muslim and Christian Coming Soon collections.
+
+Do not deliver only a plan, mockup, or incomplete code snippets when full implementation is possible.
+
+If any requirement cannot be completed because the actual source code, repository access, historical instructions, credentials, or testing environment is unavailable, identify the exact limitation and continue with the rest of the work.
+
+The final standard is verified functionality, preserved features, reliable code, and honest test results—not claims of perfection.

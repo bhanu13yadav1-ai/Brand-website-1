@@ -1,0 +1,491 @@
+{
+  "release": "BLACKED Fusion V1 Step 3.3 Collection Expansion Candidate",
+  "date": "2026-10-21",
+  "status": "candidate_not_production_ready",
+  "archive_layout": "package contents are at ZIP root; no wrapper folder inside ZIP",
+  "entry_count_excluding_manifest": 92,
+  "files": [
+    {
+      "path": "README.md",
+      "bytes": 6950,
+      "sha256": "161d658727202f23baed4a31eda583f82c5fac73fb01bda1bca69b358e167271"
+    },
+    {
+      "path": "app.js",
+      "bytes": 63174,
+      "sha256": "2486a876f78c7826fe953e171c4303a54b11ca103eec805b3f407c3a2efddf21"
+    },
+    {
+      "path": "assets/ASSET-IMPORT-MAP.csv",
+      "bytes": 5153,
+      "sha256": "9326f9cf7283dd1e610b670d2f0197dfd0ce2163f943472cfe2ffcd1b311e06c"
+    },
+    {
+      "path": "assets/README.md",
+      "bytes": 1749,
+      "sha256": "2b6ecdd682f6d54834e5b0f75b9e0d296b96bd780953a4737094ca524d71320f"
+    },
+    {
+      "path": "assets/blacked-icon.svg",
+      "bytes": 612,
+      "sha256": "94ebac2c6bb5a1f685aeceb481c7c883d6cce48d3ffe6073b6aa0d4c2314552f"
+    },
+    {
+      "path": "assets/christian-collection/christian-grace-has-never-looked-so-bold.webp",
+      "bytes": 191890,
+      "sha256": "d11b895ebbc619f601d17014a97b1397632f674f0357eb1605e0b274886fc28b"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-elegance-begins-within.webp",
+      "bytes": 227598,
+      "sha256": "ac9debf72bf2ba10f55c2afca6243e96a714add362d81a3d52b9d80cfc347fca"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-noor-ka-nasha.webp",
+      "bytes": 92918,
+      "sha256": "10324c371d9befe1da18edc8e8244e0fc0e3e822587cd2c6f45e1d16891eca4a"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-e-noor.webp",
+      "bytes": 93914,
+      "sha256": "daaad21c461c4d7df2c62c98dd29ceab914206c1703c1d2ec1b118c516d7a313"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-ki-roshni.webp",
+      "bytes": 90332,
+      "sha256": "639dad1555041488c9c09d115b843541bdb780ceb5c0143b73ff11d601cf2812"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-se-raat-tak.webp",
+      "bytes": 92520,
+      "sha256": "544c35fc7f696ca21cc3d97e036db81e0b21f43113b896d8c544a664994e7f1a"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-tradition-outside-desire-inside.webp",
+      "bytes": 232638,
+      "sha256": "6e89f0c73a39211422799619685463ce71e4e8d15d5ecd933e6aaf654ef355e6"
+    },
+    {
+      "path": "assets/registry/REMOTE-ASSET-REGISTRY.json",
+      "bytes": 51903,
+      "sha256": "52ddf9755dcb467e9a5e7ff7819a8f31200c2aa55e99b28bdb71012baf7ff274"
+    },
+    {
+      "path": "assets/registry/STEP3-3-LOCAL-COLLECTION-ASSETS.json",
+      "bytes": 5893,
+      "sha256": "3699dc7025722be6e1d33f8c770538b46d2d40f7408ae476841913fbc326120e"
+    },
+    {
+      "path": "assets/sanskari-collection/sanskari-outside-bold-within.webp",
+      "bytes": 247492,
+      "sha256": "fe5f47d0896663b17764ba009b4de986a98f0930c6a3c1cffd0c4c6050fe4718"
+    },
+    {
+      "path": "assets/sanskari-collection/sanskari-outside-dangerous-new.webp",
+      "bytes": 103164,
+      "sha256": "02a9312d31efb0194825b19cd41c327850dfeacb7656b1e40363964f9dfc388a"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200453(2).png",
+      "bytes": 2999947,
+      "sha256": "0586b51cab5ca9ff298df1d13fd0cfe0bbc305c8e7f6fc4371ca7242b38e8c8d"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200454(2).jpg",
+      "bytes": 370234,
+      "sha256": "b92c4db6feaa1dc881fe191449fb54c397c3f1fb5a403da7a81e3de2d4b621f3"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200455(3).jpg",
+      "bytes": 364564,
+      "sha256": "ab53c764f57cf473523d8d10e52c0789ceed8bc04d383bf8fee30456eb342575"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200456(2).jpg",
+      "bytes": 206532,
+      "sha256": "0cc753fed62a084d7b9f7a26625e333bdd8b3993f3e827a07c1dddc1bd194b5e"
+    },
+    {
+      "path": "assets/supplied/collection-additions/1000200479.png",
+      "bytes": 3239331,
+      "sha256": "c123aa9cabd8db50b27e07507cf547fec9f24a92f276d5e20a21d9452fd64763"
+    },
+    {
+      "path": "assets/supplied/muslim-collection-four-panel-original.png",
+      "bytes": 3350486,
+      "sha256": "a4412d05386a8fe11327c2c4fd95213cc431082aec32edd15f27616206646e9e"
+    },
+    {
+      "path": "catalog.js",
+      "bytes": 17276,
+      "sha256": "ac09bbe0e37fc9dd418ae1a0946fa40254c269e61e8b67a0e466161375dd66f2"
+    },
+    {
+      "path": "docs/BUG-REGISTER.csv",
+      "bytes": 5859,
+      "sha256": "6428095ddbf64ad8406963354527f3d7a1faefe3eb16be26cef0e0d8b4236fcf"
+    },
+    {
+      "path": "docs/DEPLOYMENT-NOTE.txt",
+      "bytes": 1970,
+      "sha256": "b9803e033fbb57d72ff3a0971407fe3325f0658a0b375ac88c403426a225b15b"
+    },
+    {
+      "path": "docs/FEATURE-INVENTORY.md",
+      "bytes": 4778,
+      "sha256": "ebb85a3df98620b26253d55c3c2f2798fb8eba0b308856b271844d3f9ffb6688"
+    },
+    {
+      "path": "docs/MASTER-MEMORY-NOTES.md",
+      "bytes": 32132,
+      "sha256": "411d7f246c754ddc0a8d3ca33bc2a55a85f8a790208232204c5d14cf0a0c941b"
+    },
+    {
+      "path": "docs/MASTER-MEMORY-NOTES.txt",
+      "bytes": 32132,
+      "sha256": "411d7f246c754ddc0a8d3ca33bc2a55a85f8a790208232204c5d14cf0a0c941b"
+    },
+    {
+      "path": "docs/MASTER-PROMPT-14-RULES-VERBATIM.txt",
+      "bytes": 33115,
+      "sha256": "9317dced4734442abdb99d48a6aa835fbe528cfcdf8224804d59dd21cee69378"
+    },
+    {
+      "path": "docs/PHASE-0-AUDIT.md",
+      "bytes": 7507,
+      "sha256": "2de68a4ddc0723b043e8fe10b3fd48d09d10dcc7257ff7e0ebbe3c1cf9995545"
+    },
+    {
+      "path": "docs/PHASE-1-END-NOTE.md",
+      "bytes": 4357,
+      "sha256": "d742ff218044045d0062c0cc3c51fa2153c6fb979e44eb2c537d156212b04d09"
+    },
+    {
+      "path": "docs/PHASE-2-END-NOTE-TEMPLATE.md",
+      "bytes": 1197,
+      "sha256": "b36e2c5acd2561866bde718d1ff2b5a0d427212e989f19425a649d0adb2aeb1d"
+    },
+    {
+      "path": "docs/PHASE-2-END-NOTE.md",
+      "bytes": 6618,
+      "sha256": "49c5e709994bd8c85687716fe0e8080d7930db0fd0b61c1e7a7002d2bcbadff3"
+    },
+    {
+      "path": "docs/PHASE-3-END-NOTE-TEMPLATE.md",
+      "bytes": 1283,
+      "sha256": "945c3db80d30c13e5106f462f379fa265895ca37b197a3768640161a35a5c55f"
+    },
+    {
+      "path": "docs/PHASE-3-END-NOTE.md",
+      "bytes": 8226,
+      "sha256": "823e36350d462773385a160123454a6e784277bb970ab493ebcb60fc4a1752d4"
+    },
+    {
+      "path": "docs/RESEARCH-SOURCES.md",
+      "bytes": 4965,
+      "sha256": "6eba33ab7f8a4fe9d93d6f8f9f57f5543edc60e4c99b0e5f91c11f0d67b018f7"
+    },
+    {
+      "path": "docs/RULE-COMPLIANCE-TRACKER.md",
+      "bytes": 3323,
+      "sha256": "b189ce8fc95c8f8bd0638ed9244d95972fa7039a063320c33917b47c48a8cabb"
+    },
+    {
+      "path": "docs/RULE-TRACKER.csv",
+      "bytes": 3200,
+      "sha256": "1e65a1f3ed2176651010902755d1c3536193971d0a6ea208b95b73058c4cdfe1"
+    },
+    {
+      "path": "docs/SESSION-LOG.md",
+      "bytes": 14208,
+      "sha256": "82b69a4f447ccc271aba8ab4538d9f01b7a2c3a65cacdd35c7cc38edeb8f202a"
+    },
+    {
+      "path": "docs/STEP-1-DECISIONS.md",
+      "bytes": 4691,
+      "sha256": "1bf113d529d83e86d21610edff9bc7cbce19b6795254e43d2548b06f3ab32558"
+    },
+    {
+      "path": "docs/STEP-2-FEATURE-MAP.md",
+      "bytes": 3436,
+      "sha256": "dffabed31f6103871e2b902b4f6a21138704dd883c6ec608486ac299de2eb186"
+    },
+    {
+      "path": "docs/STEP-2-HANDOFF.txt",
+      "bytes": 3990,
+      "sha256": "08f845c4252e39f39df852a7daeda202dd195ae3f0b8f01cb02d20b567d566ac"
+    },
+    {
+      "path": "docs/STEP-3-HANDOFF.txt",
+      "bytes": 3851,
+      "sha256": "9d390d0b443722133c72979ef48a49a619893b53b0b3106c12c62119d79b302b"
+    },
+    {
+      "path": "docs/STEP2-PACKAGE-MANIFEST.json",
+      "bytes": 7116,
+      "sha256": "14b0e1d10f0a29b4132dff8e9c6616c08474f68a35408ee75229fc01d6029a6b"
+    },
+    {
+      "path": "docs/STEP3-PACKAGE-NOTE.txt",
+      "bytes": 829,
+      "sha256": "264c0c7f25d6e21f2edd7fc9b02871824b14edf7b33c4d6e06dd8a08a9382708"
+    },
+    {
+      "path": "index.html",
+      "bytes": 49921,
+      "sha256": "531eac4e74e2619c1e3122b978a45422753eca7d0fef05a8e69459984b98418d"
+    },
+    {
+      "path": "manifest.webmanifest",
+      "bytes": 483,
+      "sha256": "9992959a4c4c4f4c92158f0a565735971587b7bf1683215a86bc3dcb20bff38d"
+    },
+    {
+      "path": "qa/ACCESSIBILITY-STATIC-RESULTS.txt",
+      "bytes": 313,
+      "sha256": "b9b32aebaee9537d33807e07127d6401b2f06cacef02960a058e83d76d59396d"
+    },
+    {
+      "path": "qa/ACCESSIBILITY-STATIC-RUN.txt",
+      "bytes": 303,
+      "sha256": "ed6c7a5a5fab2b5d668a3672b9e06384a7dd2c5bded3ca32048482bf673f0813"
+    },
+    {
+      "path": "qa/ASSET-AUDITOR-UNIT-TESTS.txt",
+      "bytes": 354,
+      "sha256": "2a8bdd4849bf30b87ee549a520977cdbdfeb92b8d21b3e644418edd76349e0cf"
+    },
+    {
+      "path": "qa/BROWSER-SMOKE-RESULTS.json",
+      "bytes": 1543,
+      "sha256": "11b880aca9643bf41f6c44cefaac647a9dfd3feb37dd6dac88df21f69adf1abb"
+    },
+    {
+      "path": "qa/BROWSER-SMOKE-RUN.txt",
+      "bytes": 1544,
+      "sha256": "07b61578c0292ce2a4d2991139a3a2161989b125bbc2fae02fb4f84727fc5326"
+    },
+    {
+      "path": "qa/FOUNDATION-ASSET-AUDIT.json",
+      "bytes": 1057,
+      "sha256": "d36cdce03f964d54c585a3e465e70c764b2c6d12dcf41681463f449a1b4cee8b"
+    },
+    {
+      "path": "qa/NODE-CHECK-APP.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/NODE-CHECK-CATALOG.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/NODE-CHECK-SERVICE-WORKER.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "qa/PREVIEW-INFO.json",
+      "bytes": 339,
+      "sha256": "a220f781dbd39500209d8ecc6e7d3f78eb045b5051b0ab30a7fa567405d9b7de"
+    },
+    {
+      "path": "qa/PREVIEW-MUSLIM-INFO.json",
+      "bytes": 534,
+      "sha256": "b68b679e20997ccf433b9e2c3a37c7fead4677c6db03324fc80554aa090a019b"
+    },
+    {
+      "path": "qa/QA-RESULTS.md",
+      "bytes": 4129,
+      "sha256": "0d80f31620554fb3cb506e0a640161e5389204f2bc62bfff7d3329f4906d1a4f"
+    },
+    {
+      "path": "qa/STEP2-ASSET-AUDIT-RUN.txt",
+      "bytes": 220,
+      "sha256": "68984fe4d39ba72dba54eba581e1ed09b3f660fdcfea0841420cb3d9f698671a"
+    },
+    {
+      "path": "qa/STEP2-ASSET-AUDIT.json",
+      "bytes": 9472,
+      "sha256": "ae906bfc98031d13a697d083281c06e04297df3df992ace96b812885e6217fa0"
+    },
+    {
+      "path": "qa/STEP2-BROWSER-SMOKE-RESULTS.json",
+      "bytes": 6476,
+      "sha256": "f21697509b1dc7bc987daf1c2e8fda2a4e4594bff6dc27d9ead150937ada292b"
+    },
+    {
+      "path": "qa/STEP2-BROWSER-SMOKE-RUN.txt",
+      "bytes": 6182,
+      "sha256": "9eda1f4762cfbdc5c6bcbd8175bcfebdc29ac076470f119af6a8be9b263d3f15"
+    },
+    {
+      "path": "qa/STEP2-STATIC-RESULTS.json",
+      "bytes": 836,
+      "sha256": "6d6a02a68251d37310f20eb4cb9093abfd81d31c29c785c07f9403dc6b7dbc9f"
+    },
+    {
+      "path": "qa/STEP2-STATIC-RUN.txt",
+      "bytes": 837,
+      "sha256": "225e97a39a80512fbab205d681f1a25e02b1b4dfa0bdd423bfcf9799e448913e"
+    },
+    {
+      "path": "qa/STEP3-ACCESSIBILITY-RUN.txt",
+      "bytes": 313,
+      "sha256": "b9b32aebaee9537d33807e07127d6401b2f06cacef02960a058e83d76d59396d"
+    },
+    {
+      "path": "qa/STEP3-ASSET-AUDIT-RUN.txt",
+      "bytes": 173,
+      "sha256": "31e3140ac807adb76211c647ba13a8d769f5ae038a798a205a8d29bb8f153b74"
+    },
+    {
+      "path": "qa/STEP3-ASSET-RESULTS.json",
+      "bytes": 7909,
+      "sha256": "75cae687484feed6fdfdbcb18897e538e8300fbfa2b7686618a8af69be47873f"
+    },
+    {
+      "path": "qa/STEP3-BROWSER-RESULTS.json",
+      "bytes": 6869,
+      "sha256": "2c25002950e01804f7167b1e6c0155e059c2b0035e82e179ca070855eddc8867"
+    },
+    {
+      "path": "qa/STEP3-BROWSER-RUN.txt",
+      "bytes": 379,
+      "sha256": "09b8a5806099be718a6ef43f33174619964060b579cc8c6d951f5a5c0c9edddf"
+    },
+    {
+      "path": "qa/STEP3-LOCAL-HTTP-RESULTS.json",
+      "bytes": 3693,
+      "sha256": "87defe5ce5dbcf9e704b524d6080a881d62aff5a9978fd8dddce566c5a83e732"
+    },
+    {
+      "path": "qa/STEP3-LOCAL-HTTP-RUN.txt",
+      "bytes": 239,
+      "sha256": "ecdd50fe05d64a3a45df1b8ef0c88de8f12016eb0a9669dc377a8dda9eef5998"
+    },
+    {
+      "path": "qa/STEP3-NODE-CHECK.txt",
+      "bytes": 90,
+      "sha256": "09538824f4538b396290684b52fc02a9e1e38bbe269d85cceb1530eb4d0c4056"
+    },
+    {
+      "path": "qa/STEP3-PYTHON-COMPILE.txt",
+      "bytes": 39,
+      "sha256": "600e9705b419d3e36bd909f7627754953a044f3b082df31d7f1039493fc75a22"
+    },
+    {
+      "path": "qa/STEP3-STATIC-RESULTS.json",
+      "bytes": 971,
+      "sha256": "8afd99e4dd4ca8b556491a53cd395217bc98e3929493d415b837fff51573ac93"
+    },
+    {
+      "path": "qa/STEP3-STATIC-RUN.txt",
+      "bytes": 971,
+      "sha256": "8afd99e4dd4ca8b556491a53cd395217bc98e3929493d415b837fff51573ac93"
+    },
+    {
+      "path": "qa/STEP3-UNIT-TEST-RUN.txt",
+      "bytes": 1290,
+      "sha256": "355c9fb1932ad81c7ed6623d80dc4855d50f65a7ea6ada12353d49412f93686c"
+    },
+    {
+      "path": "qa/accessibility_static_check.py",
+      "bytes": 3529,
+      "sha256": "b332c615b6169876be9e5dc1846e5449a01084cbee4e3931b011d8832bbf4b4e"
+    },
+    {
+      "path": "qa/browser_smoke.py",
+      "bytes": 6065,
+      "sha256": "589a5e74e42a887f9b5aff088ac1ea8037574fd8dc6244e1eee0104fac68978e"
+    },
+    {
+      "path": "qa/preview-mobile-390.png",
+      "bytes": 357483,
+      "sha256": "233426586f37da5445ebb368369daf99136882faf4171fa36a4a5e594a9f4bf4"
+    },
+    {
+      "path": "qa/preview-muslim-390.png",
+      "bytes": 854459,
+      "sha256": "ff1bf58d8fbc1d16ddcb67af6680729c90cca88c1b98f4862f420202620d6b5a"
+    },
+    {
+      "path": "qa/repo_asset_audit.py",
+      "bytes": 9049,
+      "sha256": "5ee37051cda5c87d60d8adf16f322ab008e1da701f998fe86a4ee09367c0b812"
+    },
+    {
+      "path": "qa/static_check.py",
+      "bytes": 4482,
+      "sha256": "fa1c71f1fbe3d6e5bf9b2ab20aae0ce781200ec3b5033cb3ab738b68e0496bfa"
+    },
+    {
+      "path": "qa/step2_static_check.py",
+      "bytes": 6165,
+      "sha256": "78857dfdc93e3cfeee10b8bfb43d59a7202db5e8f889a27bb0ac28c9f4f9696e"
+    },
+    {
+      "path": "qa/step3_browser_smoke.py",
+      "bytes": 20956,
+      "sha256": "d4c7ac147346777c5a339ccc16c713e9a2acb3952de0d9cc02ee7bd511474f81"
+    },
+    {
+      "path": "qa/step3_local_http_check.py",
+      "bytes": 3580,
+      "sha256": "b051ee01c4b8d9fe13c9fdc1d379495fe16b28525589cc0236d39ddc7b5bcf1f"
+    },
+    {
+      "path": "qa/step3_static_check.py",
+      "bytes": 5481,
+      "sha256": "d8df9c4afdbdb842b9aa0852d5a0d8050685023f4bcb8f365346ebfcd237c90c"
+    },
+    {
+      "path": "qa/test_repo_asset_audit.py",
+      "bytes": 2478,
+      "sha256": "0102b64ccf07d1615390d27813dbff1d5b8a0cbcbabb682b29e0dde846ce94e7"
+    },
+    {
+      "path": "qa/test_step3_release.py",
+      "bytes": 4696,
+      "sha256": "6acf11ffd137da12c8343aab2fda6f9a31045aca0d543ea8447827e0d76a015a"
+    },
+    {
+      "path": "qa/user-screenshot-unformatted-2026-10-21.png",
+      "bytes": 1108610,
+      "sha256": "0b0b375f7ecd4aa608c361cc935328f1ff097a208b6429182d4555cea1334a94"
+    },
+    {
+      "path": "styles.css",
+      "bytes": 32456,
+      "sha256": "2fa26025fbce2bfc43727d095ff4212b10a9b0ff4050986b760e201aeeaf84a7"
+    },
+    {
+      "path": "sw.js",
+      "bytes": 3464,
+      "sha256": "d9b164630b6db3048b131d340a664951521c949d7f6634250aca39c7751cd720"
+    }
+  ],
+  "verified_summary": {
+    "browser_assertions": 61,
+    "browser_result": "PASS",
+    "local_http_passed": 22,
+    "local_http_expected": 22,
+    "static_audit": "PASS",
+    "unique_html_ids": 191,
+    "missing_local_html_refs": 0,
+    "release_unit_tests_passed": 8,
+    "asset_auditor_tests_passed": 2,
+    "muslim_gallery_cards": 6,
+    "christian_gallery_cards": 1,
+    "sanskari_gallery_cards": 12,
+    "unique_new_original_images_preserved": 5,
+    "local_display_webps_added": 5,
+    "exact_duplicate_muslim_uploads_not_copied": 5,
+    "legacy_remote_image_binaries_pending": 65,
+    "catalogue_records_current": 19,
+    "older_roadmap_catalogue_records": 43,
+    "live_github_pages": "NOT TESTED",
+    "physical_android": "NOT TESTED"
+  }
+}

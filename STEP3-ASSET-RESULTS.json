@@ -1,0 +1,186 @@
+{
+  "status": "PASS",
+  "scope": "Locally bundled user-supplied Muslim, Christian and Sanskari display assets; legacy source repository image binaries remain remote and unverified.",
+  "original_source": {
+    "path": "assets/supplied/muslim-collection-four-panel-original.png",
+    "bytes": 3350486,
+    "sha256": "a4412d05386a8fe11327c2c4fd95213cc431082aec32edd15f27616206646e9e",
+    "preserved_byte_for_byte": true
+  },
+  "new_crops": [
+    {
+      "path": "assets/muslim-collection/muslim-noor-ka-nasha.webp",
+      "format": "WEBP",
+      "width": 510,
+      "height": 766,
+      "bytes": 92918,
+      "sha256": "10324c371d9befe1da18edc8e8244e0fc0e3e822587cd2c6f45e1d16891eca4a",
+      "source": "user-uploaded 1000201092.png crop",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-e-noor.webp",
+      "format": "WEBP",
+      "width": 510,
+      "height": 766,
+      "bytes": 93914,
+      "sha256": "daaad21c461c4d7df2c62c98dd29ceab914206c1703c1d2ec1b118c516d7a313",
+      "source": "user-uploaded 1000201092.png crop",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-ki-roshni.webp",
+      "format": "WEBP",
+      "width": 510,
+      "height": 766,
+      "bytes": 90332,
+      "sha256": "639dad1555041488c9c09d115b843541bdb780ceb5c0143b73ff11d601cf2812",
+      "source": "user-uploaded 1000201092.png crop",
+      "status": "PASS"
+    },
+    {
+      "path": "assets/muslim-collection/muslim-shaam-se-raat-tak.webp",
+      "format": "WEBP",
+      "width": 510,
+      "height": 766,
+      "bytes": 92520,
+      "sha256": "544c35fc7f696ca21cc3d97e036db81e0b21f43113b896d8c544a664994e7f1a",
+      "source": "user-uploaded 1000201092.png crop",
+      "status": "PASS"
+    }
+  ],
+  "legacy_remote_image_binary_count": 65,
+  "legacy_remote_images_bundled": "BLOCKED",
+  "new_collection_additions": {
+    "unique_source_original_count": 5,
+    "original_bytes_total": 7180608,
+    "optimized_webp_bytes_total": 1002782,
+    "display_asset_bytes_reduced_percent": 86.03,
+    "source_originals_preserved_byte_for_byte": true,
+    "all_webps_decoded": true,
+    "assets": [
+      {
+        "upload": "1000200454(2).jpg",
+        "collection": "muslim-collection",
+        "webp": "muslim-tradition-outside-desire-inside.webp",
+        "title": "Tradition Outside, Desire Inside",
+        "id": "muslim-noor-05",
+        "type": "User-supplied modest-style campaign concept · Coming Soon",
+        "section": "Muslim-Inspired Collection · Noor Edit",
+        "original_path": "assets/supplied/collection-additions/1000200454(2).jpg",
+        "original_bytes": 370234,
+        "original_sha256": "b92c4db6feaa1dc881fe191449fb54c397c3f1fb5a403da7a81e3de2d4b621f3",
+        "webp_path": "assets/muslim-collection/muslim-tradition-outside-desire-inside.webp",
+        "webp_bytes": 232638,
+        "webp_sha256": "6e89f0c73a39211422799619685463ce71e4e8d15d5ecd933e6aaf654ef355e6",
+        "webp_dimensions": [
+          933,
+          1400
+        ],
+        "webp_format": "WEBP",
+        "preserved_original_byte_for_byte": true,
+        "webp_decoded": true
+      },
+      {
+        "upload": "1000200455(3).jpg",
+        "collection": "muslim-collection",
+        "webp": "muslim-elegance-begins-within.webp",
+        "title": "Elegance Begins Within",
+        "id": "muslim-noor-06",
+        "type": "User-supplied modest-style campaign concept · Coming Soon",
+        "section": "Muslim-Inspired Collection · Noor Edit",
+        "original_path": "assets/supplied/collection-additions/1000200455(3).jpg",
+        "original_bytes": 364564,
+        "original_sha256": "ab53c764f57cf473523d8d10e52c0789ceed8bc04d383bf8fee30456eb342575",
+        "webp_path": "assets/muslim-collection/muslim-elegance-begins-within.webp",
+        "webp_bytes": 227598,
+        "webp_sha256": "ac9debf72bf2ba10f55c2afca6243e96a714add362d81a3d52b9d80cfc347fca",
+        "webp_dimensions": [
+          933,
+          1400
+        ],
+        "webp_format": "WEBP",
+        "preserved_original_byte_for_byte": true,
+        "webp_decoded": true
+      },
+      {
+        "upload": "1000200453(2).png",
+        "collection": "christian-collection",
+        "webp": "christian-grace-has-never-looked-so-bold.webp",
+        "title": "Grace Has Never Looked So Bold",
+        "id": "christian-grace-01",
+        "type": "User-supplied Christian-inspired concept artwork · Coming Soon",
+        "section": "Christian-Inspired Collection",
+        "original_path": "assets/supplied/collection-additions/1000200453(2).png",
+        "original_bytes": 2999947,
+        "original_sha256": "0586b51cab5ca9ff298df1d13fd0cfe0bbc305c8e7f6fc4371ca7242b38e8c8d",
+        "webp_path": "assets/christian-collection/christian-grace-has-never-looked-so-bold.webp",
+        "webp_bytes": 191890,
+        "webp_sha256": "d11b895ebbc619f601d17014a97b1397632f674f0357eb1605e0b274886fc28b",
+        "webp_dimensions": [
+          1120,
+          1400
+        ],
+        "webp_format": "WEBP",
+        "preserved_original_byte_for_byte": true,
+        "webp_decoded": true
+      },
+      {
+        "upload": "1000200456(2).jpg",
+        "collection": "sanskari-collection",
+        "webp": "sanskari-outside-dangerous-new.webp",
+        "title": "Sanskari Outside, Dangerous Inside · New Artwork",
+        "id": "sanskari-dangerous-new",
+        "type": "User-supplied Sanskari campaign reference · not verified stock",
+        "section": "Sanskari Collection",
+        "original_path": "assets/supplied/collection-additions/1000200456(2).jpg",
+        "original_bytes": 206532,
+        "original_sha256": "0cc753fed62a084d7b9f7a26625e333bdd8b3993f3e827a07c1dddc1bd194b5e",
+        "webp_path": "assets/sanskari-collection/sanskari-outside-dangerous-new.webp",
+        "webp_bytes": 103164,
+        "webp_sha256": "02a9312d31efb0194825b19cd41c327850dfeacb7656b1e40363964f9dfc388a",
+        "webp_dimensions": [
+          1022,
+          1400
+        ],
+        "webp_format": "WEBP",
+        "preserved_original_byte_for_byte": true,
+        "webp_decoded": true
+      },
+      {
+        "upload": "1000200479.png",
+        "collection": "sanskari-collection",
+        "webp": "sanskari-outside-bold-within.webp",
+        "title": "Sanskari Outside, Bold Within",
+        "id": "sanskari-bold-within-new",
+        "type": "User-supplied Sanskari campaign reference · not verified stock",
+        "section": "Sanskari Collection",
+        "original_path": "assets/supplied/collection-additions/1000200479.png",
+        "original_bytes": 3239331,
+        "original_sha256": "c123aa9cabd8db50b27e07507cf547fec9f24a92f276d5e20a21d9452fd64763",
+        "webp_path": "assets/sanskari-collection/sanskari-outside-bold-within.webp",
+        "webp_bytes": 247492,
+        "webp_sha256": "fe5f47d0896663b17764ba009b4de986a98f0930c6a3c1cffd0c4c6050fe4718",
+        "webp_dimensions": [
+          933,
+          1400
+        ],
+        "webp_format": "WEBP",
+        "preserved_original_byte_for_byte": true,
+        "webp_decoded": true
+      }
+    ],
+    "exact_duplicate_uploads_not_copied": {
+      "1000201195.png": "SHA-256 matches assets/supplied/muslim-collection-four-panel-original.png byte-for-byte; not duplicated",
+      "1000201199.webp": "SHA-256 matches assets/muslim-collection/muslim-shaam-e-noor.webp byte-for-byte; not duplicated",
+      "1000201200.webp": "SHA-256 matches assets/muslim-collection/muslim-shaam-se-raat-tak.webp byte-for-byte; not duplicated",
+      "1000201201.webp": "SHA-256 matches assets/muslim-collection/muslim-shaam-ki-roshni.webp byte-for-byte; not duplicated",
+      "1000201203.webp": "SHA-256 matches assets/muslim-collection/muslim-noor-ka-nasha.webp byte-for-byte; not duplicated"
+    },
+    "collection_counts": {
+      "muslim_collection_cards": 6,
+      "christian_collection_cards": 1,
+      "sanskari_campaign_cards": 12
+    }
+  }
+}

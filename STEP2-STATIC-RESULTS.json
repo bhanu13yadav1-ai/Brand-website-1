@@ -1,0 +1,34 @@
+{
+  "status": "PASS",
+  "scope": "Static package consistency only. Does not verify remote image HTTP delivery, real browser/network image results, GitHub Pages or Android hardware.",
+  "files": {
+    "html_bytes": 48257,
+    "css_bytes": 30762,
+    "app_js_bytes": 62900,
+    "catalog_js_bytes": 15350
+  },
+  "unique_html_ids": 189,
+  "navigation_views": [
+    "home",
+    "innerwear",
+    "sanskari",
+    "boyfriend",
+    "wellness",
+    "wheels",
+    "more"
+  ],
+  "page_views": [
+    "home",
+    "innerwear",
+    "sanskari",
+    "boyfriend",
+    "wellness",
+    "wheels",
+    "more"
+  ],
+  "static_source_image_refs": 3,
+  "remote_image_url_occurrences": 6,
+  "external_media_blocker": "Original source image binaries are not bundled yet; remote URLs must be replaced with local assets in Step 3.",
+  "errors": [],
+  "warnings": []
+}

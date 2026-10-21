@@ -1,0 +1,33 @@
+{
+  "root": ".",
+  "source_file_count": 34,
+  "source_code_files_scanned": 3,
+  "explicit_local_reference_count": 2,
+  "missing_reference_count": 0,
+  "missing_references": [],
+  "checked_references": [
+    {
+      "source": "index.html",
+      "attribute": "href",
+      "value": "css/styles.css",
+      "kind": "markup",
+      "normalized_path": "css/styles.css",
+      "status": "FOUND"
+    },
+    {
+      "source": "index.html",
+      "attribute": "src",
+      "value": "js/app.js",
+      "kind": "markup",
+      "normalized_path": "js/app.js",
+      "status": "FOUND"
+    }
+  ],
+  "external_reference_count": 0,
+  "external_references": [],
+  "basename_only_js_literals_for_manual_mapping": [],
+  "basename_only_literal_count": 0,
+  "exact_duplicate_image_groups": [],
+  "exact_duplicate_image_group_count": 0,
+  "scope_note": "Static path audit of this Step 1 foundation shell only. The source repositories and original image binaries are not included in this audit; it cannot prove production URLs, external links or runtime-generated paths work."
+}

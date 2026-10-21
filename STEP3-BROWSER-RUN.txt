@@ -1,0 +1,5 @@
+In-memory Chromium smoke test: PASS
+61/61 scripted interaction assertions passed. No unexpected console errors or page exceptions.
+Responsive widths: 320, 360, 390, 430, 1440 CSS px; no horizontal overflow in the harness.
+Legacy raw GitHub images use test fixtures; real remote image delivery, GitHub Pages and physical Android remain NOT TESTED.
+See STEP3-BROWSER-RESULTS.json.

@@ -1,0 +1,18 @@
+{
+  "name": "BLACKED Fusion V1 Step 3.3",
+  "short_name": "BLACKED V1",
+  "description": "Mobile-first brand concept with innerwear references, relationship tools and wellness education.",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#100b10",
+  "theme_color": "#100b10",
+  "icons": [
+    {
+      "src": "./assets/blacked-icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

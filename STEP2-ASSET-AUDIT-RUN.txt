@@ -1,0 +1,5 @@
+Source files: 59 | code files scanned: 5
+Explicit local refs: 10 | missing: 0
+External refs logged: 3 | JS basename literals for mapping: 71
+Exact duplicate image groups: 0
+JSON report written: qa/STEP2-ASSET-AUDIT.json
